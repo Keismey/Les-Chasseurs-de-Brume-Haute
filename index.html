@@ -443,6 +443,8 @@ details.setcard[open]>summary::after{transform:rotate(-135deg);top:11px}details.
 .aboard .aicon{width:44px;height:44px;flex:none}
 .aboard .at{display:flex;flex-direction:column;min-width:0}.aboard .bt{font-size:24px}
 .aboard.off{background:var(--panel)}.aboard.off .aicon{opacity:.55}
+.sboard{transform:rotate(-.4deg);margin:-6px 0 18px;padding:14px 18px 12px;background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--brass) 6%,transparent) 0 8px,transparent 8px 16px),linear-gradient(100deg,color-mix(in srgb,var(--brass) 16%,var(--panel)),var(--panel) 72%);box-shadow:0 2px 0 var(--line),0 0 0 1px color-mix(in srgb,var(--brass) 40%,var(--line))}
+.sboard .bt{font-size:22px}.sboard.off{background:var(--panel)}
 .jsum{display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin:4px 0 8px}
 .jsum>div{display:flex;flex-direction:column;gap:2px}.jsum b{font-size:12.5px;color:var(--muted);font-weight:600}.jsum .sg{width:18px;height:18px;vertical-align:-4px;margin-right:1px}
 .jtop{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.jcur{display:inline-flex;align-items:center;gap:5px}.jcur em{font-style:normal;font-size:11.5px;font-weight:700;color:var(--muted)}.jcur.max em{color:var(--good)}
@@ -508,11 +510,35 @@ img.uic{width:1.15em;height:1.15em;vertical-align:-.22em;object-fit:contain;disp
 @keyframes tuthl{50%{outline-color:transparent;box-shadow:0 0 0 6px color-mix(in srgb,var(--brass) 35%,transparent)}}
 body.tuton #app{padding-bottom:150px}
 .savebox{width:100%;box-sizing:border-box;font:12px/1.3 monospace;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);word-break:break-all;resize:vertical}
+
+.pnhead{display:flex;align-items:center;gap:12px;margin-bottom:6px}.pnhead .emblem{width:56px;height:56px;flex:none}.pnhead h2{margin:4px 0 0}.pntag{background:var(--brass);animation:none}
+.pnv{margin:12px 0 4px;font-size:17px}.pnv small{display:block;font-family:var(--fb);font-size:12px;color:var(--muted);font-weight:400}
+.pnl{margin:4px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.4}
+.pnlist{display:flex;flex-direction:column;gap:8px}.pncard{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px 12px}.pncard summary small{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+
+.splash{position:fixed;inset:0;z-index:9999;background:#000;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:opacity .5s ease}
+.splash.out{opacity:0;pointer-events:none}
+.splash>div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transition:opacity .6s ease}
+.splash>div.on{opacity:1}
+.splogo{width:min(64vw,340px);height:auto}
+.spword{display:none;flex-direction:column;align-items:center;font-family:var(--fb);color:#f1e6c8;letter-spacing:.32em;text-align:center}
+.spword b{font-size:34px;font-weight:700;margin-right:-.32em}.spword span{font-size:14px;margin-top:6px;opacity:.75;margin-right:-.32em}
+.spbg{position:absolute;inset:0;background:#2a3138 url('img/ui/splash.webp') center 42%/cover no-repeat;transform:scale(1.06);transition:transform 4s ease-out}
+.sp2.on .spbg{transform:scale(1)}
+.sp2::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45),transparent 38%,transparent 70%,rgba(0,0,0,.55))}
+.sptitle{position:absolute;top:max(9vh,40px);left:0;right:0;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;color:#fbf3dd;opacity:0;transform:translateY(10px);transition:opacity .8s ease .35s,transform .8s ease .35s}
+.sp2.on .sptitle{opacity:1;transform:none}
+.sptitle .emblem{width:min(30vw,128px);height:auto;filter:drop-shadow(0 3px 10px rgba(0,0,0,.6))}
+.sptitle .title{margin:0;font-size:clamp(40px,12vw,64px);text-shadow:0 2px 0 rgba(0,0,0,.5),0 0 22px rgba(0,0,0,.65)}.sptitle .title small{font-size:.42em}
+.sptap{position:absolute;bottom:max(6vh,28px);left:0;right:0;z-index:1;text-align:center;margin:0;color:#fbf3dd;font-size:14px;letter-spacing:.06em;text-shadow:0 1px 6px rgba(0,0,0,.8);opacity:.85;animation:sptap 1.8s ease-in-out infinite}
+@keyframes sptap{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.splash>div,.sptitle,.spbg{transition:none}.sptap{animation:none}}
 </style>
 </head>
 <body>
 <div id="app"></div>
 <div id="modal"></div>
+<div id="splash" class="splash" aria-hidden="true" hidden><div class="sp1"><img class="splogo" src="img/ui/keismey.webp" alt="Keismey Studio" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="spword"><b>KEISMEY</b><span>STUDIO</span></div></div><div class="sp2"><div class="spbg"></div><div class="sptitle"><img class="emblem" src="img/ui/emblem.webp" alt=""><h1 class="title"><small>Les Chasseurs de</small>Brume-Haute</h1></div><p class="sptap">Touchez l’écran pour continuer</p></div></div>
 <script>
 'use strict';
 const $=s=>document.querySelector(s);
@@ -1221,6 +1247,9 @@ QUESTS.push({id:'d9',mon:'sismorak',duo:'glacimorde',elite:1,anc:1,tier:9,opt:1,
 function qBase(m,el,anc){return QUESTS.find(x=>x.mon===m&&x.tier>0&&!!x.elite===!!el&&!!x.anc===!!anc&&!x.capture&&!x.duo&&!x.gather);}
 for(const q of QUESTS){if(q.capture&&q.ref){const b=QUESTS.find(x=>x.id===q.ref);q.stars=b.stars;q.turns=b.turns+5;q.z=Math.round(b.z*1.3/50)*50;q.obj=[{id:'nofaint',n:'Aucun évanouissement'}];}
  if(q.duo){const a=qBase(q.mon,q.elite,q.anc),b=qBase(q.duo,q.elite,q.anc);q.stars=Math.max(a.stars,b.stars);q.turns=Math.round((a.turns+b.turns)*.9);q.z=Math.round((a.z+b.z)*1.2/50)*50;q.obj=[{id:'nofaint',n:'Aucun évanouissement'}];}}
+const SP_IRON={q6:'Le Roi de Fer à la baliste',e6:'Le Roi de Fer aguerri à la baliste',m_ferroi:'Le Roi sans âge à la baliste'};
+for(const b of QUESTS.filter(q=>q.opt&&q.duo||SP_IRON[q.id]))QUESTS.push({id:'s_'+b.id,sp:1,src:b.id,mon:b.mon,duo:b.duo,elite:b.elite||0,anc:b.anc||0,tier:0,stars:b.stars,turns:b.turns,z:Math.round(b.z*.5/50)*50,obj:b.obj,
+ title:b.duo?b.title:SP_IRON[b.id],d:b.duo?b.d+' Un combat spécial : prime réduite, butin normal.':'Revivez l’assaut de la Citadelle : la Guilde remonte la baliste sur les remparts et vous confie 3 carreaux. Prime réduite, butin normal.'});
 const MON_SEQ=(()=>{const o=[];const add=m=>{if(m&&MON[m]&&!o.includes(m))o.push(m);};for(let t=1;t<=9;t++){const L=QUESTS.filter(q=>q.tier===t&&q.mon);for(const q of L.filter(q=>!q.urgent).concat(L.filter(q=>q.urgent))){add(q.mon);add(q.duo);}}for(const m in MON)if(m!=='pantin')add(m);return o;})();
 function monSeq(m){const i=MON_SEQ.indexOf(m);return i<0?-1:i;}
 {const ix=new Map(JEWELS.map((j,i)=>[j,i]));JEWELS.sort((a,b)=>a.sz-b.sz||monSeq(a.mon)-monSeq(b.mon)||ix.get(a)-ix.get(b));}
@@ -1230,7 +1259,24 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
-function newSave(){return{v:2,zenny:600,alv:{},jewels:{},sock:{},
+const PATCHES=[
+ {v:'1.63',date:'2026-10-06',t:'Combats spéciaux',items:[
+  'Nouvel écran de démarrage à l’ouverture du jeu.',
+  'Quêtes de récolte : la ressource demandée se trouve désormais dans chaque secteur de la zone, et revient 3 h après avoir été épuisée. Plus besoin de relancer une quête faute de Pingrelots !',
+  'Nouvelle catégorie à l’accueil, sous l’Expédition libre : <b>Combats spéciaux</b>. Les doubles chasses réussies au Tableau des quêtes et l’assaut du Roi de Fer à la baliste s’y rejouent, dans leur zone d’origine.',
+  'Notes de version : cette fenêtre s’affiche une fois après chaque mise à jour, et l’historique complet se trouve en bas de l’accueil.']},
+ {v:'1.62',date:'2026-10-05',t:'Première version publique',items:[
+  'Le jeu s’installe sur l’écran d’accueil du téléphone et fonctionne hors ligne.',
+  'Tutoriel guidé par Hilda pour les nouveaux chasseurs.',
+  'Export et import de la sauvegarde pour changer d’appareil.']}];
+const MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+function patchDate(d){const[y,m,j]=d.split('-').map(Number);return`${j===1?'1er':j} ${MOIS[m-1]} ${y}`;}
+function patchBody(p){return`<ul class="pnl">${p.items.map(x=>`<li>${x}</li>`).join('')}</ul>`;}
+function openPatch(){const i=PATCHES.findIndex(p=>p.v===S.patch),L=PATCHES.slice(0,i<0?1:Math.max(1,i));S.patch=PATCHES[0].v;save();
+ modal(`<div class="pnhead"><img class="emblem" src="img/ui/emblem.webp" alt=""><div><span class="urgtag pntag">Mise à jour</span><h2>Nouveautés</h2></div></div>${L.map(p=>`<h3 class="pnv">Version ${p.v} · ${esc(p.t)} <small>${patchDate(p.date)}</small></h3>${patchBody(p)}`).join('')}<button class="btn main wide" data-a="close" style="margin-top:12px">Compris !</button>`);}
+function openPatchList(){const L=PATCHES.slice().sort((a,b)=>b.date.localeCompare(a.date)||b.v.localeCompare(a.v,undefined,{numeric:true}));
+ modal(`<h2>Notes de version</h2><p class="small muted" style="margin-top:0">Toutes les mises à jour, de la plus récente à la plus ancienne.</p><div class="pnlist">${L.map((p,i)=>`<details class="setcard pncard"${i?'':' open'}><summary><b>Version ${p.v}</b> · ${esc(p.t)}<small>${patchDate(p.date)}</small></summary>${patchBody(p)}</details>`).join('')}</div><button class="btn wide" data-a="close" style="margin-top:12px">Fermer</button>`);}
+function newSave(){return{v:2,zenny:600,patch:PATCHES[0].v,alv:{},jewels:{},sock:{},
  items:{potion:10,mega:2,antidote:3,steak:2,grain:0,flash:2,piege:1,tranq:2},mats:{},
  weapons:WT_ORDER.map(t=>t+':fer'),armors:SLOTS.map(s=>s.id+':chasseur'),
  equip:{weapon:'gs:fer',tete:'tete:chasseur',torse:'torse:chasseur',bras:'bras:chasseur',taille:'taille:chasseur',jambes:'jambes:chasseur'},
@@ -1281,12 +1327,12 @@ function tierQ(t,urg){return QUESTS.filter(q=>q.tier===t&&(urg==null||!!q.urgent
 function tierDone(t){return tierQ(t).every(q=>S.cleared[q.id]);}
 function stageDone(t){return tierDone(t)||tierQ(t,true).some(q=>S.cleared[q.id]);}
 function stageOpen(t){return t===1||(t>1&&stageDone(t-1));}
-function unlocked(q){if(q.explore)return true;if(q.arena)return arenaOk(q);const t=q.tier;if(!t||!stageOpen(t))return false;
+function unlocked(q){if(q.explore)return true;if(q.sp)return!!S.cleared[q.src];if(q.arena)return arenaOk(q);const t=q.tier;if(!t||!stageOpen(t))return false;
  return q.urgent?keyQ(t).every(x=>S.cleared[x.id]):true;}
 function keyQ(t){return tierQ(t,false).filter(x=>!x.opt);}
 function hr(){for(let t=1;t<=9;t++)if(!stageDone(t))return t;return 9;}
 function hrLabel(){return STAGE_N[hr()]+(stageDone(9)?' ✓':'');}
-function qStars(q){const t=q.tier||0;return t?'★'.repeat(t>6?t-6:t>3?t-3:t):'★'.repeat(Math.min(3,q.stars));}
+function qStars(q){const t=q.tier||(q.sp&&(QUESTS.find(x=>x.id===q.src)||{}).tier)||0;return t?'★'.repeat(t>6?t-6:t>3?t-3:t):'★'.repeat(Math.min(3,q.stars));}
 function qName(q){return q.gather?q.title:monLabel(q.mon,q.elite,q.anc)+(q.duo?' puis '+monLabel(q.duo,q.elite,q.anc):'');}
 function lockText(q){if(q.urgent)return`Quête urgente : accomplissez d’abord ${keyQ(q.tier).filter(x=>!S.cleared[x.id]).map(qName).join(', ')}.`;return'Verrouillé.';}
 function capBlock(q){return q.capture&&((S.items.piege||0)<1||(S.items.tranq||0)<2);}
@@ -1316,7 +1362,7 @@ function startHunt(qid,mealId,wid,basic){const q=QUESTS.find(x=>x.id===qid);cons
  H={q,m:makeMonster(q.mon,q.anc?2:q.elite),turn:1,max:q.turns,faints:0,zone:'flanc',side:'g',moved:null,stats:st,meal,felyne,hp:st.hp,hpMax:st.hp,st:st.st,stMax:st.st,
   sharp:st.w.total,w:{charge:0,gauge:0,spirit:0,spiritT:0,demon:false,fcd:0},s:{burn:0,poison:0,gel:0,para:0,tet:0},
   used:{},atkBuff:0,defBuff:0,trap:false,freeItem:false,log:[],mark:0,fx:[],pend:[],over:false,breaks:[],guard:false,dodge:false,tackle:false,fore:false,fainted:false,intent:[],
-  pal:palInit(),phase:'camp',sup:q.mon==='ferroi'&&q.tier>0?{soin:2,baliste:3}:{soin:2},spots:[],harvest:[]};
+  pal:palInit(),phase:'camp',sup:q.mon==='ferroi'&&(q.tier>0||q.sp)?{soin:2,baliste:3}:{soin:2},spots:[],harvest:[]};
  if(st.w.type==='gl'){H.w.shells=glCap();H.w.wf=0;if(st.w.var==='long')H.close=1;}
  if(st.w.type==='sa'){H.w.mode='axe';H.w.sw=100;}
  if(st.w.type==='ig'){H.w.ex={r:0,w:0,o:0};H.w.air=0;}
@@ -1329,7 +1375,7 @@ function startHunt(qid,mealId,wid,basic){const q=QUESTS.find(x=>x.id===qid);cons
  log(q.arena?`Vous entrez dans l’arène de la Guilde. ${m.d.name} tourne en rond de l’autre côté de la grille, sans vous avoir repéré.`:`Vous arrivez au camp de base. ${m.d.name} rôde dans ${HABN[m.d.hab]}, sans vous avoir repéré.`,'warn');
  if(meal.id!=='none')log(`Repas : ${meal.n} (${meal.d}).`);
  if(felyne)log(`Talent de la cantine : ${felyne.n} (${felyne.d}).`,'good');
- log(q.mon==='ferroi'&&q.tier>0?'La Guilde vous fournit 2 Premiers soins et 3 carreaux pour la baliste des remparts.':'La Guilde vous fournit 2 Premiers soins.');
+ log(q.mon==='ferroi'&&(q.tier>0||q.sp)?'La Guilde vous fournit 2 Premiers soins et 3 carreaux pour la baliste des remparts.':'La Guilde vous fournit 2 Premiers soins.');
  H.mark=0;saveHunt();go('hunt');
  if(!S.tuto){S.tuto=true;save();if(S.tut==null)openGuide();}}
 const UNAWARE={id:'#unaware',n:'Ne vous a pas vu',t:'Il fouille les environs sans avoir remarqué votre présence.',z:[],fx:'unaware'};
@@ -1373,6 +1419,9 @@ function newExp(zid,qid){const z=EXPZ.find(x=>x.id===zid);const all=[];for(const
   return{n,nodes,seen:0};});
  const tr=1+Math.floor(rnd()*4);secs[tr].nodes.push({t:'c',u:1});
  const q=qid&&QUESTS.find(x=>x.id===qid);const max=q?q.hours:EXP_HOURS;
+ if(q&&q.goal){const k=q.goal.k,hide=!!SMALL[k];secs.forEach((sc,i)=>{if(!i)return;let nd=sc.nodes.find(n=>hide?n.t==='m'&&n.h===k:n.t==='o'&&n.o===k);
+  if(!nd){const at=sc.nodes.findIndex(n=>n.t===(hide?'m':'o'));nd=hide?{t:'m',h:k,u:2}:{t:'o',o:k,u:2};if(at>=0)sc.nodes.splice(at+1,0,nd);else sc.nodes.push(nd);}
+  nd.u=Math.max(nd.u,2);nd.goal=1;});}
  return{v:2,z:zid,quest:q?q.id:null,h:0,max,sec:0,thr:0,secs,got:{},z0:0,kills:0,beaten:[],enc:null,log:[q?`Quête de récolte : ${q.title}. Rapportez ${q.goal.n} ${RES[q.goal.k].n} en ${max} heures. Aucun grand monstre ne rôde ici.`:`Vous montez le camp : ${z.n}. ${max} heures avant la nuit.`]};}
 function expTF(){const e=S.exp;return(1-(palS().voc==='collecte'?.2:0)-(palHas('flair')?.15:0))*(e&&e.storm>e.h?1.5:1);}
 const STORM_N={crete:'Un orage éclate',glace:'Un blizzard se lève',lagon:'Un grain s’abat sur le lagon',plaine:'Une pluie de cendres tombe',foret:'Un vent mauvais se lève',col:'Un vent mauvais se lève',citadelle:'Un orage éclate',eclipse:'Une ombre glacée recouvre le cratère'};
@@ -1407,7 +1456,7 @@ function expAct(kind,arg){const e=S.exp,z=expZone();if(!e||e.enc||e.ko||e.h>=e.m
  if(kind==='move'){const to=+arg;if(!EXP_ADJ[e.sec].includes(to))return;e.h++;e.sec=to;const s=e.secs[to];const first=!s.seen;s.seen=1;
   if(to===0){if(e.omen){const dm=zDanger(z);if(!canMeet(dm)||rnd()<.5){e.omen=0;expLog(DANGER[dm].shake);}else expLog(DANGER[dm].stay);}e.thr=Math.floor(e.thr/2);expLog(e.quest?'Retour au camp.':`Retour au camp. Vous brouillez vos traces (traces ${Math.round(e.thr)} %).`);sfx('steps');return expTick(true);}
   e.thr+=z.rate*.6*expTF();expLog(`Vous gagnez : ${s.n}${first?' (nouveau secteur)':''}.`);sfx('steps');if(first)expEvent(e,z,s,to);return expTick();}
- const nd=sec.nodes[+arg];if(!nd||nd.u<=0)return;if(nd.t==='ev'&&nd.k==='shop'){openShop();return;}e.h++;nd.u--;
+ const nd=sec.nodes[+arg];if(!nd||nd.u<=0)return;if(nd.t==='ev'&&nd.k==='shop'){openShop();return;}e.h++;nd.u--;if(nd.goal&&nd.u<=0&&e.quest)nd.back=e.h+3;
  if(nd.t==='g'||nd.t==='o'){const tb=nd.t==='g'?expTable(nd.h,SPOTS[nd.h][nd.s].t):[[nd.o,6],['os',1]].concat(eliteOpen()&&nd.o!=='dracite'?[['dracite',.6]]:[]);
   const n=3+(rnd()<.5?1:0)+(nd.t==='g'&&palS().voc==='collecte'?1:0)+(palHas('pisteur')?1:0)+(nd.rich?2:0);const got={};for(let i=0;i<n;i++){const r=wpick(tb);got[r]=(got[r]||0)+1;}for(const r in got)expGain(r,got[r]);
   e.thr+=z.rate*expTF();expLog(`${nd.t==='g'?'🌿':'⛏️'} ${nodeInfo(z,nd).n} : ${Object.keys(got).map(r=>`${RES[r].n} ×${got[r]}`).join(', ')}.`);sfx('gather');}
@@ -1418,7 +1467,8 @@ function expAct(kind,arg){const e=S.exp,z=expZone();if(!e||e.enc||e.ko||e.h>=e.m
  else if(nd.t==='c'){const el=eliteOpen();const k=el&&rnd()<.5?'sphered':'sphere',n=k==='sphered'?1:2,zz=150+Math.round(rnd()*4)*50;expGain(k,n);S.zenny+=zz;e.z0+=zz;
   e.thr+=z.rate*expTF();expLog(`🎁 Coffre enfoui : ${RES[k].n} ×${n} et ${zz} z !`);sfx('coin');}
  expTick();}
-function expTick(safe){const e=S.exp,z=expZone();e.thr=Math.min(90,e.thr);const pool=e.quest?[]:expPool(z);expGoal();
+function expRegen(e){if(!e.quest)return;e.secs.forEach(sc=>sc.nodes.forEach(nd=>{if(nd.back&&e.h>=nd.back){nd.u=2;delete nd.back;expLog(nd.t==='m'?`🐾 Des ${SMALL[nd.h].n} sont revenus : ${sc.n}.`:`⛏️ De nouveaux blocs se sont détachés : ${sc.n}.`);}}));}
+function expTick(safe){const e=S.exp,z=expZone();e.thr=Math.min(90,e.thr);expRegen(e);const pool=e.quest?[]:expPool(z);expGoal();
  if(!safe&&pool.length&&e.h<e.max&&e.thr>=10&&rnd()*100<e.thr*.22){const mon=pick(pool);const an=MON[mon].mrOnly||(ancMet(mon)&&rnd()<.2),el=!an&&eliteMet(mon)&&rnd()<.3;e.enc={mon,el:el?1:0,an:an?1:0};
   expLog(`⚠️ ${monLabel(mon,el,an&&!MON[mon].mrOnly)} surgit !`);setTimeout(()=>sfx('roar'),60);}
  else if(!safe&&!e.quest&&e.h<e.max&&zDanger(z)&&!(e.beaten||[]).includes(zDanger(z))&&dangerRoll(e,z)){}
@@ -1476,7 +1526,7 @@ function vExplore(){if(S.exp&&S.exp.ko)return`<div class="scenegap" style="heigh
  const g=Object.keys(e.got);
  const enc=e.enc?`<div class="xenc">${portrait(e.enc.mon,e.enc.an?'elite anc':e.enc.el?'elite':'')}<div><b>${esc(monLabel(e.enc.mon,e.enc.el,e.enc.an&&!MON[e.enc.mon].mrOnly))} surgit !</b><span class="small">${e.enc.danger?'<b style="color:var(--danger)">Grand danger.</b> Le maître de cette zone, presque imbattable sans l’équipement adapté. Fuir tout de suite coûte 2 heures ; rester, c’est risquer de tout perdre.':'Il a flairé votre piste et vous barre la route. Le combat vous coûte 1 heure par tranche de 10 tours ; fuir tout de suite coûte 2 heures.'}</span>
   <div class="xencb"><button class="btn main" data-a="xfight">L’affronter</button><button class="btn" data-a="xflee">Fuir (2 h)</button></div></div></div>`:'';
- const nodes=sc.nodes.map((nd,i)=>{const f=nodeInfo(z,nd),dis=nd.u<=0||over||!!e.enc;return`<button class="spot${f.mon?' xmon':''}${nd.t==='ev'||nd.rich?' xev':''}" data-a="xact" data-v="${i}" ${dis?'disabled':''}>${f.ic}<span><b>${esc(f.n)}</b><small>${nd.u<=0?(nd.t==='m'?'Plus aucun ici':'Épuisé'):esc(f.sub)}</small></span><em>${nd.u<=0?'✓':f.btn+(f.free?'':' · 1 h')}</em></button>`;}).join('');
+ const nodes=sc.nodes.map((nd,i)=>{const f=nodeInfo(z,nd),dis=nd.u<=0||over||!!e.enc;return`<button class="spot${f.mon?' xmon':''}${nd.t==='ev'||nd.rich?' xev':''}" data-a="xact" data-v="${i}" ${dis?'disabled':''}>${f.ic}<span><b>${esc(f.n)}</b><small>${nd.u<=0?(nd.back?`${nd.t==='m'?'De retour':'Se reforme'} dans ${Math.max(1,nd.back-e.h)} h`:nd.t==='m'?'Plus aucun ici':'Épuisé'):esc(f.sub)}</small></span><em>${nd.u<=0?'✓':f.btn+(f.free?'':' · 1 h')}</em></button>`;}).join('');
  return`<div class="htop"><div><div class="qt">${expQ()?esc(expQ().title):esc(z.n)}</div><div class="muted small">${over?'La nuit est tombée':`${e.h} h écoulées, ${left} h avant la nuit`}</div></div><div class="tbtns">${soundBtn()}<button class="btn ghost sm" data-a="xend">Rentrer</button></div></div>
  <div class="xgauges"><div class="brow"><span>Temps</span>${bar(e.max-e.h,e.max,'st')}<em>${left} h</em></div>
  ${expQ()?(()=>{const q=expQ(),have=Math.min(q.goal.n,e.got[q.goal.k]||0);return`<div class="brow xthr"><span>Objectif</span>${bar(have,q.goal.n,'hp')}<em>${e.qdone?'✓ Accompli':`${itemIcon(q.goal.k,'iicon sm')}${have}/${q.goal.n}`}</em></div>`;})():`<div class="brow xthr"><span>Traces</span><div class="bar"><i style="width:${clamp(e.thr,0,100)}%;background:${tc}"></i></div><em>${expPool(z).length?thrLabel(e.thr):'Calme'}</em></div>`}</div>
@@ -2169,7 +2219,7 @@ function qHab(q){if(!q)return null;if(q.arena)return'arene';if(q.gather){const z
 function expHab(){const e=S.exp,z=expZone();if(!e||!z)return null;return z.habs[z.habs.length>1&&e.sec>=3?1:0];}
 function huntHab(){if(!H)return null;if(H.q.arena)return'arene';if(H.q.explore&&S.exp)return expHab()||H.m.d.hab;return H.m.d.hab;}
 function pano(h){return h?` style="--pano:url('${PANO(h)}')"`:'';}
-function sceneOf(){try{switch(screen){case 'prep':return[qHab(QUESTS.find(x=>x.id===sub.quest)),'prep'];case 'arena':return['arene','prep'];
+function sceneOf(){try{switch(screen){case 'prep':return[qHab(QUESTS.find(x=>x.id===sub.quest)),'prep'];case 'arena':return['arene','prep'];case 'special':return['citadelle','page'];
  case 'explore':return S.exp?(S.exp.ko?['echec','prep']:[expHab(),'xp']):['expe','page'];case 'quests':return['quetes','page'];case 'forge':return['forge','page'];case 'craft':return['atelier','page'];case 'shop':return['boutique','page'];case 'equip':return['equip','page'];case 'palico':return['palico','page'];case 'training':return['arene','page'];case 'notes':return['carnet','page'];case 'result':return R?[R.kind==='fail'?'echec':'victoire','res']:null;case 'hunt':return H?[huntHab(),H.phase==='camp'?'camp':'hunt']:null;}}catch(e){}return null;}
 function groundSVG(h){return`<defs><clipPath id="gclip"><circle cx="150" cy="150" r="89"/></clipPath><radialGradient id="gvig"><stop offset="58%" stop-color="var(--bg)" stop-opacity="0"/><stop offset="100%" stop-color="var(--bg)" stop-opacity=".7"/></radialGradient></defs><image class="gtex" href="${SOL(h)}" x="10" y="10" width="280" height="280" preserveAspectRatio="xMidYMid slice" clip-path="url(#gclip)"/><circle cx="150" cy="150" r="89" fill="url(#gvig)" pointer-events="none"/>`;}
 const LCOL={selenis:'#a8b0e8',herissaure:'#d0a860',nacrelle:'#5ad0c8',sismorak:'#90a8c0',tranchelune:'#b8bcc8',gorgovire:'#8a5aa0',pyroclaste:'#b8e03a',rapinoux:'#c8783a',abyssaure:'#9a6ae0',tempestaire:'#9fc3e8',bombardier:'#e0662a',ferroi:'#8a93a3',fer:'#a3adb3',grakku:'#c9a06c',brontal:'#e8803f',velyra:'#a857c4',glacimorde:'#8fd4ee',scoriak:'#c4462a',boregor:'#dbe6f0',devoreur:'#6a7a44',fulgor:'#f2cd3a'};
@@ -2244,7 +2294,7 @@ function tutRender0(){const old=document.getElementById('tutbox');if(old)old.rem
  d.innerHTML=`<img src="img/npc/guilde.webp" alt=""><div><b>${NPC_N}</b><p>${esc(t)}</p><span class="tutbtns">${st.btn&&!away?`<button class="btn sm main" data-a="tutnext">${st.btn}</button>`:''}<button class="linkbtn" data-a="tutskip">Passer le tutoriel</button></span></div>`;
  document.body.appendChild(d);if(!st.top||away)document.body.classList.add('tuton');}
 function tutWelcome(){modal(`<div class="urgpop">${npcSay('Bienvenue à Brume-Haute ! Les monstres se font nombreux autour du col, et la Guilde manque de bras. Voulez-vous que je vous montre les ficelles du métier ?')}</div><div style="display:grid;gap:8px"><button class="btn main wide" data-a="tutstart">Oui, guidez-moi</button><button class="btn wide" data-a="tutno">Je connais déjà le métier</button></div>`);}
-function checkUrgent(){if(screen!=='village'||$('#modal').innerHTML.trim())return;if(S.tut===undefined){if(Object.keys(S.cleared).length){S.tut=null;save();}else{tutWelcome();return;}}if(S.tut!=null&&S.tut<7)return;S.urgSeen=S.urgSeen||[];
+function checkUrgent(){if(screen!=='village'||SPLASH||$('#modal').innerHTML.trim())return;if(S.tut===undefined){if(Object.keys(S.cleared).length){S.tut=null;save();}else{tutWelcome();return;}}if(S.tut!=null&&S.tut<7)return;if(S.tut==null&&S.patch!==PATCHES[0].v){openPatch();return;}S.urgSeen=S.urgSeen||[];
  const q=QUESTS.find(q=>q.urgent&&q.tier>0&&!S.cleared[q.id]&&!S.urgSeen.includes(q.id)&&unlocked(q));if(!q)return;
  S.urgSeen.push(q.id);save();sfx('roar');
  modal(`<div class="urgpop"><span class="urgtag">⚠️ Quête urgente</span>${npcSay('Chasseur, la Guilde a besoin de vous, et vite. Vous avez fait vos preuves : celle-ci, je ne la confierais à personne d’autre.')}${portrait(q.mon,(S.mon[q.mon]&&S.mon[q.mon].seen)?eCls(q):'unk')}<h2>${esc(q.title)}</h2><p class="small">${esc(q.d||'')}</p><p class="small muted">${STAGE_N[q.tier]} · ${q.turns} tours · ${q.z} z de prime. La réussir vous fait passer au rang suivant.</p></div><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="urg-go" data-v="${q.id}">Préparer la chasse</button></div>`);}
@@ -2265,7 +2315,7 @@ function hzStars(v){return v>=70?'★★★':v>=55?'★★':v>=40?'★':'·';}
 
 function render(){const app=$('#app');if(!app)return;let h='';if(screen==='village')setTimeout(checkUrgent,0);setTimeout(tutRender,0);
  try{switch(screen){case 'village':h=vVillage();break;case 'quests':h=vQuests();break;case 'prep':h=vPrep();break;case 'hunt':h=vHunt();break;
-  case 'result':h=vResult();break;case 'forge':h=vForge();break;case 'equip':h=vEquip();break;case 'shop':h=vShop();break;case 'craft':h=vCraft();break;case 'explore':h=vExplore();break;case 'arena':h=vArena();break;case 'palico':h=vPalico();break;case 'notes':h=vNotes();break;case 'training':h=vTraining();break;}}
+  case 'result':h=vResult();break;case 'forge':h=vForge();break;case 'equip':h=vEquip();break;case 'shop':h=vShop();break;case 'craft':h=vCraft();break;case 'explore':h=vExplore();break;case 'arena':h=vArena();break;case 'special':h=vSpecial();break;case 'palico':h=vPalico();break;case 'notes':h=vNotes();break;case 'training':h=vTraining();break;}}
  catch(e){h=`<p>Erreur d’affichage : ${esc(e.message)}</p><button class="btn" data-a="go" data-v="village">Retour au village</button>`;}
  app.innerHTML=h;try{const sc=sceneOf();app.classList.toggle('scened',!!(sc&&sc[0]));if(sc&&sc[0]){app.style.setProperty('--scene',`url('${PANO(sc[0])}')`);app.dataset.sc=sc[1];if(sc[1]==='page'){const bk=app.querySelector(':scope>.back');if(bk&&!(bk.nextElementSibling&&bk.nextElementSibling.classList.contains('scenegap')))bk.insertAdjacentHTML('afterend','<div class="scenegap"></div>');}}else{app.style.removeProperty('--scene');delete app.dataset.sc;}}catch(e){}if(screen==='hunt'&&H&&H.faintPop&&!H.over){const f=H.faintPop;H.faintPop=null;setTimeout(()=>faintModal(f),350);}try{document.body.classList.toggle('hunting',screen==='hunt'&&!!H&&H.phase!=='camp');}catch(e){}if(screen==='hunt')afterHunt();audSync();}
 
@@ -2277,6 +2327,7 @@ function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q
  ${(()=>{const n=QUESTS.filter(q=>q.arena&&arenaOk(q)).length;return`<button class="board aboard${n?'':' off'}" data-a="go" data-v="arena"><span class="at"><span class="bt">Arène</span><span class="bd">${n?'Réaffrontez les monstres vaincus pour leurs matériaux.':'Réussissez une quête pour y réaffronter son monstre.'}</span></span></button>`;})()}
  <button class="board xboard" data-a="go" data-v="explore"><span class="bt">Expédition libre</span>
  <span class="bd">${S.exp?`En cours : ${esc(expZone().n)}, ${S.exp.max-S.exp.h} h avant la nuit${S.exp.enc?'. Un monstre vous attend !':''}`:'Récoltez minerais et cuirs, abattez de petits monstres… et gare au grand.'}</span></button>
+ ${(()=>{const n=QUESTS.filter(q=>q.sp&&unlocked(q)).length;return`<button class="board sboard${n?'':' off'}" data-a="go" data-v="special"><span class="bt">Combats spéciaux</span><span class="bd">${n?`${n} combat${n>1?'s':''} à rejouer : doubles chasses et affrontements à mécanique spéciale.`:'Réussissez une double chasse ou l’assaut du Roi de Fer pour les rejouer ici.'}</span></button>`;})()}
  <div class="loadout"><div><span>Arme</span><b class="wline">${weaponIcon(W.type,W.lin.id)}${esc(W.name)}</b><span>${wStats(W)}</span></div><div><span>Armure</span><b>Défense ${st.def}</b><span>${Object.keys(st.raw).filter(k=>st.raw[k]).map(k=>SKILLS[k].n).join(', ')||'Aucun talent'}</span></div></div>
  <nav class="menu">
  <button data-a="go" data-v="equip"><b>Équipement</b><span>Changer d’arme et d’armure, sertir des joyaux, consulter les talents</span></button>
@@ -2287,7 +2338,7 @@ function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q
  <button data-a="go" data-v="notes"><b>Carnet de chasse</b><span>Faiblesses et points sensibles des monstres chassés</span></button>
  <button data-a="go" data-v="training"><b>Aire d’entraînement</b><span>Testez chaque arme sur un pantin qui ne riposte pas</span></button>
  <button data-a="guide"><b>Guide du chasseur</b><span>Comment se déroule un combat</span></button></nav>
- <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="saveexp">Exporter</button> · <button class="linkbtn" data-a="saveimp">Importer</button> · <button class="linkbtn" data-a="reset">Recommencer à zéro</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
+ <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="saveexp">Exporter</button> · <button class="linkbtn" data-a="saveimp">Importer</button> · <button class="linkbtn" data-a="reset">Recommencer à zéro</button> · <button class="linkbtn" data-a="patches">Notes de version</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
 
 function qCard(q){const un=unlocked(q);
  if(q.gather){const z=EXPZ.find(x=>x.id===q.zone);return`<button class="qcard qgather pcard ${un?'':'locked'}"${pano(qHab(q))} data-a="${un?'gquest':'noop'}" data-v="${q.id}"><span class="gicon">${itemIcon(q.goal.k,'iicon')}</span><div class="qtxt"><span class="stars">${qStars(q)} <i class="gtag">Récolte</i></span><b>${esc(q.title)}</b>
@@ -2307,6 +2358,12 @@ function vQuests(){const cur=hr();let h='';
   else{const keys=left.filter(q=>!q.urgent),urg=left.filter(q=>q.urgent&&unlocked(q)),hid=left.some(q=>q.urgent&&!unlocked(q));
    h+=`${t===cur?`<p class="small muted" style="margin:0 0 8px">${hid?'Accomplissez les quêtes clés : la Guilde vous confiera ensuite une mission urgente.':urg.length?'La quête urgente vous fera passer au rang suivant.':'Accomplissez les quêtes clés.'} Une quête accomplie disparaît du tableau.</p>`:''}<div class="qlist">${keys.filter(q=>!q.opt).map(qCard).join('')}${urg.map(qCard).join('')}${keys.filter(q=>q.opt).map(qCard).join('')}</div>`;}}
  return backBtn()+`<h2>Tableau des quêtes</h2>${h}`;}
+function vSpecial(){const L=QUESTS.filter(q=>q.sp),ok=L.filter(unlocked);const duo=ok.filter(q=>q.duo),iron=ok.filter(q=>!q.duo),lk=L.length-ok.length;
+ const opt=q=>{const got=objGot(q),left=q.obj.filter(o=>!got.includes(o.id)).length;return`<button class="aopt${q.anc?' aanc':q.elite?' ael':''}" data-a="quest" data-v="${q.id}"><b>${q.anc?'Ancestral':q.elite?'Aguerri':'Normal'}</b><small>${q.turns} tours · ${q.z} z</small><small class="${left?'':'ok'}">${q.obj.length?(left?`${left} objectif${left>1?'s':''} bonus à faire`:'✓ bonus faits'):''}</small></button>`;};
+ return backBtn()+`<div class="scenegap"></div><h2>Combats spéciaux</h2><p class="small muted" style="margin-top:0">Rejouez les combats hors du commun déjà réussis au Tableau des quêtes, dans leur zone d’origine : doubles chasses et affrontements à mécanique spéciale. Préparation et cantine habituelles, butin normal, prime réduite. Les objectifs bonus déjà réussis ne rapportent plus rien.</p>
+ ${iron.length?`<h3>Mécaniques spéciales</h3><div class="qlist"><div class="qcard acard pcard"${pano(qHab(iron[0]))}>${portrait('ferroi',iron.some(q=>q.anc)?'elite anc':iron.some(q=>q.elite)?'elite':'')}<div class="qtxt"><b>Le Roi de Fer à la baliste</b><span class="muted small">L’assaut de la Citadelle, avec 3 carreaux de baliste sur les remparts.</span><div class="aopts">${iron.map(opt).join('')}</div></div></div></div>`:''}
+ ${duo.length?`<h3>Doubles chasses</h3><div class="qlist">${duo.map(qCard).join('')}</div>`:''}
+ ${!ok.length?'<p class="small muted">Aucun combat spécial pour l’instant. Réussissez une double chasse ou l’assaut du Roi de Fer au Tableau des quêtes : ils viendront ici, prêts à être rejoués.</p>':lk?`<p class="small muted">${lk} autre${lk>1?'s':''} combat${lk>1?'s':''} à débloquer au Tableau des quêtes.</p>`:''}`;}
 function vArena(){const L=QUESTS.filter(q=>q.arena);const ok=L.filter(arenaOk);
  return backBtn()+`<div class="scenegap"></div><h2>Arène</h2><p class="small muted" style="margin-top:0">Réaffrontez les monstres déjà vaincus pour leurs matériaux. Préparation et cantine habituelles, sans récolte, prime réduite. Les objectifs bonus de la quête d’origine restent à réussir ici ; chacun ne rapporte sa récompense qu’une fois. Les versions aguerries s’ajoutent une fois vaincues au rang supérieur, les ancestrales au rang maître.</p>
  ${ok.length?`<div class="qlist">${MON_ORDER.map(m=>{const n=ok.find(q=>q.mon===m&&!q.elite),e=ok.find(q=>q.mon===m&&q.elite&&!q.anc),a=ok.find(q=>q.mon===m&&q.anc);if(!n&&!e&&!a)return'';const b=n||e||a;
@@ -2315,7 +2372,7 @@ function vArena(){const L=QUESTS.filter(q=>q.arena);const ok=L.filter(arenaOk);
 function vPrep(){const q=QUESTS.find(x=>x.id===sub.quest);const meal=MEALS.find(x=>x.id===sub.meal)||MEALS[0];const st=computeStats(meal),W=st.w;
  const pouch=ITEM_ORDER.filter(k=>!ITEMS[k].sup&&S.items[k]>0).map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${ITEMS[k].n} ×${Math.min(S.items[k],ITEMS[k].carry)}</span>`).join('')||'<span class="muted small">Sacoche vide : passez à la boutique ou à l’atelier.</span>';
  const ob=objGot(q);
- return backBtn(q.arena?'arena':'quests',q.arena?'Arène':'Quêtes')+`<div class="scenegap"></div><div class="prephead">${q.duo?`<span class="duop">${portrait(q.mon,eCls(q))}${portrait(q.duo,eCls(q))}</span>`:portrait(q.mon,eCls(q))}<div><span class="star">${q.arena?(q.anc?'Rang maître':q.elite?'Rang supérieur':'Rang inférieur'):qStars(q)}${q.urgent?' <i class="urg">Quête urgente</i>':''}</span><h2>${esc(q.title)}</h2></div></div><p>${esc(q.d)}</p>
+ return backBtn(q.arena?'arena':q.sp?'special':'quests',q.arena?'Arène':q.sp?'Combats spéciaux':'Quêtes')+`<div class="scenegap"></div><div class="prephead">${q.duo?`<span class="duop">${portrait(q.mon,eCls(q))}${portrait(q.duo,eCls(q))}</span>`:portrait(q.mon,eCls(q))}<div><span class="star">${q.arena?(q.anc?'Rang maître':q.elite?'Rang supérieur':'Rang inférieur'):q.sp?`Combat spécial ${qStars(q)}`:qStars(q)}${q.urgent?' <i class="urg">Quête urgente</i>':''}</span><h2>${esc(q.title)}</h2></div></div><p>${esc(q.d)}</p>
  ${q.capture?`<p class="small" style="color:var(--danger)">Quête de capture : tuer le monstre fait échouer la quête.${capBlock(q)?` Il vous faut au moins 1 piège à fosse et 2 bombes tranquillisantes pour partir (vous avez ${S.items.piege||0} piège et ${S.items.tranq||0} bombe${(S.items.tranq||0)>1?'s':''}). Fabriquez-les à l’atelier.`:' Vous emportez votre piège et vos bombes tranquillisantes.'}</p>${capBlock(q)?'<button class="btn wide" data-a="go" data-v="craft">Aller à l’atelier</button>':''}`:''}
  ${q.obj.length?`<h3>Objectifs secondaires</h3><div class="objs big">${q.obj.map(o=>`<i class="${ob.includes(o.id)?'ok':''}">${ob.includes(o.id)?'✓':'○'} ${esc(o.n)}</i>`).join('')}</div><p class="small muted" style="margin-top:4px">Chaque objectif réussi pour la première fois : +25 % de prime et une récompense supplémentaire.</p>`:''}
  ${q.duo?`<p class="small" style="color:var(--danger)">Double chasse : ${esc(monLabel(q.mon,q.elite,q.anc))}, puis ${esc(monLabel(q.duo,q.elite,q.anc))} dès que le premier tombe. Les tours, vos PV, votre endurance et vos objets continuent d’une cible à l’autre. Vous récoltez le butin des deux.</p>`:''}${q.opt?'<p class="small muted">Quête facultative : elle n’est pas nécessaire pour passer au rang suivant.</p>':''}
@@ -2543,7 +2600,7 @@ function vResult(){const r=R,win=r.kind!=='fail';const g=Object.keys(r.gain);
  ${r.first&&r.q.id==='m_abyssaure'?`<div class="finale"><b>La lumière est revenue.</b><span>Au fond du Cratère, l’Abyssaure s’est tu et le soleil noir s’est éteint. La Guilde grave votre nom tout en haut du tableau des maîtres : il n’y a plus rien au-dessus de vous.</span></div>`:''}${r.first&&r.q.id==='q11'?`<div class="finale"><b>La tempête s’est tue.</b><span>Le ciel des Crêtes s’éclaircit pour la première fois depuis des siècles. La Guilde vous proclame Chasseur des Tempêtes, le plus haut rang de Brume-Haute. Les armes Tempête, à l’élément Foudre, vous attendent à la forge.</span></div>`:''}${r.first&&r.q.final&&r.q.mon==='ferroi'?`<div class="finale"><b>Le Roi de Fer est tombé.</b><span>Brume-Haute peut dormir en paix : la Guilde grave votre nom sur la stèle des Chasseurs. Les armes du Roi de Fer, à l’élément Dragon, vous attendent à la forge.</span></div>`:''}
  ${r.rankUp?`<div class="finale"><b>Promotion : ${STAGE_N[r.rankUp]} !</b><span>${r.rankUp===7?'Le rang maître s’ouvre : des monstres ancestraux, plus anciens et plus redoutables, enchaînent leurs attaques. Forgez les armes IV et poussez vos armures au-delà de 70.':r.rankUp===4?'Le rang supérieur s’ouvre : les monstres reviennent, aguerris, et les traques d’élite commencent.':'De nouvelles quêtes vous attendent au tableau.'}</span></div>`:r.newQ&&r.newQ.length?`<p class="small" style="color:var(--good)">Nouvelle quête disponible : ${r.newQ.map(esc).join(', ')}.</p>`:''}`:'<p class="muted small">Aucune récompense. Changez d’équipement ou de stratégie et retentez.</p>'}
  ${r.palxp?`<p class="small">🐱 ${esc(palS().name)} gagne ${r.palxp} XP${palS().lv>=PAL_MAXLV?' (niveau max)':` (niveau ${palS().lv}, ${palS().xp}/${palNext(palS().lv)})`}.</p>${(r.palup||[]).map(t=>`<p class="small" style="color:var(--good)">⬆ ${esc(t)}</p>`).join('')}`:''}
- <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px">${r.q.explore&&S.exp&&S.exp.ko?`<p class="small" style="color:var(--danger)">Trois évanouissements : l’expédition est terminée et la moitié de votre butin est perdue.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`:r.q.explore&&S.exp?`<button class="btn main wide" data-a="xresume">Reprendre l’expédition</button>`:r.q.arena?`<button class="btn main wide" data-a="retry">${win?'Nouveau combat':'Retenter le combat'} : ${esc(qName(r.q))}</button><button class="btn wide" data-a="toarena">Retour à l’arène</button><button class="btn wide" data-a="home">Retour au village</button>`:`<button class="btn main wide" data-a="home">Retour au village</button>${win?'':`<button class="btn wide" data-a="retry">Réessayer la quête</button>`}`}</div>`;}
+ <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px">${r.q.explore&&S.exp&&S.exp.ko?`<p class="small" style="color:var(--danger)">Trois évanouissements : l’expédition est terminée et la moitié de votre butin est perdue.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`:r.q.explore&&S.exp?`<button class="btn main wide" data-a="xresume">Reprendre l’expédition</button>`:r.q.arena||r.q.sp?`<button class="btn main wide" data-a="retry">${win?'Nouveau combat':'Retenter le combat'} : ${esc(qName(r.q))}</button><button class="btn wide" data-a="${r.q.sp?'tospecial':'toarena'}">Retour ${r.q.sp?'aux combats spéciaux':'à l’arène'}</button><button class="btn wide" data-a="home">Retour au village</button>`:`<button class="btn main wide" data-a="home">Retour au village</button>${win?'':`<button class="btn wide" data-a="retry">Réessayer la quête</button>`}`}</div>`;}
 
 /* ---------- Écran de chasse ---------- */
 function pt(a,r){const t=a*Math.PI/180;return[150+r*Math.sin(t),150-r*Math.cos(t)];}
@@ -2870,7 +2927,7 @@ function openGuide(){modal(`<h2>Guide du chasseur</h2><ul>
 <li><b>La Corne de chasse</b> assomme comme le marteau ; chaque coup joue une note, et le Récital joue la mélodie des deux dernières : Puissance, Rempart ou Soin. <b>L’Glaive-scarabée</b> récolte des extraits avec son scarabée (tête : rouge, bras : blanc, dos : orange), bondit pour esquiver et frappe la tête depuis les airs jusqu’à chevaucher le monstre. <b>La Hache-lame</b> alterne hache (remplit la jauge de fiole) et épée (plus forte, vide la jauge, Décharge élémentaire). <b>La Hache-bouclier</b> charge des fioles en épée et bouclier, puis les fait exploser en hache (dégâts fixes, assomme). <b>La Lance à obus</b> garde comme la lance et tire des obus à dégâts fixes (ignorent la dureté des parties), plus le Souffle du canon. <b>La Lance</b> a la garde la plus solide et un Contre qui bloque le coup reçu puis riposte.</li>
 <li><b>Le Tempestaire</b> (rang supérieur ★3), dragon ancien des Crêtes, invoque des tempêtes : le vent affaiblit vos coups et la foudre frappe votre zone à chaque tour. Bougez, puis frappez fort quand le ciel s’apaise. Ses cornes brisées et le poison affaiblissent ses tempêtes.</li>
 <li><b>Traques d’élite</b> : après le Roi de Fer, chaque monstre revient aguerri. Ses fragments et gemmes servent aux armes III et aux joyaux de taille 3 ; ses sphères dures renforcent les armures au-delà de 46 de défense.</li>
-<li><b>Rangs et quêtes</b> : rang inférieur, rang supérieur puis rang maître, chacun en trois niveaux d’étoiles. Accomplissez les quêtes clés d’un niveau (chasses, captures et récoltes) : la Guilde vous confie alors une quête urgente, face à un monstre plus redoutable, qui ouvre le niveau suivant. Les doubles chasses (deux monstres à la suite, sans retour au camp) sont facultatives. Une quête de capture échoue si le monstre meurt : quand il vacille à bout de forces, posez un piège. Une quête accomplie disparaît du tableau ; les monstres vaincus se réaffrontent à l’arène. Mélangez les pièces d’armure de plusieurs monstres pour combiner leurs talents.</li>
+<li><b>Rangs et quêtes</b> : rang inférieur, rang supérieur puis rang maître, chacun en trois niveaux d’étoiles. Accomplissez les quêtes clés d’un niveau (chasses, captures et récoltes) : la Guilde vous confie alors une quête urgente, face à un monstre plus redoutable, qui ouvre le niveau suivant. Les doubles chasses (deux monstres à la suite, sans retour au camp) sont facultatives. Une quête de capture échoue si le monstre meurt : quand il vacille à bout de forces, posez un piège. Une quête accomplie disparaît du tableau ; les monstres vaincus se réaffrontent à l’arène, et les doubles chasses réussies comme l’assaut du Roi de Fer à la baliste se rejouent dans les Combats spéciaux. Mélangez les pièces d’armure de plusieurs monstres pour combiner leurs talents.</li>
 <li><b>Rang maître</b> : les monstres ancestraux enchaînent leurs attaques. Leurs matériaux forgent les armes IV, et les sphères ancestrales portent les armures jusqu’à 100 de défense.</li>
 <li><b>Grand danger</b> : chaque zone a son maître (le Dévoreur dans la Vallée, le Pyroclaste dans les Terres de cendre, le Sismorak dans la Toundra, le Gorgovire dans les Crêtes, le Tempestaire au Lagon, l’Abyssaure au Cratère). Il peut surgir même au début de votre carrière. Un présage l’annonce : rentrez au camp pour lui échapper. Une fois sa quête réussie, il devient plus tenace : il rôde plus souvent et ne perd votre piste au camp qu’une fois sur deux.</li><li><b>Événements</b> : en découvrant un secteur, vous pouvez tomber sur un orage (traces plus rapides), une brume (traces effacées), un filon riche, une meute de petits monstres, une carcasse à dépecer, un nid d’œufs à revendre ou un Griffu colporteur.</li>
 <li><b>Votre Griffu</b> vous accompagne à chaque chasse. Choisissez sa vocation (Assaut, Soutien, Protection, Collecte), forgez-lui arme et tenue avec les matériaux de monstres, et activez les talents qu’il apprend en gagnant des niveaux. Il peut être mis à terre : il revient après quelques tours.</li>
@@ -3005,7 +3062,7 @@ document.addEventListener('pointerdown',e=>{const el=e.target.closest('[data-lp]
 document.addEventListener('pointermove',e=>{if(LP.t&&Math.hypot(e.clientX-LP.x,e.clientY-LP.y)>10)clearTimeout(LP.t);},{passive:true});
 document.addEventListener('contextmenu',e=>{if(e.target.closest('#app,#modal'))e.preventDefault();});
 document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefault();e.stopPropagation();return;}const el=e.target.closest('[data-a]');if(!el||el.disabled||el.getAttribute('aria-disabled')==='true')return;const a=el.dataset.a,v=el.dataset.v;
- if(['go','quest','meal','etab','ftab','ftype','stab','equipw','equipa','pouch','guide','monnotes','close','home','retry','toarena','depart','equipfrom'].includes(a))sfx('click');
+ if(['go','quest','meal','etab','ftab','ftype','stab','equipw','equipa','pouch','guide','monnotes','close','home','retry','toarena','tospecial','depart','equipfrom'].includes(a))sfx('click');
  switch(a){
  case 'noop':return;
  case 'sound':openSound();break;
@@ -3032,8 +3089,8 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'xflee':expFlee();break;
  case 'xend':if(!S.exp)break;if(S.exp.h<S.exp.max&&!S.exp.enc)modal(`<h2>Rentrer au village ?</h2><p>Il vous reste ${S.exp.max-S.exp.h} h d’exploration. Votre butin est déjà à l’abri dans votre sacoche.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer</button><button class="btn main wide" data-a="xend-yes">Rentrer</button></div>`);else expEnd();break;
  case 'xend-yes':closeModal();expEnd();break;
- case 'retry':{const q=R&&R.q;if(!q||q.explore){H=null;R=null;go('village');break;}const ml=q.arena&&R.meal&&S.zenny>=((MEALS.find(x=>x.id===R.meal)||{}).p||0)?R.meal:'none';H=null;R=null;sub.quest=q.id;sub.meal=ml;go('prep');break;}
- case 'toarena':H=null;R=null;go('arena');break;
+ case 'retry':{const q=R&&R.q;if(!q||q.explore){H=null;R=null;go('village');break;}const ml=(q.arena||q.sp)&&R.meal&&S.zenny>=((MEALS.find(x=>x.id===R.meal)||{}).p||0)?R.meal:'none';H=null;R=null;sub.quest=q.id;sub.meal=ml;go('prep');break;}
+ case 'toarena':H=null;R=null;go('arena');break;case 'tospecial':H=null;R=null;go('special');break;
  case 'quest':sub.quest=v;sub.meal='none';go('prep');break;
  case 'urg-go':$('#modal').innerHTML='';sub.quest=v;sub.meal='none';go('prep');break;
  case 'gquest':{const q=QUESTS.find(x=>x.id===v);if(!q)break;const z=EXPZ.find(x=>x.id===q.zone);sfx('click');
@@ -3092,7 +3149,7 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'setopen':{const d=el.closest('details');if(d){sub.sets=sub.sets||{};sub.sets[v]=!d.open;}return;}
  case 'sell':if(S.mats[v]>0){sfx('coin');S.mats[v]--;S.zenny+=sellPrice(v);save();render();}break;
  case 'guide':openGuide();break;
- case 'saveexp':openExport();break;
+ case 'saveexp':openExport();break;case 'patches':openPatchList();break;
  case 'saveimp':openImport();break;
  case 'savecopy':{const c=saveCode();const done=()=>{const b=document.querySelector('[data-a="savecopy"]');if(b)b.textContent='Copié ✓';};try{navigator.clipboard.writeText(c).then(done,()=>{const t=document.querySelector('.savebox');t.select();document.execCommand('copy');done();});}catch(e){const t=document.querySelector('.savebox');t.select();document.execCommand('copy');done();}break;}
  case 'savedl':{try{const bl=new Blob([saveCode()],{type:'text/plain'});const u=URL.createObjectURL(bl);const a=document.createElement('a');a.href=u;a.download='chasseurs-brume-haute-sauvegarde.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),2000);}catch(e){}break;}
@@ -3113,8 +3170,15 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target&&e.target.id==='palname'){e.preventDefault();const b=document.querySelector('[data-a="palname-ok"]');b&&b.click();}});
 document.documentElement.lang='fr';
 try{if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')&&!/claude\.(ai|site|com)|claudeusercontent/.test(location.hostname))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
+var SPLASH=false;
+function splashRun(){const el=document.getElementById('splash');if(!el||!el.classList)return;let skip=false;try{skip=(!!navigator.webdriver&&!/[?&]splash/.test(location.search))||sessionStorage.getItem('bh_splash')==='1'||/[?&]nosplash/.test(location.search);sessionStorage.setItem('bh_splash','1');}catch(e){}
+ if(skip){el.remove();return;}SPLASH=true;el.hidden=false;const a=el.querySelector('.sp1'),b=el.querySelector('.sp2');let st=0,T=[];const at=(f,ms)=>T.push(setTimeout(f,ms));
+ const end=()=>{if(st>=3)return;st=3;T.forEach(clearTimeout);el.classList.add('out');setTimeout(()=>{el.remove();SPLASH=false;if(screen==='village')checkUrgent();},520);};
+ const two=()=>{if(st>=2)return;st=2;T.forEach(clearTimeout);T=[];a.classList.remove('on');setTimeout(()=>b.classList.add('on'),st===2?350:0);at(end,4600);};
+ el.addEventListener('click',ev=>{ev.stopPropagation();ev.preventDefault();if(st<2)two();else if(st===2)end();});
+ requestAnimationFrame(()=>{st=1;a.classList.add('on');});at(()=>a.classList.remove('on'),2100);at(two,2650);}
 const _resume=loadHunt();if(_resume){H=_resume;screen='hunt';}
-render();
+render();try{splashRun();}catch(e){SPLASH=false;}
 
 </script>
 
