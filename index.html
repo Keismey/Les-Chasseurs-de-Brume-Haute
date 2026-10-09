@@ -13,7 +13,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/favicon.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<script>var BUILD_ID='e43cad2b88';</script>
+<script>var BUILD_ID='2707fbb644';</script>
 <title>Les Chasseurs de Brume-Haute</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3190,7 +3190,7 @@ function checkUpdate(){try{if(typeof BUILD_ID==='undefined'||!BUILD_ID||!window.
   if(tried!==j.v&&screen!=='hunt'&&!SPLASH&&!$('#modal').innerHTML.trim()){go();return;}
   if(document.getElementById('updbar'))return;const b=document.createElement('button');b.id='updbar';b.className='updbar';b.innerHTML='<b>Nouvelle version disponible</b><span>Touchez pour mettre à jour</span>';b.addEventListener('click',ev=>{ev.stopPropagation();go();});document.body.appendChild(b);}).catch(()=>{});}catch(e){}}
 try{document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkUpdate();});}catch(e){}
-function splashRun(){const el=document.getElementById('splash');if(!el||!el.classList)return;let skip=false;try{skip=(!!navigator.webdriver&&!/[?&]splash/.test(location.search))||sessionStorage.getItem('bh_splash')==='1'||/[?&]nosplash/.test(location.search);sessionStorage.setItem('bh_splash','1');}catch(e){}
+function splashRun(){const el=document.getElementById('splash');if(!el||!el.classList)return;let skip=false;try{skip=(!!navigator.webdriver&&!/[?&]splash/.test(location.search))||/[?&]nosplash/.test(location.search);}catch(e){}
  if(skip){el.remove();return;}SPLASH=true;el.hidden=false;const a=el.querySelector('.sp1'),b=el.querySelector('.sp2');let st=0,T=[];const at=(f,ms)=>T.push(setTimeout(f,ms));
  const end=()=>{if(st>=3)return;st=3;T.forEach(clearTimeout);el.classList.add('out');setTimeout(()=>{el.remove();SPLASH=false;if(screen==='village')checkUrgent();},520);};
  const two=()=>{if(st>=2)return;st=2;T.forEach(clearTimeout);T=[];a.classList.remove('on');setTimeout(()=>b.classList.add('on'),st===2?350:0);at(end,4600);};
