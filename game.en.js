@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.66',date:'2026-10-12',t:"Hotfix",items:[
+  "The crackling wind at the start of the village music is gone: the music now starts right away."]},
  {v:'1.65',date:'2026-10-12',t:"English version",items:[
   "The game is now available in English. It follows your phone’s language, and a link at the bottom of the home screen lets you switch anytime.",
   "Minor text fixes."]},
@@ -2411,7 +2413,7 @@ function openGuide(){modal(`<h2>Hunter’s Guide</h2><ul>
 /* ---------- Audio : musiques et bruitages ---------- */
 const AKEY='grande-traque-son';
 const AUD={cfg:{music:.5,sfx:.8,mute:false},ctx:null,master:null,mus:null,sfx:null,started:false,cur:null,tracks:{},noiseBuf:null,
- src:{village:'audio/village.mp3',camp:'audio/camp.mp3',combat:'audio/combat.mp3',boss:'audio/boss.mp3'},
+ src:{village:'audio/village.mp3?v=2',camp:'audio/camp.mp3',combat:'audio/combat.mp3',boss:'audio/boss.mp3'},
  names:{village:'Sunlight on Cedar',camp:'Steps Through the Ferns',combat:"Threshold of the Iron King",boss:"Iron Vows at World’s End"}};
 try{Object.assign(AUD.cfg,JSON.parse(localStorage.getItem(AKEY)||'{}'));}catch(e){}
 function audSave(){try{localStorage.setItem(AKEY,JSON.stringify(AUD.cfg));}catch(e){}}

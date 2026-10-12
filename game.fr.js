@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.66',date:'2026-10-12',t:'Correctif',items:[
+  'Le souffle de vent qui grésillait au début de la musique du village est supprimé : la musique démarre directement.']},
  {v:'1.65',date:'2026-10-12',t:'Version anglaise',items:[
   'Le jeu est désormais disponible en anglais. La langue suit celle du téléphone, et un lien en bas de l’accueil permet d’en changer à tout moment.',
   'Correctifs mineurs dans les textes.']},
@@ -2411,7 +2413,7 @@ function openGuide(){modal(`<h2>Guide du chasseur</h2><ul>
 /* ---------- Audio : musiques et bruitages ---------- */
 const AKEY='grande-traque-son';
 const AUD={cfg:{music:.5,sfx:.8,mute:false},ctx:null,master:null,mus:null,sfx:null,started:false,cur:null,tracks:{},noiseBuf:null,
- src:{village:'audio/village.mp3',camp:'audio/camp.mp3',combat:'audio/combat.mp3',boss:'audio/boss.mp3'},
+ src:{village:'audio/village.mp3?v=2',camp:'audio/camp.mp3',combat:'audio/combat.mp3',boss:'audio/boss.mp3'},
  names:{village:'Sunlight on Cedar',camp:'Steps Through the Ferns',combat:'Threshold of the Iron King',boss:'Iron Vows at World’s End'}};
 try{Object.assign(AUD.cfg,JSON.parse(localStorage.getItem(AKEY)||'{}'));}catch(e){}
 function audSave(){try{localStorage.setItem(AKEY,JSON.stringify(AUD.cfg));}catch(e){}}
