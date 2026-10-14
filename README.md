@@ -17,6 +17,7 @@ Installable sur l'écran d'accueil (PWA), jouable hors ligne une fois chargé, s
 - `manifest.webmanifest` — installation sur téléphone
 - `icons/`, `img/` — icônes de l'appli, bannières, illustrations
 - `audio/` — les musiques (lues en flux, jamais mises en cache)
+- `fonts/` — Almendra et Signika, hébergées avec le jeu (licence SIL OFL, voir `fonts/OFL-*.txt`)
 
 ## Mise à jour automatique
 
