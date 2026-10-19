@@ -13,7 +13,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/favicon.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<script>var BUILD_ID='b86e542ef4';</script>
+<script src="ks-back.js?v=36fb93f8f5"></script>
+<script>var BUILD_ID='36fb93f8f5';</script>
 <title>Les Chasseurs de Brume-Haute</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
@@ -550,7 +551,8 @@ body.tuton #app{padding-bottom:150px}
 try{if(q){L=q;localStorage.setItem('grande-traque-lang',q);}else{var s=localStorage.getItem('grande-traque-lang');if(s==='fr'||s==='en')L=s;else if(localStorage.getItem('grande-traque-v1'))L='fr';}}catch(e){if(q)L=q;}
 if(!L){var n=(navigator.languages&&navigator.languages[0])||navigator.language||'fr';L=/^fr/i.test(n)?'fr':'en';}
 window.BH_LANG=L;try{document.documentElement.lang=L;if(L==='en')document.title='The Hunters of Brume-Haute';}catch(e){}
-var sc=document.createElement('script');sc.src='game.'+L+'.js'+(window.BUILD_ID?'?v='+window.BUILD_ID:'');sc.async=false;document.body.appendChild(sc);})();
+var sc=document.createElement('script');sc.src='game.'+L+'.js'+(window.BUILD_ID?'?v='+window.BUILD_ID:'');sc.async=false;document.body.appendChild(sc);
+var bk=document.createElement('script');bk.src='back.js'+(window.BUILD_ID?'?v='+window.BUILD_ID:'');bk.async=false;document.body.appendChild(bk);})();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cdb82226cd1b401d9e4f4e899f9b8425"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

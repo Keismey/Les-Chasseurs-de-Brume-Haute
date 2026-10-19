@@ -725,6 +725,9 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.67',date:'2026-10-19',t:"Back button",items:[
+  "The phone’s back button now returns to the previous screen instead of leaving the game: it closes windows, returns to the village and offers to abandon a hunt in progress. In the village it offers to go back to the title screen; on the title screen, to go to the Keismey Studio hub.",
+  "Fix: the hunting-ground illustrations on the quest cards were missing in the English version."]},
  {v:'1.66',date:'2026-10-12',t:"Hotfix",items:[
   "The crackling wind at the start of the village music is gone: the music now starts right away."]},
  {v:'1.65',date:'2026-10-12',t:"English version",items:[
@@ -1691,7 +1694,7 @@ const PANO=h=>`img/pano/${h}.webp`,SOL=h=>`img/sol/${h}.webp`;
 function qHab(q){if(!q)return null;if(q.arena)return'arene';if(q.gather){const z=EXPZ.find(x=>x.id===q.zone);return z?z.habs[0]:null;}return MON[q.mon]?MON[q.mon].hab:null;}
 function expHab(){const e=S.exp,z=expZone();if(!e||!z)return null;return z.habs[z.habs.length>1&&e.sec>=3?1:0];}
 function huntHab(){if(!H)return null;if(H.q.arena)return'arene';if(H.q.explore&&S.exp)return expHab()||H.m.d.hab;return H.m.d.hab;}
-function pano(h){return h?` style="--pano:url(’${PANO(h)}’)"`:'';}
+function pano(h){return h?` style="--pano:url('${PANO(h)}')"`:'';}
 function sceneOf(){try{switch(screen){case 'prep':return[qHab(QUESTS.find(x=>x.id===sub.quest)),'prep'];case 'arena':return['arene','prep'];case 'special':return['citadelle','page'];
  case 'explore':return S.exp?(S.exp.ko?['echec','prep']:[expHab(),'xp']):['expe','page'];case 'quests':return['quetes','page'];case 'forge':return['forge','page'];case 'craft':return['atelier','page'];case 'shop':return['boutique','page'];case 'equip':return['equip','page'];case 'palico':return['palico','page'];case 'training':return['arene','page'];case 'notes':return['carnet','page'];case 'result':return R?[R.kind==='fail'?'echec':'victoire','res']:null;case 'hunt':return H?[huntHab(),H.phase==='camp'?'camp':'hunt']:null;}}catch(e){}return null;}
 function groundSVG(h){return`<defs><clipPath id="gclip"><circle cx="150" cy="150" r="89"/></clipPath><radialGradient id="gvig"><stop offset="58%" stop-color="var(--bg)" stop-opacity="0"/><stop offset="100%" stop-color="var(--bg)" stop-opacity=".7"/></radialGradient></defs><image class="gtex" href="${SOL(h)}" x="10" y="10" width="280" height="280" preserveAspectRatio="xMidYMid slice" clip-path="url(#gclip)"/><circle cx="150" cy="150" r="89" fill="url(#gvig)" pointer-events="none"/>`;}

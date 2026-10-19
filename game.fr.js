@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.67',date:'2026-10-19',t:'Bouton retour',items:[
+  'Le bouton retour du téléphone ramène à l’écran précédent au lieu de quitter le jeu : il ferme les fenêtres, revient au village, propose d’abandonner une chasse en cours. Au village, il propose de revenir à l’écran titre ; à l’écran titre, d’aller au hub Keismey Studio.']},
  {v:'1.66',date:'2026-10-12',t:'Correctif',items:[
   'Le souffle de vent qui grésillait au début de la musique du village est supprimé : la musique démarre directement.']},
  {v:'1.65',date:'2026-10-12',t:'Version anglaise',items:[
