@@ -725,8 +725,10 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.69',date:'2026-10-19',t:'Village épuré',items:[
+  'Les liens en bas du village (exporter, importer, notes, langue…) sont rangés dans les Options : il ne reste que le lien « Options ».']},
  {v:'1.68',date:'2026-10-19',t:'Options',items:[
-  'Nouvelle fenêtre Options (icône du son, ou lien en bas du village) : musique, bruitages, vibrations, langue, notes, sauvegarde, signaler un bug, soutenir le studio, écran titre.',
+  'Nouvelle fenêtre Options (icône du son, ou lien « Options » en bas du village) : musique, bruitages, vibrations, langue, notes, sauvegarde, signaler un bug, soutenir le studio, écran titre.',
   'Le jeu te tutoie désormais, comme tous les jeux de Keismey Studio.']},
  {v:'1.67',date:'2026-10-19',t:'Bouton retour',items:[
   'Le bouton retour du téléphone ramène à l’écran précédent au lieu de quitter le jeu : il ferme les fenêtres, revient au village, propose d’abandonner une chasse en cours. Au village, il propose de revenir à l’écran titre ; à l’écran titre, d’aller au hub Keismey Studio.']},
@@ -1816,7 +1818,7 @@ function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q
  <button data-a="go" data-v="notes"><b>Carnet de chasse</b><span>Faiblesses et points sensibles des monstres chassés</span></button>
  <button data-a="go" data-v="training"><b>Aire d’entraînement</b><span>Teste chaque arme sur un pantin qui ne riposte pas</span></button>
  <button data-a="guide"><b>Guide du chasseur</b><span>Comment se déroule un combat</span></button></nav>
- <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="sound">Options</button> · <button class="linkbtn" data-a="saveexp">Exporter</button> · <button class="linkbtn" data-a="saveimp">Importer</button> · <button class="linkbtn" data-a="reset">Recommencer à zéro</button> · <button class="linkbtn" data-a="patches">Notes de version</button> · <button class="linkbtn" data-a="lang" data-v="${LANG==='en'?'fr':'en'}">${LANG_NAME[LANG==='en'?'fr':'en']}</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
+ <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="sound">Options</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
 
 function qCard(q){const un=unlocked(q);
  if(q.gather){const z=EXPZ.find(x=>x.id===q.zone);return`<button class="qcard qgather pcard ${un?'':'locked'}"${pano(qHab(q))} data-a="${un?'gquest':'noop'}" data-v="${q.id}"><span class="gicon">${itemIcon(q.goal.k,'iicon')}</span><div class="qtxt"><span class="stars">${qStars(q)} <i class="gtag">Récolte</i></span><b>${esc(q.title)}</b>

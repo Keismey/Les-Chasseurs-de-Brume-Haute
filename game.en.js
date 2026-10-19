@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.69',date:'2026-10-19',t:"Tidier village",items:[
+  "The links at the bottom of the village (export, import, notes, language…) now live in Options: only the “Options” link remains."]},
  {v:'1.68',date:'2026-10-19',t:"Options",items:[
   "New Options window (sound icon, or link at the bottom of the village): music, sound effects, vibration, language, patch notes, save, bug report, support the studio, title screen."]},
  {v:'1.67',date:'2026-10-19',t:"Back button",items:[
@@ -1816,7 +1818,7 @@ function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q
  <button data-a="go" data-v="notes"><b>Hunting Journal</b><span>Weaknesses and weak spots of the monsters you’ve hunted</span></button>
  <button data-a="go" data-v="training"><b>Training Grounds</b><span>Try every weapon on a dummy that never fights back</span></button>
  <button data-a="guide"><b>Hunter’s Guide</b><span>How a fight plays out</span></button></nav>
- <p class="foot muted small">Progress saved on this device. <button class="linkbtn" data-a="sound">Options</button> · <button class="linkbtn" data-a="saveexp">Export</button> · <button class="linkbtn" data-a="saveimp">Import</button> · <button class="linkbtn" data-a="reset">Start over</button> · <button class="linkbtn" data-a="patches">Patch notes</button> · <button class="linkbtn" data-a="lang" data-v="${LANG==='en'?'fr':'en'}">${LANG_NAME[LANG==='en'?'fr':'en']}</button>${TESTMODE?" · <button class=\"linkbtn\" data-a=\"testmode\">Test mode</button>":''}</p>`;}
+ <p class="foot muted small">Progress saved on this device. <button class="linkbtn" data-a="sound">Options</button>${TESTMODE?" · <button class=\"linkbtn\" data-a=\"testmode\">Test mode</button>":''}</p>`;}
 
 function qCard(q){const un=unlocked(q);
  if(q.gather){const z=EXPZ.find(x=>x.id===q.zone);return`<button class="qcard qgather pcard ${un?'':'locked'}"${pano(qHab(q))} data-a="${un?'gquest':'noop'}" data-v="${q.id}"><span class="gicon">${itemIcon(q.goal.k,'iicon')}</span><div class="qtxt"><span class="stars">${qStars(q)} <i class="gtag">Gathering</i></span><b>${esc(q.title)}</b>
