@@ -6,7 +6,7 @@
   var EN = window.BH_LANG === 'en';
   var TX = EN
     ? { tq: 'Back to the title screen?', tp: 'Your progress is saved.', ty: 'Title screen', hq: 'Leave the game?', hp: 'Your progress is saved. You will find the other Keismey Studio games on the hub.', hy: 'Go to the hub', no: 'Cancel' }
-    : { tq: 'Retour à l’écran titre ?', tp: 'Votre progression est enregistrée.', ty: 'Écran titre', hq: 'Quitter le jeu ?', hp: 'Votre progression est enregistrée. Vous retrouverez les autres jeux de Keismey Studio sur le hub.', hy: 'Aller au hub', no: 'Annuler' };
+    : { tq: 'Retour à l’écran titre ?', tp: 'Ta progression est enregistrée.', ty: 'Écran titre', hq: 'Quitter le jeu ?', hp: 'Ta progression est enregistrée. Tu retrouveras les autres jeux de Keismey Studio sur le hub.', hy: 'Aller au hub', no: 'Annuler' };
   var sp = document.getElementById('splash');
   var SPL0 = sp ? sp.cloneNode(true) : null;   // copie de l'écran titre, pour y revenir
 
@@ -49,5 +49,6 @@
     if (screen !== 'village') { go('village'); return; }
     ask(TX.tq, TX.tp, TX.ty, titleAgain);
   }
+  window.BH_titleAgain = titleAgain;
   KSBack.init({ back: back, lang: function () { return EN ? 'en' : 'fr'; } });
 })();

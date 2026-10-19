@@ -21,20 +21,20 @@ const SHARP=[
  {n:'Vert',c:'#4caf50',raw:1.05,el:1},{n:'Bleu',c:'#2f7fd8',raw:1.2,el:1.06},{n:'Blanc',c:'#eeeeee',raw:1.32,el:1.12}];
 
 const WT={
- gs:{n:'Grande Épée',am:1.2,em:1,g:.45,r:{p:5,f:1,s:2,e:2},d:'La plus puissante. Ses charges frappent fort et font tressaillir le monstre, ce qui annule son attaque. Un coup reçu brise la charge, mais garder ou esquiver la conserve : chargez, évitez le coup, puis relâchez.'},
- ls:{n:'Épée Longue',am:1.05,em:1,g:0,r:{p:3,f:4,s:4,e:3},d:'Équilibrée. Remplissez la jauge d’esprit pour monter en puissance, et contrez les attaques avec la Coupe d’anticipation.'},
+ gs:{n:'Grande Épée',am:1.2,em:1,g:.45,r:{p:5,f:1,s:2,e:2},d:'La plus puissante. Ses charges frappent fort et font tressaillir le monstre, ce qui annule son attaque. Un coup reçu brise la charge, mais garder ou esquiver la conserve : charge, évite le coup, puis relâche.'},
+ ls:{n:'Épée Longue',am:1.05,em:1,g:0,r:{p:3,f:4,s:4,e:3},d:'Équilibrée. Remplis la jauge d’esprit pour monter en puissance, et contre les attaques avec la Coupe d’anticipation.'},
  sns:{n:'Épée & Bouclier',am:.9,em:1,g:.5,r:{p:2,f:5,s:5,e:3},d:'La plus sûre. Attaque modeste, mais sa garde bloque entièrement les petits coups, le coup de bouclier frappe en gardant, et un objet est gratuit à chaque tour.'},
  db:{n:'Lames Doubles',am:.92,em:1.35,g:0,r:{p:2,f:4,s:2,e:5},d:'Attaque brute faible mais élément renforcé et coups en rafale : redoutable contre une faiblesse élémentaire. Le mode Furie brûle l’endurance.'},
- hammer:{n:'Marteau',am:1.24,em:1,g:0,r:{p:4,f:3,s:3,e:2},d:'Puissant et contondant : visez la tête pour assommer. Vous pouvez bouger et esquiver sans perdre la charge.'},
- hh:{n:'Corne de chasse',am:1.34,em:1,g:0,r:{p:3,f:3,s:3,e:2},d:'Contondante : visez la tête pour assommer. Chaque coup joue une note (rouge, bleue ou jaune). Le Récital frappe puis joue les mélodies de vos deux dernières notes : Puissance (attaque), Rempart (défense) ou Soin (PV, Griffu compris).'},
- lance:{n:'Lance',am:1.05,em:1,g:.8,r:{p:2,f:2,s:5,e:3},d:'La garde la plus solide du jeu. Le Contre bloque le coup qui vous vise et riposte aussitôt ; s’il ne se passe rien, il est perdu. La Charge de lance enchaîne trois coups contre de l’endurance.'},
- gl:{n:'Lance à obus',am:1.04,em:1,g:.7,r:{p:4,f:3,s:4,e:2},d:'Une lance à obus. Ses obus font des dégâts fixes qui ignorent la dureté des parties et le tranchant : parfaits sur une carapace ou une plaque de fer. Selon la lignée : obus normaux (5), longs (3, tirables de loin) ou larges (2, très forts), puis rechargez. Le Souffle du canon explose très fort, fait tressaillir, puis doit refroidir 6 tours.'},
- sa:{n:'Hache-lame',am:.94,em:1,g:0,r:{p:4,f:3,s:2,e:3},d:'Deux armes en une. En hache, vos coups remplissent la jauge de fiole. En épée, vous frappez plus fort (selon la fiole : +20 % de dégâts, ou élément ×1,7) mais chaque coup vide la jauge ; la Décharge élémentaire la vide d’un coup dans une grosse explosion. Jauge vide : l’arme se replie en hache.'},
- cb:{n:'Hache-bouclier',am:1.05,em:1,g:.6,r:{p:4,f:1,s:4,e:2},d:'Épée et bouclier, ou hache géante. En épée, vos coups accumulent de l’énergie que vous chargez dans 5 fioles, et le bouclier garde. En hache, pas de garde : chaque décharge fait exploser une fiole (impact : dégâts fixes qui assomment ; élémentaire : selon la faiblesse du monstre), la Décharge ultime les fait toutes sauter. Fioles pleines, chargez le bouclier : garde renforcée et explosions +30 %.'},
- ig:{n:'Glaive-scarabée',am:.89,em:1,g:0,r:{p:3,f:3,s:4,e:3},d:'Arme agile qui combat avec un scarabée. Envoyez-le sur la partie de votre zone pour récolter un extrait : tête = rouge (attaque +10 %, enchaînement plus long), bras = blanc (bond et esquive moins chers), dos = orange (défense +20). Les trois ensemble : Triple extrait (+10 % de plus). Le Bond esquive et vous envoie en l’air ; au tour suivant, l’attaque aérienne frappe la tête et, à force, vous chevauchez le monstre, qui chute.'},
- hbg:{n:'Tromblon lourd',am:.86,em:1,g:.4,ranged:1,r:{p:5,f:2,s:3,e:2},d:'Arme à distance lourde. Pas de roulade, mais une garde. Le mode siège (+50 % de dégâts) vous ancre sur place : ni esquive, ni déplacement tant qu’il est actif. La Pleine charge vide tout le chargeur d’un coup et fait tressaillir le monstre.'},
- lbg:{n:'Tromblon léger',am:.72,em:1,g:0,ranged:1,r:{p:3,f:3,s:4,e:3},d:'Arme à distance mobile. Visez librement une partie, tirez jusqu’à vider le chargeur, puis rechargez (1 tour). Munitions normales illimitées ; perforantes, élémentaires et soporifiques à fabriquer à l’atelier. Le Tir et roulade tire et esquive dans le même tour.'},
- bow:{n:'Arc',am:.62,em:1.1,g:0,ranged:1,r:{p:3,f:3,s:4,e:4},d:'Arme à distance. Visez librement la tête, le flanc ou la queue sans vous déplacer. De loin, les coups au contact ne vous atteignent pas, mais les attaques à portée frappent plus fort (défense −30 %) et certaines ruées vous ramènent au contact. Bandez l’arc pour des tirs plus puissants : une esquive le bande aussi.'}};
+ hammer:{n:'Marteau',am:1.24,em:1,g:0,r:{p:4,f:3,s:3,e:2},d:'Puissant et contondant : vise la tête pour assommer. Tu peux bouger et esquiver sans perdre la charge.'},
+ hh:{n:'Corne de chasse',am:1.34,em:1,g:0,r:{p:3,f:3,s:3,e:2},d:'Contondante : vise la tête pour assommer. Chaque coup joue une note (rouge, bleue ou jaune). Le Récital frappe puis joue les mélodies de tes deux dernières notes : Puissance (attaque), Rempart (défense) ou Soin (PV, Griffu compris).'},
+ lance:{n:'Lance',am:1.05,em:1,g:.8,r:{p:2,f:2,s:5,e:3},d:'La garde la plus solide du jeu. Le Contre bloque le coup qui te vise et riposte aussitôt ; s’il ne se passe rien, il est perdu. La Charge de lance enchaîne trois coups contre de l’endurance.'},
+ gl:{n:'Lance à obus',am:1.04,em:1,g:.7,r:{p:4,f:3,s:4,e:2},d:'Une lance à obus. Ses obus font des dégâts fixes qui ignorent la dureté des parties et le tranchant : parfaits sur une carapace ou une plaque de fer. Selon la lignée : obus normaux (5), longs (3, tirables de loin) ou larges (2, très forts), puis recharge. Le Souffle du canon explose très fort, fait tressaillir, puis doit refroidir 6 tours.'},
+ sa:{n:'Hache-lame',am:.94,em:1,g:0,r:{p:4,f:3,s:2,e:3},d:'Deux armes en une. En hache, tes coups remplissent la jauge de fiole. En épée, tu frappes plus fort (selon la fiole : +20 % de dégâts, ou élément ×1,7) mais chaque coup vide la jauge ; la Décharge élémentaire la vide d’un coup dans une grosse explosion. Jauge vide : l’arme se replie en hache.'},
+ cb:{n:'Hache-bouclier',am:1.05,em:1,g:.6,r:{p:4,f:1,s:4,e:2},d:'Épée et bouclier, ou hache géante. En épée, tes coups accumulent de l’énergie que tu charges dans 5 fioles, et le bouclier garde. En hache, pas de garde : chaque décharge fait exploser une fiole (impact : dégâts fixes qui assomment ; élémentaire : selon la faiblesse du monstre), la Décharge ultime les fait toutes sauter. Fioles pleines, charge le bouclier : garde renforcée et explosions +30 %.'},
+ ig:{n:'Glaive-scarabée',am:.89,em:1,g:0,r:{p:3,f:3,s:4,e:3},d:'Arme agile qui combat avec un scarabée. Envoie-le sur la partie de ta zone pour récolter un extrait : tête = rouge (attaque +10 %, enchaînement plus long), bras = blanc (bond et esquive moins chers), dos = orange (défense +20). Les trois ensemble : Triple extrait (+10 % de plus). Le Bond esquive et t’envoie en l’air ; au tour suivant, l’attaque aérienne frappe la tête et, à force, tu chevauches le monstre, qui chute.'},
+ hbg:{n:'Tromblon lourd',am:.86,em:1,g:.4,ranged:1,r:{p:5,f:2,s:3,e:2},d:'Arme à distance lourde. Pas de roulade, mais une garde. Le mode siège (+50 % de dégâts) t’ancre sur place : ni esquive, ni déplacement tant qu’il est actif. La Pleine charge vide tout le chargeur d’un coup et fait tressaillir le monstre.'},
+ lbg:{n:'Tromblon léger',am:.72,em:1,g:0,ranged:1,r:{p:3,f:3,s:4,e:3},d:'Arme à distance mobile. Vise librement une partie, tire jusqu’à vider le chargeur, puis recharge (1 tour). Munitions normales illimitées ; perforantes, élémentaires et soporifiques à fabriquer à l’atelier. Le Tir et roulade tire et esquive dans le même tour.'},
+ bow:{n:'Arc',am:.62,em:1.1,g:0,ranged:1,r:{p:3,f:3,s:4,e:4},d:'Arme à distance. Vise librement la tête, le flanc ou la queue sans te déplacer. De loin, les coups au contact ne t’atteignent pas, mais les attaques à portée frappent plus fort (défense −30 %) et certaines ruées te ramènent au contact. Bande l’arc pour des tirs plus puissants : une esquive le bande aussi.'}};
 const GUARD={rip:.25,lv:.1,cost:.15,tb:{sns:{L:1,M:1,H:.6,X:.4},gs:{L:1,M:.7,H:.5,X:.3},hbg:{L:1,M:.75,H:.5,X:.3},lance:{L:1,M:1,H:.8,X:.55},gl:{L:1,M:.9,H:.65,X:.45},cb:{L:1,M:.85,H:.6,X:.4}}};
 function guardBlock(tier,T){const t=GUARD.tb[T];if(!t)return 0;return Math.min(1,(t[tier]||.3)+.1*(H?H.stats.sk.garde:0)+(T==='cb'&&H&&H.w&&H.w.shield>0?.15:0));}
 const WT_ORDER=['gs','ls','sns','db','hammer','hh','lance','gl','sa','cb','ig','bow','lbg','hbg'];
@@ -70,7 +70,7 @@ const VARN={gl:{norm:'Obus normaux',long:'Obus longs',wide:'Obus larges'},sa:{po
 const VARD={gl:{norm:'5 obus, la meilleure réserve.',long:'3 obus un peu plus forts (+20 %), tirés aussi de loin : l’anneau extérieur devient accessible, mais l’estoc et le Souffle du canon restent au contact.',wide:'2 obus seulement, mais très forts (+50 %), et un Souffle du canon +20 %.'},
  sa:{pow:'En épée : +20 % de dégâts bruts.',el:'En épée : élément (ou poison) ×1,7 et +5 % de dégâts bruts.'},
  cb:{imp:'Les fioles font des dégâts fixes et assomment à la tête.',el:'Les fioles explosent avec l’élément de l’arme : dégâts selon la faiblesse du monstre, sans assommer.'},
- ig:{vif:'Les extraits durent 4 tours de plus.',lourd:'Le scarabée frappe beaucoup plus fort et assomme à la tête.',soin:'Chaque extrait récolté vous rend 10 PV.'}};
+ ig:{vif:'Les extraits durent 4 tours de plus.',lourd:'Le scarabée frappe beaucoup plus fort et assomme à la tête.',soin:'Chaque extrait récolté te rend 10 PV.'}};
 function wVar(){return H&&H.stats?H.stats.w.var:null;}
 function varName(w){if(!w.var)return'';if(w.type==='sa'&&w.var==='el'&&w.stat&&!w.elem)return'Fiole de poison';return VARN[w.type][w.var];}
 function ranged(){return!!(H&&H.stats&&(WT[H.stats.w.type].ranged||(H.stats.w.type==='gl'&&H.stats.w.var==='long')));}
@@ -157,12 +157,12 @@ const SKILLS={
  depeceur:{n:'Dépeceur',max:1,d:'+1 dépeçage après une mise à mort'},
  capture:{n:'Maître capture',max:1,d:'+1 récompense de capture'},
  agitateur:{n:'Agitateur',max:3,d:'Contre un monstre enragé : +5 attaque et +7 % affinité par niveau'},
- volonte:{n:'Volonté de fer',max:1,d:'Une fois par chasse, un coup mortel vous laisse à 1 PV'},
+ volonte:{n:'Volonté de fer',max:1,d:'Une fois par chasse, un coup mortel te laisse à 1 PV'},
  artillerie:{n:'Artillerie',max:3,d:'Lance à obus et Hache-bouclier : +12 % par niveau aux dégâts fixes (obus, Souffle du canon, explosions de fioles). Niveau 3 : le Souffle du canon refroidit 1 tour plus vite.'},
  concentration:{n:'Concentration',max:3,d:'Épée Longue, Hache-lame et Hache-bouclier : jauges d’esprit, de fiole et d’énergie remplies 20 % plus vite par niveau. Grande Épée, Marteau et Arc : charger coûte 2 endurance de moins par niveau.'},
  prolong:{n:'Prolongation',max:2,d:'+3 tours par niveau aux chants de la Corne, aux extraits de l’Glaive-scarabée et au bouclier chargé de la Hache-bouclier ; +1 tir par niveau aux flacons de l’Arc.'},
  chargeur:{n:'Chargeur étendu',max:2,d:'Tromblons : +1 munition au chargeur par niveau. Lance à obus : +1 obus par niveau.'},
- tir:{n:'Tir expert',max:3,d:'Arc et fusarbalètes : +6 % de dégâts sur vos tirs par niveau.'}};
+ tir:{n:'Tir expert',max:3,d:'Arc et fusarbalètes : +6 % de dégâts sur tes tirs par niveau.'}};
 const SK_WT={artillerie:['gl','cb'],concentration:['ls','sa','cb','gs','hammer','bow'],prolong:['hh','ig','cb','bow'],chargeur:['lbg','hbg','gl'],tir:['bow','lbg','hbg']};
 function skWeapons(k){return SK_WT[k]?SK_WT[k].map(t=>WT[t].n).join(', '):'';}
 function skUseless(k,T){return!!(SK_WT[k]&&!SK_WT[k].includes(T));}
@@ -182,8 +182,8 @@ const ITEMS={
  mun_perf:{n:'Munition perforante',i:'🔩',p:0,carry:9,d:'Tromblon : chaque tir traverse le monstre et touche la tête, les bras et la queue.'},
  mun_el:{n:'Munition élémentaire',i:'💠',p:0,carry:15,d:'Tromblon : tirs chargés de l’élément de l’arme (inutile sur une arme sans élément).'},
  mun_som:{n:'Munition soporifique',i:'💤',p:0,carry:3,d:'Tromblon : accumule le sommeil ; un monstre endormi ne bouge plus pendant 2 tours.'},
- fiole_p:{n:'Flacon de puissance',i:'🔴',p:0,carry:6,d:'Arc : vos 4 prochains tirs gagnent +30 % de dégâts. S’applique sans perdre le tour.'},
- fiole_v:{n:'Flacon de poison',i:'🟣',p:0,carry:6,d:'Arc : vos 4 prochains tirs empoisonnent le monstre. S’applique sans perdre le tour.'}};
+ fiole_p:{n:'Flacon de puissance',i:'🔴',p:0,carry:6,d:'Arc : tes 4 prochains tirs gagnent +30 % de dégâts. S’applique sans perdre le tour.'},
+ fiole_v:{n:'Flacon de poison',i:'🟣',p:0,carry:6,d:'Arc : tes 4 prochains tirs empoisonnent le monstre. S’applique sans perdre le tour.'}};
 const ITEM_ORDER=['soin','baliste','potion','mega','antidote','steak','grain','armure','flash','piege','tranq','fiole_p','fiole_v','mun_perf','mun_el','mun_som'];
 const CAMP_OK=['soin','potion','mega','steak','grain','armure','fiole_p','fiole_v'];
 
@@ -222,12 +222,12 @@ const EXPZ=[
  {id:'lagon',n:'Lagon de Nacre',d:'Eaux turquoise, arches de corail et coquillages géants',hab:'lagon',habs:['lagon'],mons:['nacrelle','rapinoux','grakku'],hides:['c_pin','c_kel'],danger:'tempestaire',key:'nacrelle',rate:4.5,secs:['Camp','Plage blanche','Arches de corail','Hauts-fonds','Grotte nacrée']},
  {id:'cratere',n:'Cratère de l’Éclipse',d:'Obsidienne, améthyste et un ciel qui s’éteint',hab:'eclipse',habs:['eclipse'],mons:['scoriak','gorgovire','pyroclaste','tranchelune'],hides:['c_sal','c_volt'],danger:'abyssaure',ores:['ardente','dracite'],mr:1,rate:5.5,secs:['Camp','Lèvres du cratère','Obsidienne','Gouffre violet','Cœur noir']}];
 const EXP_HOURS=30;
-const DANGER={devoreur:{omen:'🌋 Le sol tremble. Les petits monstres fuient en tous sens… quelque chose d’énorme approche.',come:'☠️ Le Dévoreur surgit, affamé !',shake:'Au camp, les tremblements s’éloignent : la bête a perdu votre trace.',stay:'Même au camp, le sol continue de trembler : la bête ne lâche pas votre piste.'},
- pyroclaste:{omen:'🌋 Des coups sourds font vibrer la roche, et une gelée verte suinte des fissures…',come:'☠️ Un Pyroclaste jaillit d’une coulée, les poings fumants !',shake:'Au camp, les coups sourds s’éteignent au loin.',stay:'Même au camp, la roche continue de vibrer : il vous suit.'},
- sismorak:{omen:'❄️ La glace craque en rythme sous vos pieds : quelque chose d’immense approche…',come:'☠️ Un Sismorak fend la glace et charge !',shake:'Au camp, les craquements s’éloignent vers le lac.',stay:'Même au camp, la glace continue de craquer : il approche toujours.'},
- gorgovire:{omen:'🦠 Un nuage de spores sombres dérive entre les ruines ; un cri strident déchire le silence…',come:'☠️ Le Gorgovire tombe du ciel, attiré par le bruit !',shake:'Au camp, le silence revient : il a perdu le son de vos pas.',stay:'Même au camp, les spores tournoient : il vous entend encore.'},
- tempestaire:{omen:'⛈️ Le ciel s’assombrit d’un coup et la mer se soulève : une tempête fond sur le lagon…',come:'☠️ Le Tempestaire descend de l’œil de la tempête !',shake:'Au camp, la tempête s’éloigne vers le large.',stay:'Même au camp, la tempête ne faiblit pas : il tourne au-dessus de vous.'},
- abyssaure:{omen:'🌑 La lumière faiblit, le ciel s’éteint peu à peu… L’Éclipse approche.',come:'☠️ L’Abyssaure émerge du noir !',shake:'Au camp, la lumière revient lentement.',stay:'Même au camp, le ciel reste noir : il vous a trouvé.'}};
+const DANGER={devoreur:{omen:'🌋 Le sol tremble. Les petits monstres fuient en tous sens… quelque chose d’énorme approche.',come:'☠️ Le Dévoreur surgit, affamé !',shake:'Au camp, les tremblements s’éloignent : la bête a perdu ta trace.',stay:'Même au camp, le sol continue de trembler : la bête ne lâche pas ta piste.'},
+ pyroclaste:{omen:'🌋 Des coups sourds font vibrer la roche, et une gelée verte suinte des fissures…',come:'☠️ Un Pyroclaste jaillit d’une coulée, les poings fumants !',shake:'Au camp, les coups sourds s’éteignent au loin.',stay:'Même au camp, la roche continue de vibrer : il te suit.'},
+ sismorak:{omen:'❄️ La glace craque en rythme sous tes pieds : quelque chose d’immense approche…',come:'☠️ Un Sismorak fend la glace et charge !',shake:'Au camp, les craquements s’éloignent vers le lac.',stay:'Même au camp, la glace continue de craquer : il approche toujours.'},
+ gorgovire:{omen:'🦠 Un nuage de spores sombres dérive entre les ruines ; un cri strident déchire le silence…',come:'☠️ Le Gorgovire tombe du ciel, attiré par le bruit !',shake:'Au camp, le silence revient : il a perdu le son de tes pas.',stay:'Même au camp, les spores tournoient : il t’entend encore.'},
+ tempestaire:{omen:'⛈️ Le ciel s’assombrit d’un coup et la mer se soulève : une tempête fond sur le lagon…',come:'☠️ Le Tempestaire descend de l’œil de la tempête !',shake:'Au camp, la tempête s’éloigne vers le large.',stay:'Même au camp, la tempête ne faiblit pas : il tourne au-dessus de toi.'},
+ abyssaure:{omen:'🌑 La lumière faiblit, le ciel s’éteint peu à peu… L’Éclipse approche.',come:'☠️ L’Abyssaure émerge du noir !',shake:'Au camp, la lumière revient lentement.',stay:'Même au camp, le ciel reste noir : il t’a trouvé.'}};
 function zDanger(z){return z&&z.danger;}
 const HABN={lagon:'le Lagon de Nacre',eclipse:'le Cratère de l’Éclipse',col:'le col de Brume',plaine:'la plaine brûlée',foret:'la forêt des cimes',glace:'les lacs gelés',crete:'les crêtes orageuses',citadelle:'la Citadelle en ruine, au bout du monde'};
 const CRAFT_IN=new Set();
@@ -245,7 +245,7 @@ const SKFX={attaque:n=>`+${4*n} attaque`,critique:n=>`+${5*n} % d’affinité`,f
  garde:n=>`Garde : +${10*n} % bloqués sur les gros coups, riposte +${25+10*n} %`,bouchons:()=>'Immunisé aux rugissements',res_feu:()=>'Immunisé à la brûlure',
  res_poison:()=>'Immunisé au poison',res_glace:()=>'Immunisé au gel',res_foudre:()=>'Immunisé à la paralysie',elem:n=>`+${8*n} % de dégâts élémentaires`,
  depeceur:()=>'+1 dépeçage après une mise à mort',capture:()=>'+1 récompense de capture',agitateur:n=>`Monstre enragé : +${5*n} attaque, +${7*n} % d’affinité`,
- volonte:()=>'Une fois par chasse, un coup mortel vous laisse à 1 PV',
+ volonte:()=>'Une fois par chasse, un coup mortel te laisse à 1 PV',
  artillerie:n=>`Dégâts fixes +${12*n} %${n>=3?', Souffle du canon −1 tour':''}`,concentration:n=>`Jauges +${20*n} % plus vite, charger −${2*n} endurance`,
  prolong:n=>`Effets d’arme +${3*n} tours, flacons +${n} tir${n>1?'s':''}`,chargeur:n=>`+${n} munition${n>1?'s':''} au chargeur, +${n} obus`,tir:n=>`Tirs +${6*n} % de dégâts`};
 const SK_ORDER=['attaque','critique','faiblesse','crit_boost','elem','statut','agitateur','tranchant','sante','endurance','esquive','garde','artillerie','concentration','prolong','chargeur','tir','volonte','bouchons','res_feu','res_poison','res_glace','res_foudre','depeceur','capture'];
@@ -278,41 +278,41 @@ const FELYNE=[
  {id:'econome',n:'Griffu économe',d:'25 % de chance de ne pas consommer un objet'}];
 
 const QUESTS=[
- {id:'q1',mon:'grakku',stars:1,title:'Le voleur de rochers',turns:40,z:450,obj:[{id:'b:tete',n:'Briser le bec'},{id:'fast:25',n:'Terminer en moins de 25 tours'}],d:'Un Grakku pille les œufs de la ferme du col. Chassez-le ou capturez-le.'},
+ {id:'q1',mon:'grakku',stars:1,title:'Le voleur de rochers',turns:40,z:450,obj:[{id:'b:tete',n:'Briser le bec'},{id:'fast:25',n:'Terminer en moins de 25 tours'}],d:'Un Grakku pille les œufs de la ferme du col. Chasse-le ou capture-le.'},
  {id:'q2',mon:'brontal',stars:2,title:'Brasier dans la plaine',turns:45,z:800,obj:[{id:'b:queue',n:'Trancher la queue'},{id:'capture',n:'Capturer le Brontal'}],d:'Un Brontal affamé incendie les pâturages. Sa queue massive balaie tout derrière lui.'},
  {id:'q12',mon:'rapinoux',stars:1,title:'Le chapardeur des cimes',turns:40,z:520,obj:[{id:'b:tete',n:'Briser la crête'},{id:'fast:25',n:'Terminer en moins de 25 tours'}],d:'Un Rapinoux dévalise les convois de la Guilde dans la forêt. Il vole tout ce qui brille, et ce qui se mange.'},
- {id:'q13',mon:'selenis',stars:3,title:'Les ailes du crépuscule',turns:50,z:1300,obj:[{id:'b:flanc',n:'Déchirer les ailes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Sélénis endort les bergers du col à la tombée de la nuit. Sa poudre argentée vous plongera dans le sommeil : esquivez-la.'},
- {id:'q14',mon:'herissaure',stars:5,title:'Le dos hérissé',turns:55,z:2000,obj:[{id:'b:queue',n:'Briser la queue-massue'},{id:'fast:35',n:'Terminer en moins de 35 tours'}],d:'Un Hérissaure bloque la route des Terres de cendre. Quand il se hérisse, chaque coup au contact vous blesse : brisez ses épines au contondant, ou tirez de loin.'},
- {id:'q3',mon:'velyra',stars:3,title:'La reine venimeuse',turns:50,z:1200,obj:[{id:'b:flanc',n:'Déchirer les ailes'},{id:'b:queue',n:'Trancher la queue'}],d:'Vélyra a fait son nid au-dessus du village. Méfiez-vous de sa queue empoisonnée et de ses piqués.'},
- {id:'q7',mon:'scoriak',stars:4,title:'La carapace de braise',turns:55,z:1600,obj:[{id:'b:flanc',n:'Briser la carapace'},{id:'b:queue',n:'Briser la queue-massue'}],d:'Un Scoriak ronge les coulées des Terres de cendre. Quand sa carapace s’embrase, elle repousse les lames : visez sa mâchoire ou brisez la carapace.'},
- {id:'q8',mon:'boregor',stars:5,title:'Le seigneur des neiges',turns:60,z:2400,obj:[{id:'b:tete',n:'Briser les crocs'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Borégor règne sur la Toundra gelée. Quand il s’enfouit sous la neige, préparez-vous : il resurgit sous vos pieds. Un piège posé à temps le cueille à la sortie.'},
- {id:'q9',mon:'devoreur',stars:7,title:'La faim insatiable',turns:70,z:5200,obj:[{id:'b:tete',n:'Briser la gueule'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Dévoreur, un prédateur errant jamais rassasié, dévaste la Vallée de Brume. Il saisit ses proies dans sa gueule : débattez-vous avec assez d’endurance, ou comptez sur votre Griffu pour vous libérer.'},
- {id:'q4',mon:'glacimorde',stars:4,title:'Sous la glace éternelle',turns:55,z:1600,obj:[{id:'b:tete',n:'Briser les défenses'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Glacimorde glisse sur les lacs gelés du nord. Quand l’air se glace, fuyez ou interrompez-le.'},
+ {id:'q13',mon:'selenis',stars:3,title:'Les ailes du crépuscule',turns:50,z:1300,obj:[{id:'b:flanc',n:'Déchirer les ailes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Sélénis endort les bergers du col à la tombée de la nuit. Sa poudre argentée te plongera dans le sommeil : esquive-la.'},
+ {id:'q14',mon:'herissaure',stars:5,title:'Le dos hérissé',turns:55,z:2000,obj:[{id:'b:queue',n:'Briser la queue-massue'},{id:'fast:35',n:'Terminer en moins de 35 tours'}],d:'Un Hérissaure bloque la route des Terres de cendre. Quand il se hérisse, chaque coup au contact te blesse : brise ses épines au contondant, ou tire de loin.'},
+ {id:'q3',mon:'velyra',stars:3,title:'La reine venimeuse',turns:50,z:1200,obj:[{id:'b:flanc',n:'Déchirer les ailes'},{id:'b:queue',n:'Trancher la queue'}],d:'Vélyra a fait son nid au-dessus du village. Méfie-toi de sa queue empoisonnée et de ses piqués.'},
+ {id:'q7',mon:'scoriak',stars:4,title:'La carapace de braise',turns:55,z:1600,obj:[{id:'b:flanc',n:'Briser la carapace'},{id:'b:queue',n:'Briser la queue-massue'}],d:'Un Scoriak ronge les coulées des Terres de cendre. Quand sa carapace s’embrase, elle repousse les lames : vise sa mâchoire ou brise la carapace.'},
+ {id:'q8',mon:'boregor',stars:5,title:'Le seigneur des neiges',turns:60,z:2400,obj:[{id:'b:tete',n:'Briser les crocs'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Borégor règne sur la Toundra gelée. Quand il s’enfouit sous la neige, prépare-toi : il resurgit sous tes pieds. Un piège posé à temps le cueille à la sortie.'},
+ {id:'q9',mon:'devoreur',stars:7,title:'La faim insatiable',turns:70,z:5200,obj:[{id:'b:tete',n:'Briser la gueule'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Dévoreur, un prédateur errant jamais rassasié, dévaste la Vallée de Brume. Il saisit ses proies dans sa gueule : débats-toi avec assez d’endurance, ou compte sur ton Griffu pour te libérer.'},
+ {id:'q4',mon:'glacimorde',stars:4,title:'Sous la glace éternelle',turns:55,z:1600,obj:[{id:'b:tete',n:'Briser les défenses'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Glacimorde glisse sur les lacs gelés du nord. Quand l’air se glace, fuis ou interromps-le.'},
  {id:'q5',mon:'fulgor',stars:5,title:'Crocs de l’orage',turns:60,z:2200,obj:[{id:'b:tete',n:'Briser les cornes'},{id:'fast:40',n:'Terminer en moins de 40 tours'}],d:'Fulgor, le loup-foudre, rôde sur les crêtes. Surchargé, il frappe deux fois plus vite.'},
- {id:'q6',mon:'ferroi',stars:6,final:1,title:'Serments au bout du monde',turns:70,z:4500,obj:[{id:'plates:4',n:'Briser 4 plaques de fer'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Roi de Fer s’est réveillé dans la Citadelle en ruine. Ses plaques forgées repoussent les lames ; brisez-les pour atteindre la chair. La Guilde a monté une baliste sur les remparts.'}];
+ {id:'q6',mon:'ferroi',stars:6,final:1,title:'Serments au bout du monde',turns:70,z:4500,obj:[{id:'plates:4',n:'Briser 4 plaques de fer'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Roi de Fer s’est réveillé dans la Citadelle en ruine. Ses plaques forgées repoussent les lames ; brise-les pour atteindre la chair. La Guilde a monté une baliste sur les remparts.'}];
 
 const FEM={velyra:1,tranchelune:1};
 const TIER_N={1:'Rang 1',2:'Rang 2',3:'Rang 3 · Traques d’élite'};
 const ELITE_Q=[['grakku',7,'La colère du col',62],['brontal',7,'Terre de cendres',64],['velyra',7,'La reine des tempêtes',66],['glacimorde',8,'Le gel éternel',68],['fulgor',8,'L’orage sans fin',70],['ferroi',8,'Le dernier serment',75],['scoriak',8,'Le cœur des cendres',68],['boregor',8,'L’hiver sans fin',70],['rapinoux',7,'Le roi des voleurs',62],['selenis',8,'La nuit sans fin',66],['herissaure',8,'La forteresse d’épines',68]];
 ELITE_Q.forEach(([mon,st,title,turns],i)=>QUESTS.push({id:'e'+(i+1),mon,elite:1,stars:st,title,turns,z:3000+i*700,final:mon==='ferroi'?0:0,
  obj:[{id:'b:tete',n:'Briser la tête'},{id:i%2?'nofaint':'fast:'+Math.round(turns*.6),n:i%2?'Aucun évanouissement':`Terminer en moins de ${Math.round(turns*.6)} tours`}],
- d:`Une traque d’élite : ${({selenis:'un Sélénis aguerri',herissaure:'un Hérissaure aguerri',rapinoux:'un Rapinoux aguerri',grakku:'un Grakku aguerri',brontal:'un Brontal aguerri',velyra:'une Vélyra aguerrie',glacimorde:'un Glacimorde aguerri',scoriak:'un Scoriak aguerri',boregor:'un Borégor aguerri',fulgor:'un Fulgor aguerri',ferroi:'le Roi de Fer aguerri'})[mon]} plus robuste, plus rapide, avec un coup que vous n’avez jamais vu.`}));
+ d:`Une traque d’élite : ${({selenis:'un Sélénis aguerri',herissaure:'un Hérissaure aguerri',rapinoux:'un Rapinoux aguerri',grakku:'un Grakku aguerri',brontal:'un Brontal aguerri',velyra:'une Vélyra aguerrie',glacimorde:'un Glacimorde aguerri',scoriak:'un Scoriak aguerri',boregor:'un Borégor aguerri',fulgor:'un Fulgor aguerri',ferroi:'le Roi de Fer aguerri'})[mon]} plus robuste, plus rapide, avec un coup que tu n’as jamais vu.`}));
 {const e7=QUESTS.find(q=>q.id==='e7');if(e7)e7.z=5100;const e8=QUESTS.find(q=>q.id==='e8');if(e8)e8.z=6000;}
-QUESTS.push({id:'q15',mon:'nacrelle',stars:7,title:'L’écume dansante',turns:70,z:5000,obj:[{id:'b:tete',n:'Briser la crête'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Nacrelle a élu domicile dans le Lagon de Nacre. Ses bulles vous feront glisser : une esquive vous en débarrasse. Quand il aspire l’eau, écartez-vous de l’avant.'});
-QUESTS.push({id:'q16',mon:'sismorak',stars:8,title:'Le pas qui fend la glace',turns:72,z:6400,obj:[{id:'b:tete',n:'Briser les défenses'},{id:'fast:50',n:'Terminer en moins de 50 tours'}],d:'Un Sismorak descend vers les villages de la toundra. Quand il se cabre, le Séisme renverse tout le monde : gardez ou esquivez au bon moment.'});
-QUESTS.push({id:'q17',mon:'tranchelune',stars:9,title:'Les lames sous la lune',turns:75,z:8200,obj:[{id:'b:queue',n:'Trancher la queue-lame'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Une Tranchelune chasse dans la Citadelle en ruine. Quand elle se fige en Posture de riposte, ne la frappez surtout pas : attendez qu’elle en sorte.'});
-QUESTS.push({id:'q10',mon:'bombardier',stars:8,title:'Pluie de feu',turns:70,z:6800,obj:[{id:'b:flanc',n:'Briser les ailes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Bombardier survole les Terres de cendre et sème ses écailles explosives sur les pistes de la Guilde. Elles explosent au tour suivant : ne restez jamais sur une zone où elles rougeoient.'});
-QUESTS.push({id:'q11',mon:'tempestaire',stars:9,final:1,title:'L’œil de la tempête',turns:80,z:9500,obj:[{id:'b:tete',n:'Briser les cornes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Tempestaire, un dragon ancien, déchaîne des tempêtes sur les Crêtes orageuses. Dans la tempête, vos lames sont repoussées et la foudre frappe là où vous vous tenez : bougez sans cesse, et frappez quand le ciel s’apaise.'});
+QUESTS.push({id:'q15',mon:'nacrelle',stars:7,title:'L’écume dansante',turns:70,z:5000,obj:[{id:'b:tete',n:'Briser la crête'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Nacrelle a élu domicile dans le Lagon de Nacre. Ses bulles te feront glisser : une esquive t’en débarrasse. Quand il aspire l’eau, écarte-toi de l’avant.'});
+QUESTS.push({id:'q16',mon:'sismorak',stars:8,title:'Le pas qui fend la glace',turns:72,z:6400,obj:[{id:'b:tete',n:'Briser les défenses'},{id:'fast:50',n:'Terminer en moins de 50 tours'}],d:'Un Sismorak descend vers les villages de la toundra. Quand il se cabre, le Séisme renverse tout le monde : garde ou esquive au bon moment.'});
+QUESTS.push({id:'q17',mon:'tranchelune',stars:9,title:'Les lames sous la lune',turns:75,z:8200,obj:[{id:'b:queue',n:'Trancher la queue-lame'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Une Tranchelune chasse dans la Citadelle en ruine. Quand elle se fige en Posture de riposte, ne la frappe surtout pas : attends qu’elle en sorte.'});
+QUESTS.push({id:'q10',mon:'bombardier',stars:8,title:'Pluie de feu',turns:70,z:6800,obj:[{id:'b:flanc',n:'Briser les ailes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Un Bombardier survole les Terres de cendre et sème ses écailles explosives sur les pistes de la Guilde. Elles explosent au tour suivant : ne reste jamais sur une zone où elles rougeoient.'});
+QUESTS.push({id:'q11',mon:'tempestaire',stars:9,final:1,title:'L’œil de la tempête',turns:80,z:9500,obj:[{id:'b:tete',n:'Briser les cornes'},{id:'nofaint',n:'Aucun évanouissement'}],d:'Le Tempestaire, un dragon ancien, déchaîne des tempêtes sur les Crêtes orageuses. Dans la tempête, tes lames sont repoussées et la foudre frappe là où tu te tiens : bouge sans cesse, et frappe quand le ciel s’apaise.'});
 QUESTS.push({id:'train',mon:'pantin',training:1,stars:0,title:'Aire d’entraînement',turns:999,z:0,obj:[],d:'Entraînement sur un pantin qui ne riposte jamais.'});
-QUESTS.push({id:'q3c',mon:'velyra',stars:3,capture:1,title:'Capture : la reine des cimes',turns:50,z:1500,obj:[{id:'nofaint',n:'Aucun évanouissement'}],d:'La Guilde veut étudier Vélyra vivante. Affaiblissez-la, piégez-la et endormez-la : la tuer ferait échouer la quête.'});
-const GQ=[['g1',1,'vallee','fer',5,24,'Du fer pour la forge','Le forgeron manque de minerai. Rapportez du minerai de fer de la Vallée de Brume.'],
+QUESTS.push({id:'q3c',mon:'velyra',stars:3,capture:1,title:'Capture : la reine des cimes',turns:50,z:1500,obj:[{id:'nofaint',n:'Aucun évanouissement'}],d:'La Guilde veut étudier Vélyra vivante. Affaiblis-la, piège-la et endors-la : la tuer ferait échouer la quête.'});
+const GQ=[['g1',1,'vallee','fer',5,24,'Du fer pour la forge','Le forgeron manque de minerai. Rapporte du minerai de fer de la Vallée de Brume.'],
  ['g2',2,'toundra','cristal',6,24,'Cristaux du grand nord','Un alchimiste réclame des cristaux de glace de la Toundra gelée.'],
  ['g3',3,'ruines','tonnerre',5,24,'Pierres d’orage','Les artisans de la Guilde ont besoin de pierres-tonnerre des Crêtes.'],
  ['g4',4,'vallee','c_kel',5,24,'Carapaces convoitées','Un armurier paie cher les carapaces de Kéléboss du fond de la Vallée.'],
- ['g5',5,'volcan','ardente',8,24,'Braises vives','La forge du village doit être rallumée : rapportez des pierres ardentes.'],
+ ['g5',5,'volcan','ardente',8,24,'Braises vives','La forge du village doit être rallumée : rapporte des pierres ardentes.'],
  ['g6',6,'ruines','dracite',6,24,'Le cœur de la citadelle','Les érudits veulent de la dracite, extraite au plus profond des ruines.'],
  ['g7',7,'lagon','c_pin',6,24,'Pinces au menu','Le cuisinier de la cantine veut des pinces de Pinçarde du Lagon de Nacre pour un nouveau plat.'],
- ['g8',8,'toundra','c_ping',8,24,'Fourrures du grand froid','Les tailleurs de la Guilde préparent des doublures pour le rang maître : rapportez des fourrures de Pingrelot.'],
+ ['g8',8,'toundra','c_ping',8,24,'Fourrures du grand froid','Les tailleurs de la Guilde préparent des doublures pour le rang maître : rapporte des fourrures de Pingrelot.'],
  ['g9',9,'cratere','dracite',10,24,'Éclats de l’Éclipse','Les érudits veulent la dracite noire qui affleure au fond du Cratère de l’Éclipse.']];
 for(const[id,t,zone,k,n,h,title,d]of GQ)QUESTS.push({id,gather:1,tier:t,zone,goal:{k,n},hours:h,title,d,stars:t,z:250*t,obj:[]});
 const CARVE=[['ecaille',42],['peau',30],['griffe',20],['rare',8]];
@@ -325,7 +325,7 @@ grakku:{hab:'col',name:'Grakku',kind:'Oiseau-wyverne',rank:1,hp:900,lv:15,col:'#
  parts:{tete:{name:'Bec',cut:85,blunt:90,brk:.16},flanc:{name:'Pattes',cut:55,blunt:50,brk:.2},queue:{name:'Plumage',cut:48,blunt:45,brk:.14}},
  mats:{ecaille:'Écaille de Grakku',peau:'Plume de Grakku',griffe:'Serre de Grakku',tete:'Bec de Grakku',queue:'Plume caudale',rare:'Pierre-bec lustrée'},
  moves:[
- {id:'poursuite',n:'Picorage traquant',t:'Il vous fixe d’un œil et tend le cou vers vous…',z:[],track:1,tier:'L',w:1.2},
+ {id:'poursuite',n:'Picorage traquant',t:'Il te fixe d’un œil et tend le cou vers toi…',z:[],track:1,tier:'L',w:1.2},
  {id:'bec',n:'Coup de bec',t:'Il incline la tête vers l’avant…',z:['avant'],tier:'L',w:4},
  {id:'picore',n:'Picorage furieux',t:'Il sautille nerveusement, bec dressé…',z:['avant'],tier:'M',w:2,c:12},
  {id:'ruee',n:'Ruée',t:'Il gonfle ses plumes et fixe sa cible…',z:['avant','flanc'],tier:'M',w:2,after:'flip',open:1,c:14},
@@ -339,7 +339,7 @@ brontal:{hab:'plaine',name:'Brontal',kind:'Wyverne brute',rank:2,hp:1150,lv:17,c
  parts:{tete:{name:'Tête',cut:75,blunt:80,brk:.15},flanc:{name:'Pattes',cut:50,blunt:50,brk:.2},queue:{name:'Queue',cut:62,blunt:45,sever:1}},
  mats:{ecaille:'Écaille de Brontal',peau:'Cuir de Brontal',griffe:'Croc de Brontal',tete:'Crâne de Brontal',queue:'Queue de Brontal',rare:'Glande ardente'},
  moves:[
- {id:'traque',n:'Morsure traquante',t:'Il suit chacun de vos pas, mâchoire entrouverte…',z:[],track:1,tier:'L',w:1.2},
+ {id:'traque',n:'Morsure traquante',t:'Il suit chacun de tes pas, mâchoire entrouverte…',z:[],track:1,tier:'L',w:1.2},
  {id:'morsure',n:'Morsure',t:'Il ouvre grand la gueule…',z:['avant'],tier:'M',w:4},
  {id:'queue',n:'Balayage de queue',t:'Il pivote les hanches, queue tendue…',z:['arriere','flanc'],tier:'M',w:3,tail:1},
  {id:'pietine',n:'Piétinement',t:'Il lève une patte massive…',z:['flanc'],tier:'L',w:2.5},
@@ -353,8 +353,8 @@ velyra:{hab:'foret',name:'Vélyra',kind:'Wyverne volante',rank:3,hp:2550,lv:25,c
  parts:{tete:{name:'Tête',cut:75,blunt:70,brk:.15},flanc:{name:'Ailes',cut:58,blunt:48,brk:.18},queue:{name:'Queue',cut:60,blunt:42,sever:1}},
  mats:{ecaille:'Écaille de Vélyra',peau:'Membrane de Vélyra',griffe:'Serre de Vélyra',tete:'Couronne de Vélyra',queue:'Dard de Vélyra',rare:'Plaque de Vélyra'},
  moves:[
- {id:'cible',n:'Boule de feu ciblée',t:'Elle tourne la tête pour vous garder en ligne de mire…',z:[],track:1,tier:'L',st:'burn',w:1.2},
- {id:'rafcible',n:'Tir plongeant',t:'Elle vous suit du regard depuis les airs…',z:[],track:1,tier:'L',st:'burn',w:1.2,fly:1},
+ {id:'cible',n:'Boule de feu ciblée',t:'Elle tourne la tête pour te garder en ligne de mire…',z:[],track:1,tier:'L',st:'burn',w:1.2},
+ {id:'rafcible',n:'Tir plongeant',t:'Elle te suit du regard depuis les airs…',z:[],track:1,tier:'L',st:'burn',w:1.2,fly:1},
  {id:'boule',n:'Boule de feu',t:'Elle recule et gonfle sa gorge…',z:['avant'],tier:'M',st:'burn',w:3},
  {id:'salto',n:'Salto venimeux',t:'Elle replie la queue sous son corps…',z:['arriere','flanc'],tier:'H',st:'poison',w:3,open:1,c:15,tail:1},
  {id:'morsure',n:'Morsure',t:'Elle avance la tête, crocs découverts…',z:['avant'],tier:'L',w:2},
@@ -370,7 +370,7 @@ glacimorde:{hab:'glace',name:'Glacimorde',kind:'Léviathan',rank:4,hp:3650,lv:29
  parts:{tete:{name:'Défenses',cut:65,blunt:82,brk:.16},flanc:{name:'Ventre',cut:75,blunt:65,brk:.2},queue:{name:'Nageoire',cut:50,blunt:40,sever:1}},
  mats:{ecaille:'Écaille de Glacimorde',peau:'Cuir gelé',griffe:'Griffe de Glacimorde',tete:'Défense de Glacimorde',queue:'Nageoire caudale',rare:'Cristal éternel'},
  moves:[
- {id:'jet',n:'Jet de glace ciblé',t:'Il pivote lentement pour vous faire face, naseaux givrés…',z:[],track:1,tier:'M',st:'gel',w:1.2},
+ {id:'jet',n:'Jet de glace ciblé',t:'Il pivote lentement pour te faire face, naseaux givrés…',z:[],track:1,tier:'M',st:'gel',w:1.2},
  {id:'glisse',n:'Glissade',t:'Il se couche sur le ventre et prend appui…',z:['avant','flanc'],tier:'H',w:3,after:'flip',open:1,c:14},
  {id:'souffle',n:'Souffle glacial',t:'Du givre s’échappe de ses naseaux…',z:['avant'],tier:'M',st:'gel',w:3},
  {id:'queue',n:'Fouet caudal',t:'Il enroule sa queue contre son flanc…',z:['arriere','flanc'],tier:'M',w:3,tail:1},
@@ -385,7 +385,7 @@ scoriak:{hab:'plaine',name:'Scoriak',kind:'Bête cuirassée',rank:4,hp:3400,lv:2
  parts:{tete:{name:'Mâchoire',cut:72,blunt:76,brk:.15},flanc:{name:'Carapace',cut:42,blunt:66,brk:.2},queue:{name:'Queue-massue',cut:55,blunt:48,brk:.16}},
  mats:{ecaille:'Plaque de Scoriak',peau:'Cuir de Scoriak',griffe:'Griffe de Scoriak',tete:'Mâchoire de Scoriak',queue:'Massue de Scoriak',rare:'Cœur de magma'},
  moves:[
- {id:'crachat',n:'Crachat de scories',t:'Il gonfle ses joues de lave et vous suit du regard…',z:[],track:1,tier:'L',st:'burn',w:1.2},
+ {id:'crachat',n:'Crachat de scories',t:'Il gonfle ses joues de lave et te suit du regard…',z:[],track:1,tier:'L',st:'burn',w:1.2},
  {id:'morsure',n:'Morsure',t:'Il ouvre sa mâchoire incandescente…',z:['avant'],tier:'M',w:3.5},
  {id:'massue',n:'Coup de massue',t:'Il balance sa queue-massue au-dessus du sol…',z:['arriere','flanc'],tier:'H',w:2.5},
  {id:'pietine',n:'Piétinement',t:'Il soulève une patte trapue…',z:['flanc'],tier:'L',w:2.5},
@@ -396,32 +396,32 @@ scoriak:{hab:'plaine',name:'Scoriak',kind:'Bête cuirassée',rank:4,hp:3400,lv:2
  {id:'pluie',n:'Pluie de scories',t:'Des scories brûlantes s’abattent tout autour de lui !',z:['avant','flanc','arriere'],tier:'X',st:'burn',w:0,c:15},
  {id:'rage',n:'Mâchoire volcanique',t:'Il claque des mâchoires en crachant des braises…',z:['avant','flanc'],tier:'M',st:'burn',w:2.5,rage:1}]},
 boregor:{hab:'glace',name:'Borégor',kind:'Bête des neiges',rank:5,hp:5900,lv:35,col:'#c9d4dc',col2:'#7aa6c8',shape:'ape',roar:'Hurlement polaire',
- lore:'Un colosse des neiges aux bras immenses. Il s’enfouit sous la neige pour resurgir sous vos pieds : esquivez au bon moment, ou posez un piège pendant qu’il est enfoui. Il craint le feu.',
+ lore:'Un colosse des neiges aux bras immenses. Il s’enfouit sous la neige pour resurgir sous tes pieds : esquive au bon moment, ou pose un piège pendant qu’il est enfoui. Il craint le feu.',
  weak:{feu:1,glace:0,foudre:.5,dragon:.25},ko:170,flinch:440,poison:150,
  parts:{tete:{name:'Crocs',cut:74,blunt:80,brk:.14},flanc:{name:'Bras',cut:62,blunt:58,brk:.18},queue:{name:'Échine',cut:52,blunt:50,brk:.18}},
  mats:{ecaille:'Toison de Borégor',peau:'Cuir de Borégor',griffe:'Griffe de Borégor',tete:'Croc de Borégor',queue:'Échine de Borégor',rare:'Givre ancestral'},
  moves:[
- {id:'boule',n:'Boule de neige',t:'Il ramasse un bloc de neige et vise votre position…',z:[],track:1,tier:'L',st:'gel',w:1.2},
+ {id:'boule',n:'Boule de neige',t:'Il ramasse un bloc de neige et vise ta position…',z:[],track:1,tier:'L',st:'gel',w:1.2},
  {id:'poings',n:'Poings martelés',t:'Il lève ses deux poings au-dessus de sa tête…',z:['avant'],tier:'M',w:3.5},
  {id:'revers',n:'Revers',t:'Il balance un bras immense sur le côté…',z:['flanc','arriere'],tier:'M',w:3},
  {id:'bond',n:'Bond massif',t:'Il se ramasse sur ses pattes arrière…',z:['avant','flanc'],tier:'H',w:2,after:'face',open:1,c:14},
  {id:'souffle',n:'Souffle glacé',t:'Du givre s’échappe de sa gueule…',z:['avant','flanc'],tier:'M',st:'gel',w:2.5},
  {id:'creuse',n:'Enfouissement',t:'Il plonge sous la neige et disparaît !',z:[],fx:'burrow',w:1.6,cond:(m,H)=>H.turn>3&&!m.burrow&&m.hp<m.max*.92},
- {id:'surgit',el:'ice',n:'Surgissement',t:'La neige se soulève sous vos pieds !',z:[],track:1,tier:'H',st:'gel',w:0,c:14},
- {id:'avalanche',n:'Appel de l’avalanche',t:'Il martèle le sol : la montagne gronde au-dessus de vous…',z:[],fx:'windup',chain:'eboul',w:1.3,cond:m=>m.hp<m.max*.6},
+ {id:'surgit',el:'ice',n:'Surgissement',t:'La neige se soulève sous tes pieds !',z:[],track:1,tier:'H',st:'gel',w:0,c:14},
+ {id:'avalanche',n:'Appel de l’avalanche',t:'Il martèle le sol : la montagne gronde au-dessus de toi…',z:[],fx:'windup',chain:'eboul',w:1.3,cond:m=>m.hp<m.max*.6},
  {id:'eboul',n:'Avalanche',t:'Une avalanche dévale sur toute l’arène !',z:['avant','flanc','arriere'],tier:'X',st:'gel',w:0,c:15},
  {id:'furie',n:'Furie des neiges',t:'Il frappe le sol des deux poings en hurlant…',z:['avant','flanc'],tier:'H',w:2,rage:1}]},
 devoreur:{aHp:1.15,hab:'foret',name:'Dévoreur',kind:'Wyverne errante',rank:7,hp:10500,lv:54,noElite:1,danger:1,col:'#4f5a3a',col2:'#c8322a',shape:'brute',roar:'Rugissement affamé',
- lore:'Un prédateur errant, jamais rassasié, maître de la Vallée de Brume. Il saisit ses proies dans sa gueule : débattez-vous (avec de l’endurance) ou comptez sur votre Griffu pour vous libérer avant qu’il ne broie. Présence imprévisible : quand le sol tremble et que les petits monstres fuient, rentrez au camp.',
+ lore:'Un prédateur errant, jamais rassasié, maître de la Vallée de Brume. Il saisit ses proies dans sa gueule : débats-toi (avec de l’endurance) ou compte sur ton Griffu pour te libérer avant qu’il ne broie. Présence imprévisible : quand le sol tremble et que les petits monstres fuient, rentre au camp.',
  weak:{feu:.5,glace:.25,foudre:1,dragon:.75},ko:230,flinch:700,poison:260,
  parts:{tete:{name:'Gueule',cut:75,blunt:80,brk:.12},flanc:{name:'Pattes',cut:58,blunt:55,brk:.17},queue:{name:'Queue',cut:64,blunt:50,sever:1}},
  mats:{ecaille:'Écaille vorace',peau:'Cuir vorace',griffe:'Griffe vorace',tete:'Croc du Dévoreur',queue:'Queue du Dévoreur',rare:'Estomac insatiable'},
  moves:[
- {id:'traque',n:'Morsure traquante',t:'Il vous suit en claquant des mâchoires…',z:[],track:1,tier:'M',w:1.2},
+ {id:'traque',n:'Morsure traquante',t:'Il te suit en claquant des mâchoires…',z:[],track:1,tier:'M',w:1.2},
  {id:'morsure',n:'Morsure vorace',t:'Il ouvre une gueule démesurée…',z:['avant'],tier:'H',w:3},
  {id:'queue',n:'Coup de queue',t:'Il fait pivoter sa masse, queue tendue…',z:['arriere','flanc'],tier:'M',w:3,tail:1},
  {id:'pietine',n:'Piétinement',t:'Il martèle le sol de ses pattes…',z:['avant','flanc'],tier:'M',w:2.5},
- {id:'saisie',n:'Saisie',t:'Il se penche, bave aux lèvres, prêt à vous happer…',z:['avant','flanc'],tier:'M',grab:1,w:2.2,cond:(m,H)=>!H.grab&&H.turn>2},
+ {id:'saisie',n:'Saisie',t:'Il se penche, bave aux lèvres, prêt à te happer…',z:['avant','flanc'],tier:'M',grab:1,w:2.2,cond:(m,H)=>!H.grab&&H.turn>2},
  {id:'broyage',n:'Mâchoires broyeuses',t:'Il serre sa prise entre ses mâchoires !',z:[],track:1,tier:'X',w:0},
  {id:'charge',n:'Charge affamée',t:'Il baisse la tête et fonce droit devant…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:15},
  {id:'souffle',n:'Souffle dévorant',t:'Une lueur rouge monte dans sa gorge…',z:[],fx:'windup',chain:'rayon',w:1.3,cond:m=>m.hp<m.max*.8},
@@ -433,7 +433,7 @@ fulgor:{hab:'crete',name:'Fulgor',kind:'Bête à crocs',rank:5,hp:5050,lv:36,col
  parts:{tete:{name:'Cornes',cut:72,blunt:78,brk:.14},flanc:{name:'Pattes',cut:55,blunt:55,brk:.2},queue:{name:'Queue',cut:62,blunt:50,sever:1}},
  mats:{ecaille:'Écaille de Fulgor',peau:'Fourrure de Fulgor',griffe:'Griffe de Fulgor',tete:'Corne de Fulgor',queue:'Queue de Fulgor',rare:'Jade orageux'},
  moves:[
- {id:'eclair',el:'bolt',n:'Éclair ciblé',t:'Ses cornes crépitent et pointent vers vous…',z:[],track:1,tier:'L',w:1.2},
+ {id:'eclair',el:'bolt',n:'Éclair ciblé',t:'Ses cornes crépitent et pointent vers toi…',z:[],track:1,tier:'L',w:1.2},
  {id:'griffe',el:'bolt',n:'Coup de griffe',t:'Il lève une patte chargée…',z:['avant','flanc'],tier:'M',w:3},
  {id:'bond',n:'Bond fulgurant',t:'Il s’accroupit, pattes arrière tendues…',z:['avant'],tier:'H',w:2,after:'face'},
  {id:'queue',n:'Marteau caudal',t:'Il dresse la queue au-dessus de son dos…',z:['arriere'],tier:'M',w:2.5,tail:1},
@@ -441,14 +441,14 @@ fulgor:{hab:'crete',name:'Fulgor',kind:'Bête à crocs',rank:5,hp:5050,lv:36,col
  {id:'charge',n:'Surcharge',t:'Des insectes-foudre convergent vers lui… il se charge !',z:[],fx:'charge',w:2,cond:(m,H)=>!m.charged&&H.turn>2},
  {id:'eclairs',n:'Pluie d’éclairs',t:'Il lève la tête, l’air crépite tout autour…',z:['avant','flanc','arriere'],tier:'H',st:'para',w:2,chg:1,c:14},
  {id:'ruee',el:'bolt',n:'Ruée électrique',t:'Il gronde, crinière hérissée d’étincelles…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,chg:1,c:15},
- {id:'saut',n:'Saut en arc',t:'Il bondit par-dessus vous !',z:['flanc'],tier:'M',w:1.5,after:'flip'}]}};
+ {id:'saut',n:'Saut en arc',t:'Il bondit par-dessus toi !',z:['flanc'],tier:'M',w:1.5,after:'flip'}]}};
 MON.ferroi={aLv:-4,hab:'citadelle',name:'Roi de Fer',kind:'Dragon ancien',rank:6,hp:6800,lv:42,col:'#4a4e57',col2:'#ff7a1a',shape:'dragon',roar:'Rugissement d’acier',elder:1,plated:1,phases:1,
  lore:'Un dragon ancien couvert de plaques forgées. Le fer repousse les lames, mais une plaque brisée laisse la chair à nu un moment. Blessé à mort, son cœur de forge s’embrase et le sol de l’arène entre en fusion. Il conduit la foudre.',
  weak:{feu:.25,glace:.5,foudre:1,dragon:.5},ko:200,flinch:560,poison:220,
  parts:{tete:{name:'Couronne',cut:70,blunt:80,brk:.12},flanc:{name:'Plastron',cut:68,blunt:66,brk:.16},queue:{name:'Queue-masse',cut:62,blunt:55,sever:1}},
  mats:{ecaille:'Écaille de fer ancien',peau:'Cuir forgé',griffe:'Griffe de fer',tete:'Couronne du Roi de Fer',queue:'Queue-masse',rare:'Cœur de forge'},
  moves:[
- {id:'eclats',n:'Éclats de fer',t:'Il secoue ses plaques : des éclats sifflent dans votre direction…',z:[],track:1,tier:'L',w:1.2},
+ {id:'eclats',n:'Éclats de fer',t:'Il secoue ses plaques : des éclats sifflent dans ta direction…',z:[],track:1,tier:'L',w:1.2},
  {id:'griffe',n:'Griffe de fer',t:'Il lève une patte cuirassée…',z:['avant','flanc'],tier:'M',w:3},
  {id:'morsure',n:'Morsure d’acier',t:'Il abaisse sa couronne, mâchoires ouvertes…',z:['avant'],tier:'M',w:2.5},
  {id:'queue',n:'Queue-masse',t:'Il enroule sa queue lestée de fer…',z:['arriere','flanc'],tier:'H',w:2.5,tail:1},
@@ -458,17 +458,17 @@ MON.ferroi={aLv:-4,hab:'citadelle',name:'Roi de Fer',kind:'Dragon ancien',rank:6
  {id:'forge',n:'Souffle de la forge',t:'Sa gorge vire au blanc, l’air ondule de chaleur !',z:[],fx:'windup',chain:'vague',w:1.2,cond:m=>m.hp<m.max*.8},
  {id:'vague',n:'Vague de fer fondu',t:'Un flot de métal en fusion balaie l’avant et les flancs !',z:['avant','flanc'],tier:'X',st:'burn',w:0,c:15},
  {id:'fusion',n:'Cœur de forge',t:'Sa poitrine s’embrase : les plaques fondent, le sol se met à rougeoyer !',z:ALLZ,fx:'phase',w:0},
- {id:'scories',n:'Jet de scories',t:'Il crache une gerbe de scories brûlantes droit sur vous…',z:[],track:1,tier:'M',st:'burn',w:1.5,p2:1},
+ {id:'scories',n:'Jet de scories',t:'Il crache une gerbe de scories brûlantes droit sur toi…',z:[],track:1,tier:'M',st:'burn',w:1.5,p2:1},
  {id:'marteau',n:'Marteau de forge',t:'Il abat ses deux pattes chauffées au rouge…',z:['avant','flanc'],tier:'H',st:'burn',w:2.5,p2:1},
  {id:'coulee',n:'Appel de la coulée',t:'Le métal bouillonne sous ses pattes… tout va s’embraser !',z:[],fx:'windup',chain:'deluge',w:1.3,p2:1},
  {id:'deluge',n:'Déluge de fer',t:'Une marée de fer en fusion submerge toute l’arène !',z:['avant','flanc','arriere'],tier:'X',st:'burn',w:0,c:15}]};
 MON.bombardier={hab:'plaine',name:'Bombardier',kind:'Wyverne volante',rank:8,hp:12800,lv:64,noElite:1,col:'#6b3a34',col2:'#ffb04a',shape:'wyvern',roar:'Rugissement tonitruant',
- lore:'Une wyverne volante couverte d’écailles explosives. Il les sème sur le terrain : elles rougeoient, puis explosent au tour suivant, avant même qu’il agisse. Quittez la zone ou esquivez. Briser ses ailes réduit ses largages. Il craint la foudre.',
+ lore:'Une wyverne volante couverte d’écailles explosives. Il les sème sur le terrain : elles rougeoient, puis explosent au tour suivant, avant même qu’il agisse. Quitte la zone ou esquive. Briser ses ailes réduit ses largages. Il craint la foudre.',
  weak:{feu:0,glace:.5,foudre:1,dragon:.5},ko:240,flinch:760,poison:260,
  parts:{tete:{name:'Tête',cut:74,blunt:78,brk:.12},flanc:{name:'Ailes',cut:62,blunt:52,brk:.16},queue:{name:'Queue',cut:64,blunt:48,sever:1}},
  mats:{ecaille:'Écaille explosive',peau:'Membrane du Bombardier',griffe:'Serre du Bombardier',tete:'Crâne du Bombardier',queue:'Queue du Bombardier',rare:'Glande détonante'},
  moves:[
- {id:'ecaille',n:'Écaille lancée',t:'Il secoue une écaille rougeoyante dans votre direction…',z:[],track:1,tier:'M',st:'burn',w:1.2},
+ {id:'ecaille',n:'Écaille lancée',t:'Il secoue une écaille rougeoyante dans ta direction…',z:[],track:1,tier:'M',st:'burn',w:1.2},
  {id:'morsure',n:'Morsure',t:'Il avance la gueule, crocs fumants…',z:['avant'],tier:'M',w:3},
  {id:'queue',n:'Queue-fléau',t:'Il fait pivoter sa queue hérissée d’écailles…',z:['arriere','flanc'],tier:'H',w:2.5,tail:1},
  {id:'charge',n:'Ruée ailée',t:'Il écarte les ailes et fonce au ras du sol…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
@@ -480,12 +480,12 @@ MON.bombardier={hab:'plaine',name:'Bombardier',kind:'Wyverne volante',rank:8,hp:
  {id:'pique',n:'Piqué explosif',t:'Il replie les ailes et plonge, couvert d’écailles prêtes à sauter !',z:['avant','flanc','arriere'],tier:'H',st:'burn',w:2,fly:1,ends:1,c:14},
  {id:'explose',n:'Écailles explosives',t:'Les écailles explosent !',z:[],tier:'H',st:'burn',w:0}]};
 MON.tempestaire={aHp:.93,hab:'crete',name:'Tempestaire',kind:'Dragon ancien',rank:9,hp:15800,lv:70,noElite:1,elder:1,col:'#7f93ad',col2:'#cfe4ff',shape:'dragon',roar:'Hurlement des vents',
- lore:'Un dragon ancien qui commande aux tempêtes. Quand il les invoque, un vent furieux repousse les lames et la foudre frappe là où vous vous tenez, avant même qu’il agisse : bougez ou esquivez. Quand la tempête retombe, il reste exposé. Briser ses cornes affaiblit ses tempêtes ; le poison les dissipe plus vite. Il craint l’élément Dragon.',
+ lore:'Un dragon ancien qui commande aux tempêtes. Quand il les invoque, un vent furieux repousse les lames et la foudre frappe là où tu te tiens, avant même qu’il agisse : bouge ou esquive. Quand la tempête retombe, il reste exposé. Briser ses cornes affaiblit ses tempêtes ; le poison les dissipe plus vite. Il craint l’élément Dragon.',
  weak:{feu:.5,glace:.5,foudre:0,dragon:1},ko:260,flinch:880,poison:240,
  parts:{tete:{name:'Cornes',cut:72,blunt:80,brk:.11},flanc:{name:'Ailes',cut:64,blunt:56,brk:.16},queue:{name:'Queue',cut:66,blunt:50,sever:1}},
  mats:{ecaille:'Écaille tempétueuse',peau:'Cuir du Tempestaire',griffe:'Griffe du Tempestaire',tete:'Corne du Tempestaire',queue:'Queue du Tempestaire',rare:'Cœur des tempêtes'},
  moves:[
- {id:'eclair',n:'Éclair ciblé',t:'Il lève la tête vers vous, les cornes crépitantes…',z:[],track:1,tier:'M',st:'para',w:1},
+ {id:'eclair',n:'Éclair ciblé',t:'Il lève la tête vers toi, les cornes crépitantes…',z:[],track:1,tier:'M',st:'para',w:1},
  {id:'griffe',n:'Griffes de vent',t:'Il lève une patte enveloppée de rafales…',z:['avant','flanc'],tier:'M',w:3},
  {id:'morsure',n:'Morsure',t:'Il abaisse la tête, gueule entrouverte…',z:['avant'],tier:'M',w:2.5},
  {id:'queue',n:'Fouet de la tempête',t:'Il fait tournoyer sa queue dans un sifflement…',z:['arriere','flanc'],tier:'H',w:2.5,tail:1},
@@ -498,7 +498,7 @@ MON.tempestaire={aHp:.93,hab:'crete',name:'Tempestaire',kind:'Dragon ancien',ran
  {id:'fureur',n:'Fureur des cieux',t:'Il hurle, et la foudre s’abat en rafale devant lui…',z:['avant','flanc'],tier:'H',st:'para',w:2,rage:1},
  {id:'foudre_t',n:'Foudre de la tempête',t:'La foudre s’abat !',z:[],tier:'H',w:0}]};
 MON.abyssaure={hab:'eclipse',name:'Abyssaure',kind:'Dragon ancien des profondeurs',rank:10,hp:23300,lv:84,noElite:1,elder:1,mrOnly:1,col:'#2a2433',col2:'#b28cff',shape:'dragon',roar:'Hurlement du néant',
- lore:'Un dragon ancien surgi du fond du monde, aux écailles d’obsidienne fendues de lumière violette. Il avale la lumière : pendant l’Éclipse, vous ne voyez plus où il frappe, seulement des bruits dans le noir. Une bombe flash déchire l’Éclipse et l’expose. Briser ses cornes de cristal écourte l’Éclipse. Blessé, il concentre un Soleil noir : faites-le tressaillir ou esquivez le Néant. Il craint la Foudre.',
+ lore:'Un dragon ancien surgi du fond du monde, aux écailles d’obsidienne fendues de lumière violette. Il avale la lumière : pendant l’Éclipse, tu ne vois plus où il frappe, seulement des bruits dans le noir. Une bombe flash déchire l’Éclipse et l’expose. Briser ses cornes de cristal écourte l’Éclipse. Blessé, il concentre un Soleil noir : fais-le tressaillir ou esquive le Néant. Il craint la Foudre.',
  weak:{feu:.5,glace:.25,foudre:1,dragon:0},ko:320,flinch:1100,poison:300,
  parts:{tete:{name:'Cornes de cristal',cut:70,blunt:78,brk:.1},flanc:{name:'Ailes',cut:62,blunt:55,brk:.15},queue:{name:'Queue',cut:64,blunt:52,sever:1}},
  mats:{ecaille:'Écaille d’obsidienne',peau:'Cuir abyssal',griffe:'Griffe abyssale',tete:'Corne de cristal',queue:'Queue abyssale',rare:'Cœur d’éclipse'},
@@ -506,47 +506,47 @@ MON.abyssaure={hab:'eclipse',name:'Abyssaure',kind:'Dragon ancien des profondeur
  {id:'griffe',n:'Griffe d’obsidienne',t:'Il lève une patte aux griffes de cristal…',z:['avant','flanc'],tier:'M',w:3},
  {id:'morsure',n:'Morsure abyssale',t:'Il abaisse la tête, la gueule luisante de violet…',z:['avant'],tier:'H',w:2.5},
  {id:'queue',n:'Fouet d’obsidienne',t:'Il balance sa queue hérissée d’éclats…',z:['arriere','flanc'],tier:'H',w:2.5,tail:1},
- {id:'charge',n:'Ruée des profondeurs',t:'Il se ramasse, ailes plaquées, le regard fixé sur vous…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
- {id:'rayon',n:'Rayon d’abîme',t:'Une lueur violette se concentre entre ses cornes et vous suit…',z:[],track:1,tier:'H',w:1.5},
+ {id:'charge',n:'Ruée des profondeurs',t:'Il se ramasse, ailes plaquées, le regard fixé sur toi…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
+ {id:'rayon',n:'Rayon d’abîme',t:'Une lueur violette se concentre entre ses cornes et te suit…',z:[],track:1,tier:'H',w:1.5},
  {id:'cristaux',n:'Pluie de cristaux',t:'Il secoue ses ailes : des éclats d’améthyste s’envolent tout autour…',z:['avant','flanc','arriere'],tier:'M',w:1.5,c:10},
  {id:'eclipse',n:'Éclipse',t:'Il déploie les ailes et avale la lumière : l’arène sombre dans le noir !',z:[],fx:'eclipse',w:3.5,cond:(m,H)=>!m.eclipse&&!m.eclCd&&H.turn>2},
  {id:'absorbe',n:'Soleil noir',t:'Il aspire toute la lumière autour de lui… l’air vibre !',z:[],fx:'windup',chain:'neant',w:1.5,cond:m=>m.hp<m.max*.55},
  {id:'neant',n:'Néant',t:'Une onde de ténèbres pures déferle sur toute l’arène !',z:['avant','flanc','arriere'],tier:'X',w:0,c:16},
  {id:'fureur',n:'Colère de l’abîme',t:'Il rugit ; les fissures de ses écailles s’embrasent de violet…',z:['avant','flanc'],tier:'H',w:2,rage:1}]};
 MON.rapinoux={hab:'foret',name:'Rapinoux',kind:'Singe-wyverne',rank:1,hp:1000,lv:16,col:'#b0643a',col2:'#e8c07a',shape:'ape',roar:'Ricanement strident',
- lore:'Un singe-wyverne roux et chapardeur qui saute de branche en branche. Son Larcin vous arrache un objet de la sacoche : brisez sa crête, assommez-le ou achevez-le pour le récupérer. S’il a le temps, il grignote votre butin pour se soigner : faites-le tressaillir.',
+ lore:'Un singe-wyverne roux et chapardeur qui saute de branche en branche. Son Larcin t’arrache un objet de la sacoche : brise sa crête, assomme-le ou achève-le pour le récupérer. S’il a le temps, il grignote ton butin pour se soigner : fais-le tressaillir.',
  weak:{feu:1,glace:.5,foudre:.5,dragon:.25},ko:95,flinch:160,poison:100,
  parts:{tete:{name:'Crête',cut:80,blunt:85,brk:.15},flanc:{name:'Bras',cut:60,blunt:55,brk:.2},queue:{name:'Queue touffue',cut:70,blunt:45,sever:1}},
  mats:{ecaille:'Poil roux',peau:'Peau de Rapinoux',griffe:'Griffe de Rapinoux',tete:'Crête de Rapinoux',queue:'Queue touffue',rare:'Gemme volée'},
  moves:[
  {id:'griffes',n:'Griffes vives',t:'Il se dresse sur ses pattes arrière, bras écartés…',z:['avant','flanc'],tier:'L',w:3.5},
- {id:'larcin',n:'Larcin',t:'Il fixe votre sacoche, les doigts frémissants…',z:['avant','flanc'],tier:'L',w:2.5,steal:1,cond:m=>!(m.loot&&m.loot.length>=2)},
+ {id:'larcin',n:'Larcin',t:'Il fixe ta sacoche, les doigts frémissants…',z:['avant','flanc'],tier:'L',w:2.5,steal:1,cond:m=>!(m.loot&&m.loot.length>=2)},
  {id:'queue',n:'Coup de queue',t:'Il pivote, sa queue touffue fouette l’air…',z:['arriere','flanc'],tier:'L',w:2.5,tail:1},
- {id:'noix',n:'Jet de noix',t:'Il fouille dans sa joue et vise votre position…',z:[],track:1,tier:'L',w:1.5},
- {id:'bond',n:'Bond de branche',t:'Il s’accroupit, prêt à bondir par-dessus vous…',z:['avant','flanc'],tier:'M',w:2,after:'flip',open:1,c:12},
- {id:'grignote',n:'Grignotage',t:'Il sort votre objet et s’apprête à le dévorer…',z:[],fx:'eat',w:4,cond:m=>!!(m.loot&&m.loot.some(k=>EDIBLE.includes(k)))},
- {id:'plongeon',n:'Plongeon depuis les branches',t:'Il grimpe dans un arbre et vous guette d’en haut…',z:['avant','flanc','arriere'],tier:'M',w:1.2,c:12}]};
+ {id:'noix',n:'Jet de noix',t:'Il fouille dans sa joue et vise ta position…',z:[],track:1,tier:'L',w:1.5},
+ {id:'bond',n:'Bond de branche',t:'Il s’accroupit, prêt à bondir par-dessus toi…',z:['avant','flanc'],tier:'M',w:2,after:'flip',open:1,c:12},
+ {id:'grignote',n:'Grignotage',t:'Il sort ton objet et s’apprête à le dévorer…',z:[],fx:'eat',w:4,cond:m=>!!(m.loot&&m.loot.some(k=>EDIBLE.includes(k)))},
+ {id:'plongeon',n:'Plongeon depuis les branches',t:'Il grimpe dans un arbre et te guette d’en haut…',z:['avant','flanc','arriere'],tier:'M',w:1.2,c:12}]};
 const EDIBLE=['mega','potion','steak'];
 function stealItem(n){const m=H.m;m.loot=m.loot||[];const got=[];for(let i=0;i<n;i++){const c=['mega','potion','steak','flash'].filter(k=>ITEMS[k]&&pouchLeft(k)>0&&!ITEMS[k].sup);if(!c.length)break;const k=c[0]==='mega'&&rnd()<.5&&c[1]?c[1]:c[0];
   H.used[k]=(H.used[k]||0)+1;if(!H.q.training)S.items[k]=Math.max(0,(S.items[k]||0)-1);m.loot.push(k);got.push(ITEMS[k].n);}
- if(got.length){log(`🐒 ${m.d.name} vous vole : ${got.join(', ')} ! Brisez sa crête, assommez-le ou achevez-le pour le récupérer.`,'bad');tip('larcin','Objet volé : il le garde tant que sa tête n’est pas brisée ou qu’il n’est pas assommé ou vaincu. S’il le grignote, il se soigne et l’objet est perdu : faites-le tressaillir quand il s’y prépare.');}
- else log(`🐒 ${m.d.name} fouille votre sacoche, mais n’y trouve rien à voler.`);}
-function giveBack(why){const m=H.m;if(!m.loot||!m.loot.length)return;const n=m.loot.map(k=>ITEMS[k].n);for(const k of m.loot){H.used[k]=Math.max(0,(H.used[k]||0)-1);if(!H.q.training)S.items[k]=(S.items[k]||0)+1;}m.loot=[];H.pend.push([`🎒 ${why} : vous récupérez ${n.join(', ')}.`,'good']);}
+ if(got.length){log(`🐒 ${m.d.name} te vole : ${got.join(', ')} ! Brise sa crête, assomme-le ou achève-le pour le récupérer.`,'bad');tip('larcin','Objet volé : il le garde tant que sa tête n’est pas brisée ou qu’il n’est pas assommé ou vaincu. S’il le grignote, il se soigne et l’objet est perdu : faites-le tressaillir quand il s’y prépare.');}
+ else log(`🐒 ${m.d.name} fouille ta sacoche, mais n’y trouve rien à voler.`);}
+function giveBack(why){const m=H.m;if(!m.loot||!m.loot.length)return;const n=m.loot.map(k=>ITEMS[k].n);for(const k of m.loot){H.used[k]=Math.max(0,(H.used[k]||0)-1);if(!H.q.training)S.items[k]=(S.items[k]||0)+1;}m.loot=[];H.pend.push([`🎒 ${why} : tu récupères ${n.join(', ')}.`,'good']);}
 MON.selenis={hab:'col',name:'Sélénis',kind:'Papillon-wyverne',rank:3,hp:3400,lv:27,col:'#b8c0e0',col2:'#6a6ab8',shape:'bird',roar:'Stridulation lunaire',
- lore:'Un papillon-wyverne aux ailes marquées de lunes, qui ne sort qu’au crépuscule. Sa poudre endort : endormi, vous perdez un tour et le prochain coup reçu fait 50 % de dégâts en plus. Esquivez ou gardez contre la poudre. Déchirer ses ailes le fragilise.',
+ lore:'Un papillon-wyverne aux ailes marquées de lunes, qui ne sort qu’au crépuscule. Sa poudre endort : endormi, tu perds un tour et le prochain coup reçu fait 50 % de dégâts en plus. Esquive ou garde contre la poudre. Déchirer ses ailes le fragilise.',
  weak:{feu:1,glace:.25,foudre:.75,dragon:.5},ko:130,flinch:300,poison:130,
  parts:{tete:{name:'Antennes',cut:80,blunt:85,brk:.14},flanc:{name:'Ailes',cut:75,blunt:55,brk:.18},queue:{name:'Queue',cut:60,blunt:50,sever:1}},
  mats:{ecaille:'Écaille lunaire',peau:'Aile de Sélénis',griffe:'Griffe de Sélénis',tete:'Antenne de Sélénis',queue:'Queue de Sélénis',rare:'Pierre de lune'},
  moves:[
- {id:'poudre',n:'Poudre de sommeil',t:'Il bat des ailes vers vous : une poudre argentée scintille…',z:['avant','flanc'],tier:'L',st:'sleep',w:2.4},
+ {id:'poudre',n:'Poudre de sommeil',t:'Il bat des ailes vers toi : une poudre argentée scintille…',z:['avant','flanc'],tier:'L',st:'sleep',w:2.4},
  {id:'ailes',n:'Battement d’ailes',t:'Il s’élève un peu et rabat ses grandes ailes…',z:['flanc','arriere'],tier:'M',w:3},
  {id:'dard',n:'Dard caudal',t:'Il recourbe sa queue au-dessus de son dos…',z:['arriere'],tier:'M',w:2.2,tail:1},
  {id:'morsure',n:'Morsure',t:'Il tend le cou, mandibules ouvertes…',z:['avant'],tier:'M',w:2.5},
- {id:'vol',n:'Vol plané',t:'Il prend son élan en planant droit sur vous…',z:['avant','flanc'],tier:'M',w:1.8,after:'flip',open:1,c:12},
+ {id:'vol',n:'Vol plané',t:'Il prend son élan en planant droit sur toi…',z:['avant','flanc'],tier:'M',w:1.8,after:'flip',open:1,c:12},
  {id:'nuee',n:'Nuée de poudre',t:'Il tourbillonne sur lui-même, un nuage argenté l’entoure…',z:['avant','flanc','arriere'],tier:'L',st:'sleep',w:1,c:14,cond:m=>m.hp<m.max*.75},
- {id:'rayon_l',n:'Rayon de lune',t:'Ses antennes s’illuminent et se tournent vers vous…',z:[],track:1,tier:'M',w:1.4}]};
+ {id:'rayon_l',n:'Rayon de lune',t:'Ses antennes s’illuminent et se tournent vers toi…',z:[],track:1,tier:'M',w:1.4}]};
 MON.herissaure={hab:'plaine',name:'Hérissaure',kind:'Reptile épineux',rank:4,hp:5400,lv:34,col:'#c8a060',col2:'#e8e0c8',shape:'brute',roar:'Grondement',
- lore:'Un gros reptile couvert de piquants. Quand il se hérisse, frapper au contact vous blesse : les armes contondantes brisent ses épines, et les tirs à distance les évitent. Sa queue-massue assomme.',
+ lore:'Un gros reptile couvert de piquants. Quand il se hérisse, frapper au contact te blesse : les armes contondantes brisent ses épines, et les tirs à distance les évitent. Sa queue-massue assomme.',
  weak:{feu:.75,glace:.5,foudre:1,dragon:.25},ko:150,flinch:380,poison:150,
  parts:{tete:{name:'Tête',cut:72,blunt:80,brk:.13},flanc:{name:'Dos épineux',cut:50,blunt:62,brk:.18},queue:{name:'Queue-massue',cut:55,blunt:48,brk:.15}},
  mats:{ecaille:'Écaille ocre',peau:'Cuir épineux',griffe:'Griffe d’Hérissaure',tete:'Crâne d’Hérissaure',queue:'Massue d’Hérissaure',rare:'Épine d’os pur'},
@@ -554,52 +554,52 @@ MON.herissaure={hab:'plaine',name:'Hérissaure',kind:'Reptile épineux',rank:4,h
  {id:'morsure',n:'Morsure',t:'Il ouvre grand la gueule en avançant…',z:['avant'],tier:'M',w:3},
  {id:'epaule',n:'Coup d’épaule',t:'Il se campe et bascule son épaule hérissée…',z:['flanc'],tier:'M',w:2.5},
  {id:'massue',n:'Queue-massue',t:'Il fait tournoyer sa queue lourde derrière lui…',z:['arriere','flanc'],tier:'H',w:2.4,tail:1},
- {id:'roulade',n:'Roulade épineuse',t:'Il se roule en boule, toutes épines dehors, et vise votre position…',z:['avant','flanc'],tier:'H',w:1.8,after:'flip',open:1,c:14},
- {id:'salve',n:'Salve d’épines',t:'Il secoue le dos et oriente ses piquants vers vous…',z:[],track:1,tier:'M',w:1.6},
+ {id:'roulade',n:'Roulade épineuse',t:'Il se roule en boule, toutes épines dehors, et vise ta position…',z:['avant','flanc'],tier:'H',w:1.8,after:'flip',open:1,c:14},
+ {id:'salve',n:'Salve d’épines',t:'Il secoue le dos et oriente ses piquants vers toi…',z:[],track:1,tier:'M',w:1.6},
  {id:'herisse',n:'Hérissement',t:'Il gonfle son corps : toutes ses épines se dressent !',z:[],fx:'bristle',w:3,cond:(m,H)=>!m.spikes&&!m.spikeCd&&H.turn>2}]};
 MON.nacrelle={hab:'lagon',name:'Nacrelle',kind:'Léviathan renard',rank:7,hp:11000,lv:53,noElite:1,col:'#e8eef0',col2:'#3ac8c0',shape:'dragon',roar:'Chant de l’écume',
- lore:'Un léviathan élégant qui danse sur les lagons. Ses bulles vous couvrent : couvert de bulles, vous glissez et vos déplacements ont une chance sur deux de vous mener ailleurs. Une esquive chasse les bulles. Quand il aspire l’eau, un jet tranchant se prépare.',
+ lore:'Un léviathan élégant qui danse sur les lagons. Ses bulles te couvrent : couvert de bulles, tu glisses et tes déplacements ont une chance sur deux de te mener ailleurs. Une esquive chasse les bulles. Quand il aspire l’eau, un jet tranchant se prépare.',
  weak:{feu:.5,glace:.25,foudre:1,dragon:.75},ko:220,flinch:680,poison:220,
  parts:{tete:{name:'Crête',cut:78,blunt:80,brk:.12},flanc:{name:'Nageoires',cut:70,blunt:55,brk:.16},queue:{name:'Queue',cut:72,blunt:50,sever:1}},
  mats:{ecaille:'Écaille nacrée',peau:'Fourrure d’écume',griffe:'Griffe de Nacrelle',tete:'Crête de Nacrelle',queue:'Queue de Nacrelle',rare:'Perle d’écume'},
  moves:[
- {id:'bulles',n:'Jet de bulles',t:'Il gonfle ses joues et vise votre position…',z:[],track:1,tier:'L',st:'bulle',w:2},
+ {id:'bulles',n:'Jet de bulles',t:'Il gonfle ses joues et vise ta position…',z:[],track:1,tier:'L',st:'bulle',w:2},
  {id:'morsure',n:'Morsure',t:'Il fend l’air de son long museau…',z:['avant'],tier:'M',w:2.6},
  {id:'fouet',n:'Fouet caudal',t:'Il pivote, sa queue immense fouette l’eau…',z:['arriere','flanc'],tier:'H',w:2.6,tail:1},
- {id:'glissade',n:'Glissade d’écume',t:'Il se couche sur ses bulles et glisse vers vous…',z:['avant','flanc'],tier:'M',st:'bulle',w:2,after:'flip',open:1,c:12},
+ {id:'glissade',n:'Glissade d’écume',t:'Il se couche sur ses bulles et glisse vers toi…',z:['avant','flanc'],tier:'M',st:'bulle',w:2,after:'flip',open:1,c:12},
  {id:'danse',n:'Danse de l’écume',t:'Il tourne sur lui-même, des bulles s’envolent tout autour…',z:['avant','flanc','arriere'],tier:'M',st:'bulle',w:1.4,c:12},
- {id:'aspire',n:'Aspiration',t:'Il aspire l’eau du lagon, le cou tendu vers vous…',z:[],fx:'windup',chain:'jet',w:1.5,cond:m=>m.hp<m.max*.85},
+ {id:'aspire',n:'Aspiration',t:'Il aspire l’eau du lagon, le cou tendu vers toi…',z:[],fx:'windup',chain:'jet',w:1.5,cond:m=>m.hp<m.max*.85},
  {id:'jet',n:'Jet tranchant',t:'Un jet d’eau sous pression balaie devant lui !',z:['avant','flanc'],tier:'X',w:0,c:15},
  {id:'fureur',n:'Tourbillon d’écume',t:'Il bondit, furieux, dans une gerbe de bulles…',z:['avant','flanc'],tier:'H',st:'bulle',w:1.8,rage:1}]};
 MON.sismorak={hab:'glace',name:'Sismorak',kind:'Mastodonte',rank:8,hp:11400,lv:60,noElite:1,col:'#7f90a0',col2:'#d8e6f0',shape:'brute',roar:'Barrissement',
- lore:'Un mastodonte colossal qui fait trembler la toundra. Quand il se cabre, le Séisme renverse tout le monde : gardez ou esquivez, sinon vous perdez votre tour. Ses défenses se brisent, ce qui écourte ses charges.',
+ lore:'Un mastodonte colossal qui fait trembler la toundra. Quand il se cabre, le Séisme renverse tout le monde : garde ou esquive, sinon tu perds ton tour. Ses défenses se brisent, ce qui écourte ses charges.',
  weak:{feu:1,glace:0,foudre:.5,dragon:.5},ko:240,flinch:760,poison:240,
  parts:{tete:{name:'Défenses',cut:65,blunt:78,brk:.12},flanc:{name:'Pattes',cut:58,blunt:52,brk:.16},queue:{name:'Queue',cut:62,blunt:48,sever:1}},
  mats:{ecaille:'Plaque de Sismorak',peau:'Cuir de Sismorak',griffe:'Ongle de Sismorak',tete:'Défense de Sismorak',queue:'Queue de Sismorak',rare:'Cœur tellurique'},
  moves:[
  {id:'trompe',n:'Coup de trompe',t:'Il balance sa trompe devant lui…',z:['avant'],tier:'M',w:3},
- {id:'pietine',n:'Piétinement',t:'Il lève une patte énorme au-dessus de vous…',z:['avant','flanc'],tier:'H',st:'down',w:2.4},
+ {id:'pietine',n:'Piétinement',t:'Il lève une patte énorme au-dessus de toi…',z:['avant','flanc'],tier:'H',st:'down',w:2.4},
  {id:'queue',n:'Coup de queue',t:'Il pivote lourdement, la queue hérissée de glace…',z:['arriere','flanc'],tier:'M',w:2.4,tail:1},
- {id:'charge',n:'Charge aux défenses',t:'Il baisse la tête, défenses pointées vers vous…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
+ {id:'charge',n:'Charge aux défenses',t:'Il baisse la tête, défenses pointées vers toi…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
  {id:'souffle',n:'Souffle glacé',t:'Il gonfle son poitrail, l’air se glace…',z:[],track:1,tier:'M',st:'gel',w:1.5},
  {id:'cabre',n:'Cabrage',t:'Il se dresse sur ses pattes arrière, énorme, prêt à retomber !',z:[],fx:'windup',chain:'seisme',w:1.8,cond:m=>m.hp<m.max*.9},
  {id:'seisme',n:'Séisme',t:'Il retombe : le sol se fend dans toute l’arène !',z:['avant','flanc','arriere'],tier:'H',st:'down',w:0,c:14},
- {id:'fureur',n:'Avalanche',t:'Il barrit, et des blocs de glace dévalent sur vous…',z:['avant','flanc'],tier:'H',w:1.8,rage:1}]};
+ {id:'fureur',n:'Avalanche',t:'Il barrit, et des blocs de glace dévalent sur toi…',z:['avant','flanc'],tier:'H',w:1.8,rage:1}]};
 MON.tranchelune={aHp:.9,hab:'citadelle',name:'Tranchelune',kind:'Wyverne à lames',rank:9,hp:12600,lv:64,noElite:1,col:'#22262e',col2:'#c8ccd8',shape:'wyvern',roar:'Feulement',
- lore:'Une panthère-wyverne aux ailes tranchantes qui chasse sous la lune. En Posture de riposte, elle pare tout ce qui la frappe et contre-attaque très fort : ne l’attaquez pas, attendez qu’elle en sorte, exposée. Sa queue-lame se tranche.',
+ lore:'Une panthère-wyverne aux ailes tranchantes qui chasse sous la lune. En Posture de riposte, elle pare tout ce qui la frappe et contre-attaque très fort : ne l’attaque pas, attends qu’elle en sorte, exposée. Sa queue-lame se tranche.',
  weak:{feu:1,glace:.5,foudre:.75,dragon:.25},ko:250,flinch:820,poison:250,
  parts:{tete:{name:'Tête',cut:80,blunt:82,brk:.11},flanc:{name:'Ailes-lames',cut:55,blunt:60,brk:.16},queue:{name:'Queue-lame',cut:66,blunt:48,sever:1}},
  mats:{ecaille:'Fourrure de nuit',peau:'Cuir de Tranchelune',griffe:'Griffe de Tranchelune',tete:'Croc de Tranchelune',queue:'Queue-lame',rare:'Éclat lunaire'},
  moves:[
  {id:'lames',n:'Lames croisées',t:'Elle déploie ses ailes-lames devant elle…',z:['avant','flanc'],tier:'H',w:2.8},
  {id:'queue',n:'Queue-lame',t:'Elle fouette l’air de sa queue tranchante…',z:['arriere','flanc'],tier:'H',w:2.4,tail:1},
- {id:'bond',n:'Bond silencieux',t:'Elle se tapit, les yeux fixés sur vous…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
- {id:'tranche',n:'Tranche lunaire',t:'Elle suit vos mouvements, une aile levée…',z:[],track:1,tier:'M',w:1.6},
+ {id:'bond',n:'Bond silencieux',t:'Elle se tapit, les yeux fixés sur toi…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
+ {id:'tranche',n:'Tranche lunaire',t:'Elle suit tes mouvements, une aile levée…',z:[],track:1,tier:'M',w:1.6},
  {id:'posture',n:'Posture de riposte',t:'Elle s’immobilise, ailes croisées devant elle, parfaitement calme…',z:[],fx:'stance',w:3,cond:(m,H)=>!m.stanceCd&&H.turn>2},
  {id:'rafale',n:'Rafale de lames',t:'Elle tournoie, ses ailes fendent l’air tout autour…',z:['avant','flanc','arriere'],tier:'M',w:1.4,c:12},
  {id:'fureur',n:'Danse des lames',t:'Elle feule et enchaîne les coups d’ailes…',z:['avant','flanc'],tier:'H',w:2,rage:1}]};
 MON.gorgovire={hab:'crete',name:'Gorgovire',kind:'Dragon aveugle',rank:10,hp:14500,lv:66,noElite:1,mrOnly:1,col:'#2a2530',col2:'#8a5aa0',shape:'dragon',roar:'Cri frénétique',
- lore:'Un dragon aveugle enveloppé d’ailes comme d’un manteau, qui répand des spores sombres. Ses spores donnent la Frénésie : infligez de gros dégâts dans les 4 tours pour la surmonter (+15 % d’attaque), sinon elle explose. Il chasse au bruit et frappe toujours plus fort.',
+ lore:'Un dragon aveugle enveloppé d’ailes comme d’un manteau, qui répand des spores sombres. Ses spores donnent la Frénésie : inflige de gros dégâts dans les 4 tours pour la surmonter (+15 % d’attaque), sinon elle explose. Il chasse au bruit et frappe toujours plus fort.',
  weak:{feu:.75,glace:.5,foudre:.5,dragon:1},ko:300,flinch:1050,poison:280,
  parts:{tete:{name:'Couronne',cut:74,blunt:80,brk:.1},flanc:{name:'Ailes-manteau',cut:62,blunt:56,brk:.15},queue:{name:'Queue',cut:64,blunt:50,sever:1}},
  mats:{ecaille:'Écaille de spores',peau:'Manteau de Gorgovire',griffe:'Griffe de Gorgovire',tete:'Couronne de Gorgovire',queue:'Queue de Gorgovire',rare:'Cœur frénétique'},
@@ -607,12 +607,12 @@ MON.gorgovire={hab:'crete',name:'Gorgovire',kind:'Dragon aveugle',rank:10,hp:145
  {id:'spores',n:'Nuée de spores',t:'Il déploie son manteau : des spores sombres s’en échappent…',z:['avant','flanc'],tier:'M',st:'virus',w:2.6},
  {id:'griffes',n:'Griffes',t:'Il lève une patte griffue en tendant l’oreille…',z:['avant','flanc'],tier:'H',w:2.6},
  {id:'queue',n:'Fouet de queue',t:'Il balaie derrière lui de sa longue queue…',z:['arriere','flanc'],tier:'H',w:2.4,tail:1},
- {id:'charge',n:'Ruée aveugle',t:'Il tourne la tête vers le bruit de vos pas…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
+ {id:'charge',n:'Ruée aveugle',t:'Il tourne la tête vers le bruit de tes pas…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
  {id:'souffle',n:'Souffle de spores',t:'Il gonfle son cou, une fumée violette s’amasse dans sa gueule…',z:[],track:1,tier:'H',st:'virus',w:1.6},
  {id:'explosion',n:'Éclosion',t:'Des spores éclatent tout autour de lui !',z:['avant','flanc','arriere'],tier:'M',st:'virus',w:1.2,c:12},
  {id:'fureur',n:'Frénésie',t:'Il hurle, son manteau se déploie, les spores flamboient…',z:['avant','flanc'],tier:'X',w:1.6,rage:1}]};
 MON.pyroclaste={hab:'plaine',name:'Pyroclaste',kind:'Wyverne à poings',rank:10,hp:18500,lv:74,noElite:1,mrOnly:1,goo:1,col:'#2a3448',col2:'#b8e03a',shape:'brute',roar:'Rugissement sourd',
- lore:'Une wyverne trapue aux poings de pierre couverts de gelée. La gelée explosive se colle à vous : au tour suivant elle explose, sauf si vous esquivez pour vous en débarrasser. Quand il charge sa Détonation, toute la gelée de l’arène va sauter.',
+ lore:'Une wyverne trapue aux poings de pierre couverts de gelée. La gelée explosive se colle à toi : au tour suivant elle explose, sauf si tu esquives pour t’en débarrasser. Quand il charge sa Détonation, toute la gelée de l’arène va sauter.',
  weak:{feu:0,glace:1,foudre:.5,dragon:.5},ko:300,flinch:1080,poison:280,
  parts:{tete:{name:'Corne',cut:72,blunt:80,brk:.1},flanc:{name:'Poings',cut:48,blunt:58,brk:.14},queue:{name:'Queue',cut:62,blunt:50,sever:1}},
  mats:{ecaille:'Écaille de basalte',peau:'Cuir de Pyroclaste',griffe:'Griffe de Pyroclaste',tete:'Corne de Pyroclaste',queue:'Queue de Pyroclaste',rare:'Noyau de gelée'},
@@ -622,7 +622,7 @@ MON.pyroclaste={hab:'plaine',name:'Pyroclaste',kind:'Wyverne à poings',rank:10,
  {id:'queue',n:'Coup de queue',t:'Il pivote, la queue basse…',z:['arriere','flanc'],tier:'M',w:2.4,tail:1},
  {id:'charge',n:'Ruée de basalte',t:'Il se penche en avant, poings au sol, et fonce…',z:['avant','flanc'],tier:'H',w:2,after:'flip',open:1,c:14},
  {id:'eclabousse',n:'Éclaboussure de gelée',t:'Il frappe le sol : la gelée gicle tout autour…',z:['avant','flanc','arriere'],tier:'M',st:'slime',w:1.4,c:12},
- {id:'jet_g',n:'Jet de gelée',t:'Il crache une boule de gelée vers vous…',z:[],track:1,tier:'M',st:'slime',w:1.5},
+ {id:'jet_g',n:'Jet de gelée',t:'Il crache une boule de gelée vers toi…',z:[],track:1,tier:'M',st:'slime',w:1.5},
  {id:'arme',n:'Détonation imminente',t:'Il frappe ses poings l’un contre l’autre : la gelée se met à briller !',z:[],fx:'windup',chain:'detonation',w:1.4,cond:m=>m.hp<m.max*.7},
  {id:'detonation',n:'Détonation',t:'Toute la gelée de l’arène explose d’un coup !',z:['avant','flanc','arriere'],tier:'X',w:0,c:16}]};
 MON.pantin={hab:'arene',name:'Pantin d’entraînement',kind:'Mannequin de paille',rank:0,hp:1000000,lv:10,noElite:1,col:'#c8a86a',col2:'#8a5a2a',shape:'bird',roar:'…',
@@ -635,18 +635,18 @@ for(const k in MON)for(const mv of MON[k].moves)if(mv.tier)mv.d=Math.round(MON[k
 const SIG={
  selenis:[{id:'songe',n:'Songe lunaire',t:'Ses ailes s’illuminent de lunes pâles…',z:[],fx:'windup',chain:'eclat',w:1.3,cond:m=>m.hp<m.max*.8},{id:'eclat',n:'Éclat de lune',t:'Une pluie de poudre lumineuse s’abat sur toute l’arène !',z:ALLZ,tier:'M',st:'sleep',w:0,c:14}],
  herissaure:[{id:'tempete_e',n:'Tempête d’épines',t:'Il se ramasse en boule, toutes épines dehors…',z:ALLZ,tier:'M',w:1.5,c:12,cond:m=>m.spikes>0}],
- rapinoux:[{id:'razzia',n:'Razzia',t:'Il bondit d’un côté à l’autre, les deux mains tendues vers vous…',z:['avant','flanc','arriere'],tier:'M',w:1.6,steal:2,cond:m=>!(m.loot&&m.loot.length>=2)}],
+ rapinoux:[{id:'razzia',n:'Razzia',t:'Il bondit d’un côté à l’autre, les deux mains tendues vers toi…',z:['avant','flanc','arriere'],tier:'M',w:1.6,steal:2,cond:m=>!(m.loot&&m.loot.length>=2)}],
  grakku:[{id:'grele',n:'Grêle de rochers',t:'Il frappe la falaise de ses serres : des rochers dégringolent…',z:ALLZ,tier:'M',w:1.5,c:12},
-  {id:'lancer',n:'Lancer de rocher',t:'Il soulève son rocher et vise votre position…',z:[],track:1,tier:'H',w:3,cond:m=>m.rock>0}],
+  {id:'lancer',n:'Lancer de rocher',t:'Il soulève son rocher et vise ta position…',z:[],track:1,tier:'H',w:3,cond:m=>m.rock>0}],
  brontal:[{id:'eruption',n:'Éruption',t:'Le sol se fissure sous lui, la lave gronde…',z:[],fx:'windup',chain:'geyser',w:1.3,cond:m=>m.hp<m.max*.9},
   {id:'geyser',n:'Geysers de lave',t:'Des colonnes de feu jaillissent tout autour de lui !',z:ALLZ,tier:'X',st:'burn',w:0,c:15}],
  velyra:[{id:'fouet',n:'Fouet venimeux',t:'Elle fait tournoyer sa queue au-dessus de sa tête…',z:ALLZ,tier:'M',st:'poison',w:2,tail:1}],
- glacimorde:[{id:'prison',el:'ice',n:'Prison de givre',t:'Il fixe votre silhouette ; le givre se referme autour de vous…',z:[],track:1,tier:'M',st:'gel',w:2}],
- scoriak:[{id:'coulee',n:'Coulée de lave',t:'La lave déborde de sa carapace et coule vers vous…',z:[],track:1,tier:'M',st:'burn',w:1.5}],
+ glacimorde:[{id:'prison',el:'ice',n:'Prison de givre',t:'Il fixe ta silhouette ; le givre se referme autour de toi…',z:[],track:1,tier:'M',st:'gel',w:2}],
+ scoriak:[{id:'coulee',n:'Coulée de lave',t:'La lave déborde de sa carapace et coule vers toi…',z:[],track:1,tier:'M',st:'burn',w:1.5}],
  boregor:[{id:'grele',n:'Grêlons',t:'Il projette des éclats de glace dans toutes les directions…',z:ALLZ,tier:'M',st:'gel',w:1.5,c:12}],
  fulgor:[{id:'orage',n:'Appel de l’orage',t:'Il hurle vers le ciel, les nuages s’amoncellent…',z:[],fx:'windup',chain:'colonne',w:1.4,cond:m=>m.charged>0},
   {id:'colonne',el:'bolt',n:'Colonnes de foudre',t:'La foudre s’abat sur toute l’arène !',z:ALLZ,tier:'X',st:'para',w:0,c:15}],
- ferroi:[{id:'effondre',n:'Effondrement',t:'Il frappe les piliers : des blocs de pierre tombent vers vous…',z:[],track:1,tier:'H',w:1.5}]};
+ ferroi:[{id:'effondre',n:'Effondrement',t:'Il frappe les piliers : des blocs de pierre tombent vers toi…',z:[],track:1,tier:'H',w:1.5}]};
 const ELITE={};const RANK_ATK=[100,125,145,168,190,212,236];
 function eliteDef(id){if(ELITE[id])return ELITE[id];const b=MON[id],lv=Math.round(55+b.rank*1.2),hp=Math.round((5600+b.rank*700)*1.18*(b.eHp||1));
  const mv=x=>Object.assign({},x,x.tier?{d:Math.round(lv*TIER[x.tier])}:{});
@@ -670,20 +670,20 @@ const MON_ORDER=['rapinoux','grakku','selenis','brontal','velyra','glacimorde','
 for(const mon of MON_ORDER)for(const el of[0,1]){if(el&&MON[mon].noElite)continue;const b=QUESTS.find(q=>q.mon===mon&&!q.elite);
  QUESTS.push({id:(el?'xe_':'x_')+mon,mon,explore:1,elite:el?1:0,stars:el?7:b.stars,title:`Rencontre : ${el?withEl(MON[mon].name,mon):MON[mon].name}`,turns:40,z:Math.round((el?3000:b.z)*.6),obj:[],d:'Rencontre imprévue pendant une expédition.'});}
 const STAGE={q13:2,q14:3,q15:4,q16:5,q17:6,e10:5,e11:6,q12:1,e9:4,q11:6,q10:5,q9:4,q1:1,q2:1,g1:1,q3:1,q4:2,q7:2,g2:2,q5:2,e7:5,q3c:3,q8:3,g3:3,q6:3,e8:6,e1:4,e2:4,e3:4,g4:4,e4:5,e5:5,g5:5,g6:6,e6:6};const URGENT={q3:1,q5:1,q6:1,q9:1,q10:1,q11:1};
-QUESTS.push({id:'c2',mon:'brontal',capture:1,ref:'q2',title:'Capture : le brasier vivant',d:'Un éleveur de la plaine veut un Brontal vivant pour étudier sa queue embrasée. Affaiblissez-le, piégez-le et endormez-le : le tuer ferait échouer la quête.'});
-QUESTS.push({id:'c4',mon:'selenis',elite:1,capture:1,ref:'e10',title:'Capture : la lune captive',d:'Les érudits veulent observer un Sélénis aguerri de près. Méfiez-vous de sa poudre de sommeil, et ne le tuez pas.'});
-QUESTS.push({id:'c5',mon:'herissaure',elite:1,capture:1,ref:'e11',title:'Capture : épines vivantes',d:'L’armurier rêve des épines d’un Hérissaure aguerri vivant, qui repoussent sans fin. Affaiblissez-le sans l’achever.'});
-QUESTS.push({id:'c6',mon:'devoreur',capture:1,ref:'q9',title:'Capture : la faim enchaînée',d:'La Guilde veut comprendre pourquoi le Dévoreur ne s’arrête jamais de manger. Ramenez-le vivant… s’il vous en laisse le temps.'});
-QUESTS.push({id:'d4',mon:'brontal',duo:'scoriak',elite:1,opt:1,title:'Double chasse : le duo de braise',d:'Un Brontal aguerri et un Scoriak aguerri se disputent les Terres de cendre. Abattez le premier : le vacarme attirera le second. Vos PV et vos objets ne sont pas restaurés entre les deux.'});
+QUESTS.push({id:'c2',mon:'brontal',capture:1,ref:'q2',title:'Capture : le brasier vivant',d:'Un éleveur de la plaine veut un Brontal vivant pour étudier sa queue embrasée. Affaiblis-le, piège-le et endors-le : le tuer ferait échouer la quête.'});
+QUESTS.push({id:'c4',mon:'selenis',elite:1,capture:1,ref:'e10',title:'Capture : la lune captive',d:'Les érudits veulent observer un Sélénis aguerri de près. Méfie-toi de sa poudre de sommeil, et ne le tue pas.'});
+QUESTS.push({id:'c5',mon:'herissaure',elite:1,capture:1,ref:'e11',title:'Capture : épines vivantes',d:'L’armurier rêve des épines d’un Hérissaure aguerri vivant, qui repoussent sans fin. Affaiblis-le sans l’achever.'});
+QUESTS.push({id:'c6',mon:'devoreur',capture:1,ref:'q9',title:'Capture : la faim enchaînée',d:'La Guilde veut comprendre pourquoi le Dévoreur ne s’arrête jamais de manger. Ramène-le vivant… s’il t’en laisse le temps.'});
+QUESTS.push({id:'d4',mon:'brontal',duo:'scoriak',elite:1,opt:1,title:'Double chasse : le duo de braise',d:'Un Brontal aguerri et un Scoriak aguerri se disputent les Terres de cendre. Abats le premier : le vacarme attirera le second. Tes PV et tes objets ne sont pas restaurés entre les deux.'});
 QUESTS.push({id:'d5',mon:'glacimorde',duo:'boregor',elite:1,opt:1,title:'Double chasse : le grand froid',d:'Un Glacimorde aguerri garde le lac central ; un Borégor aguerri rôde dans les congères. Les deux à la suite, sans retour au camp.'});
-QUESTS.push({id:'d6',mon:'fulgor',duo:'ferroi',elite:1,opt:1,title:'Double chasse : orage sur la citadelle',d:'Un Fulgor aguerri chasse dans la Citadelle en ruine, et ses orages ont réveillé le Roi de Fer aguerri. Abattez le loup, puis tenez tête au roi.'});
+QUESTS.push({id:'d6',mon:'fulgor',duo:'ferroi',elite:1,opt:1,title:'Double chasse : orage sur la citadelle',d:'Un Fulgor aguerri chasse dans la Citadelle en ruine, et ses orages ont réveillé le Roi de Fer aguerri. Abats le loup, puis tiens tête au roi.'});
 Object.assign(STAGE,{c2:2,c4:4,c5:5,c6:6,d4:4,d5:5,d6:6,g7:7,g8:8,g9:9});
 for(const q of QUESTS){q.tier=STAGE[q.id]||0;q.urgent=URGENT[q.id]?1:0;}
 for(const mon of MON_ORDER)for(const el of[0,1]){const b=QUESTS.find(q=>q.mon===mon&&!!q.elite===!!el&&q.tier>0&&!q.capture&&!q.duo);if(!b)continue;
  QUESTS.push({id:(el?'ae_':'a_')+mon,mon,arena:1,tier:0,elite:el?1:0,src:b.id,stars:b.stars,title:`Arène : ${el?withEl(MON[mon].name,mon):MON[mon].name}`,turns:b.turns,z:Math.round(b.z*.4),obj:b.obj,d:'Un combat d’entraînement dans l’arène de la Guilde. Butin normal, prime réduite. Les objectifs bonus déjà réussis ne rapportent plus rien.'});}
 MON_ORDER.push('gorgovire','pyroclaste','abyssaure');
-const MR_Q=[['selenis',7,'La lune qui ne se couche pas','Un Sélénis ancestral plonge le col dans un sommeil sans rêve. Personne ne se réveille de sa poudre sans cicatrice.'],['gorgovire',7,'La frénésie aveugle','Un dragon aveugle répand ses spores sur les Crêtes : les monstres qu’il touche deviennent fous furieux. Surmontez la Frénésie, ou elle vous consumera.'],
- ['herissaure',8,'La forêt d’épines','Un Hérissaure ancestral a hérissé la plaine d’épines grandes comme des lances.'],['nacrelle',8,'La marée d’écume','Un Nacrelle ancestral fait danser tout le lagon ; ses bulles couvrent l’horizon.'],['pyroclaste',8,'Les poings de basalte','Une wyverne aux poings de pierre couvre les Terres de cendre de gelée explosive. Esquivez pour vous en débarrasser avant qu’elle ne saute.'],
+const MR_Q=[['selenis',7,'La lune qui ne se couche pas','Un Sélénis ancestral plonge le col dans un sommeil sans rêve. Personne ne se réveille de sa poudre sans cicatrice.'],['gorgovire',7,'La frénésie aveugle','Un dragon aveugle répand ses spores sur les Crêtes : les monstres qu’il touche deviennent fous furieux. Surmonte la Frénésie, ou elle te consumera.'],
+ ['herissaure',8,'La forêt d’épines','Un Hérissaure ancestral a hérissé la plaine d’épines grandes comme des lances.'],['nacrelle',8,'La marée d’écume','Un Nacrelle ancestral fait danser tout le lagon ; ses bulles couvrent l’horizon.'],['pyroclaste',8,'Les poings de basalte','Une wyverne aux poings de pierre couvre les Terres de cendre de gelée explosive. Esquive pour t’en débarrasser avant qu’elle ne saute.'],
  ['sismorak',9,'Le tremblement éternel','Un Sismorak ancestral fait trembler toute la toundra à chaque pas.'],['tranchelune',9,'La lune sanglante','Une Tranchelune ancestrale, plus rapide que l’œil, pare les coups des meilleurs chasseurs.'],
  ['rapinoux',7,'Le voleur sans âge','Un Rapinoux ancestral, gris de poils et plus rusé que jamais, pille les camps de la Guilde sans jamais se faire prendre.'],['grakku',7,'Le bec des anciens','Un Grakku ancestral, deux fois plus grand que ses cousins, défend un nid de pierre au sommet du col.'],
  ['brontal',7,'Le brasier ancestral','Un Brontal ancestral a fait fondre la moitié de la plaine. Sa queue embrasée ne s’arrête jamais.'],
@@ -699,32 +699,35 @@ const MR_Q=[['selenis',7,'La lune qui ne se couche pas','Un Sélénis ancestral 
  ['abyssaure',9,'Le soleil noir','Au fond du Cratère de l’Éclipse, un dragon ancien avale la lumière du jour. Aucun chasseur n’en est revenu pour le décrire.',1]];
 MR_Q.forEach(([mon,tier,title,desc,urg],i)=>{const b=MON[mon],turns=72+2*b.rank;QUESTS.push({id:'m_'+mon,mon,elite:1,anc:1,tier,urgent:urg?1:0,final:mon==='abyssaure'?1:0,stars:9+Math.floor(tier/3),title,turns,z:7000+b.rank*1100,
  obj:[{id:'b:tete',n:'Briser la tête'},{id:i%2?'nofaint':'fast:'+Math.round(turns*.6),n:i%2?'Aucun évanouissement':`Terminer en moins de ${Math.round(turns*.6)} tours`}],
- d:desc+(mon==='abyssaure'?' Dans l’Éclipse, vous ne verrez plus où il frappe : écoutez, ou déchirez le noir avec une bombe flash.':b.mrOnly?'':' Un monstre ancestral enchaîne ses attaques bien plus souvent qu’un aguerri.')});});
+ d:desc+(mon==='abyssaure'?' Dans l’Éclipse, tu ne verras plus où il frappe : écoute, ou déchire le noir avec une bombe flash.':b.mrOnly?'':' Un monstre ancestral enchaîne ses attaques bien plus souvent qu’un aguerri.')});});
 for(const mon of MON_ORDER){const b=QUESTS.find(q=>q.id==='m_'+mon);if(!b)continue;
  QUESTS.push({id:'xa_'+mon,mon,explore:1,elite:1,anc:1,tier:0,stars:b.stars,title:`Rencontre : ${monLabel(mon,1,1)}`,turns:45,z:Math.round(b.z*.5),obj:[],d:'Rencontre imprévue pendant une expédition.'});
  QUESTS.push({id:'aa_'+mon,mon,arena:1,tier:0,elite:1,anc:1,src:b.id,stars:b.stars,title:`Arène : ${monLabel(mon,1,1)}`,turns:b.turns,z:Math.round(b.z*.4),obj:b.obj,d:'Un combat d’entraînement dans l’arène de la Guilde. Butin normal, prime réduite. Les objectifs bonus déjà réussis ne rapportent plus rien.'});}
-QUESTS.push({id:'c7',mon:'glacimorde',elite:1,anc:1,tier:7,capture:1,ref:'m_glacimorde',title:'Capture : le léviathan figé',d:'Un Glacimorde ancestral, vivant, ferait la fierté de la Guilde. Affaiblissez-le, piégez-le et endormez-le : surtout, ne l’achevez pas.'});
-QUESTS.push({id:'c8',mon:'velyra',elite:1,anc:1,tier:8,capture:1,ref:'m_velyra',title:'Capture : la reine millénaire',d:'Les alchimistes veulent le venin d’une Vélyra ancestrale vivante. Gardez des antidotes, et ne la tuez pas.'});
+QUESTS.push({id:'c7',mon:'glacimorde',elite:1,anc:1,tier:7,capture:1,ref:'m_glacimorde',title:'Capture : le léviathan figé',d:'Un Glacimorde ancestral, vivant, ferait la fierté de la Guilde. Affaiblis-le, piège-le et endors-le : surtout, ne l’achève pas.'});
+QUESTS.push({id:'c8',mon:'velyra',elite:1,anc:1,tier:8,capture:1,ref:'m_velyra',title:'Capture : la reine millénaire',d:'Les alchimistes veulent le venin d’une Vélyra ancestrale vivante. Garde des antidotes, et ne la tue pas.'});
 QUESTS.push({id:'c9',mon:'boregor',elite:1,anc:1,tier:9,capture:1,ref:'m_boregor',title:'Capture : l’hiver en cage',d:'Capturer un Borégor ancestral : personne n’y est jamais parvenu. Il surgit de la neige sans prévenir.'});
 QUESTS.push({id:'d7',mon:'grakku',duo:'selenis',elite:1,anc:1,tier:7,opt:1,title:'Double chasse : le col maudit',d:'Un Grakku ancestral et un Sélénis ancestral règnent ensemble sur le col de Brume. L’un après l’autre, sans retour au camp.'});
 QUESTS.push({id:'d8',mon:'herissaure',duo:'brontal',elite:1,anc:1,tier:8,opt:1,title:'Double chasse : la plaine en armes',d:'Un Hérissaure ancestral et un Brontal ancestral ont fait de la plaine brûlée un champ de bataille. Le second accourt dès que le premier tombe.'});
-QUESTS.push({id:'d9',mon:'sismorak',duo:'glacimorde',elite:1,anc:1,tier:9,opt:1,title:'Double chasse : le nord ancestral',d:'Un Sismorak ancestral fait trembler la toundra et réveille un Glacimorde ancestral sous la glace. Tenez jusqu’au bout.'});
+QUESTS.push({id:'d9',mon:'sismorak',duo:'glacimorde',elite:1,anc:1,tier:9,opt:1,title:'Double chasse : le nord ancestral',d:'Un Sismorak ancestral fait trembler la toundra et réveille un Glacimorde ancestral sous la glace. Tiens jusqu’au bout.'});
 function qBase(m,el,anc){return QUESTS.find(x=>x.mon===m&&x.tier>0&&!!x.elite===!!el&&!!x.anc===!!anc&&!x.capture&&!x.duo&&!x.gather);}
 for(const q of QUESTS){if(q.capture&&q.ref){const b=QUESTS.find(x=>x.id===q.ref);q.stars=b.stars;q.turns=b.turns+5;q.z=Math.round(b.z*1.3/50)*50;q.obj=[{id:'nofaint',n:'Aucun évanouissement'}];}
  if(q.duo){const a=qBase(q.mon,q.elite,q.anc),b=qBase(q.duo,q.elite,q.anc);q.stars=Math.max(a.stars,b.stars);q.turns=Math.round((a.turns+b.turns)*.9);q.z=Math.round((a.z+b.z)*1.2/50)*50;q.obj=[{id:'nofaint',n:'Aucun évanouissement'}];}}
 const SP_IRON={q6:'Le Roi de Fer à la baliste',e6:'Le Roi de Fer aguerri à la baliste',m_ferroi:'Le Roi sans âge à la baliste'};
 for(const b of QUESTS.filter(q=>q.opt&&q.duo||SP_IRON[q.id]))QUESTS.push({id:'s_'+b.id,sp:1,src:b.id,mon:b.mon,duo:b.duo,elite:b.elite||0,anc:b.anc||0,tier:0,stars:b.stars,turns:b.turns,z:Math.round(b.z*.5/50)*50,obj:b.obj,
- title:b.duo?b.title:SP_IRON[b.id],d:b.duo?b.d+' Un combat spécial : prime réduite, butin normal.':'Revivez l’assaut de la Citadelle : la Guilde remonte la baliste sur les remparts et vous confie 3 carreaux. Prime réduite, butin normal.'});
+ title:b.duo?b.title:SP_IRON[b.id],d:b.duo?b.d+' Un combat spécial : prime réduite, butin normal.':'Revis l’assaut de la Citadelle : la Guilde remonte la baliste sur les remparts et te confie 3 carreaux. Prime réduite, butin normal.'});
 const MON_SEQ=(()=>{const o=[];const add=m=>{if(m&&MON[m]&&!o.includes(m))o.push(m);};for(let t=1;t<=9;t++){const L=QUESTS.filter(q=>q.tier===t&&q.mon);for(const q of L.filter(q=>!q.urgent).concat(L.filter(q=>q.urgent))){add(q.mon);add(q.duo);}}for(const m in MON)if(m!=='pantin')add(m);return o;})();
 function monSeq(m){const i=MON_SEQ.indexOf(m);return i<0?-1:i;}
 {const ix=new Map(JEWELS.map((j,i)=>[j,i]));JEWELS.sort((a,b)=>a.sz-b.sz||monSeq(a.mon)-monSeq(b.mon)||ix.get(a)-ix.get(b));}
 {const ix=new Map(SETS.map((s,i)=>[s,i]));SETS.sort((a,b)=>monSeq(a.mon)-monSeq(b.mon)||ix.get(a)-ix.get(b));}
-const TRAIN_IDLE={id:'#train',n:'Pantin d’entraînement',t:'Il encaisse sans broncher. Testez vos coups, vos charges et vos déplacements.',z:[],fx:'idle'};
-const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Frappez fort !',z:[],fx:'idle'};
+const TRAIN_IDLE={id:'#train',n:'Pantin d’entraînement',t:'Il encaisse sans broncher. Teste tes coups, tes charges et tes déplacements.',z:[],fx:'idle'};
+const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Frappe fort !',z:[],fx:'idle'};
 
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.68',date:'2026-10-19',t:'Options',items:[
+  'Nouvelle fenêtre Options (icône du son, ou lien en bas du village) : musique, bruitages, vibrations, langue, notes, sauvegarde, signaler un bug, soutenir le studio, écran titre.',
+  'Le jeu te tutoie désormais, comme tous les jeux de Keismey Studio.']},
  {v:'1.67',date:'2026-10-19',t:'Bouton retour',items:[
   'Le bouton retour du téléphone ramène à l’écran précédent au lieu de quitter le jeu : il ferme les fenêtres, revient au village, propose d’abandonner une chasse en cours. Au village, il propose de revenir à l’écran titre ; à l’écran titre, d’aller au hub Keismey Studio.']},
  {v:'1.66',date:'2026-10-12',t:'Correctif',items:[
@@ -739,7 +742,7 @@ const PATCHES=[
   'Quêtes de récolte : la ressource demandée se trouve désormais dans chaque secteur de la zone, et revient 3 h après avoir été épuisée. Plus besoin de relancer une quête faute de Pingrelots !',
   'Nouvelle catégorie à l’accueil, sous l’Expédition libre : <b>Combats spéciaux</b>. Les doubles chasses réussies au Tableau des quêtes et l’assaut du Roi de Fer à la baliste s’y rejouent, dans leur zone d’origine.',
   'Notes de version : cette fenêtre s’affiche une fois après chaque mise à jour, et l’historique complet se trouve en bas de l’accueil.',
-  'Les prochaines mises à jour s’installent toutes seules à l’ouverture du jeu, ou d’une simple touche si vous êtes en pleine chasse.']},
+  'Les prochaines mises à jour s’installent toutes seules à l’ouverture du jeu, ou d’une simple touche si tu es en pleine chasse.']},
  {v:'1.62',date:'2026-10-05',t:'Première version publique',items:[
   'Le jeu s’installe sur l’écran d’accueil du téléphone et fonctionne hors ligne.',
   'Tutoriel guidé par Hilda pour les nouveaux chasseurs.',
@@ -809,15 +812,15 @@ function hr(){for(let t=1;t<=9;t++)if(!stageDone(t))return t;return 9;}
 function hrLabel(){return STAGE_N[hr()]+(stageDone(9)?' ✓':'');}
 function qStars(q){const t=q.tier||(q.sp&&(QUESTS.find(x=>x.id===q.src)||{}).tier)||0;return t?'★'.repeat(t>6?t-6:t>3?t-3:t):'★'.repeat(Math.min(3,q.stars));}
 function qName(q){return q.gather?q.title:monLabel(q.mon,q.elite,q.anc)+(q.duo?' puis '+monLabel(q.duo,q.elite,q.anc):'');}
-function lockText(q){if(q.urgent)return`Quête urgente : accomplissez d’abord ${keyQ(q.tier).filter(x=>!S.cleared[x.id]).map(qName).join(', ')}.`;return'Verrouillé.';}
+function lockText(q){if(q.urgent)return`Quête urgente : accomplis d’abord ${keyQ(q.tier).filter(x=>!S.cleared[x.id]).map(qName).join(', ')}.`;return'Verrouillé.';}
 function capBlock(q){return q.capture&&((S.items.piege||0)<1||(S.items.tranq||0)<2);}
 function faintModal(f){if(!H||H.over||screen!=='hunt')return;const ex=H.q.explore;
- modal(`<div class="faintpop"><div class="fz">${uic('s_down','uic fzimg')}</div><h2>Vous vous êtes évanoui</h2>
- <p>Les Griffus vous ont ramené au camp. Vous revenez avec vos PV et votre endurance au maximum.</p>
- <ul class="small"><li>Temps perdu : <b>${f.rest} tour${f.rest>1?'s':''}</b> (tour ${H.turn}/${H.max}).</li><li>Prime réduite de <b>${Math.round(Math.min(.5,.25*H.faints)*100)} %</b> si vous réussissez.</li>${H.q.obj&&H.q.obj.some(o=>o.id==='nofaint')?'<li>Objectif « Aucun évanouissement » raté.</li>':''}${ex?'<li>Un troisième évanouissement mettra fin à l’expédition, avec la moitié du butin perdue.</li>':'<li>Au troisième évanouissement, la quête échoue.</li>'}</ul>
+ modal(`<div class="faintpop"><div class="fz">${uic('s_down','uic fzimg')}</div><h2>Tu t’es évanoui</h2>
+ <p>Les Griffus t’ont ramené au camp. Tu reviens avec tes PV et ton endurance au maximum.</p>
+ <ul class="small"><li>Temps perdu : <b>${f.rest} tour${f.rest>1?'s':''}</b> (tour ${H.turn}/${H.max}).</li><li>Prime réduite de <b>${Math.round(Math.min(.5,.25*H.faints)*100)} %</b> si tu réussis.</li>${H.q.obj&&H.q.obj.some(o=>o.id==='nofaint')?'<li>Objectif « Aucun évanouissement » raté.</li>':''}${ex?'<li>Un troisième évanouissement mettra fin à l’expédition, avec la moitié du butin perdue.</li>':'<li>Au troisième évanouissement, la quête échoue.</li>'}</ul>
  <div class="ftries">${[0,1,2].map(i=>`<i class="${i<H.faints?'x':''}"></i>`).join('')}<span>${f.left} tentative${f.left>1?'s':''} restante${f.left>1?'s':''}</span></div>
  <div style="display:flex;gap:8px"><button class="btn wide" data-a="faintflee">${ex?'Fuir le combat':'Abandonner la quête'}</button><button class="btn main wide" data-a="close">Continuer</button></div>
- <p class="small muted" style="margin:8px 0 0">${ex?'Fuir : vous retournez à l’expédition, le monstre rôde toujours. Vous perdez le temps du combat et 2 heures de fuite.':'Abandonner : aucune récompense.'}</p></div>`);}
+ <p class="small muted" style="margin:8px 0 0">${ex?'Fuir : tu retournes à l’expédition, le monstre rôde toujours. Tu perds le temps du combat et 2 heures de fuite.':'Abandonner : aucune récompense.'}</p></div>`);}
 function brisé(n){const masc=['Bec','Plumage','Ventre','Plastron'].includes(n);return'brisé'+(masc?'':'e')+(n.endsWith('s')?'s':'');}
 function objKey(q){return q.src||q.id;}
 function objGot(q){return(S.obj&&S.obj[objKey(q)])||[];}
@@ -845,23 +848,23 @@ function startHunt(qid,mealId,wid,basic){const q=QUESTS.find(x=>x.id===qid);cons
  if(isGun(st.w.type)){H.w.ammo='norm';H.w.mag=ammoCap('norm',st.w.type);H.w.siege=false;}
  const m=H.m;
  if(q.training){H.phase=null;H.pal=null;H.intent=[TRAIN_IDLE];m.aware=true;H.tr={tot:0,best:0,basic:!!basic};
-  log('Aire d’entraînement : le pantin ne riposte jamais. Objets à volonté, rien n’est consommé. Touchez « Aide » pour revoir les mécaniques de votre arme.','warn');
+  log('Aire d’entraînement : le pantin ne riposte jamais. Objets à volonté, rien n’est consommé. Touche « Aide » pour revoir les mécaniques de ton arme.','warn');
   H.log.push({m:'Tour 1',c:'sep',t:1});H.mark=0;saveHunt();go('hunt');trainHelp();return;}
- log(q.arena?`Vous entrez dans l’arène de la Guilde. ${m.d.name} tourne en rond de l’autre côté de la grille, sans vous avoir repéré.`:`Vous arrivez au camp de base. ${m.d.name} rôde dans ${HABN[m.d.hab]}, sans vous avoir repéré.`,'warn');
+ log(q.arena?`Tu entres dans l’arène de la Guilde. ${m.d.name} tourne en rond de l’autre côté de la grille, sans t’avoir repéré.`:`Tu arrives au camp de base. ${m.d.name} rôde dans ${HABN[m.d.hab]}, sans t’avoir repéré.`,'warn');
  if(meal.id!=='none')log(`Repas : ${meal.n} (${meal.d}).`);
  if(felyne)log(`Talent de la cantine : ${felyne.n} (${felyne.d}).`,'good');
- log(q.mon==='ferroi'&&(q.tier>0||q.sp)?'La Guilde vous fournit 2 Premiers soins et 3 carreaux pour la baliste des remparts.':'La Guilde vous fournit 2 Premiers soins.');
+ log(q.mon==='ferroi'&&(q.tier>0||q.sp)?'La Guilde te fournit 2 Premiers soins et 3 carreaux pour la baliste des remparts.':'La Guilde te fournit 2 Premiers soins.');
  H.mark=0;saveHunt();go('hunt');
  if(!S.tuto){S.tuto=true;save();if(S.tut==null)openGuide();}}
-const UNAWARE={id:'#unaware',n:'Ne vous a pas vu',t:'Il fouille les environs sans avoir remarqué votre présence.',z:[],fx:'unaware'};
+const UNAWARE={id:'#unaware',n:'Ne t’a pas vu',t:'Il fouille les environs sans avoir remarqué ta présence.',z:[],fx:'unaware'};
 function passive(mv){return mv&&(mv.fx==='idle'||mv.fx==='unaware');}
 function engage(arg){const[z,sd]=String(arg||'flanc:g').split(':');if(!ZN[z])return;const m=H.m;
  H.phase=null;H.zone=z;if(z==='flanc')H.side=sd||'g';const where=z==='avant'?'par l’avant':z==='arriere'?'par l’arrière':'par le flanc';
- if(z==='avant'){m.aware=true;H.intent=[introMove(m.d)];log(`Vous surgissez ${where} : ${m.d.name} vous repère aussitôt !`,'warn');}
- else{m.aware=false;H.intent=[UNAWARE];log(`Vous approchez ${where}, à pas de loup. ${m.d.name} ne vous a pas remarqué : attaque surprise, +30 % à votre premier coup !`,'good');
-  tip('hold','Maintenez le doigt sur un bouton d’action pour voir son détail complet.');
-  tip('sneak','Approche discrète : votre première action frappe un monstre qui ne vous attend pas (+30 %). Il rugira ensuite.');}
- tip('intent','Le bandeau sous l’arène annonce l’attaque du monstre et les zones visées (en rouge). Vous jouez toujours avant lui. Un rugissement touche toutes les zones : esquivez-le.');
+ if(z==='avant'){m.aware=true;H.intent=[introMove(m.d)];log(`Tu surgis ${where} : ${m.d.name} te repère aussitôt !`,'warn');}
+ else{m.aware=false;H.intent=[UNAWARE];log(`Tu approches ${where}, à pas de loup. ${m.d.name} ne t’a pas remarqué : attaque surprise, +30 % à ton premier coup !`,'good');
+  tip('hold','Maintiens le doigt sur un bouton d’action pour voir son détail complet.');
+  tip('sneak','Approche discrète : ta première action frappe un monstre qui ne t’attend pas (+30 %). Il rugira ensuite.');}
+ tip('intent','Le bandeau sous l’arène annonce l’attaque du monstre et les zones visées (en rouge). Tu joues toujours avant lui. Un rugissement touche toutes les zones : esquive-le.');
  H.log.push({m:`Tour ${H.turn}`,c:'sep',t:H.turn});}
 function spotsOf(){return H.q.arena?[]:(SPOTS[H.m.d.hab]||[]);}
 function gather(i){const sp=spotsOf()[i];if(!sp||H.spots.includes(i))return false;const win=H.over&&R&&R.kind!=='fail';
@@ -879,7 +882,7 @@ function monSeen(m){return!!(S.mon[m]&&S.mon[m].seen);}
 function monMet(m){return QUESTS.some(q=>q.mon===m&&q.tier>0&&!q.elite&&S.cleared[q.id]);}
 function eliteMet(m){return QUESTS.some(q=>q.mon===m&&q.tier>0&&q.elite&&!q.anc&&S.cleared[q.id]);}
 function expOpen(z){return z===EXPZ[0]||(z.mr?mrOpen():monSeen(z.key));}
-function expLockTxt(z){return z.mr?'S’ouvre au rang maître.':'Affrontez le monstre emblématique de cette zone pour la découvrir.';}
+function expLockTxt(z){return z.mr?'S’ouvre au rang maître.':'Affronte le monstre emblématique de cette zone pour la découvrir.';}
 function expOres(z){if(z.ores)return z.ores;return z.habs.map(h=>ZONE_ORE[MON_ORDER.find(m=>MON[m].hab===h)]);}
 function expHides(z){return z.hides||z.mons.map(m=>ZONE_HIDE[m]);}
 function canMeet(m){return MON[m].mrOnly?!!S.cleared['m_'+m]:monMet(m);}
@@ -897,7 +900,7 @@ function newExp(zid,qid){const z=EXPZ.find(x=>x.id===zid);const all=[];for(const
  if(q&&q.goal){const k=q.goal.k,hide=!!SMALL[k];secs.forEach((sc,i)=>{if(!i)return;let nd=sc.nodes.find(n=>hide?n.t==='m'&&n.h===k:n.t==='o'&&n.o===k);
   if(!nd){const at=sc.nodes.findIndex(n=>n.t===(hide?'m':'o'));nd=hide?{t:'m',h:k,u:2}:{t:'o',o:k,u:2};if(at>=0)sc.nodes.splice(at+1,0,nd);else sc.nodes.push(nd);}
   nd.u=Math.max(nd.u,2);nd.goal=1;});}
- return{v:2,z:zid,quest:q?q.id:null,h:0,max,sec:0,thr:0,secs,got:{},z0:0,kills:0,beaten:[],enc:null,log:[q?`Quête de récolte : ${q.title}. Rapportez ${q.goal.n} ${RES[q.goal.k].n} en ${max} heures. Aucun grand monstre ne rôde ici.`:`Vous montez le camp : ${z.n}. ${max} heures avant la nuit.`]};}
+ return{v:2,z:zid,quest:q?q.id:null,h:0,max,sec:0,thr:0,secs,got:{},z0:0,kills:0,beaten:[],enc:null,log:[q?`Quête de récolte : ${q.title}. Rapporte ${q.goal.n} ${RES[q.goal.k].n} en ${max} heures. Aucun grand monstre ne rôde ici.`:`Tu montes le camp : ${z.n}. ${max} heures avant la nuit.`]};}
 function expTF(){const e=S.exp;return(1-(palS().voc==='collecte'?.2:0)-(palHas('flair')?.15:0))*(e&&e.storm>e.h?1.5:1);}
 const STORM_N={crete:'Un orage éclate',glace:'Un blizzard se lève',lagon:'Un grain s’abat sur le lagon',plaine:'Une pluie de cendres tombe',foret:'Un vent mauvais se lève',col:'Un vent mauvais se lève',citadelle:'Un orage éclate',eclipse:'Une ombre glacée recouvre le cratère'};
 const SHOP_OFF=()=>[['potion',3,120],['mega',2,300],['flash',2,150],['piege',1,250],eliteOpen()?['sphered',1,700]:['sphere',2,400]];
@@ -905,19 +908,19 @@ function expEvBan(e,ic,t,until){e.evb={ic,t,until};}
 function expEvent(e,z,s,i){if(e.quest&&rnd()<.5)return;e.evn=e.evn||0;if(e.evn>=3||rnd()>.4)return;e.evn++;
  const seenM=z.mons.filter(monSeen),pool=[['orage',2],['brume',2],['gisement',2],['meute',2],['marchand',e.shopDone?0:1.5],['nid',e.quest?0:1.5],['carcasse',seenM.length?2:0]];
  const k=wpick(pool);const hb=z.habs[z.habs.length>1&&i>=3?1:0];
- if(k==='orage'){e.storm=e.h+4;expEvBan(e,elIcon('foudre'),(STORM_N[hb]||'Le temps tourne'),e.storm);expLog(`⛈️ ${STORM_N[hb]||'Le temps tourne'} : pendant 4 h, vos traces augmentent moitié plus vite.`);}
- else if(k==='brume'){e.thr=Math.max(0,e.thr-15);expEvBan(e,uic('s_elan'),'Brume épaisse : vos traces baissent de 15',e.h+1);expLog('🌫️ Une brume épaisse tombe sur la zone : vos traces se perdent un peu.');}
+ if(k==='orage'){e.storm=e.h+4;expEvBan(e,elIcon('foudre'),(STORM_N[hb]||'Le temps tourne'),e.storm);expLog(`⛈️ ${STORM_N[hb]||'Le temps tourne'} : pendant 4 h, tes traces augmentent moitié plus vite.`);}
+ else if(k==='brume'){e.thr=Math.max(0,e.thr-15);expEvBan(e,uic('s_elan'),'Brume épaisse : tes traces baissent de 15',e.h+1);expLog('🌫️ Une brume épaisse tombe sur la zone : tes traces se perdent un peu.');}
  else if(k==='gisement'){const o=eliteOpen()&&rnd()<.5?'dracite':expOres(z)[Math.min(expOres(z).length-1,i>=3?1:0)];s.nodes.push({t:'o',o,u:2,rich:1});expEvBan(e,icoImg('dracite','uic'),`Filon riche découvert : ${s.n}`,e.h+2);expLog(`💎 Un éboulement a mis au jour un filon riche : ${FILON[o]||RES[o].n} !`);}
- else if(k==='meute'){const hd=expHides(z)[Math.min(expHides(z).length-1,i>=3?1:0)],n=2+Math.floor(rnd()*2);e.h=Math.min(e.max,e.h+1);expGain(hd,n);e.kills+=n;expEvBan(e,itemIcon(hd,'uic'),`Meute repoussée : ${RES[hd].n} ×${n}`,e.h+1);expLog(`🐺 Une meute de ${SMALL[hd].n} vous tombe dessus ! Vous la repoussez (1 h) : ${RES[hd].n} ×${n}.`);}
+ else if(k==='meute'){const hd=expHides(z)[Math.min(expHides(z).length-1,i>=3?1:0)],n=2+Math.floor(rnd()*2);e.h=Math.min(e.max,e.h+1);expGain(hd,n);e.kills+=n;expEvBan(e,itemIcon(hd,'uic'),`Meute repoussée : ${RES[hd].n} ×${n}`,e.h+1);expLog(`🐺 Une meute de ${SMALL[hd].n} te tombe dessus ! Tu la repousses (1 h) : ${RES[hd].n} ×${n}.`);}
  else if(k==='marchand'){s.nodes.push({t:'ev',k:'shop',u:1});expEvBan(e,icoImg('sac','uic'),`Un Griffu colporteur s’est installé : ${s.n}`,e.h+3);expLog('🐱 Un Griffu colporteur a monté son étal ici. Il accepte les zennys.');}
- else if(k==='nid'){s.nodes.push({t:'ev',k:'nid',u:1});expEvBan(e,icoImg('nid','uic'),`Nid de wyverne repéré : ${s.n}`,e.h+2);expLog('🥚 Vous repérez un nid de wyverne… et des œufs encore chauds.');}
+ else if(k==='nid'){s.nodes.push({t:'ev',k:'nid',u:1});expEvBan(e,icoImg('nid','uic'),`Nid de wyverne repéré : ${s.n}`,e.h+2);expLog('🥚 Tu repères un nid de wyverne… et des œufs encore chauds.');}
  else if(k==='carcasse'){s.nodes.push({t:'ev',k:'carc',m:pick(seenM),u:1});expEvBan(e,icoImg('carcasse','uic'),`Carcasse à dépecer : ${s.n}`,e.h+2);expLog('🦴 Une carcasse de grand monstre gît ici : un autre prédateur ne l’a pas finie.');}}
 function openShop(){const e=S.exp;if(!e)return;const off=SHOP_OFF();
- modal(`<h2>${icoImg('sac','uic')} Griffu colporteur</h2><p class="small muted">« Miaou ! Du bon matériel, pas cher, nya. » Vous avez ${S.zenny} z. Acheter ne prend pas de temps.</p><div class="plist">${off.map(([k,n,p],i)=>{const nm=ITEMS[k]?ITEMS[k].n:RES[k].n,ok=S.zenny>=p;return`<div class="pick">${itemIcon(k,'iicon')}<span><b>${esc(nm)} ×${n}</b><small>${p} z</small></span><button class="btn sm ${ok?'go':''}" data-a="xbuy" data-v="${i}" ${ok?'':'disabled'}>Acheter</button></div>`;}).join('')}</div><button class="btn wide" data-a="close" style="margin-top:10px">Repartir</button>`);}
+ modal(`<h2>${icoImg('sac','uic')} Griffu colporteur</h2><p class="small muted">« Miaou ! Du bon matériel, pas cher, nya. » Tu as ${S.zenny} z. Acheter ne prend pas de temps.</p><div class="plist">${off.map(([k,n,p],i)=>{const nm=ITEMS[k]?ITEMS[k].n:RES[k].n,ok=S.zenny>=p;return`<div class="pick">${itemIcon(k,'iicon')}<span><b>${esc(nm)} ×${n}</b><small>${p} z</small></span><button class="btn sm ${ok?'go':''}" data-a="xbuy" data-v="${i}" ${ok?'':'disabled'}>Acheter</button></div>`;}).join('')}</div><button class="btn wide" data-a="close" style="margin-top:10px">Repartir</button>`);}
 function expQ(){return S.exp&&S.exp.quest&&QUESTS.find(x=>x.id===S.exp.quest);}
 function expGoal(){const e=S.exp,q=expQ();if(!q||e.qdone)return;if((e.got[q.goal.k]||0)>=q.goal.n){e.qdone=1;const first=!S.cleared[q.id];S.cleared[q.id]=(S.cleared[q.id]||0)+1;
  const zz=q.z;S.zenny+=zz;e.z0+=zz;S.res.sphere=(S.res.sphere||0)+2;e.got.sphere=(e.got.sphere||0)+2;palGainXP(10+5*q.tier).forEach(t=>expLog('🐱 '+t));
- expLog(`📜 Quête accomplie : ${q.title} ! Prime ${zz} z et 2 sphères d’armure. Rentrez quand vous voulez.`);setTimeout(()=>sfx('win'),60);
+ expLog(`📜 Quête accomplie : ${q.title} ! Prime ${zz} z et 2 sphères d’armure. Rentre quand tu veux.`);setTimeout(()=>sfx('win'),60);
  if(first&&hr()>q.tier&&!stageDone(hr()))e.rankUp=hr();}}
 function expLog(m){const e=S.exp;e.log.push(m);if(e.log.length>30)e.log.splice(0,e.log.length-30);}
 function expGain(k,n){const e=S.exp;S.res[k]=(S.res[k]||0)+n;e.got[k]=(e.got[k]||0)+n;}
@@ -929,16 +932,16 @@ function nodeInfo(z,nd){
  return{n:'Coffre enfoui',ic:chestIcon(),sub:'Quelque chose brille sous les racines…',btn:'Ouvrir'};}
 function expAct(kind,arg){const e=S.exp,z=expZone();if(!e||e.enc||e.ko||e.h>=e.max)return;const sec=e.secs[e.sec];
  if(kind==='move'){const to=+arg;if(!EXP_ADJ[e.sec].includes(to))return;e.h++;e.sec=to;const s=e.secs[to];const first=!s.seen;s.seen=1;
-  if(to===0){if(e.omen){const dm=zDanger(z);if(!canMeet(dm)||rnd()<.5){e.omen=0;expLog(DANGER[dm].shake);}else expLog(DANGER[dm].stay);}e.thr=Math.floor(e.thr/2);expLog(e.quest?'Retour au camp.':`Retour au camp. Vous brouillez vos traces (traces ${Math.round(e.thr)} %).`);sfx('steps');return expTick(true);}
-  e.thr+=z.rate*.6*expTF();expLog(`Vous gagnez : ${s.n}${first?' (nouveau secteur)':''}.`);sfx('steps');if(first)expEvent(e,z,s,to);return expTick();}
+  if(to===0){if(e.omen){const dm=zDanger(z);if(!canMeet(dm)||rnd()<.5){e.omen=0;expLog(DANGER[dm].shake);}else expLog(DANGER[dm].stay);}e.thr=Math.floor(e.thr/2);expLog(e.quest?'Retour au camp.':`Retour au camp. Tu brouilles tes traces (traces ${Math.round(e.thr)} %).`);sfx('steps');return expTick(true);}
+  e.thr+=z.rate*.6*expTF();expLog(`Tu gagnes : ${s.n}${first?' (nouveau secteur)':''}.`);sfx('steps');if(first)expEvent(e,z,s,to);return expTick();}
  const nd=sec.nodes[+arg];if(!nd||nd.u<=0)return;if(nd.t==='ev'&&nd.k==='shop'){openShop();return;}e.h++;nd.u--;if(nd.goal&&nd.u<=0&&e.quest)nd.back=e.h+3;
  if(nd.t==='g'||nd.t==='o'){const tb=nd.t==='g'?expTable(nd.h,SPOTS[nd.h][nd.s].t):[[nd.o,6],['os',1]].concat(eliteOpen()&&nd.o!=='dracite'?[['dracite',.6]]:[]);
   const n=3+(rnd()<.5?1:0)+(nd.t==='g'&&palS().voc==='collecte'?1:0)+(palHas('pisteur')?1:0)+(nd.rich?2:0);const got={};for(let i=0;i<n;i++){const r=wpick(tb);got[r]=(got[r]||0)+1;}for(const r in got)expGain(r,got[r]);
   e.thr+=z.rate*expTF();expLog(`${nd.t==='g'?'🌿':'⛏️'} ${nodeInfo(z,nd).n} : ${Object.keys(got).map(r=>`${RES[r].n} ×${got[r]}`).join(', ')}.`);sfx('gather');}
  else if(nd.t==='m'){const hide=nd.h;const got={[hide]:1+(rnd()<.6?1:0)};if(rnd()<.4)got.viande=1;if(rnd()<.3)got.os=1;for(const r in got)expGain(r,got[r]);
-  e.kills++;e.thr+=(z.rate+3)*expTF();expLog(`🗡️ Vous abattez un ${SMALL[hide].n} : ${Object.keys(got).map(r=>`${RES[r].n} ×${got[r]}`).join(', ')}.`);sfx('cut');}
- else if(nd.t==='ev'&&nd.k==='nid'){const zz=(150+Math.round(rnd()*4)*50)*Math.max(1,Math.ceil(hr()/2));S.zenny+=zz;e.z0+=zz;e.thr+=25*expTF();expLog(`🥚 Vous emportez les œufs : ils vaudront ${zz} z au village. Mais l’odeur va attirer du monde…`);sfx('coin');}
- else if(nd.t==='ev'&&nd.k==='carc'){const m=nd.m,got=[];for(let i=0;i<2;i++){const k=pick(['ecaille','peau','griffe']),id=matId(m,k);S.mats[id]=(S.mats[id]||0)+1;got.push(MON[m].mats[k]);}if(rnd()<.15){const id=matId(m,'rare');S.mats[id]=(S.mats[id]||0)+1;got.push(MON[m].mats.rare);}e.thr+=z.rate*expTF();expLog(`🦴 Vous dépecez la carcasse : ${got.join(', ')}.`);sfx('cut');}
+  e.kills++;e.thr+=(z.rate+3)*expTF();expLog(`🗡️ Tu abats un ${SMALL[hide].n} : ${Object.keys(got).map(r=>`${RES[r].n} ×${got[r]}`).join(', ')}.`);sfx('cut');}
+ else if(nd.t==='ev'&&nd.k==='nid'){const zz=(150+Math.round(rnd()*4)*50)*Math.max(1,Math.ceil(hr()/2));S.zenny+=zz;e.z0+=zz;e.thr+=25*expTF();expLog(`🥚 Tu emportes les œufs : ils vaudront ${zz} z au village. Mais l’odeur va attirer du monde…`);sfx('coin');}
+ else if(nd.t==='ev'&&nd.k==='carc'){const m=nd.m,got=[];for(let i=0;i<2;i++){const k=pick(['ecaille','peau','griffe']),id=matId(m,k);S.mats[id]=(S.mats[id]||0)+1;got.push(MON[m].mats[k]);}if(rnd()<.15){const id=matId(m,'rare');S.mats[id]=(S.mats[id]||0)+1;got.push(MON[m].mats.rare);}e.thr+=z.rate*expTF();expLog(`🦴 Tu dépèces la carcasse : ${got.join(', ')}.`);sfx('cut');}
  else if(nd.t==='c'){const el=eliteOpen();const k=el&&rnd()<.5?'sphered':'sphere',n=k==='sphered'?1:2,zz=150+Math.round(rnd()*4)*50;expGain(k,n);S.zenny+=zz;e.z0+=zz;
   e.thr+=z.rate*expTF();expLog(`🎁 Coffre enfoui : ${RES[k].n} ×${n} et ${zz} z !`);sfx('coin');}
  expTick();}
@@ -949,33 +952,33 @@ function expTick(safe){const e=S.exp,z=expZone();e.thr=Math.min(90,e.thr);expReg
  else if(!safe&&!e.quest&&e.h<e.max&&zDanger(z)&&!(e.beaten||[]).includes(zDanger(z))&&dangerRoll(e,z)){}
  else if(e.h>=e.max)expLog('🌙 La nuit tombe : il est temps de rentrer.');
  save();render();}
-function dangerRoll(e,z){const dm=zDanger(z),D=DANGER[dm],hunted=canMeet(dm);if(!e.omen){if(e.thr>=(hunted?18:25)&&rnd()<(hunted?.07:.045)){e.omen=1;expLog(D.omen+' Rentrez au camp !');setTimeout(()=>sfx('roar'),60);return true;}return false;}
+function dangerRoll(e,z){const dm=zDanger(z),D=DANGER[dm],hunted=canMeet(dm);if(!e.omen){if(e.thr>=(hunted?18:25)&&rnd()<(hunted?.07:.045)){e.omen=1;expLog(D.omen+' Rentre au camp !');setTimeout(()=>sfx('roar'),60);return true;}return false;}
  if(rnd()<.35){e.omen=0;e.enc={mon:dm,el:0,an:MON[dm].mrOnly||(ancMet(dm)&&rnd()<.3)?1:0,danger:1};expLog(D.come);setTimeout(()=>sfx('roar'),60);return true;}return false;}
 function expFight(){const e=S.exp;if(!e||!e.enc)return;const qid=(e.enc.an?'xa_':e.enc.el?'xe_':'x_')+e.enc.mon;const sec=e.secs[e.sec].n;
  startHunt(qid,'none');if(!H)return;const m=H.m;H.log=[];H.phase=null;H.zone='flanc';H.side='g';m.aware=true;H.intent=[introMove(m.d)];
- log(`${m.d.name} surgit devant vous (${sec}) ! Pas le temps de préparer une approche : il vous a repéré.`,'warn');
- log(m.id==='ferroi'?'Rencontre en expédition : ni repas, ni baliste. Seuls 2 Premiers soins dans votre sacoche.':'Rencontre en expédition : aucun repas, mais la Guilde vous a laissé 2 Premiers soins.',m.id==='ferroi'?'bad':'');
+ log(`${m.d.name} surgit devant toi (${sec}) ! Pas le temps de préparer une approche : il t’a repéré.`,'warn');
+ log(m.id==='ferroi'?'Rencontre en expédition : ni repas, ni baliste. Seuls 2 Premiers soins dans ta sacoche.':'Rencontre en expédition : aucun repas, mais la Guilde t’a laissé 2 Premiers soins.',m.id==='ferroi'?'bad':'');
  H.log.push({m:`Tour ${H.turn}`,c:'sep',t:H.turn});H.mark=0;saveHunt();render();}
 function expFlee(){const e=S.exp;if(!e||!e.enc)return;const nb=EXP_ADJ[e.sec];e.sec=pick(nb);e.secs[e.sec].seen=1;e.h=Math.min(e.max,e.h+2);e.thr=0;e.enc=null;
- expLog(`Vous fuyez jusqu’à : ${e.secs[e.sec].n} (2 h). Le monstre perd votre trace.`);sfx('dodge');save();render();}
+ expLog(`Tu fuis jusqu’à : ${e.secs[e.sec].n} (2 h). Le monstre perd ta trace.`);sfx('dodge');save();render();}
 function expOnHuntEnd(r){const e=S.exp;if(!e||!e.enc)return;e.enc=null;const ch=Math.max(1,Math.ceil((r.turns-1)/10)),fled=r.kind==='fail'&&!!r.fled;e.h=Math.min(e.max,e.h+ch+(fled?2:0));e.thr=0;
  if(r.kind!=='fail'){e.beaten.push(r.mon);expLog(`🏆 ${MON[r.mon].name} ${r.kind==='capture'?'capturé':'abattu'} (${ch} h de combat).${expPool(expZone()).length?'':' Les environs sont calmes.'}`);}
  else if(r.faints>=3){const lost={};for(const k in e.got){const l=Math.min(Math.floor(e.got[k]/2),S.res[k]||0);if(l>0){lost[k]=l;S.res[k]-=l;e.got[k]-=l;if(!e.got[k])delete e.got[k];}}
-  e.ko=lost;expLog(`💀 Terrassé par ${MON[r.mon].name}. Les Griffus vous ramènent au village : la moitié du butin est perdue en route.`);}
- else expLog(`${fled?`Vous fuyez le combat (${ch} h de combat + 2 h de fuite)`:`Le monstre finit par s’éloigner (${ch} h de combat)`}. ${MON[r.mon].name} rôde toujours.`);
+  e.ko=lost;expLog(`💀 Terrassé par ${MON[r.mon].name}. Les Griffus te ramènent au village : la moitié du butin est perdue en route.`);}
+ else expLog(`${fled?`Tu fuis le combat (${ch} h de combat + 2 h de fuite)`:`Le monstre finit par s’éloigner (${ch} h de combat)`}. ${MON[r.mon].name} rôde toujours.`);
  if(e.h>=e.max)expLog('🌙 La nuit tombe : il est temps de rentrer.');}
 function expAfterHunt(){H=null;R=null;save();go('explore');}
 function expEnd(){const e=S.exp;if(!e)return;const z=expZone();const g=Object.keys(e.got);S.exp=null;H=null;R=null;save();go('village');if(!e.ko)sfx('coin');
  const lk=e.ko?Object.keys(e.ko):[];
  const q=e.quest&&QUESTS.find(x=>x.id===e.quest);
- modal(`<h2>${e.ko?'Rapatrié au village':'Retour d’expédition'}</h2>${q?(e.qdone?`<p class="small" style="color:var(--good)">📜 Quête accomplie : ${esc(q.title)}.</p>${e.rankUp?`<div class="finale"><b>Promotion : ${STAGE_N[e.rankUp]} !</b><span>De nouvelles quêtes vous attendent au tableau.</span></div>`:''}`:`<p class="small" style="color:var(--danger)">Objectif non atteint : ${esc(q.title)} reste au tableau des quêtes.</p>`):''}${e.ko?`<p class="small" style="color:var(--danger)">Vous avez été terrassé. ${lk.length?`Perdu en route : ${lk.map(k=>`${RES[k].n} ×${e.ko[k]}`).join(', ')}.`:'Vous n’aviez rien à perdre.'}</p>`:''}<p>${esc(z.n)} : ${e.h} h sur le terrain, ${e.kills} petit${e.kills>1?'s':''} monstre${e.kills>1?'s':''} abattu${e.kills>1?'s':''}${e.beaten.length?`, ${e.beaten.map(m=>esc(MON[m].name)).join(' et ')} vaincu${e.beaten.length>1?'s':''}`:''}.</p>
- ${g.length?`<div class="skl">${g.map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${RES[k].n} ×${e.got[k]}</span>`).join('')}</div>`:'<p class="small muted">Vous rentrez les mains vides.</p>'}
+ modal(`<h2>${e.ko?'Rapatrié au village':'Retour d’expédition'}</h2>${q?(e.qdone?`<p class="small" style="color:var(--good)">📜 Quête accomplie : ${esc(q.title)}.</p>${e.rankUp?`<div class="finale"><b>Promotion : ${STAGE_N[e.rankUp]} !</b><span>De nouvelles quêtes t’attendent au tableau.</span></div>`:''}`:`<p class="small" style="color:var(--danger)">Objectif non atteint : ${esc(q.title)} reste au tableau des quêtes.</p>`):''}${e.ko?`<p class="small" style="color:var(--danger)">Tu as été terrassé. ${lk.length?`Perdu en route : ${lk.map(k=>`${RES[k].n} ×${e.ko[k]}`).join(', ')}.`:'Tu n’avais rien à perdre.'}</p>`:''}<p>${esc(z.n)} : ${e.h} h sur le terrain, ${e.kills} petit${e.kills>1?'s':''} monstre${e.kills>1?'s':''} abattu${e.kills>1?'s':''}${e.beaten.length?`, ${e.beaten.map(m=>esc(MON[m].name)).join(' et ')} vaincu${e.beaten.length>1?'s':''}`:''}.</p>
+ ${g.length?`<div class="skl">${g.map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${RES[k].n} ×${e.got[k]}</span>`).join('')}</div>`:'<p class="small muted">Tu rentres les mains vides.</p>'}
  ${e.z0?`<p class="small">Trésor : ${e.z0} z.</p>`:''}<button class="btn main wide" data-a="close">Fermer</button>`);}
 function chestIcon(){return icoImg('coffre','iicon');}
 const SMIMG=new Set(['c_rod','c_brou','c_lou','c_sal','c_kel','c_ping','c_volt','c_garg','c_pin']);
 function critterIcon(h,cls='iicon'){if(SMIMG.has(h))return`<img class="${cls} crit" src="img/sm/${h}.webp" alt="" draggable="false">`;return'';}
 function expMapSVG(){const e=S.exp,z=expZone(),h=HAB[z.hab]||HAB.col;const adj=e.enc||e.h>=e.max?[]:EXP_ADJ[e.sec];
- let s=`<svg class="xmap" viewBox="0 0 300 210" aria-label="Carte de la zone : touchez un secteur voisin pour vous y rendre"><defs><clipPath id="xclip"><rect x="2" y="2" width="296" height="206" rx="14"/></clipPath><linearGradient id="xtg" x1="0" y1="0" x2="0" y2="1"><stop offset=".3" stop-color="#fff"/><stop offset=".5" stop-color="#000"/></linearGradient><mask id="xtop"><rect x="0" y="0" width="300" height="210" fill="url(#xtg)"/></mask></defs>
+ let s=`<svg class="xmap" viewBox="0 0 300 210" aria-label="Carte de la zone : touche un secteur voisin pour t’y rendre"><defs><clipPath id="xclip"><rect x="2" y="2" width="296" height="206" rx="14"/></clipPath><linearGradient id="xtg" x1="0" y1="0" x2="0" y2="1"><stop offset=".3" stop-color="#fff"/><stop offset=".5" stop-color="#000"/></linearGradient><mask id="xtop"><rect x="0" y="0" width="300" height="210" fill="url(#xtg)"/></mask></defs>
  <g clip-path="url(#xclip)"><image href="img/map/${z.id}.webp" x="-7" y="0" width="314" height="210" preserveAspectRatio="xMidYMid slice"/></g>
  <rect x="2" y="2" width="296" height="206" rx="14" fill="var(--bg)" fill-opacity=".08" stroke="var(--line)"/>`;
  const done=new Set();EXP_ADJ.forEach((l,a)=>l.forEach(b=>{const key=Math.min(a,b)+'-'+Math.max(a,b);if(done.has(key))return;done.add(key);const[x1,y1]=EXP_POS[a],[x2,y2]=EXP_POS[b];
@@ -990,24 +993,24 @@ function expMapSVG(){const e=S.exp,z=expZone(),h=HAB[z.hab]||HAB.col;const adj=e
  if(e.omen&&!e.enc)s+=`<image href="img/mark/seal.webp" x="262" y="8" width="30" height="30"><title>Grand danger</title></image>`;
  return s+'</svg>';}
 function thrLabel(t){return t<15?'Aucune trace':t<35?'Traces anciennes':t<60?'Traces fraîches':'Il est tout proche';}
-function vExplore(){if(S.exp&&S.exp.ko)return`<div class="scenegap" style="height:110px"></div><h2>Terrassé</h2><p>Les Griffus vous ont ramené au village. La moitié du butin de l’expédition est perdue en route.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`;if(!S.exp){return backBtn()+`<h2>Expédition libre</h2><p class="small muted" style="margin-top:0">Explorez une zone sans quête ni limite de tours : ${EXP_HOURS} heures pour récolter, miner et abattre de petits monstres. Leurs ressources servent à la forge. Mais plus vous vous agitez, plus un grand monstre dont vous avez réussi la quête risque de flairer votre piste.</p><p class="small" style="color:var(--danger);margin:0 0 10px">☠️ Chaque zone a son <b>grand danger</b> : un monstre redoutable qui peut surgir même au début de votre carrière. Quand un présage l’annonce, rentrez au camp.</p>
+function vExplore(){if(S.exp&&S.exp.ko)return`<div class="scenegap" style="height:110px"></div><h2>Terrassé</h2><p>Les Griffus t’ont ramené au village. La moitié du butin de l’expédition est perdue en route.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`;if(!S.exp){return backBtn()+`<h2>Expédition libre</h2><p class="small muted" style="margin-top:0">Explore une zone sans quête ni limite de tours : ${EXP_HOURS} heures pour récolter, miner et abattre de petits monstres. Leurs ressources servent à la forge. Mais plus tu t’agites, plus un grand monstre dont tu as réussi la quête risque de flairer ta piste.</p><p class="small" style="color:var(--danger);margin:0 0 10px">☠️ Chaque zone a son <b>grand danger</b> : un monstre redoutable qui peut surgir même au début de ta carrière. Quand un présage l’annonce, rentre au camp.</p>
  <div class="qlist">${EXPZ.map(z=>{const ok=expOpen(z),met=z.mons.filter(canMeet);
   return`<button class="qcard xcard pcard ${ok?'':'locked'}"${pano(z.habs[0])} data-a="${ok?'xstart':'noop'}" data-v="${z.id}"><div class="qtxt"><b>${esc(z.n)}</b><span class="muted small">${esc(z.d)}.</span>
-  ${ok?`<span class="xmons">${z.mons.map(m=>{const can=met.includes(m),seen=monSeen(m);return`<span class="xmon ${can?'':'off'}">${portrait(m,seen?(can&&ancMet(m)?'elite anc':can&&eliteMet(m)?'elite':''):'unk')}<i>${seen?esc(MON[m].name):'???'}${can&&ancMet(m)&&!MON[m].mrOnly?'<small class="xag anc">'+ancTag(m)+'</small>':can&&eliteMet(m)?'<small class="xag">'+elTag(m)+'</small>':''}</i></span>`;}).join('')}</span><span class="small muted">${met.length?'En couleur : les monstres qui peuvent surgir (vous avez réussi leur quête).':'Aucune quête réussie contre les monstres d’ici : explorez tranquille.'}</span>`:`<span class="small">${expLockTxt(z)}</span>`}
-  ${ok&&z.danger?(()=>{const dm=z.danger,sn=monSeen(dm);return`<span class="xdz">${portrait(dm,sn?'':'unk')}<span><b>Grand danger : ${sn?esc(MON[dm].name):'???'}</b>${canMeet(dm)?'<small>Vous l’avez vaincu : il rôde plus souvent et lâche moins votre piste.</small>':'<small>Fuyez dès le présage.</small>'}</span></span>`;})():''}
+  ${ok?`<span class="xmons">${z.mons.map(m=>{const can=met.includes(m),seen=monSeen(m);return`<span class="xmon ${can?'':'off'}">${portrait(m,seen?(can&&ancMet(m)?'elite anc':can&&eliteMet(m)?'elite':''):'unk')}<i>${seen?esc(MON[m].name):'???'}${can&&ancMet(m)&&!MON[m].mrOnly?'<small class="xag anc">'+ancTag(m)+'</small>':can&&eliteMet(m)?'<small class="xag">'+elTag(m)+'</small>':''}</i></span>`;}).join('')}</span><span class="small muted">${met.length?'En couleur : les monstres qui peuvent surgir (tu as réussi leur quête).':'Aucune quête réussie contre les monstres d’ici : explore tranquille.'}</span>`:`<span class="small">${expLockTxt(z)}</span>`}
+  ${ok&&z.danger?(()=>{const dm=z.danger,sn=monSeen(dm);return`<span class="xdz">${portrait(dm,sn?'':'unk')}<span><b>Grand danger : ${sn?esc(MON[dm].name):'???'}</b>${canMeet(dm)?'<small>Tu l’as vaincu : il rôde plus souvent et lâche moins ta piste.</small>':'<small>Fuis dès le présage.</small>'}</span></span>`;})():''}
   ${ok?`<span class="xres">${[...new Set([...expOres(z),...expHides(z)])].map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${RES[k].n}</span>`).join('')}</span>`:''}</div></button>`;}).join('')}</div>`;}
  const e=S.exp,z=expZone(),sc=e.secs[e.sec],left=e.max-e.h,over=left<=0;
  const tc=e.thr<15?'var(--good)':e.thr<35?'var(--brass)':e.thr<60?'#e08a2a':'var(--danger)';
  const g=Object.keys(e.got);
- const enc=e.enc?`<div class="xenc">${portrait(e.enc.mon,e.enc.an?'elite anc':e.enc.el?'elite':'')}<div><b>${esc(monLabel(e.enc.mon,e.enc.el,e.enc.an&&!MON[e.enc.mon].mrOnly))} surgit !</b><span class="small">${e.enc.danger?'<b style="color:var(--danger)">Grand danger.</b> Le maître de cette zone, presque imbattable sans l’équipement adapté. Fuir tout de suite coûte 2 heures ; rester, c’est risquer de tout perdre.':'Il a flairé votre piste et vous barre la route. Le combat vous coûte 1 heure par tranche de 10 tours ; fuir tout de suite coûte 2 heures.'}</span>
+ const enc=e.enc?`<div class="xenc">${portrait(e.enc.mon,e.enc.an?'elite anc':e.enc.el?'elite':'')}<div><b>${esc(monLabel(e.enc.mon,e.enc.el,e.enc.an&&!MON[e.enc.mon].mrOnly))} surgit !</b><span class="small">${e.enc.danger?'<b style="color:var(--danger)">Grand danger.</b> Le maître de cette zone, presque imbattable sans l’équipement adapté. Fuir tout de suite coûte 2 heures ; rester, c’est risquer de tout perdre.':'Il a flairé ta piste et te barre la route. Le combat te coûte 1 heure par tranche de 10 tours ; fuir tout de suite coûte 2 heures.'}</span>
   <div class="xencb"><button class="btn main" data-a="xfight">L’affronter</button><button class="btn" data-a="xflee">Fuir (2 h)</button></div></div></div>`:'';
  const nodes=sc.nodes.map((nd,i)=>{const f=nodeInfo(z,nd),dis=nd.u<=0||over||!!e.enc;return`<button class="spot${f.mon?' xmon':''}${nd.t==='ev'||nd.rich?' xev':''}" data-a="xact" data-v="${i}" ${dis?'disabled':''}>${f.ic}<span><b>${esc(f.n)}</b><small>${nd.u<=0?(nd.back?`${nd.t==='m'?'De retour':'Se reforme'} dans ${Math.max(1,nd.back-e.h)} h`:nd.t==='m'?'Plus aucun ici':'Épuisé'):esc(f.sub)}</small></span><em>${nd.u<=0?'✓':f.btn+(f.free?'':' · 1 h')}</em></button>`;}).join('');
  return`<div class="htop"><div><div class="qt">${expQ()?esc(expQ().title):esc(z.n)}</div><div class="muted small">${over?'La nuit est tombée':`${e.h} h écoulées, ${left} h avant la nuit`}</div></div><div class="tbtns">${soundBtn()}<button class="btn ghost sm" data-a="xend">Rentrer</button></div></div>
  <div class="xgauges"><div class="brow"><span>Temps</span>${bar(e.max-e.h,e.max,'st')}<em>${left} h</em></div>
  ${expQ()?(()=>{const q=expQ(),have=Math.min(q.goal.n,e.got[q.goal.k]||0);return`<div class="brow xthr"><span>Objectif</span>${bar(have,q.goal.n,'hp')}<em>${e.qdone?'✓ Accompli':`${itemIcon(q.goal.k,'iicon sm')}${have}/${q.goal.n}`}</em></div>`;})():`<div class="brow xthr"><span>Traces</span><div class="bar"><i style="width:${clamp(e.thr,0,100)}%;background:${tc}"></i></div><em>${expPool(z).length?thrLabel(e.thr):'Calme'}</em></div>`}</div>
- ${!e.enc&&e.evb&&e.h<e.evb.until?`<div class="xevent"><b>${e.evb.ic}</b><span><b>Événement</b> · ${esc(e.evb.t)}${e.storm>e.h?` : traces ×1,5 encore ${e.storm-e.h} h`:''}</span></div>`:''}${e.omen&&!e.enc&&zDanger(z)?`<div class="xomen"><img class="uic xseal" src="img/mark/seal.webp" alt="">${esc(DANGER[zDanger(z)].omen.replace(/^\S+\s/,''))} Rentrez au camp pour ${canMeet(zDanger(z))?'tenter de ':''}lui échapper.</div>`:''}${enc}<div class="xmapbox">${expMapSVG()}</div><p class="small muted xleg">Chiffre : points d’intérêt restants. Touchez un secteur relié pour vous y rendre (1 h).</p>
+ ${!e.enc&&e.evb&&e.h<e.evb.until?`<div class="xevent"><b>${e.evb.ic}</b><span><b>Événement</b> · ${esc(e.evb.t)}${e.storm>e.h?` : traces ×1,5 encore ${e.storm-e.h} h`:''}</span></div>`:''}${e.omen&&!e.enc&&zDanger(z)?`<div class="xomen"><img class="uic xseal" src="img/mark/seal.webp" alt="">${esc(DANGER[zDanger(z)].omen.replace(/^\S+\s/,''))} Rentre au camp pour ${canMeet(zDanger(z))?'tenter de ':''}lui échapper.</div>`:''}${enc}<div class="xmapbox">${expMapSVG()}</div><p class="small muted xleg">Chiffre : points d’intérêt restants. Touche un secteur relié pour t’y rendre (1 h).</p>
  <h3 class="xh">${esc(sc.n)}${e.sec===0&&!e.quest?' <span class="small muted">· traces réduites de moitié en revenant ici</span>':''}</h3>
- ${over?`<p class="small">Il fait trop sombre pour continuer. Rentrez au village avec votre butin.</p><button class="btn main wide" data-a="xend">Rentrer au village</button>`:`<div class="spots">${nodes||'<p class="small muted" style="margin:0">Rien à récolter ici. Touchez un secteur voisin sur la carte (1 h).</p>'}</div>`}
+ ${over?`<p class="small">Il fait trop sombre pour continuer. Rentre au village avec ton butin.</p><button class="btn main wide" data-a="xend">Rentrer au village</button>`:`<div class="spots">${nodes||'<p class="small muted" style="margin:0">Rien à récolter ici. Touche un secteur voisin sur la carte (1 h).</p>'}</div>`}
  <div class="recap">${e.log.slice(-4).map((l,i,a)=>`<div class="le${i===a.length-1?' new':''}">${esc(l)}</div>`).join('')}</div>
  ${g.length?`<h3>Butin</h3><div class="skl">${g.map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${RES[k].n} ×${e.got[k]}</span>`).join('')}</div>`:''}`;}
 function canCraft(rc){for(const k in rc.ins){const have=RES[k]?(S.res[k]||0):(S.items[k]||0);if(have<rc.ins[k])return false;}return true;}
@@ -1021,7 +1024,7 @@ function prepSack(){const list=PREP_LIST.concat(rangedPrep());const done=[];
  for(const k of list){const rc=RECIPES.find(r=>r.out===k);if(!rc)continue;const b=fillBatches(rc);if(b>0){const n=craftN(k,b)*(rc.n||1);if(n)done.push(`${ITEMS[k].n} ×${n}`);}}return done;}
 function craft(out){const rc=RECIPES.find(r=>r.out===out);if(!rc||!canCraft(rc))return false;
  for(const k in rc.ins){if(RES[k])S.res[k]-=rc.ins[k];else S.items[k]-=rc.ins[k];}S.items[out]=(S.items[out]||0)+(rc.n||1);save();return true;}
-function introMove(d){return{id:'#intro',n:d.roar,t:'Il vous a repéré et se dresse de toute sa hauteur !',z:ALLZ,fx:'roar',intro:1};}
+function introMove(d){return{id:'#intro',n:d.roar,t:'Il t’a repéré et se dresse de toute sa hauteur !',z:ALLZ,fx:'roar',intro:1};}
 function roarMove(d){return{id:'#roar',n:d.roar,t:'Il se dresse, fou de rage !',z:ALLZ,fx:'roar'};}
 function moveById(d,id){return id==='#train'?TRAIN_IDLE:id==='#idle'?IDLE:id==='#unaware'?UNAWARE:id==='#intro'?introMove(d):id==='#roar'?roarMove(d):d.moves.find(x=>x.id===id);}
 const HKEY='grande-traque-chasse';
@@ -1066,7 +1069,7 @@ function calcDmg(h,pid,exp){if(h.fixed){const m=H.m,st=H.stats;let d=h.fixed*(1+
  dmg=Math.max(1,exp?dmg:Math.round(dmg*(.95+rnd()*.1)));return{dmg,bounce,crit,weak:z>=70};}
 function targetPart(){if(ranged())return H.aim||'tete';return H.m.flying?'flanc':ZPART[H.zone];}
 function estHits(hits,pid0){const pid=pid0||targetPart();let t=0;for(const h of hits)t+=calcDmg(h,pid,true).dmg;return Math.round(t);}
-function dealHit(h,pid){const m=H.m,st=H.stats,W=st.w;if(m.burrow>0){if(!H._bur){H._bur=1;H.pend.push([`❄️ ${m.d.name} est enfoui : vos coups frappent la neige.`,'warn']);}return{dmg:0,bounce:true,crit:false,weak:false};}const c=calcDmg(h,pid,false);const dmg=c.dmg,bounce=c.bounce,crit=c.crit;
+function dealHit(h,pid){const m=H.m,st=H.stats,W=st.w;if(m.burrow>0){if(!H._bur){H._bur=1;H.pend.push([`❄️ ${m.d.name} est enfoui : tes coups frappent la neige.`,'warn']);}return{dmg:0,bounce:true,crit:false,weak:false};}const c=calcDmg(h,pid,false);const dmg=c.dmg,bounce=c.bounce,crit=c.crit;
  const ps=m.parts[pid],pd=m.d.parts[pid];
  if(pid==='tete'&&m.rock>0){m.rockHp-=dmg*(h.type==='blunt'?2:1);if(m.rockHp<=0){m.rock=0;m.topple=Math.max(m.topple,2);m.chain=null;H.pend.push(['🪨 Le rocher vole en éclats ! Grakku perd l’équilibre.','good']);}}
  m.hp-=dmg;ps.dmg+=dmg;if(h.type==='cut'&&!h.shot)ps.cut+=dmg;
@@ -1083,17 +1086,17 @@ function dealHit(h,pid){const m=H.m,st=H.stats,W=st.w;if(m.burrow>0){if(!H._bur)
  return{dmg,bounce,crit,weak:c.weak};}
 function hitPlate(pid,v){const m=H.m,pl=m.plates[pid];if(!pl||pl.hp<=0)return;pl.hp-=v;
  if(pl.hp<=0){pl.hp=0;pl.bare=5;m.platesBroken++;m.flinched=true;H.pend.push([`🛡️ Plaque de fer brisée : ${m.d.parts[pid].name.toLowerCase()} à nu pendant 5 tours !`,'good']);
-  tip('plate','Plaque brisée : la chair est à nu et les coups y portent très fort. Frappez vite, le fer se reforme ensuite. Le contondant et la baliste fendent les plaques plus vite.');}}
+  tip('plate','Plaque brisée : la chair est à nu et les coups y portent très fort. Frappe vite, le fer se reforme ensuite. Le contondant et la baliste fendent les plaques plus vite.');}}
 function discharge(){const m=H.m;if(m.loot&&m.loot.length)giveBack(`${m.d.name} lâche son butin`);if(m.charged>0){m.charged=0;H.pend.push(['⚡ La surcharge de Fulgor se dissipe !','good']);}}
 function atk(label,hits,pidO){const m=H.m;let pid=pidO||targetPart();
  const pname=m.d.parts[pid].name;let tot=0,crit=false,bounce=false,weak=false;
  for(const h of hits){if(m.hp<=0)break;const r=dealHit(h,pid);tot+=r.dmg;crit=crit||r.crit;bounce=bounce||r.bounce;weak=weak||r.weak;}
  H.attacked=true;if(H.s.virus>0){H.virusD=(H.virusD||0)+tot;if(H.virusD>=m.max*.035){H.s.virus=0;H.fren=6;H.pend.push(['🦠 Frénésie surmontée ! +15 % d’attaque pendant 6 tours.','good']);}}
- if(m.spikes>0&&!ranged()&&!H.q.training&&m.hp>0){const d=Math.max(1,Math.min(H.hp-1,Math.round(m.d.lv*.7*100/(100+H.stats.def))));if(d>0){H.hp-=d;H.fx.push({t:'hurt',v:d,z:H.zone,me:1});H.pend.push([`🦔 Les épines vous blessent : ${d} dégâts.`,'bad']);}}
+ if(m.spikes>0&&!ranged()&&!H.q.training&&m.hp>0){const d=Math.max(1,Math.min(H.hp-1,Math.round(m.d.lv*.7*100/(100+H.stats.def))));if(d>0){H.hp-=d;H.fx.push({t:'hurt',v:d,z:H.zone,me:1});H.pend.push([`🦔 Les épines te blessent : ${d} dégâts.`,'bad']);}}
  H.fx.push({t:weak?'weak':'dmg',v:tot,z:H.zone});if(H.tr){H.tr.tot+=tot;H.tr.best=Math.max(H.tr.best,tot);}
  let msg=`${label} sur ${pname} : ${tot} dégâts`;if(crit)msg+=', critique !';if(bounce)msg+=' (rebond : tranchant trop faible)';if(m.flying&&!ranged())msg+=' (monstre en vol)';
- checkObj();log(msg,'you');flush();H.elan=0;H.riposte=0;if(m.hp<=0)H.blow=`votre ${label.charAt(0).toLowerCase()+label.slice(1)}`;
- if(sharpLevel()<=1)tip('sharp','Votre tranchant est bas : vos coups perdent en force et rebondissent. Aiguisez pendant un tour où le monstre ne vous vise pas.');
+ checkObj();log(msg,'you');flush();H.elan=0;H.riposte=0;if(m.hp<=0)H.blow=`ton attaque « ${label} »`;
+ if(sharpLevel()<=1)tip('sharp','Ton tranchant est bas : tes coups perdent en force et rebondissent. Aiguise pendant un tour où le monstre ne te vise pas.');
  return true;}
 function spend(c){if(H.st<c)return false;H.st-=c;return true;}
 
@@ -1157,30 +1160,30 @@ function weaponMove(id,lvl){const T=H.stats.w.type,w=H.w,base=T==='hammer'||T===
  return null;}
 function weaponAct(id){const T=H.stats.w.type,w=H.w;
  if(id==='charge'&&(T==='gs'||T==='hammer')){if(w.charge>=2||!spend(chargeCost(T)))return false;w.charge++;
-  log(T==='gs'?`Vous chargez votre lame (niveau ${w.charge}).`:`Vous armez le marteau (niveau ${w.charge}).`,'you');return true;}
+  log(T==='gs'?`Tu charges ta lame (niveau ${w.charge}).`:`Tu armes le marteau (niveau ${w.charge}).`,'you');return true;}
  if(id==='roll'&&T==='lbg'&&w.rcd>0)return false;
- if(id==='rreload'&&T==='lbg'){const a=w.ammo||'norm',cap=ammoCap(a),n=Math.min(cap,ammoLeft(a));if(w.rcd>0||n<=w.mag||!spend(dodgeCost()))return false;H.dodge=true;w.mag=n;w.rcd=2;log(`Vous roulez en rechargeant : ${AMMO[a].n} ×${n}.`,'you');return true;}
- if(id==='siege'&&T==='hbg'){if(w.siege)return false;w.siege=true;log('Vous installez le fusarbalète en mode siège : +50 % de dégâts, mais plus d’esquive ni de déplacement.','you');tip('siege','Mode siège : vos tirs gagnent +50 %, mais vous ne pouvez ni esquiver, ni bouger, ni reculer. La garde reste possible. « Quitter le siège » est gratuit : faites-le avant un gros coup.');return true;}
- if(id==='reload'&&isGun(T)){const a=w.ammo||'norm',cap=ammoCap(a),n=Math.min(cap,ammoLeft(a));if(n<=w.mag)return false;w.mag=n;log(`Vous rechargez : ${AMMO[a].n} ×${n}.`,'you');return true;}
- if(id==='charge'&&T==='bow'){if(w.charge>=3||!spend(chargeCost(T)))return false;w.charge++;log(`Vous bandez votre arc (niveau ${w.charge}).`,'you');return true;}
- if(id==='reload'&&T==='gl'){if(w.shells>=glCap())return false;w.shells=glCap();log(`Vous rechargez la lancecanon : ${glCap()} obus.`,'you');return true;}
+ if(id==='rreload'&&T==='lbg'){const a=w.ammo||'norm',cap=ammoCap(a),n=Math.min(cap,ammoLeft(a));if(w.rcd>0||n<=w.mag||!spend(dodgeCost()))return false;H.dodge=true;w.mag=n;w.rcd=2;log(`Tu roules en rechargeant : ${AMMO[a].n} ×${n}.`,'you');return true;}
+ if(id==='siege'&&T==='hbg'){if(w.siege)return false;w.siege=true;log('Tu installes le fusarbalète en mode siège : +50 % de dégâts, mais plus d’esquive ni de déplacement.','you');tip('siege','Mode siège : tes tirs gagnent +50 %, mais tu ne peux ni esquiver, ni bouger, ni reculer. La garde reste possible. « Quitter le siège » est gratuit : fais-le avant un gros coup.');return true;}
+ if(id==='reload'&&isGun(T)){const a=w.ammo||'norm',cap=ammoCap(a),n=Math.min(cap,ammoLeft(a));if(n<=w.mag)return false;w.mag=n;log(`Tu recharges : ${AMMO[a].n} ×${n}.`,'you');return true;}
+ if(id==='charge'&&T==='bow'){if(w.charge>=3||!spend(chargeCost(T)))return false;w.charge++;log(`Tu bandes ton arc (niveau ${w.charge}).`,'you');return true;}
+ if(id==='reload'&&T==='gl'){if(w.shells>=glCap())return false;w.shells=glCap();log(`Tu recharges la lancecanon : ${glCap()} obus.`,'you');return true;}
  if((id==='obus'||id==='salve')&&T==='gl'&&!(w.shells>0))return false;
  if(id==='wf'&&T==='gl'&&w.wf>0)return false;
  if(T==='gl'&&(id==='estoc'||id==='wf')&&ranged()&&!H.close)return false;
- if(T==='ig'){if(id==='vault'){if(H.s.tet>0||!spend(vaultCost()))return false;H.dodge=true;w.air=1;log('Vous prenez appui sur la glaive et bondissez dans les airs !','you');tip('vault','En l’air : vous esquivez ce tour-ci. Au tour suivant, l’Attaque aérienne frappe la tête où que vous soyez et prépare la chevauchée.');return true;}
+ if(T==='ig'){if(id==='vault'){if(H.s.tet>0||!spend(vaultCost()))return false;H.dodge=true;w.air=1;log('Tu prends appui sur la glaive et bondis dans les airs !','you');tip('vault','En l’air : tu esquives ce tour-ci. Au tour suivant, l’Attaque aérienne frappe la tête où que tu sois et prépare la chevauchée.');return true;}
   if(id==='aerial'&&!w.wasAir)return false;}
  if(T==='sa'){if(id==='morph'&&w.mode==='axe'&&w.sw<30)return false;if(id==='zsd'&&(w.mode!=='sword'||w.sw<40))return false;if(id==='slash'&&w.mode!=='sword')return false;if((id==='axe'||id==='wild')&&w.mode!=='axe')return false;}
  if(T==='cb'){if((id==='slash'||id==='charge')&&w.mode!=='sword')return false;if((id==='dis'||id==='saed')&&w.mode!=='axe')return false;if(id==='saed'&&!(w.ph>0))return false;
-  if(id==='charge'){if(w.ph>=CB_PH){w.ph=0;w.shield=12+prolong();H.guard=true;log(`🛡️ Vous chargez le bouclier derrière votre garde : garde renforcée et explosions +30 % pendant ${w.shield} tours.`,'good');tip('cbshield','Bouclier chargé : votre garde bloque mieux et vos fioles explosent 30 % plus fort. Rechargez des fioles et repassez en hache !');return true;}
-   if(w.en<20)return false;const add=Math.min(CB_PH-w.ph,Math.floor(w.en/20));w.ph+=add;w.en=0;log(`Vous chargez l’énergie dans les fioles : ${w.ph}/${CB_PH}.`,'you');if(w.ph>=CB_PH)tip('cbfull','Fioles pleines ! Passez en hache pour les faire exploser, ou chargez le bouclier.');return true;}}
- if(id==='counter'&&T==='lance'){if(w.ccd>0||!spend(12))return false;w.ccd=2;H.counter=true;H.guard=true;log('Vous vous mettez en posture de contre, lance pointée…','you');return true;}
+  if(id==='charge'){if(w.ph>=CB_PH){w.ph=0;w.shield=12+prolong();H.guard=true;log(`🛡️ Tu charges le bouclier derrière ta garde : garde renforcée et explosions +30 % pendant ${w.shield} tours.`,'good');tip('cbshield','Bouclier chargé : ta garde bloque mieux et tes fioles explosent 30 % plus fort. Recharge des fioles et repasse en hache !');return true;}
+   if(w.en<20)return false;const add=Math.min(CB_PH-w.ph,Math.floor(w.en/20));w.ph+=add;w.en=0;log(`Tu charges l’énergie dans les fioles : ${w.ph}/${CB_PH}.`,'you');if(w.ph>=CB_PH)tip('cbfull','Fioles pleines ! Passe en hache pour les faire exploser, ou charge le bouclier.');return true;}}
+ if(id==='counter'&&T==='lance'){if(w.ccd>0||!spend(12))return false;w.ccd=2;H.counter=true;H.guard=true;log('Tu te mets en posture de contre, lance pointée…','you');return true;}
  if(id==='play'&&T==='hh'){const sg=songOf(w.notes);if(!sg)return false;atk('Récital',weaponMove('play').hits);w.notes=[];
   if(sg.id==='atk'){H.song=H.song||{};H.song.atk=6+prolong();log(`🎵 Chant de puissance : +15 % d’attaque pendant ${6+prolong()} tours.`,'good');}
   else if(sg.id==='def'){H.song=H.song||{};if(!H.song.def)H.stats.def+=25;H.song.def=6+prolong();log(`🎵 Chant du rempart : +25 défense pendant ${6+prolong()} tours.`,'good');}
-  else{const v=Math.min(25,H.hpMax-H.hp);H.hp+=v;if(v)H.fx.push({t:'heal',v,z:H.zone,me:1});if(H.pal&&!H.pal.ko)H.pal.hp=Math.min(H.pal.max,H.pal.hp+25);log(`🎵 Chant de soin : +${v} PV${H.pal?', et votre Griffu se requinque':''}.`,'good');}
+  else{const v=Math.min(25,H.hpMax-H.hp);H.hp+=v;if(v)H.fx.push({t:'heal',v,z:H.zone,me:1});if(H.pal&&!H.pal.ko)H.pal.hp=Math.min(H.pal.max,H.pal.hp+25);log(`🎵 Chant de soin : +${v} PV${H.pal?', et ton Griffu se requinque':''}.`,'good');}
   return true;}
- if(id==='fore'&&T==='ls'){if(w.fcd>0||!spend(15))return false;H.fore=true;w.fcd=4;log('Vous adoptez la posture prévoyante…','you');return true;}
- if(id==='demon'&&T==='db'){if(!w.demon){if(H.st<20)return false;w.demon=true;log('Mode Furie activé !','good');}else{w.demon=false;log('Vous quittez le mode Furie.','you');}
+ if(id==='fore'&&T==='ls'){if(w.fcd>0||!spend(15))return false;H.fore=true;w.fcd=4;log('Tu adoptes la posture prévoyante…','you');return true;}
+ if(id==='demon'&&T==='db'){if(!w.demon){if(H.st<20)return false;w.demon=true;log('Mode Furie activé !','good');}else{w.demon=false;log('Tu quittes le mode Furie.','you');}
   return atk('Tournoiement',weaponMove('demon').hits);}
  const mv=weaponMove(id);if(!mv)return false;
  if(mv.gauge&&w.gauge<mv.gauge)return false;
@@ -1192,35 +1195,35 @@ function weaponAct(id){const T=H.stats.w.type,w=H.w;
   if(id==='roll'){H.dodge=true;w.rcd=2;}
   if(mv.pierce){for(const p of['tete','flanc','queue']){if(H.m.hp<=0)break;atk(mv.label,mv.hits,p);}}else atk(mv.label,mv.hits);
   if(a==='som'&&H.m.hp>0){const m=H.m;m.sleepAcc=(m.sleepAcc||0)+100;const thr=m.sleepThr||m.d.ko*1.1;if(id==='burst')m.sleepAcc+=100*(used-1);if(m.sleepAcc>=thr&&!m.ko){m.ko=2;m.sleepAcc=0;m.sleepThr=Math.round(thr*1.6);m.chain=null;log(`💤 ${m.d.name} s’endort profondément ! Il ne bougera pas pendant 2 tours.`,'good');}else if(!m.ko)log(`💤 ${m.d.name} vacille (sommeil ${Math.min(99,Math.round(m.sleepAcc/thr*100))} %).`);}
-  if(!w.mag)log('Chargeur vide : rechargez.','warn');return true;}
+  if(!w.mag)log('Chargeur vide : recharge.','warn');return true;}
  if(T==='bow'&&(id==='tir'||id==='disperse')){w.charge=0;atk(mv.label,mv.hits);if(mv.extra&&H.m.hp>0){const ot=['tete','flanc','queue'].filter(p=>p!==targetPart());const p2=ot.find(p=>!H.m.parts[p].broken)||ot[0];atk('Volée dispersée',mv.extra,p2);}
   if(H.coat){H.coat.n--;if(H.coat.n<=0){log(`Le ${ITEMS[H.coat.k].n.toLowerCase()} est épuisé.`,'warn');H.coat=null;}}return true;}
  if(id==='tackle')H.tackle=true;
  if(T==='gl'){if(id==='obus')w.shells--;else if(id==='salve')w.shells=0;else if(id==='wf'){w.wf=H.stats.sk.artillerie>=3?5:6;H.m.flinchAcc+=H.m.d.flinch*.8;}}
- if(T==='hh'&&mv.note){w.notes=(w.notes||[]).concat(mv.note).slice(-3);const sg=songOf(w.notes);if(sg)tip('song',`Mélodie prête : ${sg.n}. Touchez « Récital » pour frapper et la jouer.`);}
+ if(T==='hh'&&mv.note){w.notes=(w.notes||[]).concat(mv.note).slice(-3);const sg=songOf(w.notes);if(sg)tip('song',`Mélodie prête : ${sg.n}. Touche « Récital » pour frapper et la jouer.`);}
  if(T==='sns'&&id==='shield'){H.guard=true;H.bashGuard=true;}
  atk(mv.label,mv.hits,mv.pid);
- if(T==='ig'){const W0=H.stats.w;if(id==='kin'){const k=extOf(targetPart()),e=w.ex;if(k==='o'&&!(e.o>0))H.stats.def+=20;const was=triple();e[k]=EXT_T+prolong()+(W0.var==='vif'?4:0);if(W0.var==='soin'){const v=Math.min(10,H.hpMax-H.hp);if(v>0){H.hp+=v;H.fx.push({t:'heal',v,z:H.zone,me:1});log(`🐞 Le scarabée soigneur vous rend ${v} PV.`,'good');}}log(`🐞 Le scarabée rapporte un extrait ${EXTR[k].n} (${k==='r'?'attaque +10 %, enchaînement plus long':k==='w'?'bond et esquive moins chers':'défense +20'}).`,'good');
+ if(T==='ig'){const W0=H.stats.w;if(id==='kin'){const k=extOf(targetPart()),e=w.ex;if(k==='o'&&!(e.o>0))H.stats.def+=20;const was=triple();e[k]=EXT_T+prolong()+(W0.var==='vif'?4:0);if(W0.var==='soin'){const v=Math.min(10,H.hpMax-H.hp);if(v>0){H.hp+=v;H.fx.push({t:'heal',v,z:H.zone,me:1});log(`🐞 Le scarabée soigneur te rend ${v} PV.`,'good');}}log(`🐞 Le scarabée rapporte un extrait ${EXTR[k].n} (${k==='r'?'attaque +10 %, enchaînement plus long':k==='w'?'bond et esquive moins chers':'défense +20'}).`,'good');
    if(!was&&triple()){log('✨ Triple extrait : +10 % d’attaque supplémentaire !','good');}tip('extract','Chaque extrait dure 10 tours. Tête : rouge. Bras : blanc. Dos : orange. Les trois ensemble donnent le Triple extrait.');}
   if(id==='aerial'&&H.m.hp>0){const m=H.m;m.mountAcc=(m.mountAcc||0)+(m.flying?2:1);const thr=m.mountThr||3;
-   if(m.mountAcc>=thr){m.mountAcc=0;m.mountThr=Math.round(thr*1.6);m.flying=0;m.topple=Math.max(m.topple,2);m.chain=null;m.prep=null;log(`🐞 Vous chevauchez ${m.d.name} et le faites chuter : il est à terre !`,'good');}
+   if(m.mountAcc>=thr){m.mountAcc=0;m.mountThr=Math.round(thr*1.6);m.flying=0;m.topple=Math.max(m.topple,2);m.chain=null;m.prep=null;log(`🐞 Tu chevauches ${m.d.name} et le faites chuter : il est à terre !`,'good');}
    else log(`Chevauchée : ${m.mountAcc}/${thr}.`,'you');}}
  if(T==='ls'&&id==='entaille')w.gauge=Math.min(100,w.gauge+Math.round(20*conc()));
  if(T==='sa'){if(id==='axe')w.sw=Math.min(100,w.sw+Math.round(10*conc()));else if(id==='wild')w.sw=Math.min(100,w.sw+Math.round(20*conc()));else if(id==='slash')w.sw=Math.max(0,w.sw-12);
   else if(id==='zsd'){w.sw=0;w.mode='axe';log('La fiole est vidée : l’arme se replie en hache.','you');}
-  else if(id==='morph'){w.mode=w.mode==='axe'?'sword':'axe';log(w.mode==='sword'?'L’arme se déploie en épée.':'L’arme se replie en hache.','you');if(w.mode==='sword')tip('samode','Mode épée : vos coups sont plus forts mais vident la jauge. Vers 40, la Décharge élémentaire la vide d’un coup. Jauge vide, l’arme se replie seule en hache.');}
+  else if(id==='morph'){w.mode=w.mode==='axe'?'sword':'axe';log(w.mode==='sword'?'L’arme se déploie en épée.':'L’arme se replie en hache.','you');if(w.mode==='sword')tip('samode','Mode épée : tes coups sont plus forts mais vident la jauge. Vers 40, la Décharge élémentaire la vide d’un coup. Jauge vide, l’arme se replie seule en hache.');}
   if(w.mode==='sword'&&w.sw<12){w.mode='axe';log('Jauge de fiole vide : l’arme se replie en hache.','warn');}}
  if(T==='cb'){if(id==='slash')w.en=Math.min(100,w.en+Math.round(34*conc()));else if(id==='dis'&&w.ph>0)w.ph--;
-  else if(id==='saed'){w.ph=0;w.mode='sword';log('Vous repliez la hache : retour en épée et bouclier.','you');}
-  else if(id==='morph'){w.mode=w.mode==='sword'?'axe':'sword';log(w.mode==='axe'?'Vous déployez la hache (plus de garde).':'Vous repliez la hache : épée et bouclier.','you');}}
- if(T==='ls'&&id==='circ'){if(w.spirit<3){w.spirit++;log(`Niveau d’esprit ${w.spirit} : vos coups gagnent en puissance.`,'good');}w.spiritT=0;}
+  else if(id==='saed'){w.ph=0;w.mode='sword';log('Tu replies la hache : retour en épée et bouclier.','you');}
+  else if(id==='morph'){w.mode=w.mode==='sword'?'axe':'sword';log(w.mode==='axe'?'Tu déploies la hache (plus de garde).':'Tu replies la hache : épée et bouclier.','you');}}
+ if(T==='ls'&&id==='circ'){if(w.spirit<3){w.spirit++;log(`Niveau d’esprit ${w.spirit} : tes coups gagnent en puissance.`,'good');}w.spiritT=0;}
  return true;}
 function ammoLeft(k){const it=AMMO[k].item;return it?pouchLeft(it):1e9;}
 function ammoOk(k){if(k==='el'&&!H.stats.w.elem)return false;return ammoLeft(k)>0;}
 function pouchLeft(id){if(ITEMS[id].sup)return(H.sup&&H.sup[id])||0;if(H&&H.q&&H.q.training)return Math.max(0,ITEMS[id].carry-(H.used[id]||0))||ITEMS[id].carry;return Math.max(0,Math.min(S.items[id]||0,ITEMS[id].carry-(H.used[id]||0)));}
 function inPouch(id){return ITEMS[id].sup||(H&&H.q&&H.q.training)?pouchLeft(id)>0:(S.items[id]||0)>0;}
 function itemBlock(id){const m=H.m;
- if(id==='antidote'&&!H.s.poison)return'Vous n’êtes pas empoisonné';
+ if(id==='antidote'&&!H.s.poison)return'Tu n’es pas empoisonné';
  if(id.startsWith('fiole')&&H.stats.w.type!=='bow')return'Réservé à l’arc';
  if(id.startsWith('mun_'))return isGun(H.stats.w.type)?'Se charge avec « Munition » puis « Recharger »':'Réservé au fusarbalète';
  if(id.startsWith('fiole')&&H.coat&&H.coat.k===id&&H.coat.n>=4)return'Flacon déjà appliqué';
@@ -1236,15 +1239,15 @@ function itemBlock(id){const m=H.m;
  return null;}
 function useItem(id){if(!ITEMS[id]||pouchLeft(id)<=0||itemBlock(id))return null;const m=H.m;
  if(ITEMS[id].sup)H.sup[id]--;else{H.used[id]=(H.used[id]||0)+1;
- if(H.q.training){}else if(H.felyne&&H.felyne.id==='econome'&&rnd()<.25)log('Griffu économe : l’objet n’est pas consommé.','good');else if(palHas('econome')&&rnd()<.15)log(`🐱 ${palS().name}, économe, vous tend l’objet : il n’est pas consommé.`,'good');else S.items[id]--;}
+ if(H.q.training){}else if(H.felyne&&H.felyne.id==='econome'&&rnd()<.25)log('Griffu économe : l’objet n’est pas consommé.','good');else if(palHas('econome')&&rnd()<.15)log(`🐱 ${palS().name}, économe, te tend l’objet : il n’est pas consommé.`,'good');else S.items[id]--;}
  const it=ITEMS[id];
  if(id==='potion'||id==='mega'||id==='soin'){const v=Math.min(H.hpMax-H.hp,id==='mega'?70:id==='soin'?30:35);H.hp+=v;H.fx.push({t:'heal',v:Math.round(v),z:H.zone,me:1});log(`${it.n} : +${Math.round(v)} PV.`,'good');}
  else if(id==='antidote'){H.s.poison=0;log('Antidote : le poison est dissipé.','good');}
- else if(id==='fiole_p'||id==='fiole_v'){H.coat={k:id,n:4+H.stats.sk.prolong};log(`${it.n} appliqué : ${id==='fiole_p'?'+30 % de dégâts':'poison'} sur vos ${H.coat.n} prochains tirs.`,'good');}
+ else if(id==='fiole_p'||id==='fiole_v'){H.coat={k:id,n:4+H.stats.sk.prolong};log(`${it.n} appliqué : ${id==='fiole_p'?'+30 % de dégâts':'poison'} sur tes ${H.coat.n} prochains tirs.`,'good');}
  else if(id==='steak'){H.stMax=Math.min(150,H.stMax+25);H.st=H.stMax;log(`Steak bien cuit : endurance max ${H.stMax}.`,'good');}
  else if(id==='grain'){H.atkBuff=.1;log('Graine démoniaque : +10 % d’attaque.','good');}
  else if(id==='armure'){H.defBuff=20;H.stats.def+=20;log('Graine d’armure : +20 défense.','good');}
- else if(id==='piege'){H.trap=true;log('🪤 Vous posez un piège. Le monstre y tombera à sa prochaine action.','you');}
+ else if(id==='piege'){H.trap=true;log('🪤 Tu poses un piège. Le monstre y tombera à sa prochaine action.','you');}
  else if(id==='tranq'){if(m.hp<=m.max*.2)m.tranq++;
   if(m.hp>m.max*.2)log('💤 Le monstre est trop vigoureux : la bombe se dissipe. Il doit boiter pour être capturé.','warn');
   else if(m.tranq>=2){log('💤 Le monstre s’endort profondément… Capture réussie !','good');save();endHunt('capture');return true;}
@@ -1269,30 +1272,30 @@ function act(id,arg){if(!H)return;
  if(H.phase==='camp'){if(id==='engage'){engage(arg);H.mark=H.log.length-2;saveHunt();render();return;}
   if(id==='item'){const mk=H.log.length;if(useItem(arg)!==null){H.mark=mk;saveHunt();render();}}return;}
  if((H.s.para>0||H.grab>0)&&id!=='struggle')return;
- if(H.w&&H.w.siege&&(id==='move'||id==='dodge'||id==='reculer')){log('En mode siège, vous ne pouvez pas bouger : quittez d’abord le siège.','warn');saveHunt();render();return;}
+ if(H.w&&H.w.siege&&(id==='move'||id==='dodge'||id==='reculer')){log('En mode siège, tu ne peux pas bouger : quitte d’abord le siège.','warn');saveHunt();render();return;}
  if(id==='move'){let a0=String(arg),far=a0.startsWith('far:');if(far)a0=a0.slice(4);const[z,sd]=a0.split(':');if(!ZN[z])return;
-  if(ranged()){if(far&&H.close){tip('farring','L’anneau extérieur est la distance : pour y retourner depuis le contact, utilisez « Reculer ».');log('Vous êtes au contact : reculez pour reprendre vos distances.','warn');saveHunt();render();return;}
+  if(ranged()){if(far&&H.close){tip('farring','L’anneau extérieur est la distance : pour y retourner depuis le contact, utilise « Reculer ».');log('Tu es au contact : recule pour reprendre tes distances.','warn');saveHunt();render();return;}
    const nowFar=!H.close;if(z===H.zone&&far===nowFar){if(z==='flanc'&&sd&&sd!==H.side){H.side=sd;H.moved=null;saveHunt();render();}return;}}
   else if(far)return;
   else if(z===H.zone){if(z==='flanc'&&sd&&sd!==H.side){H.side=sd;H.moved=null;saveHunt();render();}return;}}
  const W=H.stats.w,T=W.type;
  const keep=T==='gs'?['charge','release','tackle','guard','dodge']:T==='hammer'?['charge','release','move','dodge']:T==='bow'?['charge','tir','disperse','dodge','item','reculer']:null;
  const prevMark=H.log.length;
- if(keep&&H.w.charge>0&&!keep.includes(id)){H.w.charge=0;log('Votre charge se dissipe.','you');}
+ if(keep&&H.w.charge>0&&!keep.includes(id)){H.w.charge=0;log('Ta charge se dissipe.','you');}
  H.guard=H.dodge=H.tackle=H.fore=H.fainted=H.bashGuard=H.counter=false;H.fx=[];H.moved=null;H.asleep=false;H.attacked=false;
  if(T==='ig'){H.w.wasAir=H.w.air;H.w.air=0;}
  let ends=true;
  switch(id){
-  case 'struggle':if(H.grab>0){if(H.st>=35){H.st-=35;H.grab=0;log('💪 Vous vous débattez de toutes vos forces et vous arrachez à sa gueule ! (−35 endurance)','good');}else{H.st=Math.max(0,H.st-10);log('😣 Vous vous débattez, mais vous manquez d’endurance pour vous libérer…','bad');}break;}{const w=H.s.why;H.s.para=0;H.s.why=null;if(w==='sleep'){H.asleep=true;log('💤 Vous dormez profondément…','bad');}else if(w==='down')log('🌋 Vous vous relevez péniblement…','bad');else log('⚡ Paralysé, vous ne pouvez pas agir !','bad');}break;
-  case 'move':{let a0=String(arg),far=a0.startsWith('far:');if(far)a0=a0.slice(4);let[z,sd]=a0.split(':');if(H.s.bulle>0&&rnd()<.5){const alt=ALLZ.filter(x=>x!==z&&x!==H.zone);if(alt.length){z=pick(alt);log('🫧 Vous glissez sur les bulles et finissez ailleurs !','warn');}}H.zone=z;if(z==='flanc')H.side=sd||H.side;
-   if(ranged()&&!far&&!H.close){H.close=1;log(`Vous vous approchez au contact : ${ZN[z]}.`,'you');}else log(`Vous vous déplacez${ranged()?(H.close?' au contact':' à distance'):''} : ${ZN[z]}.`,'you');break;}
+  case 'struggle':if(H.grab>0){if(H.st>=35){H.st-=35;H.grab=0;log('💪 Tu te débats de toutes tes forces et t’arraches à sa gueule ! (−35 endurance)','good');}else{H.st=Math.max(0,H.st-10);log('😣 Tu te débats, mais tu manques d’endurance pour te libérer…','bad');}break;}{const w=H.s.why;H.s.para=0;H.s.why=null;if(w==='sleep'){H.asleep=true;log('💤 Tu dors profondément…','bad');}else if(w==='down')log('🌋 Tu te relèves péniblement…','bad');else log('⚡ Paralysé, tu ne peux pas agir !','bad');}break;
+  case 'move':{let a0=String(arg),far=a0.startsWith('far:');if(far)a0=a0.slice(4);let[z,sd]=a0.split(':');if(H.s.bulle>0&&rnd()<.5){const alt=ALLZ.filter(x=>x!==z&&x!==H.zone);if(alt.length){z=pick(alt);log('🫧 Tu glisses sur les bulles et finis ailleurs !','warn');}}H.zone=z;if(z==='flanc')H.side=sd||H.side;
+   if(ranged()&&!far&&!H.close){H.close=1;log(`Tu t’approches au contact : ${ZN[z]}.`,'you');}else log(`Tu te déplaces${ranged()?(H.close?' au contact':' à distance'):''} : ${ZN[z]}.`,'you');break;}
   case 'charge':{if(T==='cb'&&H.w.mode==='sword'&&H.w.ph<CB_PH){if(!weaponAct('charge'))return;ends=false;break;}if(!weaponAct('charge'))return;break;}
-  case 'unsiege':{if(!H.w.siege)return;H.w.siege=false;log('Vous quittez le mode siège.','you');ends=false;break;}
-  case 'ammo':{if(!isGun(T))return;const cur=AMMO_ORDER.indexOf(H.w.ammo||'norm');let nx=null;for(let i=1;i<=AMMO_ORDER.length;i++){const k=AMMO_ORDER[(cur+i)%AMMO_ORDER.length];if(ammoOk(k)){nx=k;break;}}if(!nx||nx===H.w.ammo)return;H.w.ammo=nx;H.w.mag=0;log(`Munition : ${AMMO[nx].n}. Rechargez pour la charger.`,'you');ends=false;break;}
-  case 'reculer':{if(!H.close)return;H.close=0;log('Vous reculez et reprenez vos distances.','you');break;}
-  case 'dodge':{const c=dodgeCost();if(H.st<c||H.s.tet>0)return;H.st-=c;H.dodge=true;if(H.s.bulle){H.s.bulle=0;log('🫧 Vous roulez : les bulles éclatent.','good');}if(H.s.slime){H.s.slime=0;log('🟢 Vous roulez au sol : la gelée se détache !','good');}if(T==='bow'&&H.w.charge<3){H.w.charge++;log(`Vous vous tenez prêt à rouler, l’arc bandé (niveau ${H.w.charge}).`,'you');}else log('Vous vous tenez prêt à rouler.','you');break;}
-  case 'guard':if(!WT[T].g||(T==='cb'&&H.w.mode==='axe')||!spend(5))return;H.guard=true;log('Vous levez votre garde.','you');break;
-  case 'sharpen':if(H.sharp>=W.total)return;H.sharp=W.total;log('Vous aiguisez votre arme : tranchant restauré.','you');break;
+  case 'unsiege':{if(!H.w.siege)return;H.w.siege=false;log('Tu quittes le mode siège.','you');ends=false;break;}
+  case 'ammo':{if(!isGun(T))return;const cur=AMMO_ORDER.indexOf(H.w.ammo||'norm');let nx=null;for(let i=1;i<=AMMO_ORDER.length;i++){const k=AMMO_ORDER[(cur+i)%AMMO_ORDER.length];if(ammoOk(k)){nx=k;break;}}if(!nx||nx===H.w.ammo)return;H.w.ammo=nx;H.w.mag=0;log(`Munition : ${AMMO[nx].n}. Recharge pour la charger.`,'you');ends=false;break;}
+  case 'reculer':{if(!H.close)return;H.close=0;log('Tu recules et reprends tes distances.','you');break;}
+  case 'dodge':{const c=dodgeCost();if(H.st<c||H.s.tet>0)return;H.st-=c;H.dodge=true;if(H.s.bulle){H.s.bulle=0;log('🫧 Tu roules : les bulles éclatent.','good');}if(H.s.slime){H.s.slime=0;log('🟢 Tu roules au sol : la gelée se détache !','good');}if(T==='bow'&&H.w.charge<3){H.w.charge++;log(`Tu te tiens prêt à rouler, l’arc bandé (niveau ${H.w.charge}).`,'you');}else log('Tu te tiens prêt à rouler.','you');break;}
+  case 'guard':if(!WT[T].g||(T==='cb'&&H.w.mode==='axe')||!spend(5))return;H.guard=true;log('Tu lèves ta garde.','you');break;
+  case 'sharpen':if(H.sharp>=W.total)return;H.sharp=W.total;log('Tu aiguises ton arme : tranchant restauré.','you');break;
   case 'item':{const r=useItem(arg);if(r===null)return;ends=r;break;}
   case 'baliste':{if(useItem('baliste')===null)return;ends=true;break;}
   default:if(!weaponAct(id))return;}
@@ -1301,7 +1304,7 @@ function act(id,arg){if(!H)return;
  if(ends&&!H.over)resolve();
  saveHunt();render();}
 
-function capSave(){const m=H.m;if(H.q.capture&&m.hp<=0&&!H.spare){H.spare=1;m.hp=1;log(`🪤 ${m.d.name} vacille, à bout de forces ! Un coup de plus l’achèvera : posez un piège et endormez-le.`,'warn');}}
+function capSave(){const m=H.m;if(H.q.capture&&m.hp<=0&&!H.spare){H.spare=1;m.hp=1;log(`🪤 ${m.d.name} vacille, à bout de forces ! Un coup de plus l’achèvera : pose un piège et endors-le.`,'warn');}}
 function resolve(){const m=H.m;
  capSave();if(m.hp<=0)return endHunt('kill');
  palico();
@@ -1315,135 +1318,135 @@ function mineMove(m){const id=(m.mines&&m.mines.mv)||'explose';return m.d.moves.
 function mineBlast(){const m=H.m,mn=m.mines;if(!mn)return;m.mines=null;const mv=mineMove(m);if(!mv)return;
  H.fx.push({t:'mfx',zones:mn.z.slice(),el:'fire',side:H.side});
  const bolt=mn.mv==='foudre_t';if(bolt)H.fx[H.fx.length-1].el='bolt';
- if(!mn.z.includes(H.zone)){log(bolt?`⚡ La foudre frappe ${mn.z.map(z=>ZN[z].toLowerCase()).join(', ')}. Vous vous êtes écarté à temps.`:`💥 Les écailles explosent (${mn.z.map(z=>ZN[z].toLowerCase()).join(', ')}). Vous êtes hors de portée.`,'good');return;}
- if(H.dodge){log(bolt?'⚡ La foudre frappe : vous plongez à temps, esquivé !':'💥 Les écailles explosent : vous plongez à temps, esquivé !','good');H.elan=2;return;}
+ if(!mn.z.includes(H.zone)){log(bolt?`⚡ La foudre frappe ${mn.z.map(z=>ZN[z].toLowerCase()).join(', ')}. Tu t’es écarté à temps.`:`💥 Les écailles explosent (${mn.z.map(z=>ZN[z].toLowerCase()).join(', ')}). Tu es hors de portée.`,'good');return;}
+ if(H.dodge){log(bolt?'⚡ La foudre frappe : tu plonges à temps, esquivé !':'💥 Les écailles explosent : tu plonges à temps, esquivé !','good');H.elan=2;return;}
  let d=monDmg(mv),guarded=false;const T=H.stats.w.type;
  if(H.guard){const cost=Math.round(4+d*GUARD.cost);if(H.st>=cost){H.st-=cost;guarded=true;d*=1-guardBlock('H',T);}}
- d=Math.max(1,Math.round(d*100/(100+H.stats.def)));hurt(d,bolt?`⚡ La foudre de la tempête vous frappe : vous subissez ${d} dégâts${guarded?' (en partie bloqué)':''}.`:`💥 Les écailles explosent sous vos pieds : vous subissez ${d} dégâts${guarded?' (en partie bloqué)':''}.`);
+ d=Math.max(1,Math.round(d*100/(100+H.stats.def)));hurt(d,bolt?`⚡ La foudre de la tempête te frappe : tu subis ${d} dégâts${guarded?' (en partie bloqué)':''}.`:`💥 Les écailles explosent sous tes pieds : tu subis ${d} dégâts${guarded?' (en partie bloqué)':''}.`);
  if(!guarded&&!H.fainted&&!H.over&&!bolt)applyStatus('burn');}
 function monsterPhase(){const m=H.m,nm=m.d.name;if(m.mines){mineBlast();if(H.over||H.fainted)return;}
  if(H.trap&&!m.flying&&!(m.trapped>0)&&!(m.ko>0)&&!(m.topple>0)){H.trap=false;
   if(m.trapImm>0)log(`${nm} flaire le piège et le détruit.`,'warn');
-  else{m.trapped=2;m.trapImm=12;m.tranq=0;m.chain=null;if(m.burrow){m.burrow=0;log(`${nm} surgit de la neige… droit dans votre piège !`,'good');}m.flinched=false;m.flash=false;log(`🪤 ${nm} tombe dans le piège ! Immobilisé.`,'good');return;}}
+  else{m.trapped=2;m.trapImm=12;m.tranq=0;m.chain=null;if(m.burrow){m.burrow=0;log(`${nm} surgit de la neige… droit dans ton piège !`,'good');}m.flinched=false;m.flash=false;log(`🪤 ${nm} tombe dans le piège ! Immobilisé.`,'good');return;}}
  if(m.trapped>0){m.trapped--;log(`${nm} se débat dans le piège.`);return;}
  if(m.ko>0){m.ko--;log(`💫 ${nm} est assommé.`);return;}
  if(m.topple>0){m.topple--;log(`${nm} est à terre et se débat !`);return;}
  const it=H.intent||[];
  if(m.flash){m.flash=false;m.flinched=false;m.chain=null;if(it.length&&!passive(it[0]))log(`${nm} se tord, aveuglé : son attaque est annulée !`,'good');return;}
- if(m.flinched){m.flinched=false;m.chain=null;if(it.length&&!passive(it[0])){log(`${nm} tressaille ! Son action est interrompue.`,'good');tip('flinch','Assez de dégâts d’un coup, une partie brisée ou un KO font tressaillir le monstre : son attaque annoncée est annulée.');}H.fore&&log('La posture prévoyante n’a rien eu à contrer.');H.fore=false;H.counter&&log('Votre contre n’a rien eu à bloquer.');H.counter=false;return;}
+ if(m.flinched){m.flinched=false;m.chain=null;if(it.length&&!passive(it[0])){log(`${nm} tressaille ! Son action est interrompue.`,'good');tip('flinch','Assez de dégâts d’un coup, une partie brisée ou un KO font tressaillir le monstre : son attaque annoncée est annulée.');}H.fore&&log('La posture prévoyante n’a rien eu à contrer.');H.fore=false;H.counter&&log('Ton contre n’a rien eu à bloquer.');H.counter=false;return;}
  for(const mv of it){if(H.over||H.fainted||m.hp<=0||m.topple>0||m.ko>0||m.trapped>0)break;execMove(mv);}
  if(H.fore&&!H.over){H.fore=false;log('La posture prévoyante n’a rien eu à contrer.');}
- if(H.counter&&!H.over){H.counter=false;log('Votre contre n’a rien eu à bloquer.');}}
+ if(H.counter&&!H.over){H.counter=false;log('Ton contre n’a rien eu à bloquer.');}}
 
 function execMove(mv){const m=H.m,nm=m.d.name,sk=H.stats.sk;
  if(passive(mv))return;
  m.stamina-=(mv.c||8);m.lastMove=mv.id;
- if(mv.fx==='eat'){const i=(m.loot||[]).findIndex(k=>EDIBLE.includes(k));if(i<0)return;const k=m.loot.splice(i,1)[0];const v=Math.round(m.max*(k==='mega'?.08:.05));m.hp=Math.min(m.max,m.hp+v);log(`🐒 ${nm} dévore votre ${ITEMS[k].n.toLowerCase()} et reprend des forces (+${v} PV). L’objet est perdu.`,'bad');return;}
- if(mv.fx==='rock'){m.rock=5;m.rockHp=Math.round(m.max*.08);m.rockUses++;log(`🪨 ${nm} brandit un rocher : sa tête est protégée ! (le contondant le brise plus vite)`,'warn');tip('rock','Frappez le rocher (à l’avant) pour le briser : Grakku tombera à terre. Sinon, visez ailleurs le temps qu’il le lâche.');return;}
- if(mv.fx==='fly'){m.flying=3;log(`🪽 ${nm} s’envole ! Vos coups ne touchent que ses pattes. Une bombe flash ${pron(m.id)} ferait chuter.`,'warn');tip('fly','En vol, vos coups sont réduits de moitié. Une bombe flash le fait s’écraser au sol : deux tours pour frapper où vous voulez.');return;}
- if(mv.fx==='windup'){m.chain=mv.chain;log(`⚠️ ${nm} : ${mv.n}. Une attaque dévastatrice arrive au prochain tour !`,'warn');tip('windup','Attaque préparée : elle frappera fort au prochain tour. Infligez un gros coup (charge, danse…) pour le faire tressaillir et l’annuler, ou mettez-vous hors de portée.');return;}
+ if(mv.fx==='eat'){const i=(m.loot||[]).findIndex(k=>EDIBLE.includes(k));if(i<0)return;const k=m.loot.splice(i,1)[0];const v=Math.round(m.max*(k==='mega'?.08:.05));m.hp=Math.min(m.max,m.hp+v);log(`🐒 ${nm} dévore l’objet volé (${ITEMS[k].n.toLowerCase()}) et reprend des forces (+${v} PV). L’objet est perdu.`,'bad');return;}
+ if(mv.fx==='rock'){m.rock=5;m.rockHp=Math.round(m.max*.08);m.rockUses++;log(`🪨 ${nm} brandit un rocher : sa tête est protégée ! (le contondant le brise plus vite)`,'warn');tip('rock','Frappe le rocher (à l’avant) pour le briser : Grakku tombera à terre. Sinon, vise ailleurs le temps qu’il le lâche.');return;}
+ if(mv.fx==='fly'){m.flying=3;log(`🪽 ${nm} s’envole ! Tes coups ne touchent que ses pattes. Une bombe flash ${pron(m.id)} ferait chuter.`,'warn');tip('fly','En vol, tes coups sont réduits de moitié. Une bombe flash le fait s’écraser au sol : deux tours pour frapper où tu veux.');return;}
+ if(mv.fx==='windup'){m.chain=mv.chain;log(`⚠️ ${nm} : ${mv.n}. Une attaque dévastatrice arrive au prochain tour !`,'warn');tip('windup','Attaque préparée : elle frappera fort au prochain tour. Inflige un gros coup (charge, danse…) pour le faire tressaillir et l’annuler, ou mets-toi hors de portée.');return;}
  if(mv.fx==='plate'){for(const p in m.plates){const pl=m.plates[p];pl.hp=pl.max;pl.bare=0;}log(`🛡️ ${nm} ressoude ses plaques : tout son corps est à nouveau cuirassé.`,'warn');return;}
  if(mv.fx==='phase'){m.phase2=true;m.phaseQ=false;m.enraged=Math.max(m.enraged,6);m.chain=null;for(const p in m.plates){m.plates[p].hp=0;m.plates[p].bare=0;}
   H.fx.push({t:'mfx',zones:ALLZ.slice(),el:'fire',side:H.side});log(`🔥 ${nm} embrase son cœur de forge ! Ses plaques fondent, mais le sol de l’arène entre en fusion.`,'bad');
-  tip('lava','Sol en fusion : chaque tour, une zone rougeoie (elle est annoncée). Quittez-la avant la fin du tour : l’esquive ne protège pas de la chaleur du sol.');
+  tip('lava','Sol en fusion : chaque tour, une zone rougeoie (elle est annoncée). Quitte-la avant la fin du tour : l’esquive ne protège pas de la chaleur du sol.');
   const zz=ALLZ;if(zz.includes(H.zone)&&!H.dodge&&!H.guard&&!H.stats.sk.bouchons){H.s.tet=2;log('🙉 Tétanisé par le rugissement !','bad');}return;}
- if(mv.fx==='burrow'){m.burrow=1;m.chain=null;log(`❄️ ${nm} s’enfouit sous la neige ! Vos coups ne l’atteignent plus : préparez-vous à esquiver, ou posez un piège.`,'warn');tip('burrow','Monstre enfoui : il resurgira sous vos pieds au prochain tour (attaque traquante). Esquivez, gardez, ou profitez-en pour vous soigner, aiguiser ou poser un piège : il tombera dedans en sortant.');return;}
+ if(mv.fx==='burrow'){m.burrow=1;m.chain=null;log(`❄️ ${nm} s’enfouit sous la neige ! Tes coups ne l’atteignent plus : prépare-toi à esquiver, ou pose un piège.`,'warn');tip('burrow','Monstre enfoui : il resurgira sous tes pieds au prochain tour (attaque traquante). Esquive, garde, ou profites-en pour te soigner, aiguiser ou poser un piège : il tombera dedans en sortant.');return;}
  if(mv.id==='surgit')m.burrow=0;
- if(mv.id==='broyage'){if(!H.grab){log(`${nm} referme ses mâchoires sur le vide : vous vous êtes libéré !`,'good');return;}H.grab=0;const d=Math.max(1,Math.round(monDmg(mv)*100/(100+H.stats.def)));hurt(d,`🦷 ${nm} vous broie entre ses mâchoires : ${d} dégâts ! Il vous recrache au sol.`);return;}
- if(mv.fx==='harden'){m.harden=4;log(`🔥 ${nm} embrase sa carapace ! Elle repousse vos coups : visez la mâchoire (avant) ou brisez la carapace.`,'warn');tip('harden','Carapace ardente : le flanc et la queue deviennent durs (les lames rebondissent). Frappez la tête, ou brisez la carapace au contondant pour l’en empêcher définitivement.');return;}
- if(mv.fx==='bristle'){m.spikes=3;m.spikeHp=Math.round(m.max*.05);m.chain=null;log(`🦔 ${nm} se hérisse ! Pendant 3 tours, frapper au contact vous blesse.`,'warn');tip('bristle','Épines dressées : chaque attaque au contact vous blesse un peu. Le contondant et les obus les brisent (il est alors sonné) ; les tirs à distance ne craignent rien. Vous pouvez aussi attendre qu’elles retombent.');return;}
- if(mv.fx==='stance'){m.stanceCd=4;if(H.attacked&&!H.dodge){const d=Math.max(1,Math.round(m.d.lv*TIER.H*.9*(H.guard?.5:1)*100/(100+H.stats.def)));H.fx.push({t:'matk',z:H.zone,side:H.side});hurt(d,`⚔️ ${nm} pare votre attaque et riposte : ${d} dégâts${H.guard?' (en partie bloqué)':''} !`);}else{m.open=2;log(`🌙 ${nm} quitte sa posture sans rien parer : elle est exposée 2 tours !`,'good');}return;}
+ if(mv.id==='broyage'){if(!H.grab){log(`${nm} referme ses mâchoires sur le vide : tu t’es libéré !`,'good');return;}H.grab=0;const d=Math.max(1,Math.round(monDmg(mv)*100/(100+H.stats.def)));hurt(d,`🦷 ${nm} te broie entre ses mâchoires : ${d} dégâts ! Il te recrache au sol.`);return;}
+ if(mv.fx==='harden'){m.harden=4;log(`🔥 ${nm} embrase sa carapace ! Elle repousse tes coups : vise la mâchoire (avant) ou brise la carapace.`,'warn');tip('harden','Carapace ardente : le flanc et la queue deviennent durs (les lames rebondissent). Frappe la tête, ou brise la carapace au contondant pour l’en empêcher définitivement.');return;}
+ if(mv.fx==='bristle'){m.spikes=3;m.spikeHp=Math.round(m.max*.05);m.chain=null;log(`🦔 ${nm} se hérisse ! Pendant 3 tours, frapper au contact te blesse.`,'warn');tip('bristle','Épines dressées : chaque attaque au contact te blesse un peu. Le contondant et les obus les brisent (il est alors sonné) ; les tirs à distance ne craignent rien. Tu peux aussi attendre qu’elles retombent.');return;}
+ if(mv.fx==='stance'){m.stanceCd=4;if(H.attacked&&!H.dodge){const d=Math.max(1,Math.round(m.d.lv*TIER.H*.9*(H.guard?.5:1)*100/(100+H.stats.def)));H.fx.push({t:'matk',z:H.zone,side:H.side});hurt(d,`⚔️ ${nm} pare ton attaque et riposte : ${d} dégâts${H.guard?' (en partie bloqué)':''} !`);}else{m.open=2;log(`🌙 ${nm} quitte sa posture sans rien parer : elle est exposée 2 tours !`,'good');}return;}
  if(mv.fx==='eclipse'){m.eclipse=m.parts.tete.broken?2:4;m.chain=null;H.fx.push({t:'mfx',zones:ALLZ.slice(),el:'roar',side:H.side});
-  log(`🌑 ${nm} avale la lumière : l’Éclipse tombe pour ${m.eclipse} tours ! Vous ne voyez plus où il frappe.`,'warn');
-  tip('eclipse','Éclipse : vous ne voyez plus la cible de ses attaques, seulement un bruit, souvent juste mais pas toujours. Gardez, esquivez au bon moment, ou lancez une bombe flash : elle dissipe l’Éclipse et l’expose. Briser ses cornes de cristal écourte l’Éclipse.');return;}
+  log(`🌑 ${nm} avale la lumière : l’Éclipse tombe pour ${m.eclipse} tours ! Tu ne vois plus où il frappe.`,'warn');
+  tip('eclipse','Éclipse : tu ne vois plus la cible de ses attaques, seulement un bruit, souvent juste mais pas toujours. Garde, esquive au bon moment, ou lance une bombe flash : elle dissipe l’Éclipse et l’expose. Briser ses cornes de cristal écourte l’Éclipse.');return;}
  if(mv.fx==='storm'){m.storm=m.parts.tete.broken?3:4;m.chain=null;H.fx.push({t:'mfx',zones:ALLZ.slice(),el:'roar',side:H.side});
-  log(`🌪️ ${nm} invoque la tempête ! Pendant ${m.storm} tours, le vent repousse vos lames et la foudre frappe votre zone à chaque tour.`,'warn');
-  tip('storm','Tempête : vos coups perdent de leur force et la foudre frappe là où vous êtes au début de son tour. Changez de zone ou esquivez. Quand le ciel s’apaise, il est exposé : frappez fort. Briser ses cornes affaiblit la tempête, le poison l’écourte.');return;}
+  log(`🌪️ ${nm} invoque la tempête ! Pendant ${m.storm} tours, le vent repousse tes lames et la foudre frappe ta zone à chaque tour.`,'warn');
+  tip('storm','Tempête : tes coups perdent de leur force et la foudre frappe là où tu es au début de son tour. Change de zone ou esquive. Quand le ciel s’apaise, il est exposé : frappe fort. Briser ses cornes affaiblit la tempête, le poison l’écourte.');return;}
  if(mv.fx==='mines'){const n=mv.all?3:m.parts.flanc.broken?1:2;const zs=[H.zone];for(const z of ALLZ.slice().sort(()=>rnd()-.5))if(zs.length<n&&!zs.includes(z))zs.push(z);m.mines={z:zs};m.chain=null;
   log(`💥 ${nm} : ${mv.n}. Écailles explosives sur ${zs.length===3?'toute l’arène':zs.map(z=>ZN[z].toLowerCase()).join(' et ')} : elles explosent au prochain tour, avant son action !`,'warn');
-  tip('mines','Écailles explosives : elles sautent au début du prochain tour du monstre, avant son attaque. Quittez la zone qui rougeoie ou esquivez. Briser ses ailes réduit ses largages.');return;}
+  tip('mines','Écailles explosives : elles sautent au début du prochain tour du monstre, avant son attaque. Quitte la zone qui rougeoie ou esquive. Briser ses ailes réduit ses largages.');return;}
  if(mv.fx==='charge'){m.charged=8;log(`⚡ ${nm} est surchargé ! Plus rapide et plus fort, mais sa tête est exposée.`,'warn');return;}
  const zones=effZones(mv),inZone=zones.includes(H.zone);
  if(mv.fx==='roar'){
   H.fx.push({t:'mfx',zones:ALLZ.slice(),el:'roar',side:H.side});
-  if(!mv.intro){m.enraged=6;m.forceRoar=false;m.sinceRage=0;log(`😡 ${nm} entre en rage ! Ses attaques sont plus puissantes.`,'bad');tip('rage','Enragé, le monstre frappe 25 % plus fort pendant quelques tours et, dès le rang 3, peut enchaîner deux attaques. Soyez prudent jusqu’à ce qu’il se calme.');}
+  if(!mv.intro){m.enraged=6;m.forceRoar=false;m.sinceRage=0;log(`😡 ${nm} entre en rage ! Ses attaques sont plus puissantes.`,'bad');tip('rage','Enragé, le monstre frappe 25 % plus fort pendant quelques tours et, dès le rang 3, peut enchaîner deux attaques. Sois prudent jusqu’à ce qu’il se calme.');}
   else log(`${nm} pousse un ${mv.n.toLowerCase()} !`,'warn');
-  if(inZone){if(H.dodge)log('Vous plongez à terre : le rugissement ne vous atteint pas.','good');
-   else if(sk.bouchons)log('Bouchons : le rugissement ne vous affecte pas.','good');
-   else if(H.guard)log('Vous vous protégez derrière votre garde.','good');
+  if(inZone){if(H.dodge)log('Tu plonges à terre : le rugissement ne t’atteint pas.','good');
+   else if(sk.bouchons)log('Bouchons : le rugissement ne t’affecte pas.','good');
+   else if(H.guard)log('Tu te protèges derrière ta garde.','good');
    else{H.s.tet=2;log('🙉 Tétanisé ! Impossible d’esquiver au prochain tour.','bad');}}
   return;}
  if(m.exhausted>0&&mv.d&&rnd()<.3){m.topple=1;m.flying=0;m.chain=null;log(`💧 ${nm} tente une attaque mais trébuche, épuisé !`,'good');return;}
  const label=`${nm} : ${mv.n}`;
  {const zz=effZones(mv);const tz=zz.includes(H.zone)?H.zone:zz[0];if(tz)H.fx.push({t:'matk',z:tz,side:H.side});H.fx.push({t:'mfx',zones:zz.slice(),el:elemOf(mv),side:H.side});}
- if(!inZone&&ranged()&&!H.close&&mv.d&&!reachOf(mv)&&(mv.z||[]).includes(H.zone)){H.close=1;log(`${label}. Trop loin pour vous toucher, mais ${nm} avance : le voilà au contact !`,'warn');tip('close','Au contact (anneau intérieur), un tireur est exposé aux morsures, griffes et coups de queue. Utilisez « Reculer » pour regagner l’anneau extérieur.');}
- else if(!inZone)log(`${label}. Vous êtes hors de portée.`);
- else if(m.blind>0&&rnd()<.5)log(`${label}. Aveuglé, il vous manque !`,'good');
+ if(!inZone&&ranged()&&!H.close&&mv.d&&!reachOf(mv)&&(mv.z||[]).includes(H.zone)){H.close=1;log(`${label}. Trop loin pour te toucher, mais ${nm} avance : le voilà au contact !`,'warn');tip('close','Au contact (anneau intérieur), un tireur est exposé aux morsures, griffes et coups de queue. Utilise « Reculer » pour regagner l’anneau extérieur.');}
+ else if(!inZone)log(`${label}. Tu es hors de portée.`);
+ else if(m.blind>0&&rnd()<.5)log(`${label}. Aveuglé, il te manque !`,'good');
  else if(H.counter&&mv.d){H.counter=false;H.guard=false;let pid=targetPart();const hits=weaponMove('counter').hits;let tot=0;for(const hh of hits){if(H.m.hp<=0)break;tot+=dealHit(hh,pid).dmg;}
-  H.fx.push({t:'weak',v:tot,z:H.zone});log(`🛡️ Contre-estoc ! Vous bloquez ${mv.n.toLowerCase()} et ripostez : ${tot} dégâts.`,'good');if(H.m.hp<=0)H.blow='votre Contre-estoc';checkObj();flush();H.riposte=2;}
+  H.fx.push({t:'weak',v:tot,z:H.zone});log(`🛡️ Contre-estoc ! Tu bloques ${mv.n.toLowerCase()} et ripostes : ${tot} dégâts.`,'good');if(H.m.hp<=0)H.blow='ton Contre-estoc';checkObj();flush();H.riposte=2;}
  else if(H.fore){H.fore=false;H.dodge=true;H.w.gauge=Math.min(100,H.w.gauge+30);
   let pid=ZPART[H.zone];if(m.flying)pid='flanc';const r=dealHit(weaponMove('fore').hits[0],pid);
-  H.fx.push({t:'weak',v:r.dmg,z:H.zone});log(`✨ Coupe d’anticipation ! Vous esquivez ${mv.n.toLowerCase()} et contre-attaquez : ${r.dmg} dégâts.`,'good');if(m.hp<=0)H.blow='votre Coupe d’anticipation';checkObj();flush();}
- else if(H.pal&&H.pal.lure&&mv.d){H.pal.lure=false;H._lured=true;palTakeHit(mv,monDmg(mv),true);log(`${label} : ${palS().name} détourne le coup, vous êtes épargné.`,'good');}
- else if(H.dodge){tip('elan','Une esquive réussie donne de l’élan : un bonus à votre prochaine attaque.');if(!H.elan)log(`${label}. Esquivé ! Élan : +${20+10*sk.esquive} % à votre prochaine attaque.`,'good');else log(`${label}. Esquivé !`,'good');H.elan=2;if(H.s.burn){H.s.burn=0;log('La roulade éteint les flammes.','good');}}
+  H.fx.push({t:'weak',v:r.dmg,z:H.zone});log(`✨ Coupe d’anticipation ! Tu esquives ${mv.n.toLowerCase()} et contre-attaques : ${r.dmg} dégâts.`,'good');if(m.hp<=0)H.blow='ta Coupe d’anticipation';checkObj();flush();}
+ else if(H.pal&&H.pal.lure&&mv.d){H.pal.lure=false;H._lured=true;palTakeHit(mv,monDmg(mv),true);log(`${label} : ${palS().name} détourne le coup, tu es épargné.`,'good');}
+ else if(H.dodge){tip('elan','Une esquive réussie donne de l’élan : un bonus à ta prochaine attaque.');if(!H.elan)log(`${label}. Esquivé ! Élan : +${20+10*sk.esquive} % à ta prochaine attaque.`,'good');else log(`${label}. Esquivé !`,'good');H.elan=2;if(H.s.burn){H.s.burn=0;log('La roulade éteint les flammes.','good');}}
  else{let d=monDmg(mv),guarded=false;const T=H.stats.w.type;
   if(H.asleep){d*=1.5;H.asleep=false;log('💤 Réveil brutal : +50 % de dégâts !','bad');}
   let full=false;
-  if(H.guard){const cost=Math.round(4+d*GUARD.cost);if(H.st>=cost){H.st-=cost;guarded=true;const b=guardBlock(mv.tier,T);d*=1-b;full=b>=1;H.sharp=Math.max(0,H.sharp-1);}else log('Pas assez d’endurance : votre garde cède !','bad');}
+  if(H.guard){const cost=Math.round(4+d*GUARD.cost);if(H.st>=cost){H.st-=cost;guarded=true;const b=guardBlock(mv.tier,T);d*=1-b;full=b>=1;H.sharp=Math.max(0,H.sharp-1);}else log('Pas assez d’endurance : ta garde cède !','bad');}
   if(H.tackle)d*=.5;
   d=full?0:Math.max(1,Math.round(d*100/(100+H.stats.def)));
-  if(!guarded&&!H.tackle&&H.w.charge>0){H.w.charge=0;log('Le coup brise votre charge !','bad');}
-  if(full)log(`${label} : bloqué entièrement par votre ${H.bashGuard?'bouclier':'garde'} !`,'good');
-  else hurt(d,`${label} : vous subissez ${d} dégâts${guarded?' (en partie bloqué)':''}${H.tackle?' (encaissé)':''}.`);
+  if(!guarded&&!H.tackle&&H.w.charge>0){H.w.charge=0;log('Le coup brise ta charge !','bad');}
+  if(full)log(`${label} : bloqué entièrement par ${H.bashGuard?'ton bouclier':'ta garde'} !`,'good');
+  else hurt(d,`${label} : tu subis ${d} dégâts${guarded?' (en partie bloqué)':''}${H.tackle?' (encaissé)':''}.`);
   if(guarded&&T==='cb')H.w.en=Math.min(100,(H.w.en||0)+Math.round(25*conc()));
-  if(guarded&&!H.fainted&&!H.bashGuard){H.riposte=2;log(`🛡️ Garde tenue ! Riposte : +${Math.round((GUARD.rip+GUARD.lv*sk.garde)*100)} % à votre prochaine attaque.`,'good');tip('riposte','Garde tenue : votre prochaine attaque profite d’une riposte. Gardez contre les petits coups, esquivez les gros.');}
+  if(guarded&&!H.fainted&&!H.bashGuard){H.riposte=2;log(`🛡️ Garde tenue ! Riposte : +${Math.round((GUARD.rip+GUARD.lv*sk.garde)*100)} % à ta prochaine attaque.`,'good');tip('riposte','Garde tenue : ta prochaine attaque profite d’une riposte. Garde contre les petits coups, esquive les gros.');}
   if(!guarded&&mv.st&&!H.fainted)applyStatus(mv.st);
   if(!guarded&&mv.steal&&!H.fainted&&!H.over)stealItem(mv.steal);
-  if(!guarded&&mv.grab&&!H.fainted&&!H.over){H.grab=1;H.w.charge=0;log(`🦷 ${nm} vous saisit dans sa gueule ! Débattez-vous (35 endurance) avant qu’il ne broie.`,'bad');tip('grab','Saisi : au prochain tour, il vous broie. Débattez-vous : avec au moins 35 d’endurance, vous vous libérez. Votre Griffu peut aussi vous délivrer.');}}
- if(ranged()&&inZone&&mv.after&&!H.close&&!H.fainted&&!H.over){H.close=1;log(`↻ ${nm} fond sur vous : le voilà au contact ! Ses coups rapprochés vous atteignent.`,'bad');tip('close','Au contact (anneau intérieur), un tireur est exposé aux morsures, griffes et coups de queue. Utilisez « Reculer » pour regagner l’anneau extérieur.');}
+  if(!guarded&&mv.grab&&!H.fainted&&!H.over){H.grab=1;H.w.charge=0;log(`🦷 ${nm} te saisit dans sa gueule ! Débats-toi (35 endurance) avant qu’il ne broie.`,'bad');tip('grab','Saisi : au prochain tour, il te broie. Débats-toi : avec au moins 35 d’endurance, tu te libères. Ton Griffu peut aussi te délivrer.');}}
+ if(ranged()&&inZone&&mv.after&&!H.close&&!H.fainted&&!H.over){H.close=1;log(`↻ ${nm} fond sur toi : le voilà au contact ! Ses coups rapprochés t’atteignent.`,'bad');tip('close','Au contact (anneau intérieur), un tireur est exposé aux morsures, griffes et coups de queue. Utilise « Reculer » pour regagner l’anneau extérieur.');}
  if(inZone&&mv.d&&!H._lured)palTakeHit(mv,monDmg(mv),false);H._lured=false;
  if(mv.ends){m.flying=0;log(`${nm} se pose au sol.`);}
  if(mv.after&&!H.fainted&&!H.over){const z0=H.zone;
   const s0=H.side,a0=zAngle(z0,s0);H.zone=afterZone(z0,mv.after);
   if(mv.after==='flip'&&z0==='flanc')H.side=s0==='g'?'d':'g';
   const a1=zAngle(H.zone,H.side);if(a1!==a0)H.moved={from:a0,to:a1};
-  if(H.zone!==z0)log(`↻ ${nm} ${mv.after==='flip'?'traverse l’arène':'se tourne vers vous'} : vous êtes maintenant ${H.zone==='avant'?'à l’avant (tête)':H.zone==='arriere'?'à l’arrière (queue)':'sur le flanc'}.`,'warn');
-  else if(H.side!==s0)log(`↻ ${nm} passe à côté de vous : vous êtes sur l’autre flanc.`,'warn');}
+  if(H.zone!==z0)log(`↻ ${nm} ${mv.after==='flip'?'traverse l’arène':'se tourne vers toi'} : tu es maintenant ${H.zone==='avant'?'à l’avant (tête)':H.zone==='arriere'?'à l’arrière (queue)':'sur le flanc'}.`,'warn');
+  else if(H.side!==s0)log(`↻ ${nm} passe à côté de toi : tu es sur l’autre flanc.`,'warn');}
  if(mv.open){m.open=2;log('🎯 Ouverture ! Dégâts +25 % au prochain tour.','good');tip('open','Après certaines attaques, le monstre reste exposé : c’est le moment de frapper fort.');}}
 
 function applyStatus(s){const sk=H.stats.sk;
- if(s==='burn'){if(sk.res_feu)return log('Ignifuge : pas de brûlure.','good');H.s.burn=3;log('🔥 Vous brûlez ! Une esquive éteint les flammes.','bad');}
- if(s==='poison'){if(sk.res_poison)return log('Anti-poison : immunisé.','good');H.s.poison=5;log('☠️ Vous êtes empoisonné ! (antidote)','bad');}
- if(s==='gel'){if(sk.res_glace)return log('Anti-gel : immunisé.','good');H.s.gel=3;log('❄️ Gelé : votre endurance remonte deux fois moins vite.','bad');}
- if(s==='para'){if(sk.res_foudre)return log('Anti-paralysie : immunisé.','good');H.s.para=1;H.s.why='para';log('⚡ Paralysé ! Vous perdez votre prochain tour.','bad');}
- if(s==='sleep'){H.s.para=1;H.s.why='sleep';log('💤 Endormi ! Vous perdez votre prochain tour, et un coup reçu en dormant fait 50 % de dégâts en plus.','bad');tip('sleep','Endormi : vous perdez un tour, et le prochain coup reçu pendant ce tour vous réveille avec 50 % de dégâts en plus. Esquivez ou gardez contre la poudre.');}
- if(s==='down'){H.s.para=1;H.s.why='down';log('🌋 Renversé ! Vous perdez votre prochain tour.','bad');}
- if(s==='bulle'){H.s.bulle=3;log('🫧 Couvert de bulles : vos déplacements glissent une fois sur deux. Une esquive les chasse.','bad');}
- if(s==='virus'&&!H.s.virus){H.s.virus=4;H.virusD=0;log('🦠 Frénésie ! Infligez de gros dégâts dans les 4 tours pour la surmonter (+15 % d’attaque), sinon elle explose.','bad');tip('virus','Frénésie : la jauge se remplit avec vos dégâts. Pleine avant la fin du compte à rebours, elle vous donne +15 % d’attaque pendant 6 tours. Sinon, elle explose et vous blesse.');}
- if(s==='slime'){H.s.slime=2;log('🟢 Couvert de gelée explosive ! Esquivez au prochain tour pour vous en débarrasser, sinon elle explose.','bad');tip('slime','Gelée explosive : elle explose à la fin du tour suivant. Une esquive la détache. La garde ne protège pas de l’explosion.');}}
-function hurt(d,msg){H.hp-=d;H.fx.push({t:'hurt',v:d,z:H.zone,me:1});log(msg,'bad');if(H.hp<=0&&H.stats.sk.volonte&&!H.volUsed){H.hp=1;H.volUsed=true;log('🔩 Volonté de fer : vous restez debout avec 1 PV !','good');return;}if(H.hp<=0&&palHas('rempart')&&H.pal&&!H.pal.ko&&!H.pal.wall&&!H.q.training){H.hp=1;H.pal.wall=1;log(`🐱 ${palS().name} s’interpose et encaisse le coup : vous restez debout avec 1 PV !`,'good');return;}if(H.hp<=0)faint();else if(H.hp<H.hpMax*.4)tip('potion','PV bas : buvez une potion (Objets) pendant un tour où le monstre vise une autre zone.');}
+ if(s==='burn'){if(sk.res_feu)return log('Ignifuge : pas de brûlure.','good');H.s.burn=3;log('🔥 Tu brûles ! Une esquive éteint les flammes.','bad');}
+ if(s==='poison'){if(sk.res_poison)return log('Anti-poison : immunisé.','good');H.s.poison=5;log('☠️ Tu es empoisonné ! (antidote)','bad');}
+ if(s==='gel'){if(sk.res_glace)return log('Anti-gel : immunisé.','good');H.s.gel=3;log('❄️ Gelé : ton endurance remonte deux fois moins vite.','bad');}
+ if(s==='para'){if(sk.res_foudre)return log('Anti-paralysie : immunisé.','good');H.s.para=1;H.s.why='para';log('⚡ Paralysé ! Tu perds ton prochain tour.','bad');}
+ if(s==='sleep'){H.s.para=1;H.s.why='sleep';log('💤 Endormi ! Tu perds ton prochain tour, et un coup reçu en dormant fait 50 % de dégâts en plus.','bad');tip('sleep','Endormi : tu perds un tour, et le prochain coup reçu pendant ce tour te réveille avec 50 % de dégâts en plus. Esquive ou garde contre la poudre.');}
+ if(s==='down'){H.s.para=1;H.s.why='down';log('🌋 Renversé ! Tu perds ton prochain tour.','bad');}
+ if(s==='bulle'){H.s.bulle=3;log('🫧 Couvert de bulles : tes déplacements glissent une fois sur deux. Une esquive les chasse.','bad');}
+ if(s==='virus'&&!H.s.virus){H.s.virus=4;H.virusD=0;log('🦠 Frénésie ! Inflige de gros dégâts dans les 4 tours pour la surmonter (+15 % d’attaque), sinon elle explose.','bad');tip('virus','Frénésie : la jauge se remplit avec tes dégâts. Pleine avant la fin du compte à rebours, elle te donne +15 % d’attaque pendant 6 tours. Sinon, elle explose et te blesse.');}
+ if(s==='slime'){H.s.slime=2;log('🟢 Couvert de gelée explosive ! Esquive au prochain tour pour t’en débarrasser, sinon elle explose.','bad');tip('slime','Gelée explosive : elle explose à la fin du tour suivant. Une esquive la détache. La garde ne protège pas de l’explosion.');}}
+function hurt(d,msg){H.hp-=d;H.fx.push({t:'hurt',v:d,z:H.zone,me:1});log(msg,'bad');if(H.hp<=0&&H.stats.sk.volonte&&!H.volUsed){H.hp=1;H.volUsed=true;log('🔩 Volonté de fer : tu restes debout avec 1 PV !','good');return;}if(H.hp<=0&&palHas('rempart')&&H.pal&&!H.pal.ko&&!H.pal.wall&&!H.q.training){H.hp=1;H.pal.wall=1;log(`🐱 ${palS().name} s’interpose et encaisse le coup : tu restes debout avec 1 PV !`,'good');return;}if(H.hp<=0)faint();else if(H.hp<H.hpMax*.4)tip('potion','PV bas : bois une potion (Objets) pendant un tour où le monstre vise une autre zone.');}
 function faint(){H.faints++;H.fainted=true;
- log('💀 Vous vous effondrez ! Les Griffus vous ramènent au camp.','bad');
+ log('💀 Tu t’effondres ! Les Griffus te ramènent au camp.','bad');
  if(H.faints>=3)return endHunt('fail','Trois évanouissements : la quête est un échec.');
  H.hp=H.hpMax;H.st=H.stMax;H.s={burn:0,poison:0,gel:0,para:0,tet:0};H.w.charge=0;H.w.demon=false;H.zone='flanc';H.side='g';H.trap=false;const rest=palHas('sauveteur')?1:2;H.turn+=rest;H.faintPop={rest,left:3-H.faints};
- log(rest===1?`🐱 ${palS().name} vous ramène au plus vite : retour après 1 tour de repos.`:'Vous revenez sur le terrain après 2 tours de repos.','warn');}
+ log(rest===1?`🐱 ${palS().name} te ramène au plus vite : retour après 1 tour de repos.`:'Tu reviens sur le terrain après 2 tours de repos.','warn');}
 
 function endTurn(){const m=H.m,sk=H.stats.sk,nm=m.d.name;
- if(H.s.burn>0){H.s.burn--;hurt(5,'🔥 La brûlure vous inflige 5 dégâts.');}
+ if(H.s.burn>0){H.s.burn--;hurt(5,'🔥 La brûlure t’inflige 5 dégâts.');}
  if(H.over)return;
- if(H.s.poison>0){H.s.poison--;hurt(4,'☠️ Le poison vous inflige 4 dégâts.');}
+ if(H.s.poison>0){H.s.poison--;hurt(4,'☠️ Le poison t’inflige 4 dégâts.');}
  if(H.over)return;
  let regen=20+6*sk.endurance;if(H.s.gel>0){regen=Math.round(regen/2);H.s.gel--;}
  if(H.w.demon){H.st-=12-3*sk.endurance;if(H.st<=0){H.st=0;H.w.demon=false;log('À bout de souffle : le mode Furie s’arrête.','bad');}}
  else H.st=Math.min(H.stMax,H.st+regen);
  if(H.s.tet>0)H.s.tet--;if(H.s.bulle>0)H.s.bulle--;if(H.fren>0)H.fren--;
- if(H.s.slime>0&&!--H.s.slime&&!H.over){const d=Math.max(1,Math.round(m.d.lv*2*100/(100+H.stats.def)));hurt(d,`💥 La gelée explose sur vous : ${d} dégâts !`);}
+ if(H.s.slime>0&&!--H.s.slime&&!H.over){const d=Math.max(1,Math.round(m.d.lv*2*100/(100+H.stats.def)));hurt(d,`💥 La gelée explose sur toi : ${d} dégâts !`);}
  if(H.s.virus>0&&!H.over){if(!--H.s.virus){const d=Math.max(1,Math.round(m.d.lv*1.15*100/(100+H.stats.def)));hurt(d,`🦠 La Frénésie explose : ${d} dégâts !`);}}
  if(H.elan>0)H.elan--;if(H.riposte>0)H.riposte--;
  if(H.song){if(H.song.atk>0&&!--H.song.atk)log('Le chant de puissance s’estompe.');if(H.song.def>0&&!--H.song.def){H.stats.def-=25;log('Le chant du rempart s’estompe.');}}
- if(H.w.fcd>0)H.w.fcd--;if(H.w.rcd>0)H.w.rcd--;if(H.w.ccd>0)H.w.ccd--;if(H.w.wf>0)H.w.wf--;if(H.w.shield>0&&!--H.w.shield)log('Votre bouclier se décharge.','warn');
+ if(H.w.fcd>0)H.w.fcd--;if(H.w.rcd>0)H.w.rcd--;if(H.w.ccd>0)H.w.ccd--;if(H.w.wf>0)H.w.wf--;if(H.w.shield>0&&!--H.w.shield)log('Ton bouclier se décharge.','warn');
  if(H.w.ex){const wasT=triple();for(const k of['r','w','o'])if(H.w.ex[k]>0&&!--H.w.ex[k]){if(k==='o')H.stats.def-=20;log(`L’extrait ${EXTR[k].n} s’estompe.`,'warn');}}
- if(H.w.spirit>0&&++H.w.spiritT>=8){H.w.spirit--;H.w.spiritT=0;log('Votre niveau d’esprit baisse.','warn');}
+ if(H.w.spirit>0&&++H.w.spiritT>=8){H.w.spirit--;H.w.spiritT=0;log('Ton niveau d’esprit baisse.','warn');}
  if(m.poisoned>0){m.poisoned--;const d=Math.round(m.max*.025);m.hp-=d;log(`☠️ Le poison ronge ${nm} (${d}).`,'good');capSave();if(m.hp<=0){H.blow='le poison';return endHunt('kill');}}
  if(m.enraged>0){m.enraged--;if(!m.enraged)log(`${nm} se calme.`);}else m.sinceRage++;
  if(m.open>0)m.open--;if(m.blind>0)m.blind--;if(m.trapImm>0)m.trapImm--;
@@ -1455,7 +1458,7 @@ function endTurn(){const m=H.m,sk=H.stats.sk,nm=m.d.name;
  if(m.eclipse>0){m.eclipse--;if(!m.eclipse){m.eclCd=4;m.open=2;log(`🌕 La lumière revient : ${nm} est ébloui un instant, exposé pendant 2 tours !`,'good');}}
  if(m.storm>0){m.storm-=m.poisoned>0?2:1;if(m.poisoned>0&&m.storm>0)log('☠️ Le poison trouble le Tempestaire : la tempête faiblit.','good');if(m.storm<=0){m.storm=0;m.stormCd=3;m.open=2;m.mines=null;log(`🌤️ La tempête retombe. ${nm} est exposé : dégâts +25 % pendant 2 tours !`,'good');}}
  if(m.plates&&!m.phase2)for(const p in m.plates){const pl=m.plates[p];if(pl.bare>0){pl.bare--;if(!pl.bare){pl.hp=Math.round(pl.max*.6);log(`Le fer se reforme sur ${m.d.parts[p].name.toLowerCase()}.`,'warn');}}}
- if(m.lava&&!H.fainted){if(H.zone===m.lava){const d=Math.max(1,Math.round(m.d.lv*1.5*100/(100+H.stats.def)));hurt(d,`🔥 Le sol en fusion vous brûle (${ZN[m.lava]}) : ${d} dégâts.`);if(H.over)return;if(!H.fainted)applyStatus('burn');}m.lava=null;}
+ if(m.lava&&!H.fainted){if(H.zone===m.lava){const d=Math.max(1,Math.round(m.d.lv*1.5*100/(100+H.stats.def)));hurt(d,`🔥 Le sol en fusion te brûle (${ZN[m.lava]}) : ${d} dégâts.`);if(H.over)return;if(!H.fainted)applyStatus('burn');}m.lava=null;}
  if(m.rock>0){m.rock--;if(!m.rock)log('Grakku lâche son rocher.');}
  if(m.harden>0){if(m.parts.flanc.broken){m.harden=0;log('💥 La carapace éclatée ne retient plus la chaleur : elle refroidit aussitôt.','good');}else if(!--m.harden)log(`La carapace de ${nm} refroidit.`);}
  if(m.flying>1)m.flying--;
@@ -1463,7 +1466,7 @@ function endTurn(){const m=H.m,sk=H.stats.sk,nm=m.d.name;
  const r=m.hp/m.max;
  if(!m.enraged&&!m.exhausted&&!m.forceRoar&&(r<m.enrageAt||m.sinceRage>=14)){m.forceRoar=true;if(r<m.enrageAt)m.enrageAt-=.3;}
  if(m.d.phases&&!m.phase2&&!m.phaseQ&&r<.5)m.phaseQ=true;
- if(r<=.2&&!m.limp&&!m.d.elder){m.limp=true;log(`🦴 ${nm} boite ! Il peut être capturé : piège, puis deux bombes tranquillisantes.`,'warn');tip('capture','Capturer donne une prime majorée et d’autres récompenses que le dépeçage. Posez le piège quand le monstre ne vous vise pas.');}
+ if(r<=.2&&!m.limp&&!m.d.elder){m.limp=true;log(`🦴 ${nm} boite ! Il peut être capturé : piège, puis deux bombes tranquillisantes.`,'warn');tip('capture','Capturer donne une prime majorée et d’autres récompenses que le dépeçage. Pose le piège quand le monstre ne te vise pas.');}
  H.turn++;H._bur=0;H.freeItem=false;if(H.pal)H.pal.lure=false;
  if(H.turn>H.max)return endHunt('fail','Temps écoulé : le monstre a quitté la zone.');
  chooseIntent();
@@ -1475,7 +1478,7 @@ function chooseIntent0(){const m=H.m,d=m.d;
  if(m.trapped>0||m.ko>0||m.topple>0){H.intent=[IDLE];return;}
  if(m.burrow>0){const sm=d.moves.find(x=>x.id==='surgit');if(sm){H.intent=[sm];return;}m.burrow=0;}
  if(H.grab>0){const bm=d.moves.find(x=>x.id==='broyage');if(bm){H.intent=[bm];return;}H.grab=0;}
- if(m.aware===false){m.aware=true;H.intent=[introMove(d)];log(`${d.name} vous a repéré !`,'warn');return;}
+ if(m.aware===false){m.aware=true;H.intent=[introMove(d)];log(`${d.name} t’a repéré !`,'warn');return;}
  if(m.phaseQ&&!m.phase2){m.chain=null;H.intent=[d.moves.find(x=>x.fx==='phase')];return;}
  if(m.chain){const mv=d.moves.find(x=>x.id===m.chain);m.chain=null;if(mv){m.prep=mv.id;H.intent=[mv];return;}}
  if(m.forceRoar&&!m.flying){H.intent=[roarMove(d)];return;}
@@ -1486,9 +1489,9 @@ function chooseIntent0(){const m=H.m,d=m.d;
  if(!pool.length)pool=d.moves.filter(x=>!x.fx&&!x.fly&&x.w>0);
  const wl=pool.map(x=>{let w=x.w;if(effZones(x).includes(H.zone))w*=2;if(ranged()&&!H.close&&reachOf(x))w*=1.6;if(x.id===m.lastMove)w*=.5;return[x,w];});
  const first=wpick(wl);H.intent=[first];
- if(first.track)tip('track','Attaque traquante : elle vous suit où que vous alliez. Seules l’esquive et la garde vous protègent.');
- else if(first.tier==='L'&&effZones(first).includes(H.zone))tip('light','Coup léger : vous pouvez souvent l’encaisser en continuant d’attaquer, plutôt que de perdre votre tour à esquiver.');
- else if(first.tier==='H'&&effZones(first).includes(H.zone))tip('heavy','Coup lourd : esquivez, gardez ou quittez la zone. L’encaisser coûte cher.');
+ if(first.track)tip('track','Attaque traquante : elle te suit où que tu ailles. Seules l’esquive et la garde te protègent.');
+ else if(first.tier==='L'&&effZones(first).includes(H.zone))tip('light','Coup léger : tu peux souvent l’encaisser en continuant d’attaquer, plutôt que de perdre ton tour à esquiver.');
+ else if(first.tier==='H'&&effZones(first).includes(H.zone))tip('heavy','Coup lourd : esquive, garde ou quitte la zone. L’encaisser coûte cher.');
  if(m.phase2)m.lava=pick(ALLZ);
  if(!first.fx&&!m.exhausted&&!m.flying){const p2=(m.charged>0?.35:0)+(m.enraged>0&&d.rank>=3?.22:0)+(m.phase2?.12:0)+(d.elite?.15:0)+(d.anc?.15:0);
   if(rnd()<p2){const second=wpick(wl.filter(e=>!e[0].fx&&e[0].id!==first.id));if(second)H.intent.push(second);}}}
@@ -1537,8 +1540,8 @@ function endHunt(kind,reason){if(H.over)return;if(kind!=='fail'&&H.m.loot&&H.m.l
 const PAL_VOC={
  assaut:{n:'Assaut',d:'Attaque souvent et lance des bombes tonneau.',i:'⚔️'},
  soin:{n:'Soutien',d:'Souffle dans son cor de soin et soigne poison et brûlure.',i:'💚'},
- garde:{n:'Protection',d:'Agite un leurre pour détourner les coups qui vous visent.',i:'🛡️'},
- collecte:{n:'Collecte',d:'Récolte en plus, efface vos traces en expédition et chaparde en combat.',i:'🧺'}};
+ garde:{n:'Protection',d:'Agite un leurre pour détourner les coups qui te visent.',i:'🛡️'},
+ collecte:{n:'Collecte',d:'Récolte en plus, efface tes traces en expédition et chaparde en combat.',i:'🧺'}};
 const PAL_VOC_ORDER=['assaut','soin','garde','collecte'];
 const PAL_W={fer:{n:'Griffe de fer',atk:10,type:'cut'},grakku:{n:'Marteau-bec',atk:14,type:'blunt'},brontal:{n:'Lame braise',atk:17,type:'cut',el:'feu'},
  velyra:{n:'Dard venimeux',atk:19,type:'cut',stat:'poison'},glacimorde:{n:'Masse de givre',atk:21,type:'blunt',el:'glace'},scoriak:{n:'Pilon de lave',atk:22,type:'blunt',el:'feu'},boregor:{n:'Griffe des neiges',atk:24,type:'cut'},devoreur:{n:'Croc vorace',atk:28,type:'cut',el:'dragon'},bombardier:{n:'Marteau-bombe',atk:29,type:'blunt',el:'feu'},tempestaire:{n:'Griffe des vents',atk:31,type:'cut',el:'foudre'},rapinoux:{n:'Griffe chapardeuse',atk:13,type:'cut'},selenis:{n:'Dard lunaire',atk:18,type:'cut',el:'glace'},herissaure:{n:'Masse épineuse',atk:21,type:'blunt'},nacrelle:{n:'Griffe nacrée',atk:27,type:'cut',el:'glace'},sismorak:{n:'Marteau-défense',atk:29,type:'blunt'},tranchelune:{n:'Lame lunaire',atk:31,type:'cut',el:'dragon'},gorgovire:{n:'Griffe frénétique',atk:34,type:'cut'},pyroclaste:{n:'Poing de basalte',atk:34,type:'blunt',el:'feu'},abyssaure:{n:'Griffe d’obsidienne',atk:36,type:'cut',el:'dragon'},fulgor:{n:'Griffe foudre',atk:23,type:'cut',el:'foudre'},ferroi:{n:'Marteau du Roi',atk:26,type:'blunt',el:'dragon'}};
@@ -1546,7 +1549,7 @@ const PAL_A={fer:{n:'Tenue de fer',def:0,hp:0},grakku:{n:'Tenue Pierrebec',def:6
  glacimorde:{n:'Tenue Givre',def:18,hp:25},scoriak:{n:'Tenue Magma',def:20,hp:28},boregor:{n:'Tenue Frimas',def:24,hp:34},devoreur:{n:'Tenue Vorace',def:30,hp:46},bombardier:{n:'Tenue Déflagration',def:32,hp:48},tempestaire:{n:'Tenue Tempête',def:34,hp:52},rapinoux:{n:'Tenue Chapardeur',def:5,hp:8},selenis:{n:'Tenue Lune pâle',def:12,hp:18},herissaure:{n:'Tenue Épineuse',def:19,hp:27},nacrelle:{n:'Tenue Nacrée',def:29,hp:44},sismorak:{n:'Tenue Tellurique',def:32,hp:50},tranchelune:{n:'Tenue Lame-lune',def:33,hp:50},gorgovire:{n:'Tenue Frénétique',def:37,hp:56},pyroclaste:{n:'Tenue Basalte',def:37,hp:58},abyssaure:{n:'Tenue Éclipse',def:39,hp:60},fulgor:{n:'Tenue Tonnerre',def:22,hp:30},ferroi:{n:'Tenue du Roi',def:28,hp:40}};
 const PAL_ORDER=['fer','rapinoux','grakku','brontal','selenis','velyra','glacimorde','scoriak','herissaure','fulgor','boregor','ferroi','devoreur','nacrelle','bombardier','sismorak','tempestaire','tranchelune','gorgovire','pyroclaste','abyssaure'];
 const PAL_SK=[
- {id:'griffes',lv:1,n:'Griffes aiguisées',d:'+15 % de dégâts pour votre Griffu.'},
+ {id:'griffes',lv:1,n:'Griffes aiguisées',d:'+15 % de dégâts pour ton Griffu.'},
  {id:'depec',lv:2,n:'Dépeceur félin',d:'+1 tirage de dépeçage.'},
  {id:'econome',lv:3,n:'Économe',d:'15 % de chance de ne pas consommer un objet.'},
  {id:'endurant',lv:4,n:'Endurant',d:'+30 PV ; se relève en 2 tours au lieu de 3.'},
@@ -1554,13 +1557,13 @@ const PAL_SK=[
  {id:'chance',lv:6,n:'Chanceux',d:'+1 récompense de quête.'},
  {id:'piegeur',lv:7,n:'Piégeur',d:'Pose un piège une fois par chasse quand le monstre boite.'},
  {id:'flair',lv:8,n:'Flair',d:'Traces −15 % en expédition ; repère le coffre enfoui sur la carte.'},
- {id:'sauveteur',lv:9,n:'Sauveteur',d:'Après un évanouissement, vous revenez en 1 tour au lieu de 2.'},
+ {id:'sauveteur',lv:9,n:'Sauveteur',d:'Après un évanouissement, tu reviens en 1 tour au lieu de 2.'},
  {id:'furie',lv:10,n:'Furie féline',d:'Frappe deux fois quand le monstre est à terre, piégé ou assommé.'},
- {id:'rempart',lv:12,n:'Rempart félin',d:'Une fois par chasse, il s’interpose devant un coup qui vous mettrait K.O. : vous restez debout avec 1 PV.'},
- {id:'herbo',lv:14,n:'Herboriste',d:'Une fois par chasse, quand vos PV passent sous 30 %, il vous soigne de 40 % de vos PV max.'},
+ {id:'rempart',lv:12,n:'Rempart félin',d:'Une fois par chasse, il s’interpose devant un coup qui te mettrait K.O. : tu restes debout avec 1 PV.'},
+ {id:'herbo',lv:14,n:'Herboriste',d:'Une fois par chasse, quand tes PV passent sous 30 %, il te soigne de 40 % de tes PV max.'},
  {id:'pisteur',lv:16,n:'Pisteur',d:'+1 ressource à chaque récolte et chaque filon en expédition.'},
- {id:'meneur',lv:18,n:'Meneur de meute',d:'+5 % d’attaque pour vous tant que votre Griffu est debout.'},
- {id:'legende',lv:20,n:'Griffu légendaire',d:'+25 % de dégâts pour votre Griffu, et ses bombes tonneau sont plus fréquentes.'}];
+ {id:'meneur',lv:18,n:'Meneur de meute',d:'+5 % d’attaque pour toi tant que ton Griffu est debout.'},
+ {id:'legende',lv:20,n:'Griffu légendaire',d:'+25 % de dégâts pour ton Griffu, et ses bombes tonneau sont plus fréquentes.'}];
 const PAL_MAXLV=20;
 function palSlots(lv){return lv>=15?5:lv>=9?4:lv>=6?3:lv>=3?2:1;}
 function palNext(lv){return 20+15*lv;}
@@ -1588,29 +1591,29 @@ function palAttack(mult,label){const m=H.m,st=palStats(),w=st.w;const pid=m.flyi
  palHit(d,pid,w.type);H.fx.push({t:'pal',v:d,z:H.zone});
  if(w.stat==='poison'&&!m.poisoned){m.poisonAcc+=8*mult;if(m.poisonAcc>=m.poisonThr){m.poisoned=4;m.poisonAcc=0;m.poisonThr+=80;H.pend.push([`☠️ ${m.d.name} est empoisonné !`,'good']);}}
  log(`🐱 ${palS().name} ${label} ${label.includes('bombe')?'':m.d.parts[pid].name.toLowerCase()+' '}(${d}).`);
- if(m.hp<=0)H.blow=`${palS().name}, votre Griffu`;return d;}
-function palico(){if(H.q.training)return;const m=H.m,p=palS();if(!H.pal)H.pal=palInit();const P=H.pal;if(H.grab>0&&!P.ko&&rnd()<(p.voc==='garde'?.7:.45)){H.grab=0;log(`🐱 ${p.name} mord la gueule de ${m.d.name} : vous êtes libéré !`,'good');return;}if(m.burrow>0){if(P.cd>0)P.cd--;return;}
+ if(m.hp<=0)H.blow=`${palS().name}, ton Griffu`;return d;}
+function palico(){if(H.q.training)return;const m=H.m,p=palS();if(!H.pal)H.pal=palInit();const P=H.pal;if(H.grab>0&&!P.ko&&rnd()<(p.voc==='garde'?.7:.45)){H.grab=0;log(`🐱 ${p.name} mord la gueule de ${m.d.name} : tu es libéré !`,'good');return;}if(m.burrow>0){if(P.cd>0)P.cd--;return;}
  if(P.cd>0)P.cd--;
  if(P.ko>0){P.ko--;if(!P.ko){P.hp=Math.round(P.max*.6);log(`🐱 ${p.name} revient au combat.`,'good');}return;}
  const down=m.trapped>0||m.ko>0||m.topple>0;const voc=p.voc,r=rnd();
- if(palHas('herbo')&&!P.herb&&H.hp>0&&H.hp<H.hpMax*.3){P.herb=1;const v=Math.min(Math.round(H.hpMax*.4),H.hpMax-H.hp);H.hp+=v;H.fx.push({t:'heal',v,z:H.zone,me:1});log(`🐱 ${p.name} vous applique un cataplasme d’herbes : +${v} PV !`,'good');return;}
+ if(palHas('herbo')&&!P.herb&&H.hp>0&&H.hp<H.hpMax*.3){P.herb=1;const v=Math.min(Math.round(H.hpMax*.4),H.hpMax-H.hp);H.hp+=v;H.fx.push({t:'heal',v,z:H.zone,me:1});log(`🐱 ${p.name} t’applique un cataplasme d’herbes : +${v} PV !`,'good');return;}
  if(palHas('piegeur')&&m.limp&&!P.trap&&!H.trap&&!m.trapped&&!m.d.elder){P.trap=1;H.trap=true;log(`🐱 ${p.name} pose un piège à fosse sous les pattes de ${m.d.name} !`,'good');return;}
  if(voc==='soin'){
-  if((H.s.poison>0||H.s.burn>0)&&r<.45){H.s.poison=0;H.s.burn=0;log(`🐱 ${p.name} vous asperge d’une décoction : poison et brûlure soignés.`,'good');return;}
+  if((H.s.poison>0||H.s.burn>0)&&r<.45){H.s.poison=0;H.s.burn=0;log(`🐱 ${p.name} t’asperge d’une décoction : poison et brûlure soignés.`,'good');return;}
   if(H.hp<H.hpMax*.8&&r<.5){const v=Math.min(Math.round(15+2*p.lv),H.hpMax-H.hp);H.hp+=v;H.fx.push({t:'heal',v,z:H.zone,me:1});log(`🐱 ${p.name} souffle dans son cor de soin : +${v} PV.`,'good');return;}}
  if(voc==='garde'&&!P.cd&&!down){const it=(H.intent||[]).find(mv=>mv.d&&effZones(mv).includes(H.zone));if(it&&r<.45){P.lure=true;P.cd=4;log(`🐱 ${p.name} agite son leurre en criant : ${m.d.name} se tourne vers lui !`,'good');return;}}
  if(voc==='collecte'&&!P.pil&&rnd()<.08){P.pil=1;const k=wpick(CAPT),id=matId(m.id,k);S.mats[id]=(S.mats[id]||0)+1;H.palLoot=id;save();log(`🐱 ${p.name} chaparde un matériau : ${matName(id)} !`,'good');return;}
  const bombP=(voc==='assaut'?.12:.03)+(palHas('artificier')?.08:0)+(palHas('legende')?.05:0);
  if(rnd()<bombP){const d=Math.round(palStats().atk*(2.2+rnd()*.6)*(m.flying?.5:1));m.hp-=d;m.flinchAcc+=d*1.2;if(m.plates&&!m.phase2)hitPlate(pick(['tete','flanc','queue']),d*1.2);
   if(!m.ko&&!m.flying){m.koAcc+=d*.3;if(m.koAcc>=m.koThr){m.ko=2;m.koAcc=0;m.koThr=Math.round(m.koThr*1.5);m.chain=null;H.pend.push([`💫 ${m.d.name} est assommé !`,'good']);discharge();}}
-  H.fx.push({t:'pal',v:d,z:H.zone});log(`🐱 ${p.name} lance une bombe tonneau ! (${d})`);if(m.hp<=0)H.blow=`${p.name}, votre Griffu, d’une bombe tonneau`;flush();return;}
+  H.fx.push({t:'pal',v:d,z:H.zone});log(`🐱 ${p.name} lance une bombe tonneau ! (${d})`);if(m.hp<=0)H.blow=`${p.name}, ton Griffu, d’une bombe tonneau`;flush();return;}
  const atkP=voc==='assaut'?.8:voc==='collecte'?.5:.6;
  if(down||rnd()<atkP){palAttack(1,'griffe');if(down&&palHas('furie')&&m.hp>0)palAttack(1,'enchaîne sur');}
  flush();}
 function palTakeHit(mv,d0,lure){const P=H.pal,p=palS();if(!P||P.ko>0)return;const st=palStats();
  if(!lure&&rnd()<.4)return;
  const d=Math.max(1,Math.round(d0*(lure?.8:.55)*100/(100+st.def)));P.hp-=d;
- if(lure)log(`🐱 ${p.name} encaisse ${mv.n.toLowerCase()} à votre place (${d}).`,'warn');
+ if(lure)log(`🐱 ${p.name} encaisse ${mv.n.toLowerCase()} à ta place (${d}).`,'warn');
  if(P.hp<=0){P.hp=0;P.ko=palHas('endurant')?2:3;log(`🐱 ${p.name} est à terre ! Il se replie pour panser ses plaies.`,'bad');}}
 /* Rendu */
 function palSVG(cls='palport',voc){const v0=voc||palS().voc;return`<img class="${cls} palimg" src="img/pal/${v0}.webp" alt="" draggable="false">`;}
@@ -1621,14 +1624,14 @@ function vPalico(){const p=palS(),st=palStats(),tab=sub.ptab||'voc';const back=s
   <div class="stats four pstats"><div><small>Attaque</small><b>${st.atk}</b></div><div><small>${st.w.el?'Élément':st.w.stat?'Statut':'Type'}</small><b>${st.w.el?elIcon(st.w.el)+' '+ELEM[st.w.el].n:st.w.stat?uic('st_poison')+' Poison':st.w.type==='blunt'?'Contondant':'Tranchant'}</b></div><div><small>PV</small><b>${st.hp}</b></div><div><small>Défense</small><b>${st.def}</b></div></div>`;
  const tabs=`<div class="tabs">${[['voc','Vocation'],['eq','Équipement'],['sk','Talents']].map(([k,n])=>`<button class="tab ${tab===k?'on':''}" data-a="ptab" data-v="${k}">${n}</button>`).join('')}</div>`;
  let body='';
- if(tab==='voc')body=`<p class="small muted" style="margin:0 0 6px">La vocation décide de ce que fait ${esc(p.name)} pendant la chasse. Vous pouvez en changer librement au village.</p><div class="pvocs">${PAL_VOC_ORDER.map(k=>{const v=PAL_VOC[k];return`<button class="pvoc ${p.voc===k?'on':''}" data-a="palvoc" data-v="${k}">${palSVG('pvocimg',k)}<b>${v.n}</b><span>${v.d}</span></button>`;}).join('')}</div>`;
+ if(tab==='voc')body=`<p class="small muted" style="margin:0 0 6px">La vocation décide de ce que fait ${esc(p.name)} pendant la chasse. Tu peux en changer librement au village.</p><div class="pvocs">${PAL_VOC_ORDER.map(k=>{const v=PAL_VOC[k];return`<button class="pvoc ${p.voc===k?'on':''}" data-a="palvoc" data-v="${k}">${palSVG('pvocimg',k)}<b>${v.n}</b><span>${v.d}</span></button>`;}).join('')}</div>`;
  else if(tab==='eq'){const row=(kind,lin)=>{const D=kind==='w'?PAL_W[lin]:PAL_A[lin];const own=(kind==='w'?p.ws:p.as).includes(lin),cur=(kind==='w'?p.w:p.a)===lin;const seen=lin==='fer'||(S.mon[lin]&&S.mon[lin].seen);
    if(!seen)return`<div class="prow2 locked"><span><b>${kind==='w'?'Arme':'Tenue'} inconnue</b><small>Matériaux d’un monstre inconnu</small></span></div>`;
    const stt=kind==='w'?`Attaque ${D.atk}${D.el?`, ${elIcon(D.el)} ${ELEM[D.el].n}`:D.stat?', '+uic('st_poison')+' Poison':''}, ${D.type==='blunt'?'contondant':'tranchant'}`:`Défense ${D.def}, PV +${D.hp}`;
    const r=lin==='fer'?null:palRecipe(kind,lin),ok=r&&canPay(lin,r);
    return`<div class="prow2 ${cur?'cur':''}"><span><b>${esc(D.n)}</b><small>${stt}</small>${!own&&r?recipeHTML(lin,r):''}</span>${cur?'<span class="tag">Équipé</span>':own?`<button class="btn sm" data-a="palequip" data-v="${kind}|${lin}">Équiper</button>`:`<button class="btn sm ${ok?'go':''}" data-a="palforge" data-v="${kind}|${lin}" ${ok?'':'disabled'}>Forger</button>`}</div>`;};
   body=`<h3>Arme</h3><div class="plist">${PAL_ORDER.map(l=>row('w',l)).join('')}</div><h3>Tenue</h3><div class="plist">${PAL_ORDER.map(l=>row('a',l)).join('')}</div>`;}
- else{const ns=palSlots(p.lv);body=`<p class="small muted" style="margin:0 0 6px">${esc(p.name)} apprend un talent à chaque niveau jusqu’au 10, puis aux niveaux 12, 14, 16, 18 et 20. Emplacements : ${p.sk.length}/${ns} (un de plus aux niveaux 3, 6, 9 et 15). Touchez un talent appris pour l’activer ou le retirer.</p><div class="plist">${PAL_SK.map(s=>{const known=p.lv>=s.lv,on=p.sk.includes(s.id);
+ else{const ns=palSlots(p.lv);body=`<p class="small muted" style="margin:0 0 6px">${esc(p.name)} apprend un talent à chaque niveau jusqu’au 10, puis aux niveaux 12, 14, 16, 18 et 20. Emplacements : ${p.sk.length}/${ns} (un de plus aux niveaux 3, 6, 9 et 15). Touche un talent appris pour l’activer ou le retirer.</p><div class="plist">${PAL_SK.map(s=>{const known=p.lv>=s.lv,on=p.sk.includes(s.id);
   return`<button class="pskill ${on?'on':''} ${known?'':'locked'}" data-a="${known?'palsk':'noop'}" data-v="${s.id}"><span><b>${esc(s.n)}</b><small>${known?esc(s.d):`Appris au niveau ${s.lv}`}</small></span><em>${on?'Actif':known?'':'🔒'}</em></button>`;}).join('')}</div>`;}
  const toast=sub.toast;sub.toast=null;
  return back+(toast?`<div class="toast">🐱 ${esc(toast)}</div>`:'')+head+tabs+body;}
@@ -1716,7 +1719,7 @@ function hunterSVG(x,y,ang){const ly=H.zone==='arriere'?-17:24;const W=H.stats.w
  let shield='';if(H.guard){const a=ang+180;shield=`<path d="${arcD(a-40,a+40,17)}" stroke="#d8dde4" stroke-width="4" fill="none" stroke-linecap="round"/>`;}
  const cls='hunter'+(H.dodge?' roll':'')+(H.fx.some(f=>f.t==='hurt')?' ouch':'');
  return`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><g class="${cls}">${ring}${shield}<image href="img/ui/hunter.webp" x="-14" y="-14" width="28" height="28"/>
- </g><text y="${ly}" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--you)" paint-order="stroke" stroke="var(--bg)" stroke-width="3">Vous</text></g>`;}
+ </g><text y="${ly}" text-anchor="middle" font-size="9.5" font-weight="700" fill="var(--you)" paint-order="stroke" stroke="var(--bg)" stroke-width="3">Toi</text></g>`;}
 function arcD(a1,a2,r){const t1=a1*Math.PI/180,t2=a2*Math.PI/180;return`M${(r*Math.sin(t1)).toFixed(1)},${(-r*Math.cos(t1)).toFixed(1)} A${r},${r} 0 0 1 ${(r*Math.sin(t2)).toFixed(1)},${(-r*Math.cos(t2)).toFixed(1)}`;}
 function elGlyph(el,x,y){const f={fire:'el_feu',ice:'el_glace',bolt:'el_foudre',poison:'st_poison'}[el];if(!f)return'';return`<image href="img/ui/${f}.webp" x="${(x-8).toFixed(1)}" y="${(y-8).toFixed(1)}" width="16" height="16"/>`;}
 function vfxSVG(f,idx){const out=[];const secs=[];
@@ -1739,23 +1742,23 @@ const NPC_N='Hilda, maîtresse de la Guilde';
 function npcSay(t){return`<div class="npcq"><img src="img/npc/guilde.webp" alt="" draggable="false"><div><b>${NPC_N}</b><p>« ${esc(t)} »</p></div></div>`;}
 const TESTMODE=(()=>{try{return!/github\.io$/.test(location.hostname)||/[?&]test\b/.test(location.search);}catch(e){return true;}})();
 function saveCode(){const j=JSON.stringify(S);return btoa(unescape(encodeURIComponent(j)));}
-function openExport(){const c=saveCode();modal(`<h2>Exporter la sauvegarde</h2><p class="small">Copiez ce code et gardez-le précieusement : il contient toute votre progression. Collez-le dans « Importer » sur un autre appareil, ou si vos données de navigation sont effacées.</p><textarea class="savebox" readonly rows="6">${c}</textarea><div style="display:grid;gap:8px;margin-top:8px"><button class="btn main wide" data-a="savecopy">Copier le code</button><button class="btn wide" data-a="savedl">Télécharger un fichier</button><button class="btn wide" data-a="close">Fermer</button></div>`);}
-function openImport(msg){modal(`<h2>Importer une sauvegarde</h2><p class="small">Collez le code d’une sauvegarde exportée. <b>Attention :</b> il remplacera votre progression actuelle.</p>${msg?`<p class="small" style="color:var(--danger)">${esc(msg)}</p>`:''}<textarea class="savebox" id="impbox" rows="6" placeholder="Collez le code ici"></textarea><label class="small" style="display:block;margin:6px 0">ou un fichier : <input type="file" id="impfile" accept=".txt,text/plain"></label><div style="display:grid;gap:8px;margin-top:8px"><button class="btn main wide" data-a="saveimpgo">Importer</button><button class="btn wide" data-a="close">Annuler</button></div>`);
+function openExport(){const c=saveCode();modal(`<h2>Exporter la sauvegarde</h2><p class="small">Copie ce code et garde-le précieusement : il contient toute ta progression. Colle-le dans « Importer » sur un autre appareil, ou si tes données de navigation sont effacées.</p><textarea class="savebox" readonly rows="6">${c}</textarea><div style="display:grid;gap:8px;margin-top:8px"><button class="btn main wide" data-a="savecopy">Copier le code</button><button class="btn wide" data-a="savedl">Télécharger un fichier</button><button class="btn wide" data-a="close">Fermer</button></div>`);}
+function openImport(msg){modal(`<h2>Importer une sauvegarde</h2><p class="small">Colle le code d’une sauvegarde exportée. <b>Attention :</b> il remplacera ta progression actuelle.</p>${msg?`<p class="small" style="color:var(--danger)">${esc(msg)}</p>`:''}<textarea class="savebox" id="impbox" rows="6" placeholder="Colle le code ici"></textarea><label class="small" style="display:block;margin:6px 0">ou un fichier : <input type="file" id="impfile" accept=".txt,text/plain"></label><div style="display:grid;gap:8px;margin-top:8px"><button class="btn main wide" data-a="saveimpgo">Importer</button><button class="btn wide" data-a="close">Annuler</button></div>`);
  setTimeout(()=>{const f=document.getElementById('impfile');if(f)f.onchange=()=>{const r=new FileReader();r.onload=()=>{document.getElementById('impbox').value=String(r.result).trim();};if(f.files[0])r.readAsText(f.files[0]);};},0);}
-function doImport(code){try{const j=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));if(!j||typeof j!=='object'||!j.equip||!j.cleared)throw 0;localStorage.setItem(KEY,JSON.stringify(j));try{localStorage.removeItem(HKEY);}catch(e){}S=loadSave();H=null;R=null;closeModal();go('village');modal(`<h2>Sauvegarde importée</h2><p class="small">Bon retour, chasseur ! Votre progression est restaurée.</p><button class="btn main wide" data-a="close">Compris</button>`);}catch(e){openImport('Code invalide : vérifiez qu’il est complet.');}}
+function doImport(code){try{const j=JSON.parse(decodeURIComponent(escape(atob(code.trim()))));if(!j||typeof j!=='object'||!j.equip||!j.cleared)throw 0;localStorage.setItem(KEY,JSON.stringify(j));try{localStorage.removeItem(HKEY);}catch(e){}S=loadSave();H=null;R=null;closeModal();go('village');modal(`<h2>Sauvegarde importée</h2><p class="small">Bon retour, chasseur ! Ta progression est restaurée.</p><button class="btn main wide" data-a="close">Compris</button>`);}catch(e){openImport('Code invalide : vérifie qu’il est complet.');}}
 /* ---------- Tutoriel guidé (Hilda) ---------- */
 const TUT=[
- {scr:['village'],sel:'.board',t:'Bienvenue à Brume-Haute, chasseur ! Je suis Hilda, je tiens la Guilde. Commençons par une vraie chasse : ouvrez le Tableau des quêtes.',done:()=>screen==='quests'||tutQ1()},
- {scr:['quests'],sel:'[data-a="quest"][data-v="q1"]',t:'Un Grakku pille les nids du col : c’est le gibier idéal pour débuter. Touchez sa quête.',done:()=>(screen==='prep'&&sub.quest==='q1')||tutQ1()},
- {scr:['prep'],sel:'[data-a="depart"]',t:'Ici, on prépare la chasse : arme, Griffu, repas à la cantine. Votre Grande Épée de fer suffira contre lui. Partez quand vous êtes prêt.',done:()=>tutQ1()},
- {scr:['hunt'],sel:'[data-a="engage"][data-v="flanc:g"]',top:1,t:'Vous voilà au camp : le Grakku ne vous a pas encore vu. Vous pouvez récolter autour du camp (1 tour par point). Puis abordez-le par le flanc ou l’arrière : vous frapperez le premier, avec +30 % au premier coup.',done:()=>(!!H&&H.q.id==='q1'&&H.phase!=='camp')||!!S.cleared.q1},
- {scr:['hunt'],top:1,btn:'Compris',t:'Chaque tour, le bandeau sous l’arène annonce l’attaque du monstre, et les zones visées s’allument en rouge. Vous jouez toujours avant lui : si vous êtes dans le rouge, esquivez ou changez de zone ; sinon, frappez !',done:()=>!H&&!!S.cleared.q1},
- {scr:['hunt'],top:1,btn:'Compris',t:'Le chiffre sur chaque attaque, ce sont les dégâts estimés. Votre arme s’émousse à chaque coup : aiguisez-la quand la jauge de tranchant faiblit. Vos potions sont dans « Objets ». Le Grakku protège sa tête avec un rocher : visez ailleurs tant qu’il le tient.',done:()=>!H&&!!S.cleared.q1},
- {scr:['village','result','quests','prep'],t:()=>S.cleared.q1?'Bravo, première prise ! Ses matériaux vous attendent. Revenez au village et ouvrez la forge.':'Pas de chance cette fois. Retournez au Tableau des quêtes et retentez le Grakku : relisez bien le bandeau d’attaque.',sel:()=>S.cleared.q1?(screen==='village'?'[data-a="go"][data-v="forge"]':'[data-a="home"]'):(screen==='village'?'.board':null),done:()=>S.cleared.q1&&screen==='forge'},
- {scr:['forge'],btn:'Compris',t:'Chaque monstre a sa lignée d’armes et son armure. Touchez une arme pour voir ce qui manque ; les pièces d’armure apportent des talents qui se combinent entre elles. Les joyaux se sertissent dans les emplacements.',done:()=>false},
- {scr:['village','forge'],btn:'Terminer',t:'Il vous reste à découvrir votre Griffu, l’atelier (potions, pièges), l’expédition libre et l’arène. Le Guide du chasseur, au village, récapitule tout. Bonne chasse, et revenez-moi entier !',done:()=>false}];
+ {scr:['village'],sel:'.board',t:'Bienvenue à Brume-Haute, chasseur ! Je suis Hilda, je tiens la Guilde. Commençons par une vraie chasse : ouvre le Tableau des quêtes.',done:()=>screen==='quests'||tutQ1()},
+ {scr:['quests'],sel:'[data-a="quest"][data-v="q1"]',t:'Un Grakku pille les nids du col : c’est le gibier idéal pour débuter. Touche sa quête.',done:()=>(screen==='prep'&&sub.quest==='q1')||tutQ1()},
+ {scr:['prep'],sel:'[data-a="depart"]',t:'Ici, on prépare la chasse : arme, Griffu, repas à la cantine. Ta Grande Épée de fer suffira contre lui. Pars quand tu es prêt.',done:()=>tutQ1()},
+ {scr:['hunt'],sel:'[data-a="engage"][data-v="flanc:g"]',top:1,t:'Te voilà au camp : le Grakku ne t’a pas encore vu. Tu peux récolter autour du camp (1 tour par point). Puis aborde-le par le flanc ou l’arrière : tu frapperas le premier, avec +30 % au premier coup.',done:()=>(!!H&&H.q.id==='q1'&&H.phase!=='camp')||!!S.cleared.q1},
+ {scr:['hunt'],top:1,btn:'Compris',t:'Chaque tour, le bandeau sous l’arène annonce l’attaque du monstre, et les zones visées s’allument en rouge. Tu joues toujours avant lui : si tu es dans le rouge, esquive ou change de zone ; sinon, frappe !',done:()=>!H&&!!S.cleared.q1},
+ {scr:['hunt'],top:1,btn:'Compris',t:'Le chiffre sur chaque attaque, ce sont les dégâts estimés. Ton arme s’émousse à chaque coup : aiguise-la quand la jauge de tranchant faiblit. Tes potions sont dans « Objets ». Le Grakku protège sa tête avec un rocher : vise ailleurs tant qu’il le tient.',done:()=>!H&&!!S.cleared.q1},
+ {scr:['village','result','quests','prep'],t:()=>S.cleared.q1?'Bravo, première prise ! Ses matériaux t’attendent. Reviens au village et ouvre la forge.':'Pas de chance cette fois. Retourne au Tableau des quêtes et retente le Grakku : relis bien le bandeau d’attaque.',sel:()=>S.cleared.q1?(screen==='village'?'[data-a="go"][data-v="forge"]':'[data-a="home"]'):(screen==='village'?'.board':null),done:()=>S.cleared.q1&&screen==='forge'},
+ {scr:['forge'],btn:'Compris',t:'Chaque monstre a sa lignée d’armes et son armure. Touche une arme pour voir ce qui manque ; les pièces d’armure apportent des talents qui se combinent entre elles. Les joyaux se sertissent dans les emplacements.',done:()=>false},
+ {scr:['village','forge'],btn:'Terminer',t:'Il te reste à découvrir ton Griffu, l’atelier (potions, pièges), l’expédition libre et l’arène. Le Guide du chasseur, au village, récapitule tout. Bonne chasse, et reviens-moi entier !',done:()=>false}];
 function tutQ1(){return(!!H&&H.q.id==='q1')||!!S.cleared.q1;}
-const TUT_AWAY={village:'retournez au village',quests:'ouvrez le Tableau des quêtes',prep:'ouvrez la quête du Grakku',hunt:'reprenez la chasse du Grakku',forge:'ouvrez la forge'};
+const TUT_AWAY={village:'retourne au village',quests:'ouvre le Tableau des quêtes',prep:'ouvre la quête du Grakku',hunt:'reprends la chasse du Grakku',forge:'ouvre la forge'};
 function tutStep(){return S.tut==null?null:TUT[S.tut]||null;}
 function tutAdvance(){if(S.tut==null)return;S.tut++;if(S.tut>=TUT.length){S.tut=null;}save();}
 function tutRender(){try{tutRender0();}catch(e){}}
@@ -1763,16 +1766,16 @@ function tutRender0(){const old=document.getElementById('tutbox');if(old)old.rem
  let st=tutStep();let guard=0;while(st&&st.done()&&guard++<10){tutAdvance();st=tutStep();}
  if(!st)return;const away=!st.scr.includes(screen)&&!(screen==='hunt'&&H&&H.q.id!=='q1'&&false);
  if(away&&screen==='hunt')return;
- const t=away?`Le tutoriel vous attend : ${TUT_AWAY[st.scr[0]]||'retournez au village'}. Prenez votre temps, rien ne presse.`:typeof st.t==='function'?st.t():st.t;const sel=typeof st.sel==='function'?st.sel():st.sel;
+ const t=away?`Le tutoriel t’attend : ${TUT_AWAY[st.scr[0]]||'retourne au village'}. Prends ton temps, rien ne presse.`:typeof st.t==='function'?st.t():st.t;const sel=typeof st.sel==='function'?st.sel():st.sel;
  if(sel&&!away){const el=document.querySelector(sel);if(el){el.classList.add('tuthl');const r=el.getBoundingClientRect();if(r.bottom>innerHeight-170||r.top<0)try{el.scrollIntoView({block:'center',behavior:'smooth'});}catch(e){}}}
  const d=document.createElement('div');d.id='tutbox';d.className='tutbox'+(st.top&&!away?' top':'')+(away?' away':'');
  d.innerHTML=`<img src="img/npc/guilde.webp" alt=""><div><b>${NPC_N}</b><p>${esc(t)}</p><span class="tutbtns">${st.btn&&!away?`<button class="btn sm main" data-a="tutnext">${st.btn}</button>`:''}<button class="linkbtn" data-a="tutskip">Passer le tutoriel</button></span></div>`;
  document.body.appendChild(d);if(!st.top||away)document.body.classList.add('tuton');}
-function tutWelcome(){modal(`<div class="urgpop">${npcSay('Bienvenue à Brume-Haute ! Les monstres se font nombreux autour du col, et la Guilde manque de bras. Voulez-vous que je vous montre les ficelles du métier ?')}</div><div style="display:grid;gap:8px"><button class="btn main wide" data-a="tutstart">Oui, guidez-moi</button><button class="btn wide" data-a="tutno">Je connais déjà le métier</button></div>`);}
+function tutWelcome(){modal(`<div class="urgpop">${npcSay('Bienvenue à Brume-Haute ! Les monstres se font nombreux autour du col, et la Guilde manque de bras. Tu veux que je te montre les ficelles du métier ?')}</div><div style="display:grid;gap:8px"><button class="btn main wide" data-a="tutstart">Oui, guide-moi</button><button class="btn wide" data-a="tutno">Je connais déjà le métier</button></div>`);}
 function checkUrgent(){if(screen!=='village'||SPLASH||$('#modal').innerHTML.trim())return;if(S.tut===undefined){if(Object.keys(S.cleared).length){S.tut=null;save();}else{tutWelcome();return;}}if(S.tut!=null&&S.tut<7)return;if(S.tut==null&&S.patch!==PATCHES[0].v){openPatch();return;}S.urgSeen=S.urgSeen||[];
  const q=QUESTS.find(q=>q.urgent&&q.tier>0&&!S.cleared[q.id]&&!S.urgSeen.includes(q.id)&&unlocked(q));if(!q)return;
  S.urgSeen.push(q.id);save();sfx('roar');
- modal(`<div class="urgpop"><span class="urgtag">⚠️ Quête urgente</span>${npcSay('Chasseur, la Guilde a besoin de vous, et vite. Vous avez fait vos preuves : celle-ci, je ne la confierais à personne d’autre.')}${portrait(q.mon,(S.mon[q.mon]&&S.mon[q.mon].seen)?eCls(q):'unk')}<h2>${esc(q.title)}</h2><p class="small">${esc(q.d||'')}</p><p class="small muted">${STAGE_N[q.tier]} · ${q.turns} tours · ${q.z} z de prime. La réussir vous fait passer au rang suivant.</p></div><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="urg-go" data-v="${q.id}">Préparer la chasse</button></div>`);}
+ modal(`<div class="urgpop"><span class="urgtag">⚠️ Quête urgente</span>${npcSay('Chasseur, la Guilde a besoin de toi, et vite. Tu as fait tes preuves : celle-ci, je ne la confierais à personne d’autre.')}${portrait(q.mon,(S.mon[q.mon]&&S.mon[q.mon].seen)?eCls(q):'unk')}<h2>${esc(q.title)}</h2><p class="small">${esc(q.d||'')}</p><p class="small muted">${STAGE_N[q.tier]} · ${q.turns} tours · ${q.z} z de prime. La réussir te fait passer au rang suivant.</p></div><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="urg-go" data-v="${q.id}">Préparer la chasse</button></div>`);}
 function bar(v,max,c){return`<div class="bar ${c}"><i style="width:${clamp(v/max*100,0,100)}%"></i></div>`;}
 function sharpBar(arr,cur){let acc=0;return`<div class="sharp">${arr.map((n,i)=>{if(!n)return'';const s=acc;acc+=n;const f=clamp(cur-s,0,n)/n*100;
  return`<span style="flex:${n};background:linear-gradient(90deg,${SHARP[i].c} ${f}%,color-mix(in srgb,${SHARP[i].c} 22%,transparent) ${f}%)"></span>`;}).join('')}</div>`;}
@@ -1798,22 +1801,22 @@ function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q
  return`<header class="hero"><div class="heroimg" role="img" aria-label="Le village de Brume-Haute au pied des montagnes, sous le regard des monstres"></div><div class="herotxt"><div class="titlebox"><img class="emblem" src="img/ui/emblem.webp" alt=""><h1 class="title"><small>Les Chasseurs de</small>Brume-Haute</h1></div><p class="muted" style="margin:0">Le poste de la Guilde au pied du col, sous le regard des monstres</p>
  <div class="purse"><span>${S.zenny} z</span><span>${hrLabel()}</span>${soundBtn()}</div></div></header>
  <button class="board" data-a="go" data-v="quests"><span class="pin"></span><span class="bt">Tableau des quêtes</span>
- <span class="bd">${next?`${next.urgent?'Quête urgente':'Prochaine quête'} : ${esc(next.title)}${(()=>{const n=QUESTS.filter(q=>q.tier>0&&!S.cleared[q.id]&&unlocked(q)).length;return n>1?` (et ${n-1} autre${n>2?'s':''})`:'';})()}`:'Toutes les quêtes sont accomplies. L’arène vous attend pour vos matériaux.'}</span></button>
- ${(()=>{const n=QUESTS.filter(q=>q.arena&&arenaOk(q)).length;return`<button class="board aboard${n?'':' off'}" data-a="go" data-v="arena"><span class="at"><span class="bt">Arène</span><span class="bd">${n?'Réaffrontez les monstres vaincus pour leurs matériaux.':'Réussissez une quête pour y réaffronter son monstre.'}</span></span></button>`;})()}
+ <span class="bd">${next?`${next.urgent?'Quête urgente':'Prochaine quête'} : ${esc(next.title)}${(()=>{const n=QUESTS.filter(q=>q.tier>0&&!S.cleared[q.id]&&unlocked(q)).length;return n>1?` (et ${n-1} autre${n>2?'s':''})`:'';})()}`:'Toutes les quêtes sont accomplies. L’arène t’attend pour tes matériaux.'}</span></button>
+ ${(()=>{const n=QUESTS.filter(q=>q.arena&&arenaOk(q)).length;return`<button class="board aboard${n?'':' off'}" data-a="go" data-v="arena"><span class="at"><span class="bt">Arène</span><span class="bd">${n?'Réaffronte les monstres vaincus pour leurs matériaux.':'Réussis une quête pour y réaffronter son monstre.'}</span></span></button>`;})()}
  <button class="board xboard" data-a="go" data-v="explore"><span class="bt">Expédition libre</span>
- <span class="bd">${S.exp?`En cours : ${esc(expZone().n)}, ${S.exp.max-S.exp.h} h avant la nuit${S.exp.enc?'. Un monstre vous attend !':''}`:'Récoltez minerais et cuirs, abattez de petits monstres… et gare au grand.'}</span></button>
- ${(()=>{const n=QUESTS.filter(q=>q.sp&&unlocked(q)).length;return`<button class="board sboard${n?'':' off'}" data-a="go" data-v="special"><span class="bt">Combats spéciaux</span><span class="bd">${n?`${n} combat${n>1?'s':''} à rejouer : doubles chasses et affrontements à mécanique spéciale.`:'Réussissez une double chasse ou l’assaut du Roi de Fer pour les rejouer ici.'}</span></button>`;})()}
+ <span class="bd">${S.exp?`En cours : ${esc(expZone().n)}, ${S.exp.max-S.exp.h} h avant la nuit${S.exp.enc?'. Un monstre t’attend !':''}`:'Récolte minerais et cuirs, abats de petits monstres… et gare au grand.'}</span></button>
+ ${(()=>{const n=QUESTS.filter(q=>q.sp&&unlocked(q)).length;return`<button class="board sboard${n?'':' off'}" data-a="go" data-v="special"><span class="bt">Combats spéciaux</span><span class="bd">${n?`${n} combat${n>1?'s':''} à rejouer : doubles chasses et affrontements à mécanique spéciale.`:'Réussis une double chasse ou l’assaut du Roi de Fer pour les rejouer ici.'}</span></button>`;})()}
  <div class="loadout"><div><span>Arme</span><b class="wline">${weaponIcon(W.type,W.lin.id)}${esc(W.name)}</b><span>${wStats(W)}</span></div><div><span>Armure</span><b>Défense ${st.def}</b><span>${Object.keys(st.raw).filter(k=>st.raw[k]).map(k=>SKILLS[k].n).join(', ')||'Aucun talent'}</span></div></div>
  <nav class="menu">
  <button data-a="go" data-v="equip"><b>Équipement</b><span>Changer d’arme et d’armure, sertir des joyaux, consulter les talents</span></button>
- <button data-a="go" data-v="palico" class="palmenu">${palSVG('palmini')}<span><b>${esc(palS().name)}, votre Griffu</b><span>Niveau ${palS().lv} · ${PAL_VOC[palS().voc].n} · équipement, vocation et talents</span></span></button>
+ <button data-a="go" data-v="palico" class="palmenu">${palSVG('palmini')}<span><b>${esc(palS().name)}, ton Griffu</b><span>Niveau ${palS().lv} · ${PAL_VOC[palS().voc].n} · équipement, vocation et talents</span></span></button>
  <button data-a="go" data-v="forge"><b>Forge${(()=>{const n=craftables().length;return n?` <i class="badge">${n} à forger</i>`:'';})()}</b><span>Forger armes et armures avec les matériaux de monstres</span></button>
- <button data-a="go" data-v="craft"><b>Atelier${(()=>{const n=RECIPES.filter(canCraft).length;return n?` <i class="badge">${n} recette${n>1?'s':''} prête${n>1?'s':''}</i>`:'';})()}</b><span>Fabriquer potions, bombes et pièges avec vos récoltes</span></button>
+ <button data-a="go" data-v="craft"><b>Atelier${(()=>{const n=RECIPES.filter(canCraft).length;return n?` <i class="badge">${n} recette${n>1?'s':''} prête${n>1?'s':''}</i>`:'';})()}</b><span>Fabriquer potions, bombes et pièges avec tes récoltes</span></button>
  <button data-a="go" data-v="shop"><b>Boutique</b><span>Potions et antidotes, vente de matériaux</span></button>
  <button data-a="go" data-v="notes"><b>Carnet de chasse</b><span>Faiblesses et points sensibles des monstres chassés</span></button>
- <button data-a="go" data-v="training"><b>Aire d’entraînement</b><span>Testez chaque arme sur un pantin qui ne riposte pas</span></button>
+ <button data-a="go" data-v="training"><b>Aire d’entraînement</b><span>Teste chaque arme sur un pantin qui ne riposte pas</span></button>
  <button data-a="guide"><b>Guide du chasseur</b><span>Comment se déroule un combat</span></button></nav>
- <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="saveexp">Exporter</button> · <button class="linkbtn" data-a="saveimp">Importer</button> · <button class="linkbtn" data-a="reset">Recommencer à zéro</button> · <button class="linkbtn" data-a="patches">Notes de version</button> · <button class="linkbtn" data-a="lang" data-v="${LANG==='en'?'fr':'en'}">${LANG_NAME[LANG==='en'?'fr':'en']}</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
+ <p class="foot muted small">Progression sauvegardée sur cet appareil. <button class="linkbtn" data-a="sound">Options</button> · <button class="linkbtn" data-a="saveexp">Exporter</button> · <button class="linkbtn" data-a="saveimp">Importer</button> · <button class="linkbtn" data-a="reset">Recommencer à zéro</button> · <button class="linkbtn" data-a="patches">Notes de version</button> · <button class="linkbtn" data-a="lang" data-v="${LANG==='en'?'fr':'en'}">${LANG_NAME[LANG==='en'?'fr':'en']}</button>${TESTMODE?' · <button class="linkbtn" data-a="testmode">Mode test</button>':''}</p>`;}
 
 function qCard(q){const un=unlocked(q);
  if(q.gather){const z=EXPZ.find(x=>x.id===q.zone);return`<button class="qcard qgather pcard ${un?'':'locked'}"${pano(qHab(q))} data-a="${un?'gquest':'noop'}" data-v="${q.id}"><span class="gicon">${itemIcon(q.goal.k,'iicon')}</span><div class="qtxt"><span class="stars">${qStars(q)} <i class="gtag">Récolte</i></span><b>${esc(q.title)}</b>
@@ -1824,80 +1827,80 @@ function qCard(q){const un=unlocked(q);
  ${un&&q.obj.length?`<span class="objs">${q.obj.map(o=>`<i class="${ob.includes(o.id)?'ok':''}">${ob.includes(o.id)?'✓':'○'} ${esc(o.n)}</i>`).join('')}</span>`:''}</div></button>`;}
 function vQuests(){const cur=hr();let h='';
  for(let t=1;t<=9;t++){const L=tierQ(t),left=L.filter(q=>!S.cleared[q.id]),open=stageOpen(t),done=!left.length;
-  if(t===7&&!mrOpen()){h+=`<h2 class="rsh">Rang maître</h2><p class="small muted" style="margin:0 0 6px">Vainquez le Tempestaire pour ouvrir le rang maître.</p>`;break;}
+  if(t===7&&!mrOpen()){h+=`<h2 class="rsh">Rang maître</h2><p class="small muted" style="margin:0 0 6px">Vaincs le Tempestaire pour ouvrir le rang maître.</p>`;break;}
   if(t===7)h+=`<h2 class="rsh">Rang maître</h2>`;if(t===4)h+=`<h2 class="rsh">Rang supérieur</h2>`;if(t===1)h+=`<h2 class="rsh">Rang inférieur</h2>`;
   const lab=STAGE_N[t].replace(/^Rang (inférieur|supérieur|maître) /,'');
   h+=`<div class="rankh${t===cur&&!done?' cur':''}"><h3>${lab}</h3><span class="small ${done?'ok':'muted'}">${L.length-left.length}/${L.length}${done?' ✓':''}</span></div>`;
   if(done)h+=`<p class="small muted" style="margin:0 0 6px">Toutes les quêtes accomplies. Les monstres vaincus se réaffrontent à l’arène.</p>`;
-  else if(!open)h+=`<p class="small muted" style="margin:0 0 6px">${stageOpen(t-1)?`Accomplissez toutes les quêtes du ${STAGE_N[t-1].replace('Rang ','rang ')} pour y accéder.`:'Verrouillé.'}</p>`;
+  else if(!open)h+=`<p class="small muted" style="margin:0 0 6px">${stageOpen(t-1)?`Accomplis toutes les quêtes du ${STAGE_N[t-1].replace('Rang ','rang ')} pour y accéder.`:'Verrouillé.'}</p>`;
   else{const keys=left.filter(q=>!q.urgent),urg=left.filter(q=>q.urgent&&unlocked(q)),hid=left.some(q=>q.urgent&&!unlocked(q));
-   h+=`${t===cur?`<p class="small muted" style="margin:0 0 8px">${hid?'Accomplissez les quêtes clés : la Guilde vous confiera ensuite une mission urgente.':urg.length?'La quête urgente vous fera passer au rang suivant.':'Accomplissez les quêtes clés.'} Une quête accomplie disparaît du tableau.</p>`:''}<div class="qlist">${keys.filter(q=>!q.opt).map(qCard).join('')}${urg.map(qCard).join('')}${keys.filter(q=>q.opt).map(qCard).join('')}</div>`;}}
+   h+=`${t===cur?`<p class="small muted" style="margin:0 0 8px">${hid?'Accomplis les quêtes clés : la Guilde te confiera ensuite une mission urgente.':urg.length?'La quête urgente te fera passer au rang suivant.':'Accomplis les quêtes clés.'} Une quête accomplie disparaît du tableau.</p>`:''}<div class="qlist">${keys.filter(q=>!q.opt).map(qCard).join('')}${urg.map(qCard).join('')}${keys.filter(q=>q.opt).map(qCard).join('')}</div>`;}}
  return backBtn()+`<h2>Tableau des quêtes</h2>${h}`;}
 function vSpecial(){const L=QUESTS.filter(q=>q.sp),ok=L.filter(unlocked);const duo=ok.filter(q=>q.duo),iron=ok.filter(q=>!q.duo),lk=L.length-ok.length;
  const opt=q=>{const got=objGot(q),left=q.obj.filter(o=>!got.includes(o.id)).length;return`<button class="aopt${q.anc?' aanc':q.elite?' ael':''}" data-a="quest" data-v="${q.id}"><b>${q.anc?'Ancestral':q.elite?'Aguerri':'Normal'}</b><small>${q.turns} tours · ${q.z} z</small><small class="${left?'':'ok'}">${q.obj.length?(left?`${left} objectif${left>1?'s':''} bonus à faire`:'✓ bonus faits'):''}</small></button>`;};
- return backBtn()+`<div class="scenegap"></div><h2>Combats spéciaux</h2><p class="small muted" style="margin-top:0">Rejouez les combats hors du commun déjà réussis au Tableau des quêtes, dans leur zone d’origine : doubles chasses et affrontements à mécanique spéciale. Préparation et cantine habituelles, butin normal, prime réduite. Les objectifs bonus déjà réussis ne rapportent plus rien.</p>
+ return backBtn()+`<div class="scenegap"></div><h2>Combats spéciaux</h2><p class="small muted" style="margin-top:0">Rejoue les combats hors du commun déjà réussis au Tableau des quêtes, dans leur zone d’origine : doubles chasses et affrontements à mécanique spéciale. Préparation et cantine habituelles, butin normal, prime réduite. Les objectifs bonus déjà réussis ne rapportent plus rien.</p>
  ${iron.length?`<h3>Mécaniques spéciales</h3><div class="qlist"><div class="qcard acard pcard"${pano(qHab(iron[0]))}>${portrait('ferroi',iron.some(q=>q.anc)?'elite anc':iron.some(q=>q.elite)?'elite':'')}<div class="qtxt"><b>Le Roi de Fer à la baliste</b><span class="muted small">L’assaut de la Citadelle, avec 3 carreaux de baliste sur les remparts.</span><div class="aopts">${iron.map(opt).join('')}</div></div></div></div>`:''}
  ${duo.length?`<h3>Doubles chasses</h3><div class="qlist">${duo.map(qCard).join('')}</div>`:''}
- ${!ok.length?'<p class="small muted">Aucun combat spécial pour l’instant. Réussissez une double chasse ou l’assaut du Roi de Fer au Tableau des quêtes : ils viendront ici, prêts à être rejoués.</p>':lk?`<p class="small muted">${lk} autre${lk>1?'s':''} combat${lk>1?'s':''} à débloquer au Tableau des quêtes.</p>`:''}`;}
+ ${!ok.length?'<p class="small muted">Aucun combat spécial pour l’instant. Réussis une double chasse ou l’assaut du Roi de Fer au Tableau des quêtes : ils viendront ici, prêts à être rejoués.</p>':lk?`<p class="small muted">${lk} autre${lk>1?'s':''} combat${lk>1?'s':''} à débloquer au Tableau des quêtes.</p>`:''}`;}
 function vArena(){const L=QUESTS.filter(q=>q.arena);const ok=L.filter(arenaOk);
- return backBtn()+`<div class="scenegap"></div><h2>Arène</h2><p class="small muted" style="margin-top:0">Réaffrontez les monstres déjà vaincus pour leurs matériaux. Préparation et cantine habituelles, sans récolte, prime réduite. Les objectifs bonus de la quête d’origine restent à réussir ici ; chacun ne rapporte sa récompense qu’une fois. Les versions aguerries s’ajoutent une fois vaincues au rang supérieur, les ancestrales au rang maître.</p>
+ return backBtn()+`<div class="scenegap"></div><h2>Arène</h2><p class="small muted" style="margin-top:0">Réaffronte les monstres déjà vaincus pour leurs matériaux. Préparation et cantine habituelles, sans récolte, prime réduite. Les objectifs bonus de la quête d’origine restent à réussir ici ; chacun ne rapporte sa récompense qu’une fois. Les versions aguerries s’ajoutent une fois vaincues au rang supérieur, les ancestrales au rang maître.</p>
  ${ok.length?`<div class="qlist">${MON_ORDER.map(m=>{const n=ok.find(q=>q.mon===m&&!q.elite),e=ok.find(q=>q.mon===m&&q.elite&&!q.anc),a=ok.find(q=>q.mon===m&&q.anc);if(!n&&!e&&!a)return'';const b=n||e||a;
   const opt=q=>{const got=objGot(q),left=q.obj.filter(o=>!got.includes(o.id)).length;return`<button class="aopt${q.anc?' aanc':q.elite?' ael':''}" data-a="quest" data-v="${q.id}"><b>${q.anc?(MON[q.mon].mrOnly?'Rang maître':FEM[q.mon]?'Ancestrale':'Ancestral'):q.elite?'Aguerri':'Normal'}</b><small>${q.turns} tours · ${q.z} z</small><small class="${left?'':'ok'}">${q.obj.length?(left?`${left} objectif${left>1?'s':''} bonus à faire`:'✓ bonus faits'):''}</small></button>`;};
   return`<div class="qcard acard pcard"${pano('arene')}>${portrait(m,a?'elite anc':e?'elite':'')}<div class="qtxt"><b>${esc(MON[m].name)}</b><div class="aopts">${n?opt(n):''}${e?opt(e):''}${a?opt(a):''}</div></div></div>`;}).join('')}</div>`:'<p class="small muted">Aucun monstre vaincu pour l’instant.</p>'}`;}
 function vPrep(){const q=QUESTS.find(x=>x.id===sub.quest);const meal=MEALS.find(x=>x.id===sub.meal)||MEALS[0];const st=computeStats(meal),W=st.w;
- const pouch=ITEM_ORDER.filter(k=>!ITEMS[k].sup&&S.items[k]>0).map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${ITEMS[k].n} ×${Math.min(S.items[k],ITEMS[k].carry)}</span>`).join('')||'<span class="muted small">Sacoche vide : passez à la boutique ou à l’atelier.</span>';
+ const pouch=ITEM_ORDER.filter(k=>!ITEMS[k].sup&&S.items[k]>0).map(k=>`<span class="tag">${itemIcon(k,'iicon sm')}${ITEMS[k].n} ×${Math.min(S.items[k],ITEMS[k].carry)}</span>`).join('')||'<span class="muted small">Sacoche vide : passe à la boutique ou à l’atelier.</span>';
  const ob=objGot(q);
  return backBtn(q.arena?'arena':q.sp?'special':'quests',q.arena?'Arène':q.sp?'Combats spéciaux':'Quêtes')+`<div class="scenegap"></div><div class="prephead">${q.duo?`<span class="duop">${portrait(q.mon,eCls(q))}${portrait(q.duo,eCls(q))}</span>`:portrait(q.mon,eCls(q))}<div><span class="star">${q.arena?(q.anc?'Rang maître':q.elite?'Rang supérieur':'Rang inférieur'):q.sp?`Combat spécial ${qStars(q)}`:qStars(q)}${q.urgent?' <i class="urg">Quête urgente</i>':''}</span><h2>${esc(q.title)}</h2></div></div><p>${esc(q.d)}</p>
- ${q.capture?`<p class="small" style="color:var(--danger)">Quête de capture : tuer le monstre fait échouer la quête.${capBlock(q)?` Il vous faut au moins 1 piège à fosse et 2 bombes tranquillisantes pour partir (vous avez ${S.items.piege||0} piège et ${S.items.tranq||0} bombe${(S.items.tranq||0)>1?'s':''}). Fabriquez-les à l’atelier.`:' Vous emportez votre piège et vos bombes tranquillisantes.'}</p>${capBlock(q)?'<button class="btn wide" data-a="go" data-v="craft">Aller à l’atelier</button>':''}`:''}
+ ${q.capture?`<p class="small" style="color:var(--danger)">Quête de capture : tuer le monstre fait échouer la quête.${capBlock(q)?` Il te faut au moins 1 piège à fosse et 2 bombes tranquillisantes pour partir (tu as ${S.items.piege||0} piège et ${S.items.tranq||0} bombe${(S.items.tranq||0)>1?'s':''}). Fabrique-les à l’atelier.`:' Tu emportes ton piège et tes bombes tranquillisantes.'}</p>${capBlock(q)?'<button class="btn wide" data-a="go" data-v="craft">Aller à l’atelier</button>':''}`:''}
  ${q.obj.length?`<h3>Objectifs secondaires</h3><div class="objs big">${q.obj.map(o=>`<i class="${ob.includes(o.id)?'ok':''}">${ob.includes(o.id)?'✓':'○'} ${esc(o.n)}</i>`).join('')}</div><p class="small muted" style="margin-top:4px">Chaque objectif réussi pour la première fois : +25 % de prime et une récompense supplémentaire.</p>`:''}
- ${q.duo?`<p class="small" style="color:var(--danger)">Double chasse : ${esc(monLabel(q.mon,q.elite,q.anc))}, puis ${esc(monLabel(q.duo,q.elite,q.anc))} dès que le premier tombe. Les tours, vos PV, votre endurance et vos objets continuent d’une cible à l’autre. Vous récoltez le butin des deux.</p>`:''}${q.opt?'<p class="small muted">Quête facultative : elle n’est pas nécessaire pour passer au rang suivant.</p>':''}
+ ${q.duo?`<p class="small" style="color:var(--danger)">Double chasse : ${esc(monLabel(q.mon,q.elite,q.anc))}, puis ${esc(monLabel(q.duo,q.elite,q.anc))} dès que le premier tombe. Les tours, tes PV, ton endurance et tes objets continuent d’une cible à l’autre. Tu récoltes le butin des deux.</p>`:''}${q.opt?'<p class="small muted">Quête facultative : elle n’est pas nécessaire pour passer au rang suivant.</p>':''}
  <p class="small muted">Limite : ${q.turns} tours. Échec après 3 évanouissements. Prime : ${q.z} z.</p>
- <h3>Votre équipement</h3><div class="row"><div class="top"><span><b class="wline">${weaponIcon(W.type,W.lin.id)}${esc(W.name)}</b><br><span class="small muted">${wStats(W)}</span></span><button class="btn sm" data-a="equipfrom">Modifier</button></div>
+ <h3>Ton équipement</h3><div class="row"><div class="top"><span><b class="wline">${weaponIcon(W.type,W.lin.id)}${esc(W.name)}</b><br><span class="small muted">${wStats(W)}</span></span><button class="btn sm" data-a="equipfrom">Modifier</button></div>
  <div class="skl"><span class="tag">Défense ${st.def}</span><span class="tag">PV ${st.hp}</span><span class="tag">Endurance ${st.st}</span>${skillTags(st)}</div></div>
  <div class="row"><div class="top"><span class="iline">${palSVG('palmini')}<span><b>${esc(palS().name)}</b><span class="small muted">Niv. ${palS().lv} · ${PAL_VOC[palS().voc].n} · ${esc(palStats().w.n)}</span></span></span><button class="btn sm" data-a="palfrom">Modifier</button></div></div>
  <h3>Cantine</h3><div class="meals">${MEALS.map(x=>`<button class="meal ${x.id===meal.id?'on':''}" data-a="meal" data-v="${x.id}" ${S.zenny<x.p?'disabled':''}><div><b>${x.n}</b><span>${x.d}</span></div><b>${x.p?x.p+' z':''}</b></button>`).join('')}</div>
- <p class="small muted">Un repas peut éveiller un talent de cantine aléatoire (en plus de ceux de votre Griffu).</p>
- <h3>Sacoche</h3><div class="skl">${pouch}</div><p class="small muted">${q.arena?'La Guilde ajoute 2 Premiers soins. Dans l’arène, pas de récolte : préparez-vous, puis choisissez par où aborder le monstre.':'La Guilde ajoute 2 Premiers soins. Vous commencerez au camp de base : préparez-vous, récoltez, puis choisissez par où aborder le monstre.'}</p>
+ <p class="small muted">Un repas peut éveiller un talent de cantine aléatoire (en plus de ceux de ton Griffu).</p>
+ <h3>Sacoche</h3><div class="skl">${pouch}</div><p class="small muted">${q.arena?'La Guilde ajoute 2 Premiers soins. Dans l’arène, pas de récolte : prépare-toi, puis choisis par où aborder le monstre.':'La Guilde ajoute 2 Premiers soins. Tu commenceras au camp de base : prépare-toi, récolte, puis choisis par où aborder le monstre.'}</p>
  <div style="margin-top:16px"><button class="btn main wide" data-a="depart" ${S.zenny<meal.p||capBlock(q)?'disabled':''}>Partir en chasse${meal.p?` (${meal.p} z)`:''}</button></div>`;}
 
 function vTraining(){const W=getWeapon(S.equip.weapon),st=computeStats();
- return backBtn()+`<h2>Aire d’entraînement</h2><p class="small muted" style="margin-top:0">Un pantin de la Guilde qui ne riposte jamais. Chaque arme s’essaie dans sa version de fer, avec l’armure Chasseur, pour découvrir ses mécaniques ; une fiche les explique en arrivant. Objets à volonté, aucune récompense, votre équipement n’est jamais modifié.</p>
- <div class="qlist"><div class="qcard tcardw tcur"><span class="gicon">${weaponIcon(W.type,W.lin.id)}</span><div class="qtxt"><b>Avec votre équipement</b><span class="small muted">Testez votre équipement actuel : ${esc(W.name)}, défense ${st.def}, joyaux et talents compris. Idéal pour comparer vos builds.</span><button class="btn sm go" data-a="train" data-v="cur" style="margin-top:6px;align-self:flex-start">S’entraîner</button></div></div>
+ return backBtn()+`<h2>Aire d’entraînement</h2><p class="small muted" style="margin-top:0">Un pantin de la Guilde qui ne riposte jamais. Chaque arme s’essaie dans sa version de fer, avec l’armure Chasseur, pour découvrir ses mécaniques ; une fiche les explique en arrivant. Objets à volonté, aucune récompense, ton équipement n’est jamais modifié.</p>
+ <div class="qlist"><div class="qcard tcardw tcur"><span class="gicon">${weaponIcon(W.type,W.lin.id)}</span><div class="qtxt"><b>Avec ton équipement</b><span class="small muted">Teste ton équipement actuel : ${esc(W.name)}, défense ${st.def}, joyaux et talents compris. Idéal pour comparer tes builds.</span><button class="btn sm go" data-a="train" data-v="cur" style="margin-top:6px;align-self:flex-start">S’entraîner</button></div></div>
  ${WT_ORDER.map(t=>{const w=getWeapon(t+':fer');
   return`<div class="qcard tcardw"><span class="gicon">${weaponIcon(t,'fer')}</span><div class="qtxt"><b>${WT[t].n}</b>${wtRatings(t)}<span class="small muted">${esc(WT[t].d)}</span><span class="wttip">💡 ${esc(WT_TIP[t])}</span><span class="small">${esc(w.name)} · armure Chasseur</span><button class="btn sm go" data-a="train" data-v="${t}" style="margin-top:6px;align-self:flex-start">S’entraîner</button></div></div>`;}).join('')}</div>`;}
 function trainHelp(){if(!H)return;const W=H.stats.w,T=W.type,A=getActions();
  const rows=A.map(a=>{const[,long]=actInfo(a);return`<li><b>${esc(a.label)}</b> : ${esc(long||a.sub||'')}</li>`;}).join('');
- const extra=WT[T].ranged?'<li><b>Viser</b> : sous vos jauges, choisissez la tête, les bras ou le dos, sans perdre de tour. Les étoiles indiquent l’efficacité.</li><li><b>Distance</b> : l’anneau extérieur de l’arène est la distance, l’anneau intérieur le contact. En combat réel, les coups au contact ne vous atteignent pas de loin, mais les charges, souffles et projectiles si. Un monstre qui vous rejoint vous ramène à l’intérieur : seul « Reculer » vous remet à distance.</li>'
-  :'<li><b>Zones</b> : vous frappez la partie de votre zone (avant : tête, flanc : bras, arrière : dos). Touchez une zone de l’arène pour vous y déplacer (1 tour).</li><li><b>Tranchant</b> : il baisse à chaque coup ; un tranchant faible fait rebondir vos coups sur les parties dures.</li>';
- const modes=T==='sa'?'<li><b>Deux modes</b> : « Transformer » change de forme en frappant. Hache : taille (+10 jauge), frappes sauvages (+20). Épée : taille d’épée (−12 jauge, renforcée par la fiole) et Décharge élémentaire (vide la jauge).</li>':T==='ig'?'<li><b>Extraits</b> : le scarabée récolte l’extrait de la partie de votre zone (10 tours). Tête : rouge, bras : blanc, dos : orange ; les trois donnent le Triple extrait. Leurs pastilles s’allument sous vos jauges.</li><li><b>Bond</b> : une esquive moins chère qui vous envoie en l’air ; l’Attaque aérienne apparaît alors au tour suivant.</li>':T==='cb'?'<li><b>Deux modes</b> : « Transformer » change de forme en frappant. Épée : tailles (+34 énergie), garde (+25 énergie si elle bloque), charger les fioles puis le bouclier. Hache : Décharge (1 fiole) et Décharge ultime (toutes).</li>':'';
+ const extra=WT[T].ranged?'<li><b>Viser</b> : sous tes jauges, choisis la tête, les bras ou le dos, sans perdre de tour. Les étoiles indiquent l’efficacité.</li><li><b>Distance</b> : l’anneau extérieur de l’arène est la distance, l’anneau intérieur le contact. En combat réel, les coups au contact ne t’atteignent pas de loin, mais les charges, souffles et projectiles si. Un monstre qui te rejoint te ramène à l’intérieur : seul « Reculer » te remet à distance.</li>'
+  :'<li><b>Zones</b> : tu frappes la partie de ta zone (avant : tête, flanc : bras, arrière : dos). Touche une zone de l’arène pour t’y déplacer (1 tour).</li><li><b>Tranchant</b> : il baisse à chaque coup ; un tranchant faible fait rebondir tes coups sur les parties dures.</li>';
+ const modes=T==='sa'?'<li><b>Deux modes</b> : « Transformer » change de forme en frappant. Hache : taille (+10 jauge), frappes sauvages (+20). Épée : taille d’épée (−12 jauge, renforcée par la fiole) et Décharge élémentaire (vide la jauge).</li>':T==='ig'?'<li><b>Extraits</b> : le scarabée récolte l’extrait de la partie de ta zone (10 tours). Tête : rouge, bras : blanc, dos : orange ; les trois donnent le Triple extrait. Leurs pastilles s’allument sous tes jauges.</li><li><b>Bond</b> : une esquive moins chère qui t’envoie en l’air ; l’Attaque aérienne apparaît alors au tour suivant.</li>':T==='cb'?'<li><b>Deux modes</b> : « Transformer » change de forme en frappant. Épée : tailles (+34 énergie), garde (+25 énergie si elle bloque), charger les fioles puis le bouclier. Hache : Décharge (1 fiole) et Décharge ultime (toutes).</li>':'';
  const vli=W.var?`<li><b>${esc(varName(W))}</b> : ${esc(VARD[T][W.var])} Chaque lignée de la forge a sa variante.</li>`:'';
- modal(`<h2>Entraînement : ${esc(WT[T].n)}</h2><p class="small muted" style="margin:0">${H.tr&&H.tr.basic?`${esc(W.name)}, armure Chasseur.`:`Votre équipement : ${esc(W.name)}, défense ${H.stats.def}.`}</p><p>${esc(WT[T].d)}</p>${wtRatings(T)}<h3 class="mini">Vos actions</h3><ul class="small">${rows}${modes}${vli}${extra}<li><b>Objets</b> : à volonté ici. Maintenez le doigt sur un bouton pour revoir son détail.</li></ul>
- <p class="small muted">Le compteur sous le nom du pantin affiche vos dégâts totaux, votre moyenne par tour et votre meilleur coup.</p><button class="btn main wide" data-a="close">Compris</button>`);}
+ modal(`<h2>Entraînement : ${esc(WT[T].n)}</h2><p class="small muted" style="margin:0">${H.tr&&H.tr.basic?`${esc(W.name)}, armure Chasseur.`:`Ton équipement : ${esc(W.name)}, défense ${H.stats.def}.`}</p><p>${esc(WT[T].d)}</p>${wtRatings(T)}<h3 class="mini">Tes actions</h3><ul class="small">${rows}${modes}${vli}${extra}<li><b>Objets</b> : à volonté ici. Maintiens le doigt sur un bouton pour revoir son détail.</li></ul>
+ <p class="small muted">Le compteur sous le nom du pantin affiche tes dégâts totaux, ta moyenne par tour et ton meilleur coup.</p><button class="btn main wide" data-a="close">Compris</button>`);}
 function vTalents(){const st=computeStats();const f=sub.tfilter||'';
  const srcs=k=>{const pieces=[];for(const set of SETS)set.p.forEach((p,i)=>{if(p[k]){const id=SLOTS[i].id+':'+set.id,seen=!set.mon||(S.mon[set.mon]&&S.mon[set.mon].seen);pieces.push({id,own:S.armors.includes(id),seen,t:seen?`${SLOTS[i].n} ${set.name}`:'Pièce inconnue',n:p[k]});}});
   const jw=JEWELS.filter(j=>j.sk===k).map(j=>({j,own:(S.jewels[j.id]||0)>0,seen:S.mon[j.mon]&&S.mon[j.mon].seen}));return{pieces,jw};};
  const list=SK_ORDER.filter(k=>!f||(f==='act'?st.raw[k]>0:true)).map(k=>{const s=SKILLS[k],lv=Math.min(st.raw[k],s.max),{pieces,jw}=srcs(k),open=sub.topen===k;
   const lvls=Array.from({length:s.max},(_,i)=>`<li class="${i<lv?'on':''}"><b>Niv. ${i+1}</b> ${esc(skEffect(k,i+1))}</li>`).join('');
   return`<div class="tcard ${lv?'lit':''} ${skUseless(k,st.w.type)?'na':''}"><button class="thead" data-a="topen" data-v="${k}"><span><b>${s.n}</b><small>${esc(lv?skEffect(k,lv):skEffect(k,1))}</small></span>${pips(lv,s.max)}<em>${lv}/${s.max}</em></button>
-  ${open?`<div class="tbody">${SK_WT[k]?`<p class="small muted" style="margin:0 0 6px">Talent d’arme : ${esc(skWeapons(k))}.${skUseless(k,st.w.type)?' Sans effet avec votre arme actuelle.':''}</p>`:''}<ol class="tlv">${lvls}</ol><h4>Où l’obtenir</h4><div class="tsrc">${pieces.map(p=>`<span class="src ${p.own?'own':''}">${p.own?'✓ ':''}${esc(p.t)} +${p.n}</span>`).join('')}${jw.map(x=>`<span class="src jw ${x.own?'own':''}">${sgIcon(x.j.sz,x.own)} ${x.seen?esc(x.j.n):'Joyau inconnu'} +${x.j.pts||1}</span>`).join('')||''}</div></div>`:''}</div>`;}).join('');
+  ${open?`<div class="tbody">${SK_WT[k]?`<p class="small muted" style="margin:0 0 6px">Talent d’arme : ${esc(skWeapons(k))}.${skUseless(k,st.w.type)?' Sans effet avec ton arme actuelle.':''}</p>`:''}<ol class="tlv">${lvls}</ol><h4>Où l’obtenir</h4><div class="tsrc">${pieces.map(p=>`<span class="src ${p.own?'own':''}">${p.own?'✓ ':''}${esc(p.t)} +${p.n}</span>`).join('')}${jw.map(x=>`<span class="src jw ${x.own?'own':''}">${sgIcon(x.j.sz,x.own)} ${x.seen?esc(x.j.n):'Joyau inconnu'} +${x.j.pts||1}</span>`).join('')||''}</div></div>`:''}</div>`;}).join('');
  return`<div class="tabs"><button class="tab ${!f?'on':''}" data-a="tfilter" data-v="">Tous les talents</button><button class="tab ${f==='act'?'on':''}" data-a="tfilter" data-v="act">Actifs</button></div>
- <p class="small muted" style="margin:0 0 8px">Touchez un talent pour voir l’effet de chaque niveau et les pièces ou joyaux qui le donnent (✓ : possédé). Les talents d’arme (Artillerie, Concentration, Prolongation, Chargeur étendu, Tir expert) n’agissent qu’avec certaines armes : ils sont grisés quand la vôtre n’en profite pas.</p><div class="tlist">${list||'<p class="small muted">Aucun talent actif.</p>'}</div>`;}
+ <p class="small muted" style="margin:0 0 8px">Touche un talent pour voir l’effet de chaque niveau et les pièces ou joyaux qui le donnent (✓ : possédé). Les talents d’arme (Artillerie, Concentration, Prolongation, Chargeur étendu, Tir expert) n’agissent qu’avec certaines armes : ils sont grisés quand la tienne n’en profite pas.</p><div class="tlist">${list||'<p class="small muted">Aucun talent actif.</p>'}</div>`;}
 function vEquip(){const etab=sub.etab2||'eq';const back=sub.fromPrep?backBtn('prep','Préparation'):backBtn();
  const tabs=`<div class="tabs"><button class="tab ${etab==='eq'?'on':''}" data-a="etab2" data-v="eq">Mon équipement</button><button class="tab ${etab==='tal'?'on':''}" data-a="etab2" data-v="tal">Talents</button></div>`;
  if(etab==='tal')return back+`<h2>Équipement</h2>`+tabs+vTalents();
  const st=computeStats(),W=st.w;
  const sk=Object.keys(st.raw).filter(k=>st.raw[k]>0).sort((a,b)=>(skUseless(a,W.type)-skUseless(b,W.type))||(st.raw[b]-st.raw[a])).map(k=>{const v=st.raw[k],m=SKILLS[k].max;
-  const na=skUseless(k,W.type);return`<div class="skrow ${na?'na':''}"><span>${SKILLS[k].n}</span>${pips(Math.min(v,m),m)}<em class="${v>m?'over':''}">${Math.min(v,m)}/${m}${v>m?` (+${v-m} perdu${v-m>1?'s':''})`:''}</em><small>${na?'Sans effet avec votre arme · ':''}${esc(skEffect(k,Math.min(v,m)))}</small></div>`;}).join('')||'<p class="small muted">Aucun talent. Forgez des armures et sertissez des joyaux.</p>';
+  const na=skUseless(k,W.type);return`<div class="skrow ${na?'na':''}"><span>${SKILLS[k].n}</span>${pips(Math.min(v,m),m)}<em class="${v>m?'over':''}">${Math.min(v,m)}/${m}${v>m?` (+${v-m} perdu${v-m>1?'s':''})`:''}</em><small>${na?'Sans effet avec ton arme · ':''}${esc(skEffect(k,Math.min(v,m)))}</small></div>`;}).join('')||'<p class="small muted">Aucun talent. Forge des armures et sertis des joyaux.</p>';
  const ws=getWeaponSlots(W.id);
  const rows=`<button class="eqrow" data-a="eslot" data-v="weapon">${weaponIcon(W.type,W.lin.id)}<span><b>${esc(W.name)}</b><small>${wStats(W)}</small>${sockOf(W.id).some(Boolean)?`<span class="chips2">${ptsChips(itemPts({pts:{},id:W.id}))}</span>`:''}</span><span class="slots">${slotGlyphs(ws,sockOf(W.id))}</span></button>`+
   SLOTS.map(sl=>{const a=getArmor(S.equip[sl.id]);return`<button class="eqrow" data-a="eslot" data-v="${sl.id}"><i class="eqlab">${sl.n}</i><span><b>${esc(a.name)}${a.lv?` <em class="lv">Niv. ${a.lv}</em>`:''}</b><small>Défense ${a.def}</small><span class="chips2">${ptsChips(itemPts(a))}</span></span><span class="slots">${slotGlyphs(a.slots,sockOf(a.id))}</span></button>`;}).join('');
  return back+`<h2>Équipement</h2>${tabs}
  <div class="stats four"><div><small>Attaque</small><b>${st.atk}</b></div><div><small>Affinité</small><b>${st.aff} %</b></div><div><small>Élément</small><b>${W.elem?`${ELEM[W.elem].n} ${Math.round(W.ev*(1+.08*st.sk.elem))}`:W.stat?`Poison ${W.sv}`:'—'}</b></div><div><small>Défense</small><b>${st.def}</b></div></div>
  <h3>Talents actifs</h3><div class="sklist">${sk}</div>
- <h3>Votre équipement</h3><p class="small muted" style="margin:0 0 6px">Touchez une ligne pour changer de pièce ou sertir des joyaux.</p><div class="eqlist">${rows}</div>
+ <h3>Ton équipement</h3><p class="small muted" style="margin:0 0 6px">Touche une ligne pour changer de pièce ou sertir des joyaux.</p><div class="eqlist">${rows}</div>
  ${(()=>{const n=Object.values(S.sock).reduce((a,arr)=>a+arr.filter(Boolean).length,0);return n?`<button class="btn wide" data-a="unsockask" style="margin-top:12px">Déséquiper tous les joyaux (${n})</button>`:'';})()}`;}
 function slotEditor(itemId,slots){const cur=sockOf(itemId);if(!slots.length)return'<p class="small muted">Aucun emplacement de joyau.</p>';
- return`<div class="socks">${slots.map((s,i)=>{const j=cur[i]&&JEWELS.find(x=>x.id===cur[i]);return`<button class="sock" data-a="sockpick" data-v="${itemId}|${i}">${sgIcon(s,!!j)}<span>${j?`<b>${esc(j.n)}</b><small>${SKILLS[j.sk].n} +${j.pts||1}</small>`:`<b>Emplacement vide</b><small>Taille ${s} : touchez pour sertir</small>`}</span></button>`;}).join('')}</div>`;}
+ return`<div class="socks">${slots.map((s,i)=>{const j=cur[i]&&JEWELS.find(x=>x.id===cur[i]);return`<button class="sock" data-a="sockpick" data-v="${itemId}|${i}">${sgIcon(s,!!j)}<span>${j?`<b>${esc(j.n)}</b><small>${SKILLS[j.sk].n} +${j.pts||1}</small>`:`<b>Emplacement vide</b><small>Taille ${s} : touche pour sertir</small>`}</span></button>`;}).join('')}</div>`;}
 function openSlot(which){const st=computeStats();
  if(which==='weapon'){const W=st.w;const list=WT_ORDER.map(t=>{const own=S.weapons.filter(id=>id.startsWith(t+':')).sort((a,b)=>{const la=getWeapon(a).lin,lb=getWeapon(b).lin;return monSeq(linRoot(la).mon)-monSeq(linRoot(lb).mon)||lb.atk-la.atk;});if(!own.length)return'';
    return`<details class="wgrp" ${own.includes(W.id)?'open':''}><summary><b>${WT[t].n}</b><small>${own.length} arme${own.length>1?'s':''}${own.includes(W.id)?' · équipée':''}</small></summary>`+own.map(id=>{const w=getWeapon(id),on=id===W.id;const ws=getWeaponSlots(id);return`<div class="pick ${on?'on':''}">${weaponIcon(w.type,w.lin.id)}<span><b>${esc(w.name)}</b><small>${wStats(w)}</small>${jewelLine(id,'weapon')}</span>${ws.length?`<span class="slots">${slotGlyphs(ws,sockOf(id))}</span>`:''}${on?'<span class="tag">Équipée</span>':`<button class="btn sm" data-a="equipw" data-v="${id}">Équiper</button>`}</div>`;}).join('')+'</details>';}).join('');
@@ -1915,22 +1918,22 @@ function openSockPick(v){const[itemId,i]=v.split('|');const idx=+i;const slots=i
  const list=JEWELS.filter(j=>j.sz<=size&&(jewelFree(j.id)>0||j.id===cur)).map(j=>`<div class="pick ${j.id===cur?'on':''}">${sgIcon(j.sz,true)}<span><b>${esc(j.n)}</b><small>${SKILLS[j.sk].n} +${j.pts||1} · libres : ${jewelFree(j.id)}</small><small>${esc(skEffect(j.sk,j.pts||1))}</small></span>${j.id===cur?'<span class="tag">Serti</span>':`<button class="btn sm" data-a="sockset" data-v="${itemId}|${idx}|${j.id}">Sertir</button>`}</div>`).join('');
  modal(`<h2>Emplacement de taille ${size}</h2><p class="small muted" style="margin:0 0 8px">Un joyau se sertit dans un emplacement de sa taille ou plus grand. Le retirer le rend libre pour une autre pièce.</p>
  ${cur?`<button class="btn wide" data-a="sockset" data-v="${itemId}|${idx}|">Retirer ${esc(JEWELS.find(x=>x.id===cur).n)}</button>`:''}
- <div class="picks">${list||'<p class="small muted">Aucun joyau disponible à cette taille. Fabriquez-en à la forge, onglet Joyaux.</p>'}</div>
+ <div class="picks">${list||'<p class="small muted">Aucun joyau disponible à cette taille. Fabriques-en à la forge, onglet Joyaux.</p>'}</div>
  <button class="btn wide" data-a="back2slot" data-v="${itemId}" style="margin-top:10px">Retour</button>`);}
-const WT_TIP={gs:'Chargez quand rien ne vous vise, puis relâchez. Garder ou esquiver conserve la charge ; un coup reçu la brise.',
- ls:'Frappez pour remplir la jauge, montez l’esprit avec la Coupe tournoyante, et gardez la Coupe d’anticipation pour un coup annoncé.',
- sns:'Gardez dès qu’un coup vous vise : le bouclier bloque entièrement les petits coups. Sûre, mais il faut frapper souvent.',
- db:'Visez la faiblesse élémentaire du monstre. Le mode Furie frappe fort mais vide l’endurance : sortez-en avant d’être à sec.',
- hammer:'Visez la tête pour assommer. Vous pouvez bouger et esquiver sans perdre la charge.',
- hh:'Chaque coup joue une note : enchaînez-les puis lancez le Récital pour jouer la mélodie (attaque, défense ou soin).',
- lance:'Restez au contact et gardez dès qu’un coup vous vise : sa garde est la plus solide. Le Contre riposte aussitôt.',
- gl:'Les obus ignorent la dureté : tirez-les sur les parties cuirassées, rechargez quand le chargeur est vide, gardez contre les gros coups.',
- sa:'Remplissez la fiole en hache, passez en épée pour frapper plus fort, puis terminez par la Décharge.',
- cb:'En épée, accumulez l’énergie et chargez vos fioles, puis passez en hache pour la Décharge ultime.',
- ig:'Envoyez le scarabée sur la tête, le flanc et la queue : avec les trois extraits, vous frappez nettement plus fort.',
- bow:'Restez à distance et chargez vos tirs quand rien ne vous vise. Reculez dès que le monstre vient au contact.',
- lbg:'Visez la partie faible et changez de munition selon le monstre. Tir et roulade esquive en tirant, mais pas à chaque tour.',
- hbg:'Le mode siège fait très mal mais vous immobilise : sortez-en dès qu’un gros coup vous vise. Gardez quand vous ne pouvez pas fuir.'};
+const WT_TIP={gs:'Charge quand rien ne te vise, puis relâche. Garder ou esquiver conserve la charge ; un coup reçu la brise.',
+ ls:'Frappe pour remplir la jauge, monte l’esprit avec la Coupe tournoyante, et garde la Coupe d’anticipation pour un coup annoncé.',
+ sns:'Garde dès qu’un coup te vise : le bouclier bloque entièrement les petits coups. Sûre, mais il faut frapper souvent.',
+ db:'Vise la faiblesse élémentaire du monstre. Le mode Furie frappe fort mais vide l’endurance : sors-en avant d’être à sec.',
+ hammer:'Vise la tête pour assommer. Tu peux bouger et esquiver sans perdre la charge.',
+ hh:'Chaque coup joue une note : enchaîne-les puis lance le Récital pour jouer la mélodie (attaque, défense ou soin).',
+ lance:'Reste au contact et garde dès qu’un coup te vise : sa garde est la plus solide. Le Contre riposte aussitôt.',
+ gl:'Les obus ignorent la dureté : tire-les sur les parties cuirassées, recharge quand le chargeur est vide, garde contre les gros coups.',
+ sa:'Remplis la fiole en hache, passe en épée pour frapper plus fort, puis termine par la Décharge.',
+ cb:'En épée, accumule l’énergie et charge tes fioles, puis passe en hache pour la Décharge ultime.',
+ ig:'Envoie le scarabée sur la tête, le flanc et la queue : avec les trois extraits, tu frappes nettement plus fort.',
+ bow:'Reste à distance et charge tes tirs quand rien ne te vise. Recule dès que le monstre vient au contact.',
+ lbg:'Vise la partie faible et change de munition selon le monstre. Tir et roulade esquive en tirant, mais pas à chaque tour.',
+ hbg:'Le mode siège fait très mal mais t’immobilise : sors-en dès qu’un gros coup te vise. Garde quand tu ne peux pas fuir.'};
 function wtRatings(t){const r=WT[t].r,row=(n,v)=>`<span class="rt"><em>${n}</em>${[1,2,3,4,5].map(i=>`<i class="${i<=v?'on':''}"></i>`).join('')}</span>`;
  return`<div class="rts">${row('Puissance',r.p)}${row('Facilité',r.f)}${row('Sécurité',r.s)}${r.e?row('Élément',r.e):''}</div>`;}
 function costText(mon,r){return[...Object.keys(r.mats).map(k=>`${MON[mon].mats[k]} ×${r.mats[k]}`),...Object.keys(r.res||{}).map(k=>`${RES[k].n} ×${r.res[k]}`),`${r.z} z`].join(', ');}
@@ -1946,7 +1949,7 @@ function missing(mon,r){const out=[];for(const k in r.mats){const h=S.mats[matId
 function linTiers(t,base){const a=[base];a.push(LIN.find(x=>x.up===base.id));a.push(LIN.find(x=>x.up===a[1].id));a.push(LIN.find(x=>x.up===a[2].id));return a.map(L=>({L,id:t+':'+L.id}));}
 function linRoot(l){let L=l;while(L&&L.up)L=LIN.find(x=>x.id===L.up);return L;}
 function vForgeWorn(){const W=getWeapon(S.equip.weapon),root=linRoot(W.lin);let wcard;
- if(!root||!root.mon)wcard=`<div class="fcard"><div class="fbody">${weaponIcon(W.type,W.lin.id)}<span><b>${esc(W.name)}</b><small>${wStats(W)}</small><small class="muted">L’arme de fer ne s’améliore pas : forgez une arme de monstre.</small></span></div></div>`;
+ if(!root||!root.mon)wcard=`<div class="fcard"><div class="fbody">${weaponIcon(W.type,W.lin.id)}<span><b>${esc(W.name)}</b><small>${wStats(W)}</small><small class="muted">L’arme de fer ne s’améliore pas : forge une arme de monstre.</small></span></div></div>`;
  else{const ti=linTiers(W.type,root),owned=ti.findIndex(x=>x.id===W.id),maxT=mrOpen()?3:eliteOpen()?2:1,next=owned<maxT?owned+1:-1;
   let st='';if(next<0)st=owned===3?'<em class="ok">Version maximale</em>':`<em class="no">Version ${['II','III','IV'][owned]} : ${owned===2?'rang maître':'traques d’élite'}</em>`;
   else{const r=weaponRecipe(ti[next].L),nr=missing(root.mon,r);st=nr.length?`<em class="no">Manque : ${esc(nr.slice(0,2).join(', '))}${nr.length>2?'…':''}</em>`:'<em class="ok">Matériaux prêts</em>';}
@@ -1955,7 +1958,7 @@ function vForgeWorn(){const W=getWeapon(S.equip.weapon),root=linRoot(W.lin);let 
   if(a.lv>=a.maxLv)st=`<em class="ok">Niveau max (${a.def} déf.)</em>`;
   else{const c=armorLvCost(a),ok=canLv(a),nd=Math.min(defCap(),a.def+DEF_STEP);st=`<em class="${ok?'ok':'no'}">Niv. ${a.lv} → ${a.lv+1} : déf. ${a.def} → ${nd} · ${RES[c.res].n} ${S.res[c.res]||0}/1, ${RES[c.ore].n} ${S.res[c.ore]||0}/1, ${c.z} z</em>`;btn=`<button class="btn sm ${ok?'go':''}" data-a="alvq" data-v="${a.id}" ${ok?'':'disabled'}>+1 niveau</button>`;}
   return`<div class="fcard"><button class="fbody" data-a="adetail" data-v="${a.id}"><i class="eqlab">${sl.n}</i><span><b>${esc(a.name)}</b><span class="lvbar sm">${Array.from({length:a.maxLv},(_,i)=>`<i class="${i<a.lv?'on':''}"></i>`).join('')}</span><small>${st}</small></span></button>${btn}</div>`;}).join('');
- return`<p class="small muted" style="margin:0 0 8px">Votre équipement porté. Touchez une pièce pour voir son détail, ou améliorez-la directement.</p><h3 class="mini">Arme</h3><div class="fcards">${wcard}</div><h3 class="mini">Armure</h3><div class="fcards">${arm}</div>`;}
+ return`<p class="small muted" style="margin:0 0 8px">Ton équipement porté. Touche une pièce pour voir son détail, ou améliore-la directement.</p><h3 class="mini">Arme</h3><div class="fcards">${wcard}</div><h3 class="mini">Armure</h3><div class="fcards">${arm}</div>`;}
 function vForge(){const tab=sub.ftab||'porte';let body='';
  if(tab==='porte')body=vForgeWorn();
  else if(tab==='arme'){const t=sub.ftype||'gs';
@@ -1967,8 +1970,8 @@ function vForge(){const tab=sub.ftab||'porte';let body='';
    const nr=next>=0&&seen?missing(l.mon,weaponRecipe(ti[next].L)):[];
    return`<div class="fcard"><button class="fbody" data-a="wdetail" data-v="${t}|${l.id}">${weaponIcon(t,show.L.id)}<span><b>${seen?esc(w.name):'Arme inconnue'}</b><small>${seen?wStats(w):`Monstre inconnu (${'★'.repeat(l.rank)})`}</small>
    <span class="tiers">${['I','II','III','IV'].map((x,i)=>`<i class="${i<=owned?'on':''}">${x}</i>`).join('')}${seen&&next>=0?(nr.length?`<em class="no">Manque : ${esc(nr.slice(0,2).join(', '))}${nr.length>2?'…':''}</em>`:'<em class="ok">Matériaux prêts</em>'):''}</span></span></button>${act}</div>`;}).join('')+`</div>`;}
- else if(tab==='armure')body=`<p class="small muted" style="margin:0 0 8px">Touchez une pièce pour la forger ou l’améliorer. Toutes les pièces montent jusqu’à ${defCap()} de défense avec des sphères d’armure : choisissez-les pour leurs talents.</p><div class="sets">`+SETS.map(set=>{const seen=!set.mon||(S.mon[set.mon]&&S.mon[set.mon].seen);
-   if(!seen)return`<div class="setcard"><div class="sethead"><b>Armure inconnue</b><small>Chassez le monstre pour la découvrir</small></div></div>`;
+ else if(tab==='armure')body=`<p class="small muted" style="margin:0 0 8px">Touche une pièce pour la forger ou l’améliorer. Toutes les pièces montent jusqu’à ${defCap()} de défense avec des sphères d’armure : choisis-les pour leurs talents.</p><div class="sets">`+SETS.map(set=>{const seen=!set.mon||(S.mon[set.mon]&&S.mon[set.mon].seen);
+   if(!seen)return`<div class="setcard"><div class="sethead"><b>Armure inconnue</b><small>Chasse le monstre pour la découvrir</small></div></div>`;
    const ids=SLOTS.map(sl=>sl.id+':'+set.id),nOwn=ids.filter(id=>S.armors.includes(id)).length,nReady=ids.filter((id,i)=>S.armors.includes(id)?canLv(getArmor(id)):set.mon&&canPay(set.mon,armorRecipe(SLOTS[i].id,set))).length,worn=ids.some(id=>Object.values(S.equip).includes(id));
    const open=sub.sets&&set.id in sub.sets?sub.sets[set.id]:(nReady>0||worn);
    return`<details class="setcard" ${open?'open':''}><summary class="sethead" data-a="setopen" data-v="${set.id}"><b>Armure ${esc(set.name)}${worn?' <em class="worn">portée</em>':''}</b><small>Défense ${set.def} → ${defCap()} · ${nOwn}/5 forgée${nOwn>1?'s':''}${nReady?` · <span class="rdy">${nReady} action${nReady>1?'s':''} possible${nReady>1?'s':''}</span>`:''}</small></summary>
@@ -1979,8 +1982,8 @@ function vForge(){const tab=sub.ftab||'porte';let body='';
   const items=[S.equip.weapon,...SLOTS.map(sl=>S.equip[sl.id])];const free={1:0,2:0,3:0};
   for(const id of items){const sl=SLOTS.some(x=>id.startsWith(x.id+':'))?getArmor(id).slots:getWeaponSlots(id);const cur=sockOf(id);sl.forEach((z,i)=>{if(!cur[i])free[z]++;});}
   const stock=JEWELS.filter(j=>jewelFree(j.id)>0).map(j=>`${esc(j.n)} ×${jewelFree(j.id)}`);
-  body=`<div class="jsum"><div><b>Emplacements libres sur votre équipement</b><span>${[1,2,3].map(z=>free[z]?`${sgIcon(z,false)}×${free[z]}`:'').join(' ')||'<span class="muted">aucun</span>'}</span></div>${stock.length?`<div><b>Joyaux en réserve</b><span class="small">${stock.join(', ')}</span></div>`:''}</div>
-  <p class="small muted" style="margin:0 0 4px">Les joyaux se sertissent dans les emplacements de même taille ou plus grands (écran Équipement). La jauge indique le niveau actuel du talent sur votre équipement porté.</p>`+
+  body=`<div class="jsum"><div><b>Emplacements libres sur ton équipement</b><span>${[1,2,3].map(z=>free[z]?`${sgIcon(z,false)}×${free[z]}`:'').join(' ')||'<span class="muted">aucun</span>'}</span></div>${stock.length?`<div><b>Joyaux en réserve</b><span class="small">${stock.join(', ')}</span></div>`:''}</div>
+  <p class="small muted" style="margin:0 0 4px">Les joyaux se sertissent dans les emplacements de même taille ou plus grands (écran Équipement). La jauge indique le niveau actuel du talent sur ton équipement porté.</p>`+
   (()=>{const sz=sub.jsz||1,only=!!sub.jrdy;const L=JEWELS.filter(j=>j.sz===sz),seenL=L.filter(j=>monSeen(j.mon)),unk=L.length-seenL.length;
    const can=j=>canPay(j.mon,jewelRecipe(j))&&(j.sz<3||eliteOpen());const cnt=z=>JEWELS.filter(j=>j.sz===z&&monSeen(j.mon)&&can(j)).length;
    const shown=only?seenL.filter(can):seenL;
@@ -2022,8 +2025,8 @@ function vCraft(){const own=RES_ORDER.filter(k=>S.res[k]>0);const t=sub.toast;su
  const rg=WT[getWeapon(S.equip.weapon).type].ranged,cats=rg?[CRAFT_CAT[3],...CRAFT_CAT.slice(0,3)]:CRAFT_CAT;const tab=sub.ctab&&CRAFT_CAT.some(c=>c[0]===sub.ctab)?sub.ctab:cats[0][0];
  const cat=CRAFT_CAT.find(c=>c[0]===tab),list=RECIPES.filter(r=>cat[2].includes(r.out));
  const prepN=PREP_LIST.concat(rangedPrep()).filter(k=>{const rc=RECIPES.find(r=>r.out===k);return rc&&fillBatches(rc)>0;}).length;
- return backBtn()+`<h2>Atelier</h2>${t?`<div class="toast">🛠️ ${esc(t)}</div>`:''}<p class="small muted" style="margin:0 0 8px">Fabriquez potions, bombes, pièges et munitions avec vos récoltes, ici ou au camp de base.</p>
- <button class="btn wide${prepN?' main':''}" data-a="prepsack" ${prepN?'':'disabled'}>Préparer ma sacoche</button><p class="small muted" style="margin:4px 0 0">Remplit potions, antidotes, steaks et bombes flash${getWeapon(S.equip.weapon).type==='bow'?', et flacons de puissance':isGun(getWeapon(S.equip.weapon).type)?', et munitions perforantes':''} jusqu’au maximum emportable, selon vos ressources.</p>
+ return backBtn()+`<h2>Atelier</h2>${t?`<div class="toast">🛠️ ${esc(t)}</div>`:''}<p class="small muted" style="margin:0 0 8px">Fabrique potions, bombes, pièges et munitions avec tes récoltes, ici ou au camp de base.</p>
+ <button class="btn wide${prepN?' main':''}" data-a="prepsack" ${prepN?'':'disabled'}>Préparer ma sacoche</button><p class="small muted" style="margin:4px 0 0">Remplit potions, antidotes, steaks et bombes flash${getWeapon(S.equip.weapon).type==='bow'?', et flacons de puissance':isGun(getWeapon(S.equip.weapon).type)?', et munitions perforantes':''} jusqu’au maximum emportable, selon tes ressources.</p>
  ${(()=>{const ks=ITEM_ORDER.filter(k=>!ITEMS[k].sup&&(S.items[k]>0||PREP_LIST.includes(k)||(rg&&k==='fiole_p')));const lack=ks.filter(k=>(S.items[k]||0)<ITEMS[k].carry&&(PREP_LIST.includes(k)||rangedPrep().includes(k))).length;
   return`<details class="sackbox" ${sub.sackOpen?'open':''}><summary data-a="sacktog"><b>Ma sacoche</b><small>${ks.filter(k=>S.items[k]>0).length} objet${ks.filter(k=>S.items[k]>0).length>1?'s':''}${lack?` · ${lack} à compléter`:' · prête'}</small></summary><div class="skl">${ks.map(k=>{const n=S.items[k]||0,c=ITEMS[k].carry;return`<span class="tag sk${n>=c?' full':n?'':' none'}">${itemIcon(k,'iicon sm')}${ITEMS[k].n} ${n}/${c}</span>`;}).join('')}</div><p class="small muted" style="margin:4px 0 0">Stock / maximum emporté par quête.</p></details>`;})()}
  <div class="tabs">${cats.map(([k,n,ids])=>{const c=RECIPES.filter(r=>ids.includes(r.out)&&canCraft(r)).length;return`<button class="tab ${k===tab?'on':''}" data-a="ctab" data-v="${k}">${n}${c?` <i class="tcnt">${c}</i>`:''}</button>`;}).join('')}</div>
@@ -2036,8 +2039,8 @@ function vShop(){const tab=sub.stab||'achat';let body='';
   const byMon=MON_ORDER.map(m=>[m,ids.filter(id=>id.startsWith(m+'.'))]).filter(x=>x[1].length);
   body=(byMon.length||rs.length)?byMon.map(([m,l])=>`<h3>${esc(MON[m].name)}</h3>`+l.map(id=>`<div class="row"><div class="top"><span><b>${esc(matName(id))}</b> <span class="muted small">×${S.mats[id]}</span></span><button class="btn sm" data-a="sell" data-v="${id}">Vendre ${sellPrice(id)} z</button></div></div>`).join('')).join('')
    +(rs.length?`<h3>Minerais et cuirs</h3>`+rs.map(k=>`<div class="row"><div class="top"><span class="iline">${itemIcon(k,'iicon')}<span><b>${RES[k].n}</b> <span class="muted small">×${S.res[k]}</span></span></span><button class="btn sm" data-a="sellr" data-v="${k}">Vendre ${RES_PRICE[k]} z</button></div></div>`).join(''):'')
-   :'<p class="muted">Rien à vendre. Chassez et explorez pour récolter.</p>';}
- if(tab==='achat')body+=`<p class="small muted">La Guilde ne vend que l’essentiel. Méga-potions, steaks, graines, bombes et pièges se fabriquent à l’atelier avec vos récoltes.</p><button class="btn wide" data-a="go" data-v="craft">Aller à l’atelier</button>`;
+   :'<p class="muted">Rien à vendre. Chasse et explore pour récolter.</p>';}
+ if(tab==='achat')body+=`<p class="small muted">La Guilde ne vend que l’essentiel. Méga-potions, steaks, graines, bombes et pièges se fabriquent à l’atelier avec tes récoltes.</p><button class="btn wide" data-a="go" data-v="craft">Aller à l’atelier</button>`;
  return backBtn()+`<h2>Boutique</h2><p class="muted small" style="margin:0">${S.zenny} z</p><div class="tabs"><button class="tab ${tab==='achat'?'on':''}" data-a="stab" data-v="achat">Objets</button><button class="tab ${tab==='vente'?'on':''}" data-a="stab" data-v="vente">Vendre des matériaux</button></div>${body}`;}
 
 function pctOf(tab,k){const t=tab.reduce((a,e)=>a+e[1],0),e=tab.find(x=>x[0]===k);return e?e[1]/t:0;}
@@ -2054,7 +2057,7 @@ function lootHTML(id){const d=MON[id],P=d.parts;const keys=['ecaille','peau','gr
 function monNotesHTML(id){const d=MON[id],rec=S.mon[id]||{};const known=(rec.kills||0)+(rec.caps||0)>0;
  if(!rec.seen)return`<div class="nhead">${portrait(id,'unk')}<div><h3>???</h3><p class="muted small">Monstre jamais rencontré.</p></div></div>`;
  let h=`<div class="nhead">${portrait(id)}<div><h3>${d.name}</h3><p class="small muted" style="margin:0">${d.kind}. Chassés : ${rec.kills||0}, capturés : ${rec.caps||0}.${QUESTS.some(q=>q.mon===id&&q.elite&&!q.anc&&q.tier>0&&S.cleared[q.id])?' Version aguerrie vaincue.':''}${QUESTS.some(q=>q.mon===id&&q.anc&&q.tier>0&&S.cleared[q.id])?(MON[id].mrOnly?' Vaincu au rang maître.':' Version ancestrale vaincue.'):''}</p></div></div><p class="small">${d.lore}</p>`;
- if(!known)return h+lootHTML(id)+'<p class="small muted">Terminez une chasse contre ce monstre pour noter ses faiblesses.</p>';
+ if(!known)return h+lootHTML(id)+'<p class="small muted">Termine une chasse contre ce monstre pour noter ses faiblesses.</p>';
  h+=`<table class="hz hzel"><tr><th>Élément</th>${Object.keys(ELEM).map(e=>`<th>${elIcon(e)}</th>`).join('')}</tr><tr><td>Efficacité</td>${Object.keys(ELEM).map(e=>`<td class="star">${stars(d.weak[e])}</td>`).join('')}</tr></table>`;
  h+=`<table class="hz"><tr><th>Partie</th><th>Zone</th><th>Tranchant</th><th>Contondant</th><th>Spécial</th></tr>${['tete','flanc','queue'].map(p=>{const P=d.parts[p];
   return`<tr><td>${P.name}</td><td>${ZN[Object.keys(ZPART).find(z=>ZPART[z]===p)]}</td><td class="star">${hzStars(P.cut)}</td><td class="star">${hzStars(P.blunt)}</td><td>${[d.plated?'Plaqué de fer':'',P.sever?'Tranchable':P.brk?'Destructible':''].filter(Boolean).join(', ')}</td></tr>`;}).join('')}</table>`;
@@ -2072,10 +2075,10 @@ function vResult(){const r=R,win=r.kind!=='fail';const g=Object.keys(r.gain);
  ${r.pil?`<p class="small">🐱 ${esc(palS().name)} a chapardé : ${esc(matName(r.pil))}.</p>`:''}
  ${r.breaks&&r.breaks.length?`<p class="small muted">Parties brisées : ${r.breaks.map(b=>b==='sever'?'queue tranchée':MON[r.mon].parts[b].name.toLowerCase()).join(', ')}.</p>`:''}
  ${r.q.explore?'':(()=>{const c=craftables();return c.length?`<h3>Désormais forgeable</h3><p class="small">${c.slice(0,6).map(x=>esc(x.name)).join(', ')}${c.length>6?`, et ${c.length-6} autre${c.length>7?'s':''}`:''}.</p><button class="btn wide" data-a="go" data-v="forge">Aller à la forge</button>`:'';})()}
- ${r.first&&r.q.id==='m_abyssaure'?`<div class="finale"><b>La lumière est revenue.</b><span>Au fond du Cratère, l’Abyssaure s’est tu et le soleil noir s’est éteint. La Guilde grave votre nom tout en haut du tableau des maîtres : il n’y a plus rien au-dessus de vous.</span></div>`:''}${r.first&&r.q.id==='q11'?`<div class="finale"><b>La tempête s’est tue.</b><span>Le ciel des Crêtes s’éclaircit pour la première fois depuis des siècles. La Guilde vous proclame Chasseur des Tempêtes, le plus haut rang de Brume-Haute. Les armes Tempête, à l’élément Foudre, vous attendent à la forge.</span></div>`:''}${r.first&&r.q.final&&r.q.mon==='ferroi'?`<div class="finale"><b>Le Roi de Fer est tombé.</b><span>Brume-Haute peut dormir en paix : la Guilde grave votre nom sur la stèle des Chasseurs. Les armes du Roi de Fer, à l’élément Dragon, vous attendent à la forge.</span></div>`:''}
- ${r.rankUp?`<div class="finale"><b>Promotion : ${STAGE_N[r.rankUp]} !</b><span>${r.rankUp===7?'Le rang maître s’ouvre : des monstres ancestraux, plus anciens et plus redoutables, enchaînent leurs attaques. Forgez les armes IV et poussez vos armures au-delà de 70.':r.rankUp===4?'Le rang supérieur s’ouvre : les monstres reviennent, aguerris, et les traques d’élite commencent.':'De nouvelles quêtes vous attendent au tableau.'}</span></div>`:r.newQ&&r.newQ.length?`<p class="small" style="color:var(--good)">Nouvelle quête disponible : ${r.newQ.map(esc).join(', ')}.</p>`:''}`:'<p class="muted small">Aucune récompense. Changez d’équipement ou de stratégie et retentez.</p>'}
+ ${r.first&&r.q.id==='m_abyssaure'?`<div class="finale"><b>La lumière est revenue.</b><span>Au fond du Cratère, l’Abyssaure s’est tu et le soleil noir s’est éteint. La Guilde grave ton nom tout en haut du tableau des maîtres : il n’y a plus rien au-dessus de toi.</span></div>`:''}${r.first&&r.q.id==='q11'?`<div class="finale"><b>La tempête s’est tue.</b><span>Le ciel des Crêtes s’éclaircit pour la première fois depuis des siècles. La Guilde te proclame Chasseur des Tempêtes, le plus haut rang de Brume-Haute. Les armes Tempête, à l’élément Foudre, t’attendent à la forge.</span></div>`:''}${r.first&&r.q.final&&r.q.mon==='ferroi'?`<div class="finale"><b>Le Roi de Fer est tombé.</b><span>Brume-Haute peut dormir en paix : la Guilde grave ton nom sur la stèle des Chasseurs. Les armes du Roi de Fer, à l’élément Dragon, t’attendent à la forge.</span></div>`:''}
+ ${r.rankUp?`<div class="finale"><b>Promotion : ${STAGE_N[r.rankUp]} !</b><span>${r.rankUp===7?'Le rang maître s’ouvre : des monstres ancestraux, plus anciens et plus redoutables, enchaînent leurs attaques. Forge les armes IV et pousse tes armures au-delà de 70.':r.rankUp===4?'Le rang supérieur s’ouvre : les monstres reviennent, aguerris, et les traques d’élite commencent.':'De nouvelles quêtes t’attendent au tableau.'}</span></div>`:r.newQ&&r.newQ.length?`<p class="small" style="color:var(--good)">Nouvelle quête disponible : ${r.newQ.map(esc).join(', ')}.</p>`:''}`:'<p class="muted small">Aucune récompense. Change d’équipement ou de stratégie et retente.</p>'}
  ${r.palxp?`<p class="small">🐱 ${esc(palS().name)} gagne ${r.palxp} XP${palS().lv>=PAL_MAXLV?' (niveau max)':` (niveau ${palS().lv}, ${palS().xp}/${palNext(palS().lv)})`}.</p>${(r.palup||[]).map(t=>`<p class="small" style="color:var(--good)">⬆ ${esc(t)}</p>`).join('')}`:''}
- <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px">${r.q.explore&&S.exp&&S.exp.ko?`<p class="small" style="color:var(--danger)">Trois évanouissements : l’expédition est terminée et la moitié de votre butin est perdue.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`:r.q.explore&&S.exp?`<button class="btn main wide" data-a="xresume">Reprendre l’expédition</button>`:r.q.arena||r.q.sp?`<button class="btn main wide" data-a="retry">${win?'Nouveau combat':'Retenter le combat'} : ${esc(qName(r.q))}</button><button class="btn wide" data-a="${r.q.sp?'tospecial':'toarena'}">Retour ${r.q.sp?'aux combats spéciaux':'à l’arène'}</button><button class="btn wide" data-a="home">Retour au village</button>`:`<button class="btn main wide" data-a="home">Retour au village</button>${win?'':`<button class="btn wide" data-a="retry">Réessayer la quête</button>`}`}</div>`;}
+ <div style="margin-top:18px;display:flex;flex-direction:column;gap:8px">${r.q.explore&&S.exp&&S.exp.ko?`<p class="small" style="color:var(--danger)">Trois évanouissements : l’expédition est terminée et la moitié de ton butin est perdue.</p><button class="btn main wide" data-a="xend-yes">Rentrer au village</button>`:r.q.explore&&S.exp?`<button class="btn main wide" data-a="xresume">Reprendre l’expédition</button>`:r.q.arena||r.q.sp?`<button class="btn main wide" data-a="retry">${win?'Nouveau combat':'Retenter le combat'} : ${esc(qName(r.q))}</button><button class="btn wide" data-a="${r.q.sp?'tospecial':'toarena'}">Retour ${r.q.sp?'aux combats spéciaux':'à l’arène'}</button><button class="btn wide" data-a="home">Retour au village</button>`:`<button class="btn main wide" data-a="home">Retour au village</button>${win?'':`<button class="btn wide" data-a="retry">Réessayer la quête</button>`}`}</div>`;}
 
 /* ---------- Écran de chasse ---------- */
 function pt(a,r){const t=a*Math.PI/180;return[150+r*Math.sin(t),150-r*Math.cos(t)];}
@@ -2092,7 +2095,7 @@ function arenaSVG(){const m=H.m,RG=ranged(),far=RG&&!H.close,danger={},delem={},
   for(const z of rz){if(!mv.track||!far)add(danger,z,v);if(reach&&(!mv.track||far))add(dOut,z,v);if(e!=='phys')delem[z]=e;}}
  if(m.mines&&!H.over&&mineMove(m))for(const z of m.mines.z){const v=estDmg(mineMove(m));add(danger,z,v);if(RG)add(dOut,z,v);delem[z]=m.mines.mv==='foudre_t'?'bolt':'fire';}
  const shown=far?dOut:danger,sr=far?165:106;
- let s=`<svg viewBox="${RG?'-34 -34 368 368':'0 0 300 300'}" aria-label="${H.phase==='camp'?'Arène : touchez une zone pour engager le combat par là':'Arène : touchez une zone pour vous déplacer'}">${VFX_DEFS}`;
+ let s=`<svg viewBox="${RG?'-34 -34 368 368':'0 0 300 300'}" aria-label="${H.phase==='camp'?'Arène : touche une zone pour engager le combat par là':'Arène : touche une zone pour te déplacer'}">${VFX_DEFS}`;
  for(const q of SECTS){const side=q.a===90?'d':q.a===270?'g':'';const here=q.z===H.zone&&(q.z!=='flanc'||side===H.side);
   const c=['sec'];if(m.lava===q.z&&!H.over)c.push('lava');if(m.mines&&m.mines.z.includes(q.z)&&!H.over)c.push(m.mines.mv==='foudre_t'?'bolt':'mine');if(H.phase!=='camp'){if(here)c.push('here');else if(q.z===H.zone)c.push('same');}if(q.z in danger)c.push('danger');
   if(RG&&H.phase!=='camp'){const k=c.indexOf('here');if(k>=0&&far){c.splice(k,1);c.push('same');}}
@@ -2135,36 +2138,36 @@ function monChips(m){const c=[];const P=m.parts,d=m.d;if(H&&H.tr){const n=Math.m
  {const br=['tete','flanc','queue'].filter(p=>P[p].broken).map(p=>d.parts[p].name.toLowerCase());if(P.queue.severed)br.push('queue tranchée');if(br.length)c.push([`${uic('s_break')} ${br.join(', ')}`,'']);}
  return c.map(x=>`<span class="chip ${x[1]}">${x[0]}</span>`).join('');}
 function minesHTML(){const m=H.m;if(!m.mines||!mineMove(m))return'';const on=m.mines.z.includes(H.zone),bolt=m.mines.mv==='foudre_t';
- if(bolt)return`<div class="irow lavarow"><div class="ih"><b>⚡ Foudre de la tempête</b><span class="ic ${on?'bad':''}">${m.mines.z.map(x=>ZN[x]).join(' · ')}</span><span class="ic tier H">lourd ≈${estDmg(mineMove(m))}</span></div><span class="iz">Elle frappe cette zone avant son action : changez de zone ou esquivez. Vent : vos coups ${m.parts.tete.broken?'−20':'−35'} %.</span></div>`;
- return`<div class="irow lavarow"><div class="ih"><b>💥 Écailles explosives</b><span class="ic ${on?'bad':''}">${m.mines.z.length===3?'toutes zones':m.mines.z.map(x=>ZN[x]).join(' · ')}</span><span class="ic tier H">lourd ≈${estDmg(mineMove(m))}</span><span class="ic">brûlure</span></div><span class="iz">Elles explosent avant son action : quittez la zone ou esquivez.</span></div>`;}
+ if(bolt)return`<div class="irow lavarow"><div class="ih"><b>⚡ Foudre de la tempête</b><span class="ic ${on?'bad':''}">${m.mines.z.map(x=>ZN[x]).join(' · ')}</span><span class="ic tier H">lourd ≈${estDmg(mineMove(m))}</span></div><span class="iz">Elle frappe cette zone avant son action : change de zone ou esquive. Vent : tes coups ${m.parts.tete.broken?'−20':'−35'} %.</span></div>`;
+ return`<div class="irow lavarow"><div class="ih"><b>💥 Écailles explosives</b><span class="ic ${on?'bad':''}">${m.mines.z.length===3?'toutes zones':m.mines.z.map(x=>ZN[x]).join(' · ')}</span><span class="ic tier H">lourd ≈${estDmg(mineMove(m))}</span><span class="ic">brûlure</span></div><span class="iz">Elles explosent avant son action : quitte la zone ou esquive.</span></div>`;}
 function intentHTML(){const it=H.intent||[];if(!it.length)return'';
  if(passive(it[0])){const mh=minesHTML();return`<div class="intent ${mh?(H.m.mines.z.includes(H.zone)?'':'safe'):'calm'}"><div class="ih"><b>${it[0].n}</b>${it[0].fx==='unaware'?'<span class="ic good">surprise +30 %</span>':''}</div><span class="it">${it[0].t}</span>${mh}</div>`;}
  const m=H.m,ecl=m.eclipse>0&&!H.over,hid=mv=>ecl&&mv.d&&!mv.fx;const hit=it.some(mv=>!hid(mv)&&effZones(mv).includes(H.zone));let zc=H.zone;
  const rows=it.map((mv,i)=>{const z=effZones(mv);const ch=[];let note='';
-  if(hid(mv)){const hn=H.eHint&&H.eHint[i];ch.push(`<span class="ic tier ${mv.tier}">${TIERN[mv.tier]}</span>`);ch.push(hn==='track'?'<span class="ic bad">il vous sent</span>':hn?`<span class="ic">bruit : ${ZN[hn]}</span>`:'<span class="ic">zone inconnue</span>');
-   return`<div class="irow dark"><div class="ih"><b>${i?'Puis : ':''}Une ombre dans le noir</b>${ch.join('')}</div><span class="it">${hn==='track'?'Vous sentez son regard sur vous, quelque part dans l’obscurité…':'Vous ne distinguez qu’un mouvement, et un bruit qui vient de quelque part…'}</span></div>`;}
-  if(mv.fx==='windup')note='Attaque dévastatrice au prochain tour : faites-le tressaillir ou sortez de sa portée.';
-  else if(mv.fx==='fly')note=FEM[H.m.id]?'Elle s’envole : vos coups seront divisés par deux. Bombe flash pour la faire chuter.':'Il s’envole : vos coups seront divisés par deux. Bombe flash pour le faire chuter.';
+  if(hid(mv)){const hn=H.eHint&&H.eHint[i];ch.push(`<span class="ic tier ${mv.tier}">${TIERN[mv.tier]}</span>`);ch.push(hn==='track'?'<span class="ic bad">il te sent</span>':hn?`<span class="ic">bruit : ${ZN[hn]}</span>`:'<span class="ic">zone inconnue</span>');
+   return`<div class="irow dark"><div class="ih"><b>${i?'Puis : ':''}Une ombre dans le noir</b>${ch.join('')}</div><span class="it">${hn==='track'?'Tu sens son regard sur toi, quelque part dans l’obscurité…':'Tu ne distingues qu’un mouvement, et un bruit qui vient de quelque part…'}</span></div>`;}
+  if(mv.fx==='windup')note='Attaque dévastatrice au prochain tour : fais-le tressaillir ou sors de sa portée.';
+  else if(mv.fx==='fly')note=FEM[H.m.id]?'Elle s’envole : tes coups seront divisés par deux. Bombe flash pour la faire chuter.':'Il s’envole : tes coups seront divisés par deux. Bombe flash pour le faire chuter.';
   else if(mv.fx==='eat')note='Il va dévorer l’objet volé et se soigner : faites-le tressaillir pour l’en empêcher.';
   else if(mv.fx==='rock')note='Il protège sa tête avec un rocher. Pas d’attaque ce tour.';
-  else if(mv.fx==='bristle')note='Il se hérisse : pendant 3 tours, frapper au contact vous blesse. Le contondant brise les épines ; les tirs à distance les évitent.';
-  else if(mv.fx==='stance')note='Posture de riposte : si vous attaquez ce tour, elle pare (−65 %) et riposte très fort. Gardez, bougez ou aiguisez : elle sera exposée ensuite.';
-  else if(mv.fx==='eclipse')note='Il plonge l’arène dans le noir : pendant quelques tours, vous ne verrez plus où il frappe. Une bombe flash dissipe l’Éclipse.';
-  else if(mv.fx==='storm')note='Il invoque la tempête : vos coups perdront en force et la foudre frappera votre zone à chaque tour. Bougez !';
-  else if(mv.fx==='mines')note=mv.all?'Il couvre toute l’arène d’écailles : esquivez au prochain tour.':'Il sème des écailles qui exploseront au prochain tour, avant son action.';
+  else if(mv.fx==='bristle')note='Il se hérisse : pendant 3 tours, frapper au contact te blesse. Le contondant brise les épines ; les tirs à distance les évitent.';
+  else if(mv.fx==='stance')note='Posture de riposte : si tu attaques ce tour, elle pare (−65 %) et riposte très fort. Garde, bouge ou aiguise : elle sera exposée ensuite.';
+  else if(mv.fx==='eclipse')note='Il plonge l’arène dans le noir : pendant quelques tours, tu ne verras plus où il frappe. Une bombe flash dissipe l’Éclipse.';
+  else if(mv.fx==='storm')note='Il invoque la tempête : tes coups perdront en force et la foudre frappera ta zone à chaque tour. Bouge !';
+  else if(mv.fx==='mines')note=mv.all?'Il couvre toute l’arène d’écailles : esquive au prochain tour.':'Il sème des écailles qui exploseront au prochain tour, avant son action.';
   else if(mv.fx==='charge')note='Il se surcharge : plus fort pendant 8 tours, tête exposée. Pas d’attaque ce tour.';
-  else if(mv.fx==='plate')note='Ses plaques se reforment. Pas d’attaque : frappez ce qui est à nu.';
+  else if(mv.fx==='plate')note='Ses plaques se reforment. Pas d’attaque : frappe ce qui est à nu.';
   else if(mv.fx==='phase')note='Rugissement sur toutes les zones, puis le sol entre en fusion.';
-  else if(mv.fx&&mv.fx!=='roar')note='Pas d’attaque ce tour : profitez-en.';
-  else{if(mv.track)ch.push(`<span class="ic bad">vous suit</span>`);else if(farAway(mv))ch.push(`<span class="ic good">au contact · hors de portée</span>`);else ch.push(`<span class="ic ${z.includes(H.zone)?'bad':''}">${z.length===3?'toutes zones':z.map(x=>ZN[x]).join(' · ')}</span>`);
+  else if(mv.fx&&mv.fx!=='roar')note='Pas d’attaque ce tour : profites-en.';
+  else{if(mv.track)ch.push(`<span class="ic bad">te suit</span>`);else if(farAway(mv))ch.push(`<span class="ic good">au contact · hors de portée</span>`);else ch.push(`<span class="ic ${z.includes(H.zone)?'bad':''}">${z.length===3?'toutes zones':z.map(x=>ZN[x]).join(' · ')}</span>`);
    if(mv.d)ch.push(`<span class="ic tier ${mv.tier}">${TIERN[mv.tier]} ≈${estDmg(mv)}</span>`);if(mv.st)ch.push(`<span class="ic">${STATN[mv.st]}</span>`);
    if(mv.fx==='roar')ch.push('<span class="ic">tétanise</span>');if(mv.open)ch.push('<span class="ic good">ouverture</span>');}
-  let mvTxt='';if(mv.after&&!mv.fx){const nz=afterZone(zc,mv.after);if(nz!==zc)mvTxt=`<span class="iz mv">↻ Vous finirez ${nz==='avant'?'à l’avant':nz==='arriere'?'à l’arrière':'sur le flanc'}.</span>`;zc=nz;}
+  let mvTxt='';if(mv.after&&!mv.fx){const nz=afterZone(zc,mv.after);if(nz!==zc)mvTxt=`<span class="iz mv">↻ Tu finiras ${nz==='avant'?'à l’avant':nz==='arriere'?'à l’arrière':'sur le flanc'}.</span>`;zc=nz;}
   return`<div class="irow"><div class="ih"><b>${i?'Puis : ':''}${mv.n}</b>${ch.join('')}</div><span class="it">${mv.t}</span>${note?`<span class="iz">${note}</span>`:''}${mvTxt}</div>`;}).join('');
- const lava=m.lava?`<div class="irow lavarow"><div class="ih"><b>🔥 Sol en fusion</b><span class="ic ${m.lava===H.zone?'bad':''}">${ZN[m.lava]}</span><span class="ic">≈${Math.round(m.d.lv*1.5*100/(100+H.stats.def))} + brûlure</span></div><span class="iz">Quittez la zone avant la fin du tour, l’esquive ne protège pas du sol.</span></div>`:'';
+ const lava=m.lava?`<div class="irow lavarow"><div class="ih"><b>🔥 Sol en fusion</b><span class="ic ${m.lava===H.zone?'bad':''}">${ZN[m.lava]}</span><span class="ic">≈${Math.round(m.d.lv*1.5*100/(100+H.stats.def))} + brûlure</span></div><span class="iz">Quitte la zone avant la fin du tour, l’esquive ne protège pas du sol.</span></div>`:'';
  const mh=minesHTML(),onMine=!!(m.mines&&m.mines.z.includes(H.zone));const danger=hit||m.lava===H.zone||onMine;
  const stc=it.some(x=>x.fx==='stance');
- return`<div class="intent ${ecl&&it.some(hid)?'dark':danger||stc?'':'safe'}"><span class="verdict">${ecl&&it.some(hid)?'Dans le noir':stc?'Ne frappez pas':hit?'Vous êtes visé':onMine?(m.mines.mv==='foudre_t'?'La foudre vous vise':'Écailles sous vous'):m.lava===H.zone?'Sol brûlant':'Hors de portée'}</span>${rows}${mh}${lava}</div>`;}
+ return`<div class="intent ${ecl&&it.some(hid)?'dark':danger||stc?'':'safe'}"><span class="verdict">${ecl&&it.some(hid)?'Dans le noir':stc?'Ne frappe pas':hit?'Tu es visé':onMine?(m.mines.mv==='foudre_t'?'La foudre te vise':'Écailles sous toi'):m.lava===H.zone?'Sol brûlant':'Hors de portée'}</span>${rows}${mh}${lava}</div>`;}
 function weaponGauge(){const W=H.stats.w,w=H.w;
  if(W.type==='ig')return`<div class="brow"><span>Extr.</span><div class="pips">${['r','w','o'].map(k=>`<i class="${w.ex[k]>0?'on':''}" style="${w.ex[k]>0?'background:'+EXTR[k].c+';box-shadow:inset 0 0 0 1px #0004':''}"></i>`).join('')}</div><em style="white-space:nowrap">${w.air?'En l’air':triple()?'Triple ✓':''}</em></div>`;
  if(W.type==='sa')return`<div class="brow"><span>${w.mode==='sword'?'Épée':'Hache'}</span>${bar(w.sw,100,'sp')}<em>Fiole ${w.sw}</em></div>`;
@@ -2178,7 +2181,7 @@ function weaponGauge(){const W=H.stats.w,w=H.w;
  if(W.type==='db')return`<div class="brow"><span>Furie</span><div class="pips"><i class="${w.demon?'on':''}" style="width:40px"></i></div><em>${w.demon?'Actif':'Inactif'}</em></div>`;
  return'';}
 function hunterChips(){const c=[],s=H.s;if(H.defBuff)c.push(['Défense +20','good']);if(H.song&&H.song.atk>0)c.push([`${uic('s_song')} Puissance ${H.song.atk}`,'good']);if(H.song&&H.song.def>0)c.push([`${uic('s_song')} Rempart ${H.song.def}`,'good']);
- if(s.bulle)c.push([`${uic('s_bulle')} Bulles ${s.bulle}`,'bad']);if(s.slime)c.push([uic('s_warn')+' Gelée : esquivez !','bad']);if(s.virus)c.push([`${uic('s_rage')} Frénésie ${s.virus} · ${Math.min(99,Math.round((H.virusD||0)/(H.m.max*.035)*100))} %`,'bad']);if(H.fren>0)c.push([`${uic('s_rage')} Surmontée +15 % · ${H.fren}`,'good']);if(s.burn)c.push([elIcon('feu')+' Brûlure','bad']);if(s.poison)c.push([uic('st_poison')+' Poison','bad']);if(s.gel)c.push([elIcon('glace')+' Gel','bad']);if(s.tet)c.push([uic('s_deaf')+' Tétanisé','bad']);if(s.para)c.push([s.why==='sleep'?uic('st_sleep')+' Endormi':s.why==='down'?uic('s_down')+' Renversé':uic('st_para')+' Paralysé','bad']);
+ if(s.bulle)c.push([`${uic('s_bulle')} Bulles ${s.bulle}`,'bad']);if(s.slime)c.push([uic('s_warn')+' Gelée : esquive !','bad']);if(s.virus)c.push([`${uic('s_rage')} Frénésie ${s.virus} · ${Math.min(99,Math.round((H.virusD||0)/(H.m.max*.035)*100))} %`,'bad']);if(H.fren>0)c.push([`${uic('s_rage')} Surmontée +15 % · ${H.fren}`,'good']);if(s.burn)c.push([elIcon('feu')+' Brûlure','bad']);if(s.poison)c.push([uic('st_poison')+' Poison','bad']);if(s.gel)c.push([elIcon('glace')+' Gel','bad']);if(s.tet)c.push([uic('s_deaf')+' Tétanisé','bad']);if(s.para)c.push([s.why==='sleep'?uic('st_sleep')+' Endormi':s.why==='down'?uic('s_down')+' Renversé':uic('st_para')+' Paralysé','bad']);
  if(H.atkBuff)c.push([icoImg('grain','uic')+' Attaque +10 %','good']);if(H.elan>0)c.push([`${uic('s_elan')} Élan +${20+10*H.stats.sk.esquive} %`,'good']);if(H.riposte>0)c.push([`${uic('s_riposte')} Riposte +${Math.round((GUARD.rip+GUARD.lv*H.stats.sk.garde)*100)} %`,'good']);if(H.trap)c.push([icoImg('piege','uic')+' Piège posé','good']);if(H.w&&H.w.siege)c.push([uic('s_siege')+' Siège +50 %','good']);if(H.w&&H.w.shield>0)c.push([`${uic('s_plates')} Bouclier chargé ${H.w.shield}`,'good']);if(H.coat)c.push([`${icoImg(H.coat.k,'uic')} ${H.coat.k==='fiole_p'?'Puissance':'Poison'} ×${H.coat.n}`,'good']);if(H.grab)c.push([uic('s_grab')+' Saisi','bad']);if(H.felyne)c.push([H.felyne.n,'']);if(H.pal){const P=H.pal;c.push([P.ko?`${uic('cat_'+palS().voc)} à terre (${P.ko})`:`${uic('cat_'+palS().voc)} ${Math.max(0,Math.round(P.hp))}/${P.max}${P.lure?' · leurre':''}`,P.ko?'bad':P.hp<P.max*.35?'bad':'']);}
  return c.map(x=>`<span class="chip ${x[1]}">${x[0]}</span>`).join('');}
 function getActions(){const W=H.stats.w,T=W.type,w=H.w,st=H.st,A=[];const add=(id,label,sub,dis,cls)=>A.push({id,label,sub,dis,cls});
@@ -2203,20 +2206,20 @@ function getActions(){const W=H.stats.w,T=W.type,w=H.w,st=H.st,A=[];const add=(i
   else{add('dis',w.ph?'Décharge':'Coup de hache',w.ph?'1 fiole explose':'Plus de fiole');add('saed','Déch. ultime',w.ph?`15 end. · ${w.ph} fiole${w.ph>1?'s':''}`:'Aucune fiole',!w.ph||st<15,w.ph>=CB_PH?'hot':'');add('morph','Transformer','→ épée et garde');}}
  if(T==='gl'){add('estoc','Estoc','2 coups');add('obus','Tir d’obus',w.shells?`Obus ${w.shells}/${glCap()} · dégâts fixes`:'Plus d’obus',!w.shells);add('salve','Salve',w.shells>1?`${w.shells} obus d’un coup`:'2 obus minimum',w.shells<2);
   add('reload','Recharger',w.shells>=glCap()?'Obus au complet':`→ ${glCap()} obus`,w.shells>=glCap(),w.shells?'':'hot');add('wf','Souffle du canon',w.wf?`Refroidit : ${w.wf} tour${w.wf>1?'s':''}`:'Explosion, fait tressaillir',w.wf>0,w.wf?'':'hot');
-  if(ranged()){const far=!H.close;for(const a of A)if((a.id==='estoc'||a.id==='wf')&&far){a.dis=true;a.cls='';a.sub='Au contact seulement';}if(H.close)add('reculer','Reculer','Reprend vos distances',false,'def');}}
+  if(ranged()){const far=!H.close;for(const a of A)if((a.id==='estoc'||a.id==='wf')&&far){a.dis=true;a.cls='';a.sub='Au contact seulement';}if(H.close)add('reculer','Reculer','Reprend tes distances',false,'def');}}
  if(T==='lance'){add('estoc','Estoc','2 coups');add('charge','Charge de lance','22 end. · 3 coups',st<22);add('counter','Contre',w.ccd>0?'Récupère : 1 tour':'12 end. · bloque et riposte',st<12||w.ccd>0,'def');}
  if(T==='hbg'){const a=w.ammo||'norm',cap=ammoCap(a),left=ammoLeft(a);add('tir',a==='norm'?'Tir lourd':`Tir ${AMMO[a].n.toLowerCase()}`,w.mag?`Chargeur ${w.mag}/${cap}`:'Chargeur vide',!w.mag,w.siege?'hot':'');
   add('burst','Pleine charge',w.mag>=2?`${w.mag} tirs d’un coup`:'Chargeur trop vide',w.mag<2,w.mag>=cap&&cap>1?'hot':'');
   add('reload','Recharger',left<=w.mag?(left?'Chargeur plein':'Plus de munitions'):`→ ${Math.min(cap,left)} ${AMMO[a].n.toLowerCase()}${a==='norm'?'s':'s'}`,Math.min(cap,left)<=w.mag,w.mag?'':'hot');
   if(w.siege)add('unsiege','Quitter le siège','Gratuit',false,'def');else add('siege','Mode siège','+50 % dégâts, immobile',false,'');
-  const ci=AMMO_ORDER.indexOf(a),nx=[1,2,3].map(i=>AMMO_ORDER[(ci+i)%AMMO_ORDER.length]).filter(k=>ammoOk(k));add('ammo','Munition ▸',nx.length?`${AMMO[a].n} → ${AMMO[nx[0]].n}`:AMMO[a].n,!nx.length);if(H.close)add('reculer','Reculer',w.siege?'Impossible en siège':'Reprend vos distances',w.siege,'def');}
+  const ci=AMMO_ORDER.indexOf(a),nx=[1,2,3].map(i=>AMMO_ORDER[(ci+i)%AMMO_ORDER.length]).filter(k=>ammoOk(k));add('ammo','Munition ▸',nx.length?`${AMMO[a].n} → ${AMMO[nx[0]].n}`:AMMO[a].n,!nx.length);if(H.close)add('reculer','Reculer',w.siege?'Impossible en siège':'Reprend tes distances',w.siege,'def');}
  if(T==='lbg'){const a=w.ammo||'norm',cap=ammoCap(a),left=ammoLeft(a);add('tir',a==='norm'?'Tirer':`Tir ${AMMO[a].n.toLowerCase()}`,w.mag?`Chargeur ${w.mag}/${cap}`:'Chargeur vide',!w.mag,'');
   add('reload','Recharger',left<=w.mag?(left?'Chargeur plein':'Plus de munitions'):`→ ${Math.min(cap,left)} ${AMMO[a].n.toLowerCase()}${a==='norm'?'':'s'}`,Math.min(cap,left)<=w.mag,w.mag?'':'hot');
   {const rc=rollCost(),dc=dodgeCost(),cd=w.rcd>0;if(w.mag||Math.min(cap,left)<=w.mag)add('roll','Tir et roulade',cd?'Récupère : 1 tour':`${rc} end. Tire et esquive`,!w.mag||st<rc||H.s.tet>0||cd,'def');else add('rreload','Roulade et recharge',cd?'Récupère : 1 tour':`${dc} end. Esquive et recharge`,st<dc||H.s.tet>0||cd,'def');}
-  const ci=AMMO_ORDER.indexOf(a),nx=[1,2,3].map(i=>AMMO_ORDER[(ci+i)%AMMO_ORDER.length]).filter(k=>ammoOk(k));add('ammo','Munition ▸',nx.length?`${AMMO[a].n} → ${AMMO[nx[0]].n}`:AMMO[a].n,!nx.length);if(H.close)add('reculer','Reculer','Reprend vos distances',false,'def');}
+  const ci=AMMO_ORDER.indexOf(a),nx=[1,2,3].map(i=>AMMO_ORDER[(ci+i)%AMMO_ORDER.length]).filter(k=>ammoOk(k));add('ammo','Munition ▸',nx.length?`${AMMO[a].n} → ${AMMO[nx[0]].n}`:AMMO[a].n,!nx.length);if(H.close)add('reculer','Reculer','Reprend tes distances',false,'def');}
  if(T==='bow'){const c=w.charge;add('tir',c?`Tir chargé niv. ${c}`:'Tir',c?'Relâche la charge':'Volée de flèches',false,c>=2?'hot':'');
   {const cc=chargeCost(T);if(c<3)add('charge',c?'Bander encore':'Bander l’arc',`${cc} end. Tir suivant plus fort`,st<cc);}
-  add('disperse','Tir dispersé','20 end. Touche 2 parties',st<20);if(H.close)add('reculer','Reculer','Reprend vos distances',false,'def');}
+  add('disperse','Tir dispersé','20 end. Touche 2 parties',st<20);if(H.close)add('reculer','Reculer','Reprend tes distances',false,'def');}
  const dc=dodgeCost();add('dodge','Esquiver',H.w.siege?'Impossible en siège':H.s.tet?'Impossible : tétanisé':`${dc} end. Évite tout ce tour`,st<dc||H.s.tet>0||!!H.w.siege,'def');
  if(WT[T].g&&!(T==='cb'&&w.mode==='axe')){const it=H.m.eclipse>0?null:(H.intent||[]).find(x=>x.tier&&effZones(x).includes(H.zone));const b=it?Math.round(guardBlock(it.tier,T)*100):null;H._gb=b==null?(T==='sns'?'lm':'l'):b;
   add('guard','Garde',`${b==null?(T==='sns'?'Bloque légers et moyens':'Bloque les coups légers'):b>=100?'Bloque ce coup en entier':`Bloque ${b} % de ce coup`}, puis riposte +${Math.round((GUARD.rip+GUARD.lv*H.stats.sk.garde)*100)} %`,st<5,'def');}
@@ -2224,70 +2227,70 @@ function getActions(){const W=H.stats.w,T=W.type,w=H.w,st=H.st,A=[];const add=(i
  if(H.sup&&H.sup.baliste>0)add('baliste','Baliste',`Tir lourd, fend les plaques (×${H.sup.baliste})`,false,'hot');
  return A;}
 const ACT_INFO={
- 'gs:slash':['Coup lourd','Frappe verticale puissante, sans préparation. Utile quand vous n’avez pas le temps de charger.'],
+ 'gs:slash':['Coup lourd','Frappe verticale puissante, sans préparation. Utile quand tu n’as pas le temps de charger.'],
  'gs:release':['Relâcher','Relâche la charge accumulée. Niveau 2 : dégâts énormes, élément renforcé (×3,2) et forte chance de faire tressaillir le monstre, ce qui annule son attaque.'],
  'gs:charge':['10 end.','Accumule un niveau de charge (2 au maximum). Un coup reçu brise la charge. Garder, esquiver ou le coup d’épaule la conservent.'],
- 'gs:tackle':['12 end. · ½ dégâts','Coup d’épaule contondant qui conserve la charge. Si le monstre vous touche ce tour, vous n’encaissez que la moitié des dégâts.'],
+ 'gs:tackle':['12 end. · ½ dégâts','Coup d’épaule contondant qui conserve la charge. Si le monstre te touche ce tour, tu n’encaisses que la moitié des dégâts.'],
  'ls:entaille':['+ esprit','Deux entailles rapides qui remplissent la jauge d’esprit de 20.'],
  'ls:esprit':['jauge 35','Trois tranches alimentées par l’esprit. Consomme 35 de jauge.'],
  'ls:circ':['jauge 60 · niv. +1','Consomme 60 de jauge et fait monter le niveau d’esprit (3 au maximum) : chaque niveau augmente les dégâts de 5 %. Le niveau baisse après 8 tours sans taille circulaire.'],
- 'ls:fore':['15 end. · contre','Posture de contre : si le monstre vous vise ce tour, vous esquivez et ripostez automatiquement, et la jauge d’esprit se remplit. Recharge de 4 tours.'],
+ 'ls:fore':['15 end. · contre','Posture de contre : si le monstre te vise ce tour, tu esquives et ripostes automatiquement, et la jauge d’esprit se remplit. Recharge de 4 tours.'],
  'sns:combo':['2 coups','Deux coups tranchants rapides.'],
- 'sns:shield':['garde · KO','Coup de bouclier contondant qui assomme à la tête. Vous gardez en même temps : les coups légers et moyens sont bloqués.'],
+ 'sns:shield':['garde · KO','Coup de bouclier contondant qui assomme à la tête. Tu gardes en même temps : les coups légers et moyens sont bloqués.'],
  'sns:leap':['15 end.','Taille bondissante, le coup le plus lourd de l’Épée & Bouclier.'],
  'db:combo':['rafale','Enchaînement de coups rapides, idéal pour appliquer l’élément. En mode Furie : 4 coups renforcés.'],
  'db:demon':['−12 end./tour','Active ou quitte le mode Furie : coups renforcés et danse démoniaque, mais l’endurance baisse à chaque tour. Le mode s’arrête à 0 d’endurance.'],
  'db:dance':['30 end. · 6 coups','Danse démoniaque : six coups, le meilleur usage de l’élément. Réservée au mode Furie.'],
  'hammer:strike':['KO tête','Coup contondant. À la tête, il accumule l’assommement : un monstre assommé ne peut pas agir pendant 2 tours.'],
  'hammer:release':['Relâcher · KO','Niveau 1 : frappe ascendante, gros assommement. Niveau 2 : grand tourbillon en trois coups. Les deux font facilement tressaillir.'],
- 'hammer:charge':['8 end.','Arme le marteau (2 niveaux). Vous pouvez vous déplacer et esquiver sans perdre la charge.'],
+ 'hammer:charge':['8 end.','Arme le marteau (2 niveaux). Tu peux te déplacer et esquiver sans perdre la charge.'],
  'hammer:bash':['2 coups','Deux frappes latérales rapides, avec un peu d’assommement.'],
  'lbg:tir':['1 salve','Tire une salve de la munition chargée sur la partie visée. Normale : 2 balles. Perforante : touche la tête, les bras et la queue. Élémentaire : amplifie l’élément de l’arme. Soporifique : endort le monstre à force.'],
  'lbg:reload':['1 tour','Remplit le chargeur avec la munition choisie. Normales illimitées ; les autres se fabriquent à l’atelier (onglet Munitions).'],
- 'lbg:roll':['esquive · 1 tour sur 2','Une salve un peu plus faible (−30 %), puis une roulade : vous esquivez tout ce qui vous vise ce tour. Coûte 5 endurance de plus qu’une esquive, et il faut un tour pour s’en remettre avant de rouler à nouveau.'],
- 'lbg:rreload':['esquive · 1 tour sur 2','Chargeur vide : vous roulez tout en rechargeant. Vous esquivez tout ce qui vous vise ce tour et le chargeur est plein au tour suivant. Coûte comme une esquive, et il faut un tour pour s’en remettre avant de rouler à nouveau.'],
+ 'lbg:roll':['esquive · 1 tour sur 2','Une salve un peu plus faible (−30 %), puis une roulade : tu esquives tout ce qui te vise ce tour. Coûte 5 endurance de plus qu’une esquive, et il faut un tour pour s’en remettre avant de rouler à nouveau.'],
+ 'lbg:rreload':['esquive · 1 tour sur 2','Chargeur vide : tu roules tout en rechargeant. Tu esquives tout ce qui te vise ce tour et le chargeur est plein au tour suivant. Coûte comme une esquive, et il faut un tour pour s’en remettre avant de rouler à nouveau.'],
  'hbg:tir':['1 salve','Une salve lourde sur la partie visée (2 balles puissantes en munition normale). En mode siège : +50 %.'],
  'hbg:burst':['tout le chargeur','Vide tout le chargeur en une rafale sur la partie visée et fait souvent tressaillir le monstre, ce qui annule son attaque annoncée. Idéal contre une attaque préparée.'],
  'hbg:reload':['1 tour','Remplit le chargeur (plus petit que celui du fusarbalète léger).'],
- 'hbg:siege':['1 tour','Vous vous ancrez : +50 % de dégâts sur tous vos tirs, mais ni esquive, ni déplacement, ni recul. La garde reste possible.'],
- 'unsiege':['gratuit','Quitte le mode siège sans perdre le tour : vous pouvez ensuite esquiver ou bouger.'],
- 'hbg:ammo':['gratuit','Passe à la munition suivante disponible, sans perdre le tour. Le chargeur est vidé : rechargez ensuite.'],
- 'lbg:ammo':['gratuit','Passe à la munition suivante disponible, sans perdre le tour. Le chargeur est vidé : rechargez ensuite.'],
+ 'hbg:siege':['1 tour','Tu t’ancres : +50 % de dégâts sur tous tes tirs, mais ni esquive, ni déplacement, ni recul. La garde reste possible.'],
+ 'unsiege':['gratuit','Quitte le mode siège sans perdre le tour : tu peux ensuite esquiver ou bouger.'],
+ 'hbg:ammo':['gratuit','Passe à la munition suivante disponible, sans perdre le tour. Le chargeur est vidé : recharge ensuite.'],
+ 'lbg:ammo':['gratuit','Passe à la munition suivante disponible, sans perdre le tour. Le chargeur est vidé : recharge ensuite.'],
  'hh:red':['note rouge','Frappe contondante qui assomme à la tête. Joue une note rouge.'],
  'hh:blue':['note bleue','Deux coups rapides. Joue une note bleue.'],
  'hh:yellow':['10 end. · note jaune','Coup ascendant puissant, fort assommement. Joue une note jaune.'],
- 'hh:play':['mélodie','Frappe, puis joue la mélodie de vos deux dernières notes. Rouge + bleue : Puissance (+15 % d’attaque, 6 tours). Bleue + jaune : Rempart (+25 défense, 6 tours). Jaune + rouge : Soin (+25 PV, Griffu compris).'],
+ 'hh:play':['mélodie','Frappe, puis joue la mélodie de tes deux dernières notes. Rouge + bleue : Puissance (+15 % d’attaque, 6 tours). Bleue + jaune : Rempart (+25 défense, 6 tours). Jaune + rouge : Soin (+25 PV, Griffu compris).'],
  'ig:combo':['3 coups','Un enchaînement rapide. Avec l’extrait rouge : 4 coups, et +10 % d’attaque.'],
- 'ig:kin':['extrait','Frappe et envoie le scarabée sur la partie de votre zone : il rapporte un extrait pour 10 tours. Tête : rouge (attaque +10 %, enchaînement plus long). Bras : blanc (bond et esquive moins chers). Dos : orange (défense +20). Les trois : Triple extrait, +10 % d’attaque en plus.'],
- 'ig:vault':['esquive · en l’air','Vous bondissez sur votre glaive : comme une esquive, rien ne vous touche ce tour, pour moins d’endurance. Au tour suivant, vous pouvez lancer l’Attaque aérienne.'],
- 'ig:aerial':['tête · chevauchée','Juste après un bond : frappe la tête, quelle que soit votre zone, sans pénalité contre un monstre en vol. Chaque attaque aérienne prépare la chevauchée ; au bout de quelques-unes, vous chevauchez le monstre et il chute (2 tours à terre).'],
+ 'ig:kin':['extrait','Frappe et envoie le scarabée sur la partie de ta zone : il rapporte un extrait pour 10 tours. Tête : rouge (attaque +10 %, enchaînement plus long). Bras : blanc (bond et esquive moins chers). Dos : orange (défense +20). Les trois : Triple extrait, +10 % d’attaque en plus.'],
+ 'ig:vault':['esquive · en l’air','Tu bondis sur ton glaive : comme une esquive, rien ne te touche ce tour, pour moins d’endurance. Au tour suivant, tu peux lancer l’Attaque aérienne.'],
+ 'ig:aerial':['tête · chevauchée','Juste après un bond : frappe la tête, quelle que soit ta zone, sans pénalité contre un monstre en vol. Chaque attaque aérienne prépare la chevauchée ; au bout de quelques-unes, tu chevauches le monstre et il chute (2 tours à terre).'],
  'sa:axe':['+10 jauge','Un grand coup de hache. Remplit la jauge de fiole de 10.'],
  'sa:wild':['14 end. · +20 jauge','Trois coups de hache sauvages : ils remplissent la jauge de fiole de 20.'],
- 'sa:morph':['change de mode','Frappe en changeant de forme. Hache → épée : jauge ≥ 30. Épée → hache : toujours possible. En épée, vos coups sont renforcés par la fiole (puissance : +20 % ; élémentaire : élément ×1,7), mais vident la jauge.'],
+ 'sa:morph':['change de mode','Frappe en changeant de forme. Hache → épée : jauge ≥ 30. Épée → hache : toujours possible. En épée, tes coups sont renforcés par la fiole (puissance : +20 % ; élémentaire : élément ×1,7), mais vident la jauge.'],
  'sa:slash':['−12 jauge','Deux tailles d’épée renforcées par la fiole (puissance : +20 % ; élémentaire : élément ×1,7). Consomme 12 de jauge ; jauge vide, l’arme se replie en hache.'],
- 'sa:zsd':['vide la jauge','Décharge élémentaire : vous plantez la lame et libérez toute la fiole. Plus la jauge est pleine, plus l’explosion finale est forte ; elle fait souvent tressaillir le monstre. L’arme repasse ensuite en hache.'],
+ 'sa:zsd':['vide la jauge','Décharge élémentaire : tu plantes la lame et libères toute la fiole. Plus la jauge est pleine, plus l’explosion finale est forte ; elle fait souvent tressaillir le monstre. L’arme repasse ensuite en hache.'],
  'cb:slash':['+34 énergie','Deux tailles d’épée qui accumulent 25 d’énergie. Bloquer un coup en garde en donne aussi 15.'],
- 'cb:charge':['énergie → fioles','Convertit l’énergie en fioles (1 par tranche de 20, 5 au maximum), sans perdre le tour. Fioles pleines : vous chargez le bouclier en gardant (ce tour-là, vous êtes en garde). Pendant 12 tours, la garde est renforcée et vos fioles explosent 30 % plus fort.'],
+ 'cb:charge':['énergie → fioles','Convertit l’énergie en fioles (1 par tranche de 20, 5 au maximum), sans perdre le tour. Fioles pleines : tu charges le bouclier en gardant (ce tour-là, tu es en garde). Pendant 12 tours, la garde est renforcée et tes fioles explosent 30 % plus fort.'],
  'cb:morph':['change de mode','Frappe en changeant de forme. En épée : garde et énergie. En hache : pas de garde, mais les décharges font exploser les fioles.'],
  'cb:dis':['1 fiole','Un coup de hache qui fait exploser une fiole : dégâts fixes (ils ignorent la dureté des parties et le tranchant) et assommement à la tête. Sans fiole, simple coup de hache.'],
- 'cb:saed':['toutes les fioles','Décharge ultime : un coup énorme qui fait sauter toutes vos fioles d’un coup (dégâts fixes, assomme à la tête, fait tressaillir). Vous repassez ensuite en épée.'],
+ 'cb:saed':['toutes les fioles','Décharge ultime : un coup énorme qui fait sauter toutes tes fioles d’un coup (dégâts fixes, assomme à la tête, fait tressaillir). Tu repasses ensuite en épée.'],
  'gl:estoc':['2 coups','Deux estocs rapides.'],
- 'gl:obus':['dégâts fixes','Tire un obus : des dégâts fixes, basés sur votre attaque, qui ignorent la dureté de la partie et le tranchant. Idéal sur une carapace, une plaque de fer ou avec un tranchant usé.'],
- 'gl:salve':['tout le chargeur','Tire tous vos obus d’un coup (légèrement moins par obus).'],
- 'gl:reload':['1 tour','Remplit tous vos obus (5 normaux, 3 longs ou 2 larges selon la lignée).'],
+ 'gl:obus':['dégâts fixes','Tire un obus : des dégâts fixes, basés sur ton attaque, qui ignorent la dureté de la partie et le tranchant. Idéal sur une carapace, une plaque de fer ou avec un tranchant usé.'],
+ 'gl:salve':['tout le chargeur','Tire tous tes obus d’un coup (légèrement moins par obus).'],
+ 'gl:reload':['1 tour','Remplit tous tes obus (5 normaux, 3 longs ou 2 larges selon la lignée).'],
  'gl:wf':['refroidit 6 tours','Souffle du canon : une énorme explosion à dégâts fixes qui fait tressaillir le monstre (annule souvent son attaque). La lancecanon doit ensuite refroidir 6 tours.'],
  'lance:estoc':['2 coups','Deux estocs rapides.'],
  'lance:charge':['22 end. · 3 coups','Charge en trois coups, le plus gros enchaînement de la lance.'],
- 'lance:counter':['12 end. · 1 tour sur 2','Posture de contre : si le monstre vous vise ce tour, vous bloquez entièrement le coup et ripostez fort (et votre prochaine attaque profite de la riposte). Sinon, le contre est perdu. Il faut un tour pour se remettre en posture.'],
+ 'lance:counter':['12 end. · 1 tour sur 2','Posture de contre : si le monstre te vise ce tour, tu bloques entièrement le coup et ripostes fort (et ta prochaine attaque profite de la riposte). Sinon, le contre est perdu. Il faut un tour pour se remettre en posture.'],
  'bow:tir':['volée','Une volée de flèches sur la partie visée. Bandé, l’arc tire plus de flèches, plus fort (niveau 3 : 5 flèches puissantes). Les flèches ne tranchent pas la queue mais brisent les parties.'],
  'bow:charge':['10 end.','Bande l’arc d’un niveau (3 au maximum). Un coup reçu relâche la tension ; une esquive, elle, bande l’arc d’un niveau de plus.'],
  'bow:disperse':['20 end. · 2 parties','Trois flèches sur la partie visée et deux sur une autre partie, de préférence intacte. Profite aussi du niveau de charge.'],
- 'reculer':['distance','Vous reculez vers l’anneau extérieur : les coups au contact ne vous atteignent plus. C’est le seul moyen de quitter le contact.'],
- 'dodge':[null,'Esquive tout ce qui vous vise ce tour. Une esquive réussie donne de l’élan : +20 % à votre prochaine attaque. Impossible si vous êtes tétanisé.'],
- 'guard':[null,'Garde : bloque entièrement les coups légers (et moyens avec le bouclier), réduit les autres. Bloquer prépare une riposte sur votre prochaine attaque. L’esquive reste meilleure contre les coups lourds.'],
+ 'reculer':['distance','Tu recules vers l’anneau extérieur : les coups au contact ne t’atteignent plus. C’est le seul moyen de quitter le contact.'],
+ 'dodge':[null,'Esquive tout ce qui te vise ce tour. Une esquive réussie donne de l’élan : +20 % à ta prochaine attaque. Impossible si tu es tétanisé.'],
+ 'guard':[null,'Garde : bloque entièrement les coups légers (et moyens avec le bouclier), réduit les autres. Bloquer prépare une riposte sur ta prochaine attaque. L’esquive reste meilleure contre les coups lourds.'],
  'sharpen':['tranchant max','Restaure tout le tranchant. Un tranchant bas réduit les dégâts et fait rebondir les coups sur les parties dures.'],
- 'baliste':[null,'Tir de la baliste des remparts : gros dégâts sur la partie de votre zone et fend les plaques de fer. Carreaux limités.'],
- 'struggle':['tour perdu','Paralysé : vous ne pouvez rien faire ce tour.']};
+ 'baliste':[null,'Tir de la baliste des remparts : gros dégâts sur la partie de ta zone et fend les plaques de fer. Carreaux limités.'],
+ 'struggle':['tour perdu','Paralysé : tu ne peux rien faire ce tour.']};
 function actInfo(a){const T=H.stats.w.type;return ACT_INFO[T+':'+a.id]||ACT_INFO[a.id]||[null,a.sub||''];}
 function shortOf(a){const[s]=actInfo(a);const w=H.w;if(a.id==='charge'&&['gs','hammer','bow'].includes(H.stats.w.type))return`${chargeCost(H.stats.w.type)} end.`;if(H.stats.w.type==='ig'&&['kin','vault'].includes(a.id)&&!a.dis)return a.id==='vault'?`${vaultCost()} end. · esquive`:a.sub;if((H.stats.w.type==='sa'&&['morph','zsd'].includes(a.id))||(H.stats.w.type==='cb'&&['charge','dis','saed','morph'].includes(a.id)))return a.sub;if(H.stats.w.type==='gl'&&['obus','salve','reload','wf','estoc'].includes(a.id)&&(a.id!=='estoc'||a.dis))return a.sub;if(H.stats.w.type==='hh'&&a.id==='play')return a.sub;if(isGun(H.stats.w.type)&&['tir','reload','ammo','burst','unsiege'].includes(a.id))return a.sub;
  if(a.dis){if(a.id==='dodge'&&H.w.siege)return'en siège';if(a.id==='dodge'&&H.s.tet)return'tétanisé';if(a.id==='fore'&&w.fcd)return`dans ${w.fcd} tour${w.fcd>1?'s':''}`;if(a.id==='sharpen')return'déjà affûté';if(a.id==='esprit'||a.id==='circ')return`jauge ${Math.round(w.gauge)}`;return'endurance';}
@@ -2299,12 +2302,12 @@ function withEst(A){const T=H.stats.w.type,w=H.w;for(const a of A){
  if(a.id==='wf'&&H.w.wf)continue;
  if(a.id==='disperse'){const mv=weaponMove('disperse');a.est='≈ '+(estHits(mv.hits)+estHits(mv.extra));continue;}
  if(['dodge','guard','sharpen'].includes(a.id))continue;if(a.id==='baliste'){a.est='≈ '+Math.round(H.m.max*.035*(H.m.open>0?1.25:1));continue;}const mv=weaponMove(a.id);if(mv)a.est='≈ '+(mv.pierce?['tete','flanc','queue'].reduce((t,p)=>t+mv.hits.reduce((s,hh)=>s+calcDmg(hh,p,true).dmg,0),0)|0:estHits(mv.hits,mv.pid));}return A;}
-function actionsHTML(){if(H.grab>0)return`<button class="act wide hot" data-a="h" data-v="struggle" data-lp="struggle"><b>Se débattre !</b><small>${H.st>=35?'Assez d’endurance pour vous libérer (−35)':'Endurance trop faible : comptez sur votre Griffu'}</small></button>`;if(H.s.para>0)return`<button class="act wide hot" data-a="h" data-v="struggle" data-lp="struggle"><b>${H.s.why==='sleep'?'Endormi…':H.s.why==='down'?'Renversé…':'Paralysé…'}</b><small>${H.s.why==='sleep'?'Vous perdez ce tour. Un coup reçu fera +50 %':'Vous perdez ce tour'}</small></button>`;
+function actionsHTML(){if(H.grab>0)return`<button class="act wide hot" data-a="h" data-v="struggle" data-lp="struggle"><b>Se débattre !</b><small>${H.st>=35?'Assez d’endurance pour te libérer (−35)':'Endurance trop faible : compte sur ton Griffu'}</small></button>`;if(H.s.para>0)return`<button class="act wide hot" data-a="h" data-v="struggle" data-lp="struggle"><b>${H.s.why==='sleep'?'Endormi…':H.s.why==='down'?'Renversé…':'Paralysé…'}</b><small>${H.s.why==='sleep'?'Tu perds ce tour. Un coup reçu fera +50 %':'Tu perds ce tour'}</small></button>`;
  const m=H.m;const fl=m.flying&&pouchLeft('flash')>0&&!itemBlock('flash')?`<button class="act wide hot flashq" data-a="use" data-v="flash">${itemIcon('flash','iicon big')}<span><b>Lancer une bombe flash</b><small>La fait s’écraser au sol : 2 tours pour frapper (×${pouchLeft('flash')})</small></span></button>`:'';
  H._acts=withEst(getActions());
  return fl+H._acts.map(a=>`<button class="act ${a.cls||''}${a.dis?' off':''}" data-a="h" data-v="${a.id}" data-lp="${a.id}" ${a.dis?'aria-disabled="true"':''}>${a.est?`<i class="est">${a.est}</i>`:''}<b>${a.label}</b><small class="sh">${esc(shortOf(a))}</small></button>`).join('')+
  `<button class="act" data-a="pouch" data-lp="pouch"><b>Objets</b><small class="sh">${H.stats.w.type==='sns'&&!H.freeItem?'1 gratuit':'sacoche'}</small></button>`;}
-function openActDetail(id){if(!H)return;if(id==='pouch'){modal(`<h2>Objets</h2><p>Ouvre la sacoche : potions, antidotes, bombes, pièges. Utiliser un objet prend votre tour${H.stats.w.type==='sns'?', sauf le premier de chaque tour avec l’Épée & Bouclier':''}.</p><button class="btn wide" data-a="close">Fermer</button>`);return;}
+function openActDetail(id){if(!H)return;if(id==='pouch'){modal(`<h2>Objets</h2><p>Ouvre la sacoche : potions, antidotes, bombes, pièges. Utiliser un objet prend ton tour${H.stats.w.type==='sns'?', sauf le premier de chaque tour avec l’Épée & Bouclier':''}.</p><button class="btn wide" data-a="close">Fermer</button>`);return;}
  const a=(H._acts||[]).find(x=>x.id===id)||{id,label:id,sub:''};const[,long]=actInfo(a);
  modal(`<h2>${esc(a.label)}</h2>${a.est?`<p class="adest">Dégâts estimés : <b>${esc(a.est.replace('≈ ','≈ ').replace('→ ','après charge : '))}</b> sur ${esc(H.m.d.parts[targetPart()].name.toLowerCase())}</p>`:''}
  ${a.sub?`<p class="adsub">${esc(a.sub)}</p>`:''}<p>${esc(long)}</p>${a.dis?`<p class="small" style="color:var(--danger)">Indisponible pour le moment : ${esc(shortOf(a))}.</p>`:''}
@@ -2325,13 +2328,13 @@ function endPanelHTML(){const r=R;if(!r)return'';const nm=H.m.d.name;
  const title=r.kind==='kill'?`${nm} est abattu !`:r.kind==='capture'?`${nm} est capturé !`:'Quête échouée';
  const detail=r.kind==='kill'?(r.blow?`Coup de grâce : ${esc(r.blow)}.`:''):r.kind==='capture'?'Les bombes tranquillisantes ont fait effet.':esc(r.reason||'');
  const left=r.kind!=='fail'?spotsOf().map((sp,i)=>[sp,i]).filter(([sp,i])=>!H.spots.includes(i)):[];
- const gath=left.length?`<span class="small">Le calme revient. Vous pouvez récolter avant de partir, sans limite de temps :</span><div class="spots endspots">${left.map(([sp,i])=>`<button class="spot" data-a="gather" data-v="${i}">${spotIcon(sp.k)}<span><b>${esc(sp.n)}</b><small>${sp.t.map(e=>RES[e[0]].n).join(', ')}</small></span></button>`).join('')}</div>`:'';
+ const gath=left.length?`<span class="small">Le calme revient. Tu peux récolter avant de partir, sans limite de temps :</span><div class="spots endspots">${left.map(([sp,i])=>`<button class="spot" data-a="gather" data-v="${i}">${spotIcon(sp.k)}<span><b>${esc(sp.n)}</b><small>${sp.t.map(e=>RES[e[0]].n).join(', ')}</small></span></button>`).join('')}</div>`:'';
  return`<div class="endpanel ${r.kind==='fail'?'lose':'win'}"><b>${title}</b><span>${detail}</span>${gath}<button class="btn main wide" data-a="go" data-v="result">${r.kind==='fail'?'Voir le bilan':'Voir les récompenses'}</button></div>`;}
 function resLine(ins){return Object.keys(ins).map(k=>{const have=RES[k]?(S.res[k]||0):(S.items[k]||0);const n=RES[k]?RES[k].n:ITEMS[k].n;return`<span class="${have>=ins[k]?'ok':'no'}">${itemIcon(k,'iicon sm')}${n} ${have}/${ins[k]}</span>`;}).join('');}
 function craftRow(rc){const it=ITEMS[rc.out],own=S.items[rc.out]||0,ok=canCraft(rc),fb=fillBatches(rc),full=own>=it.carry;
  return`<div class="row crow${ok?'':' cno'}"><div class="top"><span class="iline">${itemIcon(rc.out,'iicon big')}<span><b>${it.n}${rc.n>1?` ×${rc.n}`:''}</b><span class="small muted">possédé : ${own} / ${it.carry}${full?' · sacoche pleine':''}</span><span class="small cdesc">${esc(it.d)}</span></span></span>
  <span class="cbtns"><button class="btn sm${ok?' go':''}" data-a="craft" data-v="${rc.out}" ${ok?'':'disabled'}>Fabriquer</button>${fb>1?`<button class="btn sm" data-a="craftall" data-v="${rc.out}">Tout (×${fb*(rc.n||1)})</button>`:''}</span></div><div class="recipe">${resLine(rc.ins)}</div></div>`;}
-function craftRows(onlyReady){const list=RECIPES.filter(rc=>!onlyReady||canCraft(rc));if(!list.length)return'<p class="small muted">Rien à fabriquer avec vos ressources actuelles. Récoltez d’abord.</p>';
+function craftRows(onlyReady){const list=RECIPES.filter(rc=>!onlyReady||canCraft(rc));if(!list.length)return'<p class="small muted">Rien à fabriquer avec tes ressources actuelles. Récolte d’abord.</p>';
  return list.slice().sort((a,b)=>canCraft(b)-canCraft(a)).map(craftRow).join('');}
 function vCamp(){const m=H.m,q=H.q;const left=H.max-H.turn;
  const items=ITEM_ORDER.filter(k=>inPouch(k)&&CAMP_OK.includes(k)&&(!['soin','potion','mega'].includes(k)||H.hp<H.hpMax)).map(k=>{const blk=itemBlock(k),it=ITEMS[k];
@@ -2342,9 +2345,9 @@ function vCamp(){const m=H.m,q=H.q;const left=H.max-H.turn;
  <div class="mhead"><div><h2 class="mname">Camp de base</h2><div class="muted small">${m.d.name} rôde dans ${HABN[m.d.hab]}.</div></div><button class="btn ghost sm" data-a="monnotes">Carnet</button></div>
  <div class="arena">${arenaSVG()}</div>
  ${recapHTML()}
- <div class="intent calm"><b>Il ne vous a pas encore repéré</b><span class="it">Au camp, utiliser un objet ou fabriquer ne prend pas de temps. Seule la récolte coûte un tour.</span><span class="iz">Touchez une zone de l’arène pour engager le combat par là. Par le flanc ou l’arrière, vous frappez le premier (+30 %). Par l’avant, il vous voit venir.</span></div>
+ <div class="intent calm"><b>Il ne t’a pas encore repéré</b><span class="it">Au camp, utiliser un objet ou fabriquer ne prend pas de temps. Seule la récolte coûte un tour.</span><span class="iz">Touche une zone de l’arène pour engager le combat par là. Par le flanc ou l’arrière, tu frappes le premier (+30 %). Par l’avant, il te voit venir.</span></div>
  <div class="engage"><button class="btn main" data-a="engage" data-v="flanc:g">Approcher par le flanc</button><button class="btn" data-a="engage" data-v="arriere">Par l’arrière</button><button class="btn" data-a="engage" data-v="avant">Par l’avant</button></div>
- <h3>Préparatifs</h3>${items?`<div class="items">${items}</div>`:'<p class="small muted">Aucun objet utilisable au camp dans votre sacoche.</p>'}
+ <h3>Préparatifs</h3>${items?`<div class="items">${items}</div>`:'<p class="small muted">Aucun objet utilisable au camp dans ta sacoche.</p>'}
  <p class="small muted">Steak, graines et potions se prennent ici sans perdre de tour. Les bombes et le piège s’utilisent pendant le combat.</p>
  <h3>Récolte</h3><div class="spots">${spots}</div>${left<=5?'<p class="small muted">Plus assez de temps pour récolter.</p>':''}
  <h3>Artisanat</h3>${own?`<div class="skl">${own}</div>`:''}${craftRows(true)}
@@ -2380,35 +2383,35 @@ function modal(html){$('#modal').innerHTML=`<div class="backdrop" data-a="close"
 function closeModal(){$('#modal').innerHTML='';if(screen==='village')setTimeout(checkUrgent,0);}
 function openPouch(){const list=ITEM_ORDER.filter(k=>inPouch(k)).map(k=>{const it=ITEMS[k],left=pouchLeft(k),blk=left<=0?'Limite par quête atteinte':itemBlock(k);
  return`<button class="item" data-a="use" data-v="${k}" ${blk?'disabled':''}><span class="iline">${itemIcon(k,'iicon big')}<span><b>${it.n}</b><span>${blk||it.d}</span></span></span><b>×${left}</b></button>`;}).join('');
- const flh=H.stats.w.type==='bow'&&!inPouch('fiole_p')&&!inPouch('fiole_v')?'<p class="small muted">Aucun flacon pour l’arc : fabriquez-en à l’atelier (onglet Munitions).</p>':'';
- modal(`<h2>Sacoche</h2>${flh}${H.stats.w.type==='sns'&&!H.freeItem?'<p class="small" style="color:var(--good)">Épée & Bouclier : votre premier objet de ce tour ne consomme pas votre action.</p>':'<p class="small muted">Utiliser un objet prend votre tour : le monstre agira ensuite.</p>'}
+ const flh=H.stats.w.type==='bow'&&!inPouch('fiole_p')&&!inPouch('fiole_v')?'<p class="small muted">Aucun flacon pour l’arc : fabriques-en à l’atelier (onglet Munitions).</p>':'';
+ modal(`<h2>Sacoche</h2>${flh}${H.stats.w.type==='sns'&&!H.freeItem?'<p class="small" style="color:var(--good)">Épée & Bouclier : ton premier objet de ce tour ne consomme pas ton action.</p>':'<p class="small muted">Utiliser un objet prend ton tour : le monstre agira ensuite.</p>'}
  <div class="items">${list||'<p class="muted">Sacoche vide.</p>'}</div><div style="margin-top:12px"><button class="btn wide" data-a="close">Fermer</button></div>`);}
 function openGuide(){modal(`<h2>Guide du chasseur</h2><ul>
-<li><b>Au camp de base</b>, le monstre ne vous a pas encore vu : prenez steak et graines sans perdre de temps, récoltez (1 tour par point), fabriquez, puis choisissez par où l’aborder. Par le flanc ou l’arrière, vous frappez le premier.</li>
-<li><b>Chaque tour, le monstre annonce son attaque</b> : le bandeau décrit son geste et les zones visées s’allument en rouge. Vous agissez d’abord, puis il frappe.</li>
-<li><b>Trois zones</b> entourent le monstre : l’avant (tête), le flanc et l’arrière (queue). Vous frappez la partie de votre zone. Touchez une zone pour vous y déplacer : cela prend le tour.</li>
+<li><b>Au camp de base</b>, le monstre ne t’a pas encore vu : prends steak et graines sans perdre de temps, récolte (1 tour par point), fabrique, puis choisis par où l’aborder. Par le flanc ou l’arrière, tu frappes le premier.</li>
+<li><b>Chaque tour, le monstre annonce son attaque</b> : le bandeau décrit son geste et les zones visées s’allument en rouge. Tu agis d’abord, puis il frappe.</li>
+<li><b>Trois zones</b> entourent le monstre : l’avant (tête), le flanc et l’arrière (queue). Tu frappes la partie de ta zone. Touche une zone pour t’y déplacer : cela prend le tour.</li>
 <li><b>Esquiver</b> évite tout pendant ce tour, contre de l’endurance, et donne de l’élan. <b>La garde</b> (Épée & Bouclier, Grande Épée, Lance, Lance à obus, Hache-bouclier, Tromblon lourd) bloque entièrement les coups légers (et moyens pour le bouclier), réduit les gros coups, coûte peu d’endurance et prépare une riposte. Contre les coups lourds, l’esquive reste la meilleure option.</li>
-<li><b>↻ Repositionnement</b> : les ruées, glissades et bonds déplacent le monstre, donc votre position par rapport à lui. Le bandeau vous prévient à l’avance et une flèche montre où vous atterrissez.</li>
+<li><b>↻ Repositionnement</b> : les ruées, glissades et bonds déplacent le monstre, donc ta position par rapport à lui. Le bandeau te prévient à l’avance et une flèche montre où tu atterris.</li>
 <li><b>Faire tressaillir</b> : infliger beaucoup de dégâts d’un coup, briser une partie ou assommer le monstre interrompt son attaque annoncée. C’est la clé contre les attaques préparées.</li>
-<li><b>Tranchant</b> : votre arme s’émousse à chaque coup. Aiguisez-la, sinon vos coups rebondissent sur les parties dures.</li>
+<li><b>Tranchant</b> : ton arme s’émousse à chaque coup. Aiguise-la, sinon tes coups rebondissent sur les parties dures.</li>
 <li><b>Parties</b> : briser la tête, les pattes ou trancher la queue rapporte des matériaux en plus.</li>
-<li><b>Capture</b> : quand le monstre boite, posez un piège puis lancez deux bombes tranquillisantes. Récompenses différentes et prime majorée.</li>
-<li><b>Évanouissement</b> : vous revenez au camp (2 tours perdus) et la prime finale baisse de 25 % (50 % au plus). Au troisième, la quête échoue ; le temps écoulé aussi.</li>
-<li>Votre chasse est sauvegardée à chaque tour : vous pouvez fermer la page et reprendre plus tard.</li>
-<li><b>Le Roi de Fer</b> (★6) est couvert de plaques : brisez-les, frappez la chair à nu, et quittez le sol en fusion dans sa seconde phase. La baliste des remparts vous aide.</li>
-<li><b>L’Arc</b> tire de loin : choisissez la partie visée sous vos jauges, sans perdre de tour. Les coups au contact ne vous atteignent pas, mais les charges, souffles, projectiles et attaques de toute l’arène si, et votre défense est réduite. L’anneau extérieur de l’arène est la distance, l’anneau intérieur le contact ; les zones rougissent selon la portée de l’attaque. Un coup au contact qui vous vise ou une ruée vous ramène à l’intérieur : seul « Reculer » vous remet à distance. Bandez l’arc (une esquive le bande aussi) et appliquez des flacons fabriqués à l’atelier.</li>
-<li><b>Le Tromblon léger</b> tire comme l’arc, à distance, mais avec un chargeur : tirez, puis rechargez (1 tour). « Munition ▸ » change de munition sans perdre de tour. Le Tir et roulade tire et esquive en même temps. Munitions perforantes, élémentaires et soporifiques à fabriquer à l’atelier.</li>
+<li><b>Capture</b> : quand le monstre boite, pose un piège puis lance deux bombes tranquillisantes. Récompenses différentes et prime majorée.</li>
+<li><b>Évanouissement</b> : tu reviens au camp (2 tours perdus) et la prime finale baisse de 25 % (50 % au plus). Au troisième, la quête échoue ; le temps écoulé aussi.</li>
+<li>Ta chasse est sauvegardée à chaque tour : tu peux fermer la page et reprendre plus tard.</li>
+<li><b>Le Roi de Fer</b> (★6) est couvert de plaques : brise-les, frappe la chair à nu, et quitte le sol en fusion dans sa seconde phase. La baliste des remparts t’aide.</li>
+<li><b>L’Arc</b> tire de loin : choisis la partie visée sous tes jauges, sans perdre de tour. Les coups au contact ne t’atteignent pas, mais les charges, souffles, projectiles et attaques de toute l’arène si, et ta défense est réduite. L’anneau extérieur de l’arène est la distance, l’anneau intérieur le contact ; les zones rougissent selon la portée de l’attaque. Un coup au contact qui te vise ou une ruée te ramène à l’intérieur : seul « Reculer » te remet à distance. Bande l’arc (une esquive le bande aussi) et applique des flacons fabriqués à l’atelier.</li>
+<li><b>Le Tromblon léger</b> tire comme l’arc, à distance, mais avec un chargeur : tire, puis recharge (1 tour). « Munition ▸ » change de munition sans perdre de tour. Le Tir et roulade tire et esquive en même temps. Munitions perforantes, élémentaires et soporifiques à fabriquer à l’atelier.</li>
 <li><b>Le Tromblon lourd</b> partage les munitions du léger mais sans roulade : il a une garde, un mode siège (+50 % de dégâts, immobile ; en sortir est gratuit) et la Pleine charge, qui vide le chargeur d’un coup et fait tressaillir le monstre.</li>
 <li><b>La Corne de chasse</b> assomme comme le marteau ; chaque coup joue une note, et le Récital joue la mélodie des deux dernières : Puissance, Rempart ou Soin. <b>L’Glaive-scarabée</b> récolte des extraits avec son scarabée (tête : rouge, bras : blanc, dos : orange), bondit pour esquiver et frappe la tête depuis les airs jusqu’à chevaucher le monstre. <b>La Hache-lame</b> alterne hache (remplit la jauge de fiole) et épée (plus forte, vide la jauge, Décharge élémentaire). <b>La Hache-bouclier</b> charge des fioles en épée et bouclier, puis les fait exploser en hache (dégâts fixes, assomme). <b>La Lance à obus</b> garde comme la lance et tire des obus à dégâts fixes (ignorent la dureté des parties), plus le Souffle du canon. <b>La Lance</b> a la garde la plus solide et un Contre qui bloque le coup reçu puis riposte.</li>
-<li><b>Le Tempestaire</b> (rang supérieur ★3), dragon ancien des Crêtes, invoque des tempêtes : le vent affaiblit vos coups et la foudre frappe votre zone à chaque tour. Bougez, puis frappez fort quand le ciel s’apaise. Ses cornes brisées et le poison affaiblissent ses tempêtes.</li>
+<li><b>Le Tempestaire</b> (rang supérieur ★3), dragon ancien des Crêtes, invoque des tempêtes : le vent affaiblit tes coups et la foudre frappe ta zone à chaque tour. Bouge, puis frappe fort quand le ciel s’apaise. Ses cornes brisées et le poison affaiblissent ses tempêtes.</li>
 <li><b>Traques d’élite</b> : après le Roi de Fer, chaque monstre revient aguerri. Ses fragments et gemmes servent aux armes III et aux joyaux de taille 3 ; ses sphères dures renforcent les armures au-delà de 46 de défense.</li>
-<li><b>Rangs et quêtes</b> : rang inférieur, rang supérieur puis rang maître, chacun en trois niveaux d’étoiles. Accomplissez les quêtes clés d’un niveau (chasses, captures et récoltes) : la Guilde vous confie alors une quête urgente, face à un monstre plus redoutable, qui ouvre le niveau suivant. Les doubles chasses (deux monstres à la suite, sans retour au camp) sont facultatives. Une quête de capture échoue si le monstre meurt : quand il vacille à bout de forces, posez un piège. Une quête accomplie disparaît du tableau ; les monstres vaincus se réaffrontent à l’arène, et les doubles chasses réussies comme l’assaut du Roi de Fer à la baliste se rejouent dans les Combats spéciaux. Mélangez les pièces d’armure de plusieurs monstres pour combiner leurs talents.</li>
+<li><b>Rangs et quêtes</b> : rang inférieur, rang supérieur puis rang maître, chacun en trois niveaux d’étoiles. Accomplis les quêtes clés d’un niveau (chasses, captures et récoltes) : la Guilde te confie alors une quête urgente, face à un monstre plus redoutable, qui ouvre le niveau suivant. Les doubles chasses (deux monstres à la suite, sans retour au camp) sont facultatives. Une quête de capture échoue si le monstre meurt : quand il vacille à bout de forces, pose un piège. Une quête accomplie disparaît du tableau ; les monstres vaincus se réaffrontent à l’arène, et les doubles chasses réussies comme l’assaut du Roi de Fer à la baliste se rejouent dans les Combats spéciaux. Mélange les pièces d’armure de plusieurs monstres pour combiner leurs talents.</li>
 <li><b>Rang maître</b> : les monstres ancestraux enchaînent leurs attaques. Leurs matériaux forgent les armes IV, et les sphères ancestrales portent les armures jusqu’à 100 de défense.</li>
-<li><b>Grand danger</b> : chaque zone a son maître (le Dévoreur dans la Vallée, le Pyroclaste dans les Terres de cendre, le Sismorak dans la Toundra, le Gorgovire dans les Crêtes, le Tempestaire au Lagon, l’Abyssaure au Cratère). Il peut surgir même au début de votre carrière. Un présage l’annonce : rentrez au camp pour lui échapper. Une fois sa quête réussie, il devient plus tenace : il rôde plus souvent et ne perd votre piste au camp qu’une fois sur deux.</li><li><b>Événements</b> : en découvrant un secteur, vous pouvez tomber sur un orage (traces plus rapides), une brume (traces effacées), un filon riche, une meute de petits monstres, une carcasse à dépecer, un nid d’œufs à revendre ou un Griffu colporteur.</li>
-<li><b>Votre Griffu</b> vous accompagne à chaque chasse. Choisissez sa vocation (Assaut, Soutien, Protection, Collecte), forgez-lui arme et tenue avec les matériaux de monstres, et activez les talents qu’il apprend en gagnant des niveaux. Il peut être mis à terre : il revient après quelques tours.</li>
-<li><b>Expédition libre</b> : ${EXP_HOURS} heures dans une zone, sans quête. Se déplacer, récolter, miner ou abattre un petit monstre prend 1 h. Chaque action laisse des traces : plus la jauge monte, plus un grand monstre de la zone risque de surgir, mais seulement ceux dont vous avez réussi la quête (et leur version aguerrie, une fois sa traque d’élite réussie). Revenir au camp les réduit de moitié. Minerais et cuirs de petits monstres servent à la forge. Face à un grand monstre, fuir coûte du temps ; être terrassé (3 évanouissements) met fin à l’expédition et fait perdre la moitié du butin.</li>
-<li><b>Récolte et artisanat</b> : herbes, champignons, miel, os… Récoltez au camp ou après une chasse réussie, puis fabriquez potions, bombes et pièges à l’atelier. La boutique ne vend que potions et antidotes : tout le reste se fabrique, avec ce que vous récoltez au camp et en expédition.</li>
-<li>Au village, forgez armes et armures avec les matériaux. Chaque pièce d’armure apporte un talent. Consultez le carnet pour les faiblesses.</li></ul>
+<li><b>Grand danger</b> : chaque zone a son maître (le Dévoreur dans la Vallée, le Pyroclaste dans les Terres de cendre, le Sismorak dans la Toundra, le Gorgovire dans les Crêtes, le Tempestaire au Lagon, l’Abyssaure au Cratère). Il peut surgir même au début de ta carrière. Un présage l’annonce : rentre au camp pour lui échapper. Une fois sa quête réussie, il devient plus tenace : il rôde plus souvent et ne perd ta piste au camp qu’une fois sur deux.</li><li><b>Événements</b> : en découvrant un secteur, tu peux tomber sur un orage (traces plus rapides), une brume (traces effacées), un filon riche, une meute de petits monstres, une carcasse à dépecer, un nid d’œufs à revendre ou un Griffu colporteur.</li>
+<li><b>Ton Griffu</b> t’accompagne à chaque chasse. Choisis sa vocation (Assaut, Soutien, Protection, Collecte), forge-lui arme et tenue avec les matériaux de monstres, et active les talents qu’il apprend en gagnant des niveaux. Il peut être mis à terre : il revient après quelques tours.</li>
+<li><b>Expédition libre</b> : ${EXP_HOURS} heures dans une zone, sans quête. Se déplacer, récolter, miner ou abattre un petit monstre prend 1 h. Chaque action laisse des traces : plus la jauge monte, plus un grand monstre de la zone risque de surgir, mais seulement ceux dont tu as réussi la quête (et leur version aguerrie, une fois sa traque d’élite réussie). Revenir au camp les réduit de moitié. Minerais et cuirs de petits monstres servent à la forge. Face à un grand monstre, fuir coûte du temps ; être terrassé (3 évanouissements) met fin à l’expédition et fait perdre la moitié du butin.</li>
+<li><b>Récolte et artisanat</b> : herbes, champignons, miel, os… Récolte au camp ou après une chasse réussie, puis fabrique potions, bombes et pièges à l’atelier. La boutique ne vend que potions et antidotes : tout le reste se fabrique, avec ce que tu récoltes au camp et en expédition.</li>
+<li>Au village, forge armes et armures avec les matériaux. Chaque pièce d’armure apporte un talent. Consulte le carnet pour les faiblesses.</li></ul>
 <button class="btn main wide" data-a="close">Compris, en chasse !</button><p class="small muted" style="text-align:center"><button class="linkbtn" data-a="tipsreset">Réafficher les astuces pendant les chasses</button> · <button class="linkbtn" data-a="tutagain">Relancer le tutoriel</button></p>`);}
 
 
@@ -2493,26 +2496,26 @@ function turnSounds(fx){if(!H)return;const from=Math.max(H.mark,H._snd||0);H._sn
  const W=H.stats.w;let t=0,n=0;const at=(name,a)=>{if(n>=7)return;sfx(name,t,a);t+=.17;n++;};
  for(const m of lines){
   if(/^💡|^Tour \d/.test(m))continue;
-  if(/ : \d+ dégâts/.test(m)&&!/subissez/.test(m)){const blunt=W.type==='hammer'||/bouclier|épaule/i.test(m);at(blunt?'blunt':'cut');if(/critique/.test(m))sfx('crit',t-.17);continue;}
-  if(/chargez votre lame|armez le marteau/.test(m)){at('charge',H.w.charge||1);continue;}
+  if(/ : \d+ dégâts/.test(m)&&!/subis/.test(m)){const blunt=W.type==='hammer'||/bouclier|épaule/i.test(m);at(blunt?'blunt':'cut');if(/critique/.test(m))sfx('crit',t-.17);continue;}
+  if(/charges ta lame|armes le marteau/.test(m)){at('charge',H.w.charge||1);continue;}
   if(/Mode Furie activé/.test(m)){at('demon');continue;}
-  if(/aiguisez/.test(m)){at('craft');continue;}
-  if(/Vous vous déplacez/.test(m)){at('steps');continue;}
+  if(/aiguises/.test(m)){at('craft');continue;}
+  if(/Tu te déplaces/.test(m)){at('steps');continue;}
   if(/Potion|Premiers soins|Méga-potion|cor de soin/.test(m)&&/PV/.test(m)){at('heal');continue;}
   if(/Steak|Graine/.test(m)){at('eat');continue;}
   if(/bombe flash|aveuglé|Aveuglé en plein vol/i.test(m)&&/✨/.test(m)){at('flash');continue;}
-  if(/posez un piège|tombe dans le piège/.test(m)){at('trap');continue;}
+  if(/poses un piège|tombe dans le piège/.test(m)){at('trap');continue;}
   if(/pousse un|entre en rage/.test(m)){at('roar');continue;}
-  const f=/subissez|Esquivé|hors de portée|bloqué|manque|Coupe d’anticipation !/.test(m)?mfx.shift():null;
+  const f=/subis|Esquivé|hors de portée|bloqué|manque|Coupe d’anticipation !/.test(m)?mfx.shift():null;
   if(f){const el=f.el==='phys'?'swing':f.el;if(el!=='roar')at(el);t-=.1;}
-  if(/subissez/.test(m)){at('hurt');continue;}
-  if(/Esquivé|Vous plongez/.test(m)){at('dodge');continue;}
+  if(/subis/.test(m)){at('hurt');continue;}
+  if(/Esquivé|Tu plonges/.test(m)){at('dodge');continue;}
   if(/bloqué|Garde tenue/.test(m)){at('block');continue;}
   if(/brisé|tranchée|vole en éclats/.test(m)){at('brk');continue;}
   if(/tressaille|annulée/.test(m)){at('flinch');continue;}
   if(/^🏆.*capturé/.test(m)){at('capture');continue;}
   if(/^🏆.*s’effondre/.test(m)){at('win');continue;}
-  if(/vous effondrez/.test(m)){at('faint');continue;}
+  if(/t’effondres/.test(m)){at('faint');continue;}
   if(/^❌/.test(m)){at('fail');continue;}
   if(/^🌿/.test(m)){at('gather');continue;}
 }}
@@ -2532,7 +2535,7 @@ document.addEventListener('input',e=>{const id=e.target&&e.target.id;if(!id||!id
 /* ---------- Événements ---------- */
 let LP={t:null,x:0,y:0,fired:false};
 document.addEventListener('pointerdown',e=>{const el=e.target.closest('[data-lp]');if(!el)return;LP.fired=false;LP.x=e.clientX;LP.y=e.clientY;clearTimeout(LP.t);
- LP.t=setTimeout(()=>{LP.fired=true;try{navigator.vibrate&&navigator.vibrate(12);}catch(_){}openActDetail(el.dataset.lp);},430);});
+ LP.t=setTimeout(()=>{LP.fired=true;try{AUD.cfg.vib!==false&&navigator.vibrate&&navigator.vibrate(12);}catch(_){}openActDetail(el.dataset.lp);},430);});
 ['pointerup','pointercancel','pointerleave'].forEach(ev=>document.addEventListener(ev,()=>clearTimeout(LP.t),true));
 document.addEventListener('pointermove',e=>{if(LP.t&&Math.hypot(e.clientX-LP.x,e.clientY-LP.y)>10)clearTimeout(LP.t);},{passive:true});
 document.addEventListener('contextmenu',e=>{if(e.target.closest('#app,#modal'))e.preventDefault();});
@@ -2551,25 +2554,25 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'palvoc':if(PAL_VOC[v]){sfx('click');palS().voc=v;save();render();}break;
  case 'palequip':{const[k,l]=v.split('|'),p=palS();if((k==='w'?p.ws:p.as).includes(l)){sfx('click');if(k==='w')p.w=l;else p.a=l;save();render();}break;}
  case 'palforge':{const[k,l]=v.split('|'),p=palS(),list=k==='w'?p.ws:p.as;const r=palRecipe(k,l);if(!list.includes(l)&&canPay(l,r)){pay(l,r);list.push(l);if(k==='w')p.w=l;else p.a=l;save();sfx('craft');sub.toast=`Forgé et équipé : ${(k==='w'?PAL_W:PAL_A)[l].n}. Consommé : ${costText(l,r)}.`;render();}break;}
- case 'palsk':{const p=palS(),sk=PAL_SK.find(x=>x.id===v);if(!sk||p.lv<sk.lv)break;if(p.sk.includes(v))p.sk=p.sk.filter(x=>x!==v);else if(p.sk.length<palSlots(p.lv))p.sk.push(v);else{sub.toast=`Emplacements pleins (${palSlots(p.lv)}) : retirez d’abord un talent.`;render();break;}sfx('click');save();render();break;}
- case 'palname':modal(`<h2>Renommer votre Griffu</h2><input id="palname" class="tin" maxlength="16" value="${esc(palS().name)}" autocomplete="off"><div style="display:flex;gap:8px;margin-top:10px"><button class="btn wide" data-a="close">Annuler</button><button class="btn main wide" data-a="palname-ok">Valider</button></div>`);setTimeout(()=>{const i=$('#palname');if(i){i.focus();i.select&&i.select();}},50);break;
+ case 'palsk':{const p=palS(),sk=PAL_SK.find(x=>x.id===v);if(!sk||p.lv<sk.lv)break;if(p.sk.includes(v))p.sk=p.sk.filter(x=>x!==v);else if(p.sk.length<palSlots(p.lv))p.sk.push(v);else{sub.toast=`Emplacements pleins (${palSlots(p.lv)}) : retire d’abord un talent.`;render();break;}sfx('click');save();render();break;}
+ case 'palname':modal(`<h2>Renommer ton Griffu</h2><input id="palname" class="tin" maxlength="16" value="${esc(palS().name)}" autocomplete="off"><div style="display:flex;gap:8px;margin-top:10px"><button class="btn wide" data-a="close">Annuler</button><button class="btn main wide" data-a="palname-ok">Valider</button></div>`);setTimeout(()=>{const i=$('#palname');if(i){i.focus();i.select&&i.select();}},50);break;
  case 'palname-ok':{const i=$('#palname');const n=i&&i.value.trim().replace(/[<>]/g,'').slice(0,16);if(n){palS().name=n;save();}closeModal();render();break;}
  case 'home':if(R&&R.q.explore&&S.exp){if(S.exp.ko)expEnd();else expAfterHunt();break;}H=null;R=null;go('village');break;
  case 'xresume':sfx('click');expAfterHunt();break;
  case 'xstart':if(!S.exp){const z=EXPZ.find(x=>x.id===v);if(z&&expOpen(z)){sfx('steps');S.exp=newExp(v);save();go('explore');}}break;
  case 'xmove':expAct('move',v);break;
  case 'xact':expAct('node',v);break;
- case 'xbuy':{const o=SHOP_OFF()[+v];if(!o||!S.exp||S.zenny<o[2])break;S.zenny-=o[2];if(ITEMS[o[0]])S.items[o[0]]=(S.items[o[0]]||0)+o[1];else{S.res[o[0]]=(S.res[o[0]]||0)+o[1];S.exp.got[o[0]]=(S.exp.got[o[0]]||0)+o[1];}S.exp.shopDone=1;sfx('coin');expLog(`🐱 Vous achetez ${ITEMS[o[0]]?ITEMS[o[0]].n:RES[o[0]].n} ×${o[1]} au colporteur.`);save();render();openShop();break;}
+ case 'xbuy':{const o=SHOP_OFF()[+v];if(!o||!S.exp||S.zenny<o[2])break;S.zenny-=o[2];if(ITEMS[o[0]])S.items[o[0]]=(S.items[o[0]]||0)+o[1];else{S.res[o[0]]=(S.res[o[0]]||0)+o[1];S.exp.got[o[0]]=(S.exp.got[o[0]]||0)+o[1];}S.exp.shopDone=1;sfx('coin');expLog(`🐱 Tu achètes ${ITEMS[o[0]]?ITEMS[o[0]].n:RES[o[0]].n} ×${o[1]} au colporteur.`);save();render();openShop();break;}
  case 'xfight':sfx('click');expFight();break;
  case 'xflee':expFlee();break;
- case 'xend':if(!S.exp)break;if(S.exp.h<S.exp.max&&!S.exp.enc)modal(`<h2>Rentrer au village ?</h2><p>Il vous reste ${S.exp.max-S.exp.h} h d’exploration. Votre butin est déjà à l’abri dans votre sacoche.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer</button><button class="btn main wide" data-a="xend-yes">Rentrer</button></div>`);else expEnd();break;
+ case 'xend':if(!S.exp)break;if(S.exp.h<S.exp.max&&!S.exp.enc)modal(`<h2>Rentrer au village ?</h2><p>Il te reste ${S.exp.max-S.exp.h} h d’exploration. Ton butin est déjà à l’abri dans ta sacoche.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer</button><button class="btn main wide" data-a="xend-yes">Rentrer</button></div>`);else expEnd();break;
  case 'xend-yes':closeModal();expEnd();break;
  case 'retry':{const q=R&&R.q;if(!q||q.explore){H=null;R=null;go('village');break;}const ml=(q.arena||q.sp)&&R.meal&&S.zenny>=((MEALS.find(x=>x.id===R.meal)||{}).p||0)?R.meal:'none';H=null;R=null;sub.quest=q.id;sub.meal=ml;go('prep');break;}
  case 'toarena':H=null;R=null;go('arena');break;case 'tospecial':H=null;R=null;go('special');break;
  case 'quest':sub.quest=v;sub.meal='none';go('prep');break;
  case 'urg-go':$('#modal').innerHTML='';sub.quest=v;sub.meal='none';go('prep');break;
  case 'gquest':{const q=QUESTS.find(x=>x.id===v);if(!q)break;const z=EXPZ.find(x=>x.id===q.zone);sfx('click');
-  modal(`<h2>${esc(q.title)}</h2><p>${esc(q.d)}</p><p class="small">Lieu : ${esc(z.n)} · ${q.hours} heures · objectif : ${itemIcon(q.goal.k,'iicon sm')}${q.goal.n} ${RES[q.goal.k].n}. Aucun grand monstre ne rôde pendant une quête de récolte.</p><p class="small muted">Récompense : ${q.z} z et 2 sphères d’armure. Tout ce que vous récoltez est gardé.</p>${S.exp?'<p class="small" style="color:var(--danger)">Une expédition est déjà en cours : terminez-la d’abord.</p>':''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="gstart" data-v="${q.id}" ${S.exp?'disabled':''}>Partir</button></div>`);break;}
+  modal(`<h2>${esc(q.title)}</h2><p>${esc(q.d)}</p><p class="small">Lieu : ${esc(z.n)} · ${q.hours} heures · objectif : ${itemIcon(q.goal.k,'iicon sm')}${q.goal.n} ${RES[q.goal.k].n}. Aucun grand monstre ne rôde pendant une quête de récolte.</p><p class="small muted">Récompense : ${q.z} z et 2 sphères d’armure. Tout ce que tu récoltes est gardé.</p>${S.exp?'<p class="small" style="color:var(--danger)">Une expédition est déjà en cours : termine-la d’abord.</p>':''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="gstart" data-v="${q.id}" ${S.exp?'disabled':''}>Partir</button></div>`);break;}
  case 'gstart':{const q=QUESTS.find(x=>x.id===v);if(!q||S.exp||!unlocked(q))break;closeModal();sfx('steps');S.exp=newExp(q.zone,q.id);save();go('explore');break;}
  case 'equipfrom':sub.fromPrep=true;go('equip');break;
  case 'meal':sub.meal=v;render();break;
@@ -2580,21 +2583,21 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'gather':act('gather',v);break;
  case 'ctab':sub.ctab=v;render();break;
  case 'sacktog':{const d=el.closest('details');if(d)sub.sackOpen=!d.open;return;}
- case 'craftall':{const rc=RECIPES.find(r=>r.out===v);if(!rc)break;const k=fillBatches(rc);const d=craftN(v,k);if(d){sfx('craft');const n=ITEMS[v].n,q=d*(rc.n||1);if(H&&H.phase==='camp'){H.mark=H.log.length;log(`🛠️ Vous fabriquez : ${n} ×${q} (possédé : ${S.items[v]}).`,'good');saveHunt();}else sub.toast=`Fabriqué : ${n} ×${q} (possédé : ${S.items[v]}).`;render();}break;}
+ case 'craftall':{const rc=RECIPES.find(r=>r.out===v);if(!rc)break;const k=fillBatches(rc);const d=craftN(v,k);if(d){sfx('craft');const n=ITEMS[v].n,q=d*(rc.n||1);if(H&&H.phase==='camp'){H.mark=H.log.length;log(`🛠️ Tu fabriques : ${n} ×${q} (possédé : ${S.items[v]}).`,'good');saveHunt();}else sub.toast=`Fabriqué : ${n} ×${q} (possédé : ${S.items[v]}).`;render();}break;}
  case 'prepsack':{const d=prepSack();if(d.length){sfx('craft');sub.toast=`Sacoche préparée : ${d.join(', ')}.`;}else sub.toast='Rien à fabriquer : sacoche déjà pleine ou ressources insuffisantes.';render();break;}
- case 'craft':if(craft(v)){sfx('craft');const n=ITEMS[v].n;if(H&&H.phase==='camp'){H.mark=H.log.length;log(`🛠️ Vous fabriquez : ${n} (possédé : ${S.items[v]}).`,'good');saveHunt();}else sub.toast=`Fabriqué : ${n} (possédé : ${S.items[v]}).`;render();}break;
+ case 'craft':if(craft(v)){sfx('craft');const n=ITEMS[v].n;if(H&&H.phase==='camp'){H.mark=H.log.length;log(`🛠️ Tu fabriques : ${n} (possédé : ${S.items[v]}).`,'good');saveHunt();}else sub.toast=`Fabriqué : ${n} (possédé : ${S.items[v]}).`;render();}break;
  case 'pouch':openPouch();break;
  case 'use':closeModal();act('item',v);break;
  case 'monnotes':if(H&&H.q.training){trainHelp();break;}modal(`<h3>Objectifs de la quête</h3><div class="objs big">${(H.q.obj||[]).map(o=>{const ok=objDone(o);return`<i class="${ok?'ok':''}">${ok?'✓':'○'} ${esc(o.n)}</i>`;}).join('')}</div>`+monNotesHTML(H.m.id)+`<p class="small muted">Parties : ${['tete','flanc','queue'].map(p=>`${H.m.d.parts[p].name} (${ZN[Object.keys(ZPART).find(z=>ZPART[z]===p)].toLowerCase()})`).join(', ')}.</p><button class="btn wide" data-a="close">Fermer</button>`);break;
- case 'abandon':if(H&&H.q.training){H=null;R=null;try{localStorage.removeItem(HKEY);}catch(e){}closeModal();go('training');break;}modal(H&&H.q.explore?`<h2>Fuir le combat ?</h2><p>Vous vous repliez sans récompense ; l’expédition continue.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer la chasse</button><button class="btn main wide" data-a="abandon-yes">Fuir</button></div>`:`<h2>Abandonner la quête ?</h2><p>Vous rentrerez au village sans aucune récompense.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer la chasse</button><button class="btn main wide" data-a="abandon-yes">Abandonner</button></div>`);break;
- case 'faintflee':closeModal();if(H&&!H.over){H.fled=1;endHunt('fail',H.q.explore?'Vous avez fui le combat.':'Quête abandonnée.');render();}break;
- case 'abandon-yes':closeModal();if(H&&!H.over){const cmp=H.phase==='camp';endHunt('fail',H.q.explore?'Vous avez fui le combat.':'Quête abandonnée.');if(cmp){H.phase=null;go('result');}else render();}break;
+ case 'abandon':if(H&&H.q.training){H=null;R=null;try{localStorage.removeItem(HKEY);}catch(e){}closeModal();go('training');break;}modal(H&&H.q.explore?`<h2>Fuir le combat ?</h2><p>Tu te replies sans récompense ; l’expédition continue.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer la chasse</button><button class="btn main wide" data-a="abandon-yes">Fuir</button></div>`:`<h2>Abandonner la quête ?</h2><p>Tu rentreras au village sans aucune récompense.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Continuer la chasse</button><button class="btn main wide" data-a="abandon-yes">Abandonner</button></div>`);break;
+ case 'faintflee':closeModal();if(H&&!H.over){H.fled=1;endHunt('fail',H.q.explore?'Tu as fui le combat.':'Quête abandonnée.');render();}break;
+ case 'abandon-yes':closeModal();if(H&&!H.over){const cmp=H.phase==='camp';endHunt('fail',H.q.explore?'Tu as fui le combat.':'Quête abandonnée.');if(cmp){H.phase=null;go('result');}else render();}break;
  case 'etab':sub.etab=v;render();break;
  case 'ftab':sub.ftab=v;render();break;
  case 'ftype':sub.ftype=v;render();break;
  case 'stab':sub.stab=v;render();break;
  case 'craftw':{sfx('craft');const fromDetail=!!document.querySelector('#modal .wtier');const w=getWeapon(v),r=weaponRecipe(w.lin);const base=w.lin.up?w.type+':'+w.lin.up:null;const higher=LIN.filter(l=>l.up===w.lin.id||(l.up&&LIN.find(x=>x.id===l.up)&&LIN.find(x=>x.id===l.up).up===w.lin.id)).some(l=>S.weapons.includes(w.type+':'+l.id));if(!higher&&!S.weapons.includes(v)&&canPay(w.lin.mon,r)&&(!base||S.weapons.includes(base))){pay(w.lin.mon,r);
-  let lostJ=[];if(base){S.weapons=S.weapons.filter(x=>x!==base);if(S.equip.weapon===base)S.equip.weapon=v;}S.weapons.push(v);if(base)lostJ=moveSock(base,v);save();modal(`<div class="forged">${weaponIcon(w.type,w.lin.id)}</div><h2>${esc(w.name)}</h2><p>${base?'Améliorée':'Forgée'} ! ${wStats(w)}.</p><p class="small muted">Consommé : ${esc(costText(w.lin.mon,r))}.</p>${base&&sockOf(v).some(Boolean)?`<p class="small" style="color:var(--good)">Joyaux conservés : ${sockOf(v).filter(Boolean).map(j=>esc(JEWELS.find(x=>x.id===j).n)).join(', ')}.</p>`:''}${lostJ.length?`<p class="small muted">Retiré faute de place : ${lostJ.map(j=>esc(JEWELS.find(x=>x.id===j).n)).join(', ')} (rendu à votre stock).</p>`:''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="equipw" data-v="${v}">Équiper</button></div>`);render();}break;}
+  let lostJ=[];if(base){S.weapons=S.weapons.filter(x=>x!==base);if(S.equip.weapon===base)S.equip.weapon=v;}S.weapons.push(v);if(base)lostJ=moveSock(base,v);save();modal(`<div class="forged">${weaponIcon(w.type,w.lin.id)}</div><h2>${esc(w.name)}</h2><p>${base?'Améliorée':'Forgée'} ! ${wStats(w)}.</p><p class="small muted">Consommé : ${esc(costText(w.lin.mon,r))}.</p>${base&&sockOf(v).some(Boolean)?`<p class="small" style="color:var(--good)">Joyaux conservés : ${sockOf(v).filter(Boolean).map(j=>esc(JEWELS.find(x=>x.id===j).n)).join(', ')}.</p>`:''}${lostJ.length?`<p class="small muted">Retiré faute de place : ${lostJ.map(j=>esc(JEWELS.find(x=>x.id===j).n)).join(', ')} (rendu à ton stock).</p>`:''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="equipw" data-v="${v}">Équiper</button></div>`);render();}break;}
  case 'crafta':{sfx('craft');const ar=getArmor(v),r=armorRecipe(ar.slot,ar.set);if(!S.armors.includes(v)&&ar.set.mon&&canPay(ar.set.mon,r)){pay(ar.set.mon,r);S.armors.push(v);save();modal(`<h2>${esc(ar.name)}</h2><p>Forgée ! Défense ${ar.def}${Object.keys(ar.pts).length?', '+ptsText(ar.pts):''}.</p><p class="small muted">Consommé : ${esc(costText(ar.set.mon,r))}.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Plus tard</button><button class="btn main wide" data-a="equipa" data-v="${v}">Porter</button></div>`);render();}break;}
  case 'equipw':if(S.weapons.includes(v)){sfx('click');S.equip.weapon=v;save();const inEq=screen==='equip';closeModal();render();if(inEq)openSlot('weapon');}break;
  case 'equipa':if(S.armors.includes(v)){sfx('click');const sl=v.split(':')[0];S.equip[sl]=v;save();const inEq=screen==='equip';closeModal();render();if(inEq)openSlot(sl);}break;
@@ -2604,7 +2607,7 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'tfilter':sub.tfilter=v;render();break;
  case 'topen':sub.topen=sub.topen===v?null:v;render();break;
  case 'unsockask':{const worn=new Set([S.equip.weapon,...SLOTS.map(sl=>S.equip[sl.id])]);let nw=0,no=0;for(const[id,arr]of Object.entries(S.sock)){const c=arr.filter(Boolean).length;if(worn.has(id))nw+=c;else no+=c;}
-  modal(`<h2>Déséquiper les joyaux</h2><p>Les joyaux retirés reviennent dans votre réserve, prêts à être sertis ailleurs.</p><div style="display:flex;flex-direction:column;gap:8px">${no?`<button class="btn wide" data-a="unsockdo" data-v="off">Seulement l’équipement non porté (${no})</button>`:''}<button class="btn main wide" data-a="unsockdo" data-v="all">Tous les joyaux, équipement porté compris (${nw+no})</button><button class="btn wide" data-a="close">Annuler</button></div>`);break;}
+  modal(`<h2>Déséquiper les joyaux</h2><p>Les joyaux retirés reviennent dans ta réserve, prêts à être sertis ailleurs.</p><div style="display:flex;flex-direction:column;gap:8px">${no?`<button class="btn wide" data-a="unsockdo" data-v="off">Seulement l’équipement non porté (${no})</button>`:''}<button class="btn main wide" data-a="unsockdo" data-v="all">Tous les joyaux, équipement porté compris (${nw+no})</button><button class="btn wide" data-a="close">Annuler</button></div>`);break;}
  case 'unsockdo':{const worn=new Set([S.equip.weapon,...SLOTS.map(sl=>S.equip[sl.id])]);let n=0;for(const id of Object.keys(S.sock)){if(v==='off'&&worn.has(id))continue;n+=S.sock[id].filter(Boolean).length;S.sock[id]=S.sock[id].map(()=>null);}save();sfx('craft');closeModal();render();break;}
  case 'unsockall':{const[id,back]=v.split('|');if(S.sock[id]){S.sock[id]=S.sock[id].map(()=>null);save();sfx('craft');render();openSlot(back);}break;}
  case 'sockpick':openSockPick(v);break;
@@ -2635,8 +2638,8 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'tutskip':S.tut=null;save();render();break;
  case 'tutagain':S.tut=0;save();closeModal();go('village');break;
  case 'tipsreset':S.tips={};save();closeModal();break;
- case 'reset':modal(`<h2>Recommencer à zéro ?</h2><p>Tout votre équipement, vos matériaux et votre progression seront effacés.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Annuler</button><button class="btn main wide" data-a="reset-yes">Tout effacer</button></div>`);break;
- case 'testmode':modal(`<h2>Mode test</h2><p class="small">Pour tester rapidement : toutes les ressources, matériaux et objets passent à 99, et vous recevez 1 000 000 z. Vous pouvez aussi débloquer tous les rangs d’un coup.</p><div style="display:grid;gap:8px"><button class="btn main wide" data-a="test-go" data-v="0">Ressources ×99 + 1 M z</button><button class="btn wide" data-a="test-go" data-v="1">Tout ça + tous les rangs débloqués</button><button class="btn wide" data-a="close">Annuler</button></div>`);break;
+ case 'reset':modal(`<h2>Recommencer à zéro ?</h2><p>Tout ton équipement, tes matériaux et ta progression seront effacés.</p><div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Annuler</button><button class="btn main wide" data-a="reset-yes">Tout effacer</button></div>`);break;
+ case 'testmode':modal(`<h2>Mode test</h2><p class="small">Pour tester rapidement : toutes les ressources, matériaux et objets passent à 99, et tu reçois 1 000 000 z. Tu peux aussi débloquer tous les rangs d’un coup.</p><div style="display:grid;gap:8px"><button class="btn main wide" data-a="test-go" data-v="0">Ressources ×99 + 1 M z</button><button class="btn wide" data-a="test-go" data-v="1">Tout ça + tous les rangs débloqués</button><button class="btn wide" data-a="close">Annuler</button></div>`);break;
  case 'test-go':{for(const k in RES)S.res[k]=99;for(const m in MON){if(m==='pantin')continue;for(const k in MON[m].mats)S.mats[matId(m,k)]=99;S.mon[m]=S.mon[m]||{seen:false,kills:0,caps:0};S.mon[m].seen=true;}
   for(const k in ITEMS)if(!ITEMS[k].sup)S.items[k]=99;S.zenny=1000000;S.tut=null;
   if(v==='1'){for(const q of QUESTS)if(q.tier>0)S.cleared[q.id]=1;S.urgSeen=QUESTS.filter(q=>q.urgent).map(q=>q.id);S.tuto=true;}
@@ -2653,10 +2656,10 @@ function checkUpdate(){try{if(typeof BUILD_ID==='undefined'||!BUILD_ID||!window.
   const go=()=>{try{sessionStorage.setItem('bh_upd',j.v);}catch(e){}const nav=()=>location.replace(location.pathname+'?v='+j.v);
    try{navigator.serviceWorker.getRegistration().then(r=>r&&r.update()).catch(()=>{}).then(()=>setTimeout(nav,300));}catch(e){nav();}};
   if(tried!==j.v&&screen!=='hunt'&&!SPLASH&&!$('#modal').innerHTML.trim()){go();return;}
-  if(document.getElementById('updbar'))return;const b=document.createElement('button');b.id='updbar';b.className='updbar';b.innerHTML='<b>Nouvelle version disponible</b><span>Touchez pour mettre à jour</span>';b.addEventListener('click',ev=>{ev.stopPropagation();go();});document.body.appendChild(b);}).catch(()=>{});}catch(e){}}
+  if(document.getElementById('updbar'))return;const b=document.createElement('button');b.id='updbar';b.className='updbar';b.innerHTML='<b>Nouvelle version disponible</b><span>Touche pour mettre à jour</span>';b.addEventListener('click',ev=>{ev.stopPropagation();go();});document.body.appendChild(b);}).catch(()=>{});}catch(e){}}
 try{document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checkUpdate();});}catch(e){}
 function splashRun(){const el=document.getElementById('splash');if(!el||!el.classList)return;let skip=false;try{skip=(!!navigator.webdriver&&!/[?&]splash/.test(location.search))||/[?&]nosplash/.test(location.search);}catch(e){}
- if(skip){el.remove();return;}try{el.querySelector('.sptitle .title').innerHTML='<small>Les Chasseurs de</small>Brume-Haute';el.querySelector('.sptap').textContent='Touchez l’écran pour continuer';}catch(e){}SPLASH=true;el.hidden=false;const a=el.querySelector('.sp1'),b=el.querySelector('.sp2');let st=0,T=[];const at=(f,ms)=>T.push(setTimeout(f,ms));
+ if(skip){el.remove();return;}try{el.querySelector('.sptitle .title').innerHTML='<small>Les Chasseurs de</small>Brume-Haute';el.querySelector('.sptap').textContent='Touche pour commencer';}catch(e){}SPLASH=true;el.hidden=false;const a=el.querySelector('.sp1'),b=el.querySelector('.sp2');let st=0,T=[];const at=(f,ms)=>T.push(setTimeout(f,ms));
  const end=()=>{if(st>=3)return;st=3;T.forEach(clearTimeout);el.classList.add('out');setTimeout(()=>{el.remove();SPLASH=false;if(screen==='village')checkUrgent();},520);};
  const two=()=>{if(st>=2)return;st=2;T.forEach(clearTimeout);T=[];a.classList.remove('on');setTimeout(()=>b.classList.add('on'),st===2?350:0);at(end,4600);};
  el.addEventListener('click',ev=>{ev.stopPropagation();ev.preventDefault();if(st<2)two();else if(st===2)end();});
