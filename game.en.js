@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.70',date:'2026-10-26',t:'Credits',items:[
+  'Options: game credits.']},
  {v:'1.69',date:'2026-10-19',t:"Tidier village",items:[
   "The links at the bottom of the village (export, import, notes, language…) now live in Options: only the “Options” link remains."]},
  {v:'1.68',date:'2026-10-19',t:"Options",items:[

@@ -23,7 +23,7 @@
         '<button class="btn ghost wide" id="opt-title">' + L('Écran titre', 'Title screen') + '</button>' +
         '<button class="btn ghost wide" data-a="reset">' + L('Recommencer à zéro', 'Start over') + '</button></div>' : '') +
       '<button class="btn main wide" data-a="close">' + L('Fermer', 'Close') + '</button>' +
-      '<p class="small muted" style="text-align:center;margin-top:10px">v' + PATCHES[0].v + ' · Keismey Studio</p>');
+      '<p class="small muted" style="text-align:center;margin-top:10px">v' + PATCHES[0].v + ' · Keismey Studio<br>' + L('Conception et direction : Keismey · Développé avec l’aide d’outils IA', 'Design and direction: Keismey · Developed with the help of AI tools') + '</p>');
     var q = function (id) { return document.getElementById(id); };
     q('opt-vib').onchange = function () { AUD.cfg.vib = this.checked; audSave(); if (this.checked) try { navigator.vibrate && navigator.vibrate(30); } catch (e) {} };
     if (vil) {

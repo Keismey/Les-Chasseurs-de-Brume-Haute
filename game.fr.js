@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.70',date:'2026-10-26',t:'Crédits',items:[
+  'Options : crédits du jeu.']},
  {v:'1.69',date:'2026-10-19',t:'Village épuré',items:[
   'Les liens en bas du village (exporter, importer, notes, langue…) sont rangés dans les Options : il ne reste que le lien « Options ».']},
  {v:'1.68',date:'2026-10-19',t:'Options',items:[
