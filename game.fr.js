@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.71',date:'2026-10-29',t:'Retour au hub',items:[
+  'Options : bouton « Retour au hub », et le même ordre que dans les autres jeux du studio.']},
  {v:'1.70',date:'2026-10-26',t:'Crédits',items:[
   'Options : crédits du jeu.']},
  {v:'1.69',date:'2026-10-19',t:'Village épuré',items:[
