@@ -50,5 +50,10 @@
     ask(TX.tq, TX.tp, TX.ty, titleAgain);
   }
   window.BH_titleAgain = titleAgain;
-  KSBack.init({ back: back, lang: function () { return EN ? 'en' : 'fr'; } });
+  function onTitle() {
+    var spl = document.getElementById('splash');
+    return !!(SPLASH && spl && !spl.classList.contains('out') && !(spl.querySelector('.sp1') && !spl.querySelector('.sp2.on')) &&
+      !document.querySelector('#modal .backdrop'));
+  }
+  KSBack.init({ back: back, lang: function () { return EN ? 'en' : 'fr'; }, title: onTitle });
 })();
