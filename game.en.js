@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.72',date:'2026-10-31',t:'Comfort and accessibility',items:[
+  'Buttons easier to tap on phones (at least 44 px), windows usable with the keyboard, arena zones and expedition map playable with the keyboard, safer offline mode.']},
  {v:'1.71',date:'2026-10-29',t:'Back to the hub',items:[
   'Options: a “Back to the hub” button, in the same order as the studio’s other games.']},
  {v:'1.70',date:'2026-10-26',t:'Credits',items:[
