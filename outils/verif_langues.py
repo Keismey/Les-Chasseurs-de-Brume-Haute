@@ -4,7 +4,7 @@
 Les deux fichiers du jeu sont identiques à part les textes. Ce script retire
 les chaînes ('…', "…", parties texte des `…`), les commentaires et les regex,
 puis compare ce qui reste (le code). Toute différence est signalée avec ses
-numéros de ligne : soit une correction faite dans une seule langue, soit une
+numéros de ligne (une ligne de code acceptée ne couvre que cette ligne-là) : soit une correction faite dans une seule langue, soit une
 différence voulue (pluriel, ordre des mots…) à ajouter dans
 outils/verif_langues_ok.txt.
 
@@ -59,9 +59,9 @@ def jetons(src):
             ligne += src.count('\n', i, j); i = j; continue
         if c in '\'"':
             j = i + 1
-            while j < n and src[j] != c:
+            while j < n and src[j] != c and src[j] != '\n':
                 j += 2 if src[j] == '\\' else 1
-            ajoute('S'); i = j + 1; continue
+            ajoute('S'); ligne += src.count('\n', i, min(j, n)); i = j + 1; continue
         if c == '`':
             i, fin = gabarit(i + 1)
             ajoute('S')
@@ -145,14 +145,17 @@ def main():
                          for o, x1, x2, y1, y2 in m.get_opcodes() if o != 'equal']
             else:
                 bouts = [(fa[1] if fa else '', fb[1] if fb else '')]
+            cle = f'{fa[1] if fa else ""} || {fb[1] if fb else ""}'.strip()
+            if cle in ok:
+                continue
             for fr, en in bouts:
-                if f'{fr} || {en}'.strip() in ok:
-                    continue
                 ecarts += 1
                 print(f'Écart {ecarts} : game.fr.js ligne {fa[0] if fa else "-"}, game.en.js ligne {fb[0] if fb else "-"}')
                 print(f'  fr : {fr[:200] or "(rien)"}')
                 print(f'  en : {en[:200] or "(rien)"}')
-                print(f'  si voulu, ajouter dans outils/verif_langues_ok.txt : {fr} || {en}')
+            if bouts:
+                print('  si voulu, ajouter cette ligne dans outils/verif_langues_ok.txt :')
+                print('  ' + cle)
     if ecarts:
         print(f'\n{ecarts} écart(s) de code entre le français et l’anglais.')
         return 1
