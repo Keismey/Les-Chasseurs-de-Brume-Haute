@@ -2385,8 +2385,11 @@ function afterHunt(){const ar=document.querySelector('.arena');if(!ar||!H)return
  H.fx=[];const lg=document.querySelector('.log');if(lg)lg.scrollTop=lg.scrollHeight;}
 
 /* ---------- Modales ---------- */
-function modal(html){$('#modal').innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog">${html}</div></div>`;}
-function closeModal(){$('#modal').innerHTML='';if(screen==='village')setTimeout(checkUrgent,0);}
+// Fenêtres : focus dans la fenêtre à l'ouverture, Tab gardé dedans, focus rendu à la fermeture (clavier, lecteur d'écran)
+let modalFrom=null,modalKey=null;
+function modal(html){const m=$('#modal');if(!m.innerHTML.trim()){modalFrom=document.activeElement;modalKey=modalFrom&&modalFrom.dataset&&modalFrom.dataset.a?{a:modalFrom.dataset.a,v:modalFrom.dataset.v}:null;}m.innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog" aria-modal="true" tabindex="-1">${html}</div></div>`;const sh=m.querySelector('.sheet'),h=sh.querySelector('h2');if(h){h.id='modal-t';sh.setAttribute('aria-labelledby','modal-t');}try{sh.focus({preventScroll:true});}catch(e){}}
+function closeModal(){$('#modal').innerHTML='';let f=modalFrom;const k=modalKey;modalFrom=modalKey=null;try{if(f&&!f.isConnected&&k)f=document.querySelector(`#app [data-a="${CSS.escape(k.a)}"]`+(k.v!=null?`[data-v="${CSS.escape(k.v)}"]`:':not([data-v])'));if(f&&f!==document.body&&f.isConnected&&f.focus)f.focus({preventScroll:true});}catch(e){}if(screen==='village')setTimeout(checkUrgent,0);}
+document.addEventListener('keydown',e=>{if(e.key!=='Tab'||e.defaultPrevented||document.getElementById('ks-dlg'))return;const sh=document.querySelector('#modal .sheet');if(!sh)return;const f=[...sh.querySelectorAll('button,input,select,textarea,a[href],summary,[tabindex]:not([tabindex="-1"])')].filter(x=>!x.disabled&&x.getClientRects().length);if(!f.length){e.preventDefault();sh.focus();return;}const a=document.activeElement,i=f.indexOf(a);if(e.shiftKey&&(i<=0)){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&(i===-1||i===f.length-1)){e.preventDefault();f[0].focus();}});
 function openPouch(){const list=ITEM_ORDER.filter(k=>inPouch(k)).map(k=>{const it=ITEMS[k],left=pouchLeft(k),blk=left<=0?"Quest limit reached":itemBlock(k);
  return`<button class="item" data-a="use" data-v="${k}" ${blk?'disabled':''}><span class="iline">${itemIcon(k,'iicon big')}<span><b>${it.n}</b><span>${blk||it.d}</span></span></span><b>×${left}</b></button>`;}).join('');
  const flh=H.stats.w.type==='bow'&&!inPouch('fiole_p')&&!inPouch('fiole_v')?"<p class=\"small muted\">No bow coatings: craft some at the Workshop (Ammo tab).</p>":'';
@@ -2576,7 +2579,7 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'retry':{const q=R&&R.q;if(!q||q.explore){H=null;R=null;go('village');break;}const ml=(q.arena||q.sp)&&R.meal&&S.zenny>=((MEALS.find(x=>x.id===R.meal)||{}).p||0)?R.meal:'none';H=null;R=null;sub.quest=q.id;sub.meal=ml;go('prep');break;}
  case 'toarena':H=null;R=null;go('arena');break;case 'tospecial':H=null;R=null;go('special');break;
  case 'quest':sub.quest=v;sub.meal='none';go('prep');break;
- case 'urg-go':$('#modal').innerHTML='';sub.quest=v;sub.meal='none';go('prep');break;
+ case 'urg-go':$('#modal').innerHTML='';modalFrom=modalKey=null;sub.quest=v;sub.meal='none';go('prep');break;
  case 'gquest':{const q=QUESTS.find(x=>x.id===v);if(!q)break;const z=EXPZ.find(x=>x.id===q.zone);sfx('click');
   modal(`<h2>${esc(q.title)}</h2><p>${esc(q.d)}</p><p class="small">Location: ${esc(z.n)} · ${q.hours} hours · goal: ${itemIcon(q.goal.k,'iicon sm')}${RES[q.goal.k].n} ×${q.goal.n}. No large monster roams during a gathering quest.</p><p class="small muted">Reward: ${q.z} z and 2 armor spheres. You keep everything you gather.</p>${S.exp?"<p class=\"small\" style=\"color:var(--danger)\">An expedition is already underway: finish it first.</p>":''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Later</button><button class="btn main wide" data-a="gstart" data-v="${q.id}" ${S.exp?'disabled':''}>Depart</button></div>`);break;}
  case 'gstart':{const q=QUESTS.find(x=>x.id===v);if(!q||S.exp||!unlocked(q))break;closeModal();sfx('steps');S.exp=newExp(q.zone,q.id);save();go('explore');break;}
