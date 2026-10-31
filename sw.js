@@ -6,6 +6,6 @@ self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(V
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V&&k.startsWith('cbh-')).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',e=>{const r=e.request;if(r.method!=='GET')return;const u=new URL(r.url);
  if(/\.mp3$/.test(u.pathname)||/version\.json$/.test(u.pathname)||u.hostname==='static.cloudflareinsights.com')return; // la musique passe directement (lecture en flux)
- // page : réseau d'abord ; seule une réponse valide va en cache, et sur erreur serveur (5xx) on sert la copie en cache
- if(r.mode==='navigate'){e.respondWith(fetch(r.url,{cache:'no-cache',credentials:'same-origin'}).then(res=>{if(res.ok){const cp=res.clone();caches.open(V).then(c=>c.put('index.html',cp));return res;}if(res.status>=500)return caches.match('index.html').then(hit=>hit||res);return res;}).catch(()=>caches.match('index.html')));return;}
+ // page : réseau d'abord ; seule une réponse valide et non redirigée va en cache, et sur erreur serveur (5xx) on sert la copie en cache
+ if(r.mode==='navigate'){e.respondWith(fetch(r.url,{cache:'no-cache',credentials:'same-origin'}).then(res=>{if(res.ok&&!res.redirected){const cp=res.clone();caches.open(V).then(c=>c.put('index.html',cp));return res;}if(res.status>=500)return caches.match('index.html').then(hit=>hit||res);return res;}).catch(()=>caches.match('index.html')));return;}
  e.respondWith(caches.match(r).then(hit=>hit||fetch(r).then(res=>{if(res.ok||res.type==='opaque'){const cp=res.clone();caches.open(V).then(c=>c.put(r,cp));}return res;})));});
