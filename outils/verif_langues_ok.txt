@@ -1,0 +1,39 @@
+# Différences voulues entre game.fr.js et game.en.js (pluriels, accords, ordre des mots).
+# Une ligne par écart, au format donné par outils/verif_langues.py : <code fr> || <code en>.
+# Relevé initial du 31/10/2026 (version 1.72) : 58 écarts, tous liés à la langue.
+ || . charAt ( 0 ) . toLowerCase ( ) + label . slice ( 1 )
+ || . n }$ S ${ q . goal
+ || : S
+ || MON [ id ] . mrOnly ?
+ || S +
+ || S ,
+ || [ 0 ] . toUpperCase ( ) + EXTR [ k ] . n . slice ( 1 )
+ || goal . n }$ S ${ q .
+ || lin . name }$ S ${
+ || set . name }$ S ${
+${ a = = = S ? S : S }$ S || 
+${ e . beaten . length > 1 ? S || 
+${ unk > 1 ? S : S }$ S || 
+${ used [ j . id ] > 1 ? S || 
+${ v - m > 1 ? S : S }$ S || 
++ ( FEM [ id ] ? S : S ) || 
++ ( FEM [ m ] ? S : S ) || 
++ ( masc ? S : S ) + ( n . endsWith ( S ) ? S : S ) || 
+= = = 1 ? S : j || 
+> 1 ? S : S }$ S ${ e . kills > 1 ? S : S }$ S ${ e . kills > || ! = =
+> 1 ? S : S }$ S ${ lk > || ! = =
+> 1 ? S : S }$ S ${ n > || ! = =
+> 1 ? S : S }$ S ${ nReady > || ! = =
+> || ! = =
+FEM [ m ] ? S : || 
+S ${ f . left > 1 ? S : S }$ || 
+S , || 
+S : S }$ || 
+ancSuffix ( id ) || n
+const masc = [ S , S , S , S ] . includes ( n ) ; || 
+nOwn > 1 ? S : S }$ S ${ || 
+q . goal . n }$ S ${ || 
+}$ S ${ lin . name || 
+}$ S ${ m . loot . length > 1 ? S : S || 
+}$ S ${ q . goal . n || 
+}$ S ${ set . name || 

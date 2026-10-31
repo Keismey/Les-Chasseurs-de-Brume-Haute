@@ -18,6 +18,15 @@ Installable sur l'écran d'accueil (PWA), jouable hors ligne une fois chargé, s
 - `icons/`, `img/` — icônes de l'appli, bannières, illustrations
 - `audio/` — les musiques (lues en flux, jamais mises en cache)
 - `fonts/` — Almendra et Signika, hébergées avec le jeu (licence SIL OFL, voir `fonts/OFL-*.txt`)
+- `outils/verif_langues.py` — contrôle que `game.fr.js` et `game.en.js` ont le même code (voir plus bas)
+
+## Contrôle français / anglais
+
+Le jeu existe en deux fichiers, un par langue, qui doivent garder exactement le même code : seuls les textes changent. Après toute modification de l'un des deux, lancer depuis la racine du dépôt :
+
+    python3 outils/verif_langues.py
+
+Le script (Python 3, sans dépendance) retire les textes, les commentaires et les regex, puis compare le code qui reste. « OK » : les deux fichiers sont alignés. Sinon, il affiche chaque écart avec ses numéros de ligne : soit la correction n'a été faite que dans une langue (à reporter dans l'autre), soit l'écart est voulu (pluriel, accord, ordre des mots) et on copie la ligne proposée dans `outils/verif_langues_ok.txt`.
 
 ## Mise à jour automatique
 
