@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:'Immobilisé',t:'Il ne peut pas attaquer ce tour-ci. Fr
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.72',date:'2026-10-31',t:'Confort et accessibilité',items:[
+  'Boutons plus faciles à toucher sur téléphone (44 px au moins), fenêtres utilisables au clavier, zones de l’arène et carte d’expédition jouables au clavier, mode hors ligne plus sûr.']},
  {v:'1.71',date:'2026-10-29',t:'Retour au hub',items:[
   'Options : bouton « Retour au hub », et le même ordre que dans les autres jeux du studio.']},
  {v:'1.70',date:'2026-10-26',t:'Crédits',items:[
