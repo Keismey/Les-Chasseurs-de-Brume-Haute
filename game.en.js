@@ -725,6 +725,8 @@ const IDLE={id:'#idle',n:"Immobilized",t:"It can’t attack this turn. Hit hard!
 /* ---------- Sauvegarde ---------- */
 const KEY='grande-traque-v1';
 const PATCHES=[
+ {v:'1.72',date:'2026-10-31',t:'Comfort and accessibility',items:[
+  'Buttons easier to tap on phones (at least 44 px), windows usable with the keyboard, arena zones and expedition map playable with the keyboard, safer offline mode.']},
  {v:'1.71',date:'2026-10-29',t:'Back to the hub',items:[
   'Options: a “Back to the hub” button, in the same order as the studio’s other games.']},
  {v:'1.70',date:'2026-10-26',t:'Credits',items:[
@@ -991,7 +993,7 @@ function expMapSVG(){const e=S.exp,z=expZone(),h=HAB[z.hab]||HAB.col;const adj=e
   const on=(a===e.sec&&adj.includes(b))||(b===e.sec&&adj.includes(a)),mx=(x1+x2)/2+(y2-y1)*.08,my=(y1+y2)/2-(x2-x1)*.08,d=`M${x1},${y1} Q${mx},${my} ${x2},${y2}`;
   s+=`<path d="${d}" fill="none" stroke="rgba(20,14,8,.45)" stroke-width="${on?6.5:4.5}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${on?'#f3dfa8':'#d9c595'}" stroke-width="${on?3.2:2.2}" stroke-dasharray="${on?'7 5':'3 6'}" stroke-linecap="round" opacity="${on?1:.7}"/>`;}));
  e.secs.forEach((sc,i)=>{const[x,y]=EXP_POS[i],cur=i===e.sec,can=adj.includes(i);const left=sc.nodes.reduce((a,n)=>a+(n.u>0?1:0),0);const R=cur?27:23;
-  s+=`<g class="xsec${cur?' cur':''}${can?' can':''}" ${can?`data-a="xmove" data-v="${i}"`:''}>${can?`<circle class="xring" cx="${x}" cy="${y}" r="${R+3}" fill="none" stroke="#f3dfa8" stroke-width="2.5"/>`:''}
+  s+=`<g class="xsec${cur?' cur':''}${can?' can':''}" ${can?`data-a="xmove" data-v="${i}" role="button" tabindex="0" aria-label="Go: ${esc(sc.n)}"`:''}>${can?`<circle class="xring" cx="${x}" cy="${y}" r="${R+3}" fill="none" stroke="#f3dfa8" stroke-width="2.5"/>`:''}
   <image href="img/mark/${i===0?'camp':sc.seen?'disc':'fog'}.webp" x="${x-R-(i===0?6:0)}" y="${y-R-(i===0?6:0)}" width="${2*R+(i===0?12:0)}" height="${2*R+(i===0?12:0)}"/>
   ${i===0?'':cur?`<circle cx="${x+R-4}" cy="${y+R-6}" r="10" fill="#f3dfa8" stroke="#3a2a14" stroke-width="1.5"/><text x="${x+R-4}" y="${y+R-2}" text-anchor="middle" font-size="12" font-weight="800" fill="#3a2a14">${left||'✓'}</text>`:sc.seen?`<text x="${x}" y="${y+6}" text-anchor="middle" font-size="17" font-weight="800" fill="#3a2a14">${left||'✓'}</text>`:`<text x="${x}" y="${y+6}" text-anchor="middle" font-size="17" font-weight="700" fill="#e8e0cc">?</text>`}
   ${cur?`<image href="img/mark/pin.webp" x="${x-22}" y="${y-43}" width="44" height="44"/>`:''}${sc.nodes.some(n=>(n.t==='ev'||n.rich)&&n.u>0)?`<image href="img/mark/star.webp" x="${x-R-6}" y="${y-R-8}" width="20" height="20"/>`:''}${palHas('flair')&&sc.nodes.some(n=>n.t==='c'&&n.u>0)?`<text x="${x-19}" y="${y+24}" font-size="14" fill="var(--brass)" paint-order="stroke" stroke="var(--bg)" stroke-width="3">✦</text>`:''}
@@ -1797,11 +1799,12 @@ function backBtn(to='village',label="Village"){return`<div class="back"><button 
 function stars(v){return v>=1?'★★★':v>=.5?'★★':v>=.25?'★':'✕';}
 function hzStars(v){return v>=70?'★★★':v>=55?'★★':v>=40?'★':'·';}
 
-function render(){const app=$('#app');if(!app)return;let h='';if(screen==='village')setTimeout(checkUrgent,0);setTimeout(tutRender,0);
+let renderedScr=null;
+function render(){const app=$('#app');if(!app)return;let h='';const fa=document.activeElement,fk=renderedScr===screen&&fa&&fa!==app&&app.contains(fa)&&fa.dataset&&fa.dataset.a?fa.dataset:null;renderedScr=screen;if(screen==='village')setTimeout(checkUrgent,0);setTimeout(tutRender,0);
  try{switch(screen){case 'village':h=vVillage();break;case 'quests':h=vQuests();break;case 'prep':h=vPrep();break;case 'hunt':h=vHunt();break;
   case 'result':h=vResult();break;case 'forge':h=vForge();break;case 'equip':h=vEquip();break;case 'shop':h=vShop();break;case 'craft':h=vCraft();break;case 'explore':h=vExplore();break;case 'arena':h=vArena();break;case 'special':h=vSpecial();break;case 'palico':h=vPalico();break;case 'notes':h=vNotes();break;case 'training':h=vTraining();break;}}
  catch(e){h=`<p>Display error: ${esc(e.message)}</p><button class="btn" data-a="go" data-v="village">Back to the village</button>`;}
- app.innerHTML=h;try{const sc=sceneOf();app.classList.toggle('scened',!!(sc&&sc[0]));if(sc&&sc[0]){app.style.setProperty('--scene',`url('${PANO(sc[0])}')`);app.dataset.sc=sc[1];if(sc[1]==='page'){const bk=app.querySelector(':scope>.back');if(bk&&!(bk.nextElementSibling&&bk.nextElementSibling.classList.contains('scenegap')))bk.insertAdjacentHTML('afterend','<div class="scenegap"></div>');}}else{app.style.removeProperty('--scene');delete app.dataset.sc;}}catch(e){}if(screen==='hunt'&&H&&H.faintPop&&!H.over){const f=H.faintPop;H.faintPop=null;setTimeout(()=>faintModal(f),350);}try{document.body.classList.toggle('hunting',screen==='hunt'&&!!H&&H.phase!=='camp');}catch(e){}if(screen==='hunt')afterHunt();audSync();}
+ app.innerHTML=h;if(fk)try{let n=app.querySelector(`[data-a="${CSS.escape(fk.a)}"]`+(fk.v!=null?`[data-v="${CSS.escape(fk.v)}"]`:':not([data-v])'));if(!n&&fk.a==='xmove')n=app.querySelector('[data-a="xmove"]');if(n)n.focus({preventScroll:true});}catch(e){}try{const sc=sceneOf();app.classList.toggle('scened',!!(sc&&sc[0]));if(sc&&sc[0]){app.style.setProperty('--scene',`url('${PANO(sc[0])}')`);app.dataset.sc=sc[1];if(sc[1]==='page'){const bk=app.querySelector(':scope>.back');if(bk&&!(bk.nextElementSibling&&bk.nextElementSibling.classList.contains('scenegap')))bk.insertAdjacentHTML('afterend','<div class="scenegap"></div>');}}else{app.style.removeProperty('--scene');delete app.dataset.sc;}}catch(e){}if(screen==='hunt'&&H&&H.faintPop&&!H.over){const f=H.faintPop;H.faintPop=null;setTimeout(()=>faintModal(f),350);}try{document.body.classList.toggle('hunting',screen==='hunt'&&!!H&&H.phase!=='camp');}catch(e){}if(screen==='hunt')afterHunt();audSync();}
 
 function vVillage(){const st=computeStats(),W=st.w;const next=QUESTS.filter(q=>q.tier>0&&!S.cleared[q.id]&&unlocked(q)).sort((a,b)=>(a.urgent-b.urgent)||(a.stars-b.stars))[0];
  return`<header class="hero"><div class="heroimg" role="img" aria-label="The village of Brume-Haute at the foot of the mountains, watched by monsters"></div><div class="herotxt"><div class="titlebox"><img class="emblem" src="img/ui/emblem.webp" alt=""><h1 class="title"><small>The Hunters of</small>Brume-Haute</h1></div><p class="muted" style="margin:0">The Guild outpost at the foot of the pass, watched by monsters</p>
@@ -2105,9 +2108,9 @@ function arenaSVG(){const m=H.m,RG=ranged(),far=RG&&!H.close,danger={},delem={},
  for(const q of SECTS){const side=q.a===90?'d':q.a===270?'g':'';const here=q.z===H.zone&&(q.z!=='flanc'||side===H.side);
   const c=['sec'];if(m.lava===q.z&&!H.over)c.push('lava');if(m.mines&&m.mines.z.includes(q.z)&&!H.over)c.push(m.mines.mv==='foudre_t'?'bolt':'mine');if(H.phase!=='camp'){if(here)c.push('here');else if(q.z===H.zone)c.push('same');}if(q.z in danger)c.push('danger');
   if(RG&&H.phase!=='camp'){const k=c.indexOf('here');if(k>=0&&far){c.splice(k,1);c.push('same');}}
-  s+=`<path class="${c.join(' ')}" d="${secPath(q.a-43,q.a+43,146,90)}" data-a="move" data-v="${q.z}${side?':'+side:''}"><title>${RG&&far?"Close in to melee: ":"Go: "}${ZN[q.z]}</title></path>`;
+  s+=`<path class="${c.join(' ')}" d="${secPath(q.a-43,q.a+43,146,90)}" role="button" tabindex="0" data-a="move" data-v="${q.z}${side?':'+side:''}"><title>${RG&&far?"Close in to melee: ":"Go: "}${ZN[q.z]}</title></path>`;
   if(RG){const o=['sec','far'];if(m.lava===q.z&&!H.over)o.push('lava');if(m.mines&&m.mines.z.includes(q.z)&&!H.over)o.push(m.mines.mv==='foudre_t'?'bolt':'mine');if(H.phase!=='camp'&&far&&here)o.push('here');if(q.z in dOut)o.push('danger');
-   s+=`<path class="${o.join(' ')}" d="${secPath(q.a-43,q.a+43,182,151)}" data-a="move" data-v="far:${q.z}${side?':'+side:''}"><title>At range: ${ZN[q.z]}</title></path>`;}
+   s+=`<path class="${o.join(' ')}" d="${secPath(q.a-43,q.a+43,182,151)}" role="button" tabindex="0" data-a="move" data-v="far:${q.z}${side?':'+side:''}"><title>At range: ${ZN[q.z]}</title></path>`;}
   let lx,ly,px,py;if(side){[lx,ly]=pt(q.a,121);px=lx;ly-=4;py=ly+14;}else{[lx,ly]=pt(q.a,134);[px,py]=pt(q.a,120);ly+=4;py+=4;if(q.a===180){ly+=0;}}
   let pn=m.flying?`${m.d.parts.flanc.name} ½`:m.d.parts[ZPART[q.z]].name;const pl=m.plates&&!m.phase2?m.plates[ZPART[q.z]]:null;
   const pst=pl?(pl.hp>0?"plated":pl.bare>0?`exposed · ${pl.bare}`:''):'';
@@ -2385,8 +2388,11 @@ function afterHunt(){const ar=document.querySelector('.arena');if(!ar||!H)return
  H.fx=[];const lg=document.querySelector('.log');if(lg)lg.scrollTop=lg.scrollHeight;}
 
 /* ---------- Modales ---------- */
-function modal(html){$('#modal').innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog">${html}</div></div>`;}
-function closeModal(){$('#modal').innerHTML='';if(screen==='village')setTimeout(checkUrgent,0);}
+// Fenêtres : focus dans la fenêtre à l'ouverture, Tab gardé dedans, focus rendu à la fermeture (clavier, lecteur d'écran)
+let modalFrom=null,modalKey=null;
+function modal(html){const m=$('#modal');if(!m.innerHTML.trim()){modalFrom=document.activeElement;modalKey=modalFrom&&modalFrom.dataset&&modalFrom.dataset.a?{a:modalFrom.dataset.a,v:modalFrom.dataset.v}:null;}m.innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog" aria-modal="true" tabindex="-1">${html}</div></div>`;const sh=m.querySelector('.sheet'),h=sh.querySelector('h2');if(h){h.id='modal-t';sh.setAttribute('aria-labelledby','modal-t');}try{sh.focus({preventScroll:true});}catch(e){}}
+function closeModal(){$('#modal').innerHTML='';let f=modalFrom;const k=modalKey;modalFrom=modalKey=null;try{if(f&&!f.isConnected&&k)f=document.querySelector(`#app [data-a="${CSS.escape(k.a)}"]`+(k.v!=null?`[data-v="${CSS.escape(k.v)}"]`:':not([data-v])'));if(f&&f!==document.body&&f.isConnected&&f.focus)f.focus({preventScroll:true});}catch(e){}if(screen==='village')setTimeout(checkUrgent,0);}
+document.addEventListener('keydown',e=>{if(e.key!=='Tab'||e.defaultPrevented||document.getElementById('ks-dlg'))return;const sh=document.querySelector('#modal .sheet');if(!sh)return;const f=[...sh.querySelectorAll('button,input,select,textarea,a[href],summary,[tabindex]:not([tabindex="-1"])')].filter(x=>!x.disabled&&x.getClientRects().length);if(!f.length){e.preventDefault();sh.focus();return;}const a=document.activeElement,i=f.indexOf(a);if(e.shiftKey&&(i<=0)){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&(i===-1||i===f.length-1)){e.preventDefault();f[0].focus();}});
 function openPouch(){const list=ITEM_ORDER.filter(k=>inPouch(k)).map(k=>{const it=ITEMS[k],left=pouchLeft(k),blk=left<=0?"Quest limit reached":itemBlock(k);
  return`<button class="item" data-a="use" data-v="${k}" ${blk?'disabled':''}><span class="iline">${itemIcon(k,'iicon big')}<span><b>${it.n}</b><span>${blk||it.d}</span></span></span><b>×${left}</b></button>`;}).join('');
  const flh=H.stats.w.type==='bow'&&!inPouch('fiole_p')&&!inPouch('fiole_v')?"<p class=\"small muted\">No bow coatings: craft some at the Workshop (Ammo tab).</p>":'';
@@ -2576,7 +2582,7 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
  case 'retry':{const q=R&&R.q;if(!q||q.explore){H=null;R=null;go('village');break;}const ml=(q.arena||q.sp)&&R.meal&&S.zenny>=((MEALS.find(x=>x.id===R.meal)||{}).p||0)?R.meal:'none';H=null;R=null;sub.quest=q.id;sub.meal=ml;go('prep');break;}
  case 'toarena':H=null;R=null;go('arena');break;case 'tospecial':H=null;R=null;go('special');break;
  case 'quest':sub.quest=v;sub.meal='none';go('prep');break;
- case 'urg-go':$('#modal').innerHTML='';sub.quest=v;sub.meal='none';go('prep');break;
+ case 'urg-go':$('#modal').innerHTML='';modalFrom=modalKey=null;sub.quest=v;sub.meal='none';go('prep');break;
  case 'gquest':{const q=QUESTS.find(x=>x.id===v);if(!q)break;const z=EXPZ.find(x=>x.id===q.zone);sfx('click');
   modal(`<h2>${esc(q.title)}</h2><p>${esc(q.d)}</p><p class="small">Location: ${esc(z.n)} · ${q.hours} hours · goal: ${itemIcon(q.goal.k,'iicon sm')}${RES[q.goal.k].n} ×${q.goal.n}. No large monster roams during a gathering quest.</p><p class="small muted">Reward: ${q.z} z and 2 armor spheres. You keep everything you gather.</p>${S.exp?"<p class=\"small\" style=\"color:var(--danger)\">An expedition is already underway: finish it first.</p>":''}<div style="display:flex;gap:8px"><button class="btn wide" data-a="close">Later</button><button class="btn main wide" data-a="gstart" data-v="${q.id}" ${S.exp?'disabled':''}>Depart</button></div>`);break;}
  case 'gstart':{const q=QUESTS.find(x=>x.id===v);if(!q||S.exp||!unlocked(q))break;closeModal();sfx('steps');S.exp=newExp(q.zone,q.id);save();go('explore');break;}
@@ -2651,6 +2657,8 @@ document.addEventListener('click',e=>{if(LP.fired){LP.fired=false;e.preventDefau
   if(v==='1'){for(const q of QUESTS)if(q.tier>0)S.cleared[q.id]=1;S.urgSeen=QUESTS.filter(q=>q.urgent).map(q=>q.id);S.tuto=true;}
   save();go('village');modal(`<h2>Test mode on</h2><p class="small">${v==='1'?"All ranks are unlocked, ":''}resources, materials and items at 99, 1,000,000 z in your pocket. Happy forging!</p><button class="btn main wide" data-a="close">Got it</button>`);break;}
  case 'reset-yes':S=newSave();save();closeModal();go('village');break;}});
+// Zones de l'arène et secteurs d'expédition (SVG) : Entrée ou Espace = toucher
+document.addEventListener('keydown',e=>{const t=e.target;if((e.key==='Enter'||e.key===' ')&&!e.repeat&&t instanceof SVGElement&&t.getAttribute('role')==='button'&&t.dataset.a){e.preventDefault();t.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}));}});
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target&&e.target.id==='palname'){e.preventDefault();const b=document.querySelector('[data-a="palname-ok"]');b&&b.click();}});
 document.documentElement.lang=LANG;try{document.title="The Hunters of Brume-Haute";}catch(e){}
 try{if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost')&&!/claude\.(ai|site|com)|claudeusercontent/.test(location.hostname))navigator.serviceWorker.register('sw.js').catch(()=>{});}catch(e){}
