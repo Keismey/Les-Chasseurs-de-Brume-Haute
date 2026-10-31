@@ -2385,8 +2385,11 @@ function afterHunt(){const ar=document.querySelector('.arena');if(!ar||!H)return
  H.fx=[];const lg=document.querySelector('.log');if(lg)lg.scrollTop=lg.scrollHeight;}
 
 /* ---------- Modales ---------- */
-function modal(html){$('#modal').innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog">${html}</div></div>`;}
-function closeModal(){$('#modal').innerHTML='';if(screen==='village')setTimeout(checkUrgent,0);}
+// Fenêtres : focus dans la fenêtre à l'ouverture, Tab gardé dedans, focus rendu à la fermeture (clavier, lecteur d'écran)
+let modalFrom=null;
+function modal(html){const m=$('#modal');if(!m.innerHTML.trim())modalFrom=document.activeElement;m.innerHTML=`<div class="backdrop" data-a="close"><div class="sheet" data-a="noop" role="dialog" aria-modal="true" tabindex="-1">${html}</div></div>`;const sh=m.querySelector('.sheet'),h=sh.querySelector('h2');if(h){h.id='modal-t';sh.setAttribute('aria-labelledby','modal-t');}try{sh.focus({preventScroll:true});}catch(e){}}
+function closeModal(){$('#modal').innerHTML='';const f=modalFrom;modalFrom=null;if(f&&f!==document.body&&f.isConnected&&f.focus)try{f.focus({preventScroll:true});}catch(e){}if(screen==='village')setTimeout(checkUrgent,0);}
+document.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const sh=document.querySelector('#modal .sheet');if(!sh)return;const f=[...sh.querySelectorAll('button,input,select,textarea,a[href],summary,[tabindex]:not([tabindex="-1"])')].filter(x=>!x.disabled&&x.getClientRects().length);if(!f.length){e.preventDefault();sh.focus();return;}const a=document.activeElement,i=f.indexOf(a);if(e.shiftKey&&(i<=0)){e.preventDefault();f[f.length-1].focus();}else if(!e.shiftKey&&(i===-1||i===f.length-1)){e.preventDefault();f[0].focus();}});
 function openPouch(){const list=ITEM_ORDER.filter(k=>inPouch(k)).map(k=>{const it=ITEMS[k],left=pouchLeft(k),blk=left<=0?'Limite par quête atteinte':itemBlock(k);
  return`<button class="item" data-a="use" data-v="${k}" ${blk?'disabled':''}><span class="iline">${itemIcon(k,'iicon big')}<span><b>${it.n}</b><span>${blk||it.d}</span></span></span><b>×${left}</b></button>`;}).join('');
  const flh=H.stats.w.type==='bow'&&!inPouch('fiole_p')&&!inPouch('fiole_v')?'<p class="small muted">Aucun flacon pour l’arc : fabriques-en à l’atelier (onglet Munitions).</p>':'';
